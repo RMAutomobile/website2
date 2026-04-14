@@ -1,5 +1,4 @@
 [build]
-  base = "website"
   publish = "website"
 
 [[redirects]]
@@ -57,4 +56,3 @@
   [headers.values]
     X-Content-Type-Options = "nosniff"
     X-Frame-Options = "SAMEORIGIN"
-    X-Cloudflare-Email-Obfuscation = "off"
