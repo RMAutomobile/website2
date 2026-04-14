@@ -1,0 +1,58 @@
+[build]
+  publish = "website"
+
+[[redirects]]
+  from = "/"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/uber-uns"
+  to = "/uber-uns.html"
+  status = 200
+
+[[redirects]]
+  from = "/fahrzeugbereich"
+  to = "/fahrzeugbereich.html"
+  status = 200
+
+[[redirects]]
+  from = "/kontakt"
+  to = "/kontakt.html"
+  status = 200
+
+[[redirects]]
+  from = "/mein-fahrzeug-verkaufen"
+  to = "/mein-fahrzeug-verkaufen.html"
+  status = 200
+
+[[redirects]]
+  from = "/fahrzeug-i10"
+  to = "/fahrzeug-i10.html"
+  status = 200
+
+[[redirects]]
+  from = "/fahrzeug-bmw320d"
+  to = "/fahrzeug-bmw320d.html"
+  status = 200
+
+[[redirects]]
+  from = "/impressum"
+  to = "/impressum.html"
+  status = 200
+
+[[redirects]]
+  from = "/datenschutz"
+  to = "/datenschutz.html"
+  status = 200
+
+[[redirects]]
+  from = "/agb"
+  to = "/agb.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
