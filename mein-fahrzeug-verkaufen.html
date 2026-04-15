@@ -124,9 +124,12 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
 .rb.sel{border-color:var(--tx);color:var(--page);background:var(--tx)}.rb:hover:not(.sel){border-color:var(--bo3);color:var(--tx)}
 /* Checkboxes */
 .cg{display:grid;grid-template-columns:1fr 1fr;gap:4px}
-.ci{display:flex;align-items:center;gap:7px;padding:8px 10px;border:1px solid var(--bo);cursor:pointer;transition:border-color .25s;font-size:11px;font-weight:300;color:var(--tx2);user-select:none}
-.ci:hover{border-color:var(--bo2);color:var(--tx)}.ci.checked{border-color:var(--grn-bd);color:var(--tx);background:rgba(111,207,151,.04)}
-.ci input{width:12px;height:12px;accent-color:var(--grn);flex-shrink:0;cursor:pointer;pointer-events:none}
+.ci{display:flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid var(--bo);cursor:pointer;transition:all .2s;font-size:11px;font-weight:300;color:var(--tx2);user-select:none;position:relative}
+.ci:hover{border-color:var(--bo2);color:var(--tx)}
+.ci.checked{border-color:var(--grn-bd);color:var(--tx);background:rgba(111,207,151,.06)}
+.ci input{display:none}
+.ci-check{width:16px;height:16px;border:1.5px solid var(--bo2);border-radius:3px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;color:transparent;transition:all .2s;background:transparent}
+.ci.checked .ci-check{background:var(--grn-bg);border-color:var(--grn);color:var(--grn)}
 /* Rating buttons */
 .ratg{display:flex;gap:4px;flex-wrap:wrap}
 .ratb{padding:7px 11px;border:1px solid var(--bo);cursor:pointer;font-family:var(--fh);font-size:10px;font-weight:600;text-transform:uppercase;color:var(--tx3);transition:all .25s;background:transparent}
@@ -227,46 +230,56 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
         <div class="fstep active" id="fs1">
           <div class="step-lbl">Schritt 1/6 &#183; Fahrzeugdaten</div>
           <div class="fg-row">
-            <div class="fg"><label>Marke *</label><select name="marke" required><option value="" disabled selected>W&#228;hlen</option><option>Audi</option><option>BMW</option><option>Citro&#235;n</option><option>Dacia</option><option>Fiat</option><option>Ford</option><option>Honda</option><option>Hyundai</option><option>Kia</option><option>Mazda</option><option>Mercedes-Benz</option><option>Mini</option><option>Nissan</option><option>Opel</option><option>Peugeot</option><option>Porsche</option><option>Renault</option><option>Seat</option><option>Skoda</option><option>Tesla</option><option>Toyota</option><option>Volkswagen</option><option>Volvo</option><option>Sonstige</option></select></div>
+            <div class="fg"><label>Marke *</label><select name="marke" required><option value="" disabled selected>W&#228;hlen</option><option>Audi</option><option>BMW</option><option>Citro&#235;n</option><option>Dacia</option><option>Fiat</option><option>Ford</option><option>Honda</option><option>Hyundai</option><option>Kia</option><option>Mazda</option><option>Mercedes-Benz</option><option>Mini</option><option>Mitsubishi</option><option>Nissan</option><option>Opel</option><option>Peugeot</option><option>Porsche</option><option>Renault</option><option>Seat</option><option>Skoda</option><option>Subaru</option><option>Suzuki</option><option>Tesla</option><option>Toyota</option><option>Volkswagen</option><option>Volvo</option><option>Sonstige</option></select></div>
             <div class="fg"><label>Modell *</label><input type="text" name="modell" placeholder="z.B. Golf, 3er..." required/></div>
           </div>
           <div class="fg-row">
-            <div class="fg"><label>Bauform *</label><select name="bauform" required><option value="" disabled selected>W&#228;hlen</option><option>Limousine</option><option>Kombi</option><option>SUV</option><option>Hatchback</option><option>Coup&#233;</option><option>Cabrio</option><option>Van</option><option>Pickup</option></select></div>
-            <div class="fg"><label>Kraftstoff *</label><select name="kraftstoff" required><option value="" disabled selected>W&#228;hlen</option><option>Benzin</option><option>Diesel</option><option>Hybrid</option><option>Plug-in-Hybrid</option><option>Elektro</option><option>LPG</option></select></div>
+            <div class="fg"><label>Bauform</label><select name="bauform"><option value="" disabled selected>W&#228;hlen</option><option>Limousine</option><option>Kombi</option><option>SUV</option><option>Hatchback</option><option>Coup&#233;</option><option>Cabrio</option><option>Van / Minivan</option><option>Pickup</option><option>Gel&#228;ndewagen</option></select></div>
+            <div class="fg"><label>Kraftstoff *</label><select name="kraftstoff" required><option value="" disabled selected>W&#228;hlen</option><option>Benzin</option><option>Diesel</option><option>Hybrid (Benzin)</option><option>Hybrid (Diesel)</option><option>Plug-in-Hybrid</option><option>Elektro</option><option>LPG / Autogas</option><option>Erdgas (CNG)</option></select></div>
           </div>
-          <div class="fg"><label>Ausstattungslinie</label><input type="text" name="variante" placeholder="z.B. Comfortline, M-Paket..."/></div>
+          <div class="fg"><label>Ausstattungslinie</label><input type="text" name="variante" placeholder="z.B. Comfortline, M-Paket, S-Line..."/></div>
           <div class="fg-row">
-            <div class="fg"><label>Getriebe *</label><select name="getriebe" required><option value="" disabled selected>W&#228;hlen</option><option>Schaltgetriebe</option><option>Automatik</option><option>DSG</option></select></div>
-            <div class="fg"><label>T&#252;ren</label><select name="tueren"><option value="" disabled selected>Anzahl</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+            <div class="fg"><label>Getriebe *</label><select name="getriebe" required><option value="" disabled selected>W&#228;hlen</option><option>Schaltgetriebe</option><option>Automatik</option><option>Halbautomatik</option></select></div>
+            <div class="fg"><label>T&#252;ren</label><select name="tueren"><option value="" disabled selected>Anzahl</option><option>3</option><option>5</option></select></div>
           </div>
-          <div class="fg"><label>Fahrgestellnummer (VIN) &#8211; optional</label><input type="text" name="vin" placeholder="f&#252;r pr&#228;zisere Bewertung"/></div>
+          <div class="fg-row">
+            <div class="fg"><label>Erstzulassung (EZ) *</label><input type="text" name="erstzulassung" placeholder="z.B. 03/2019" required/></div>
+            <div class="fg"><label>Fahrgestellnummer (VIN)</label><input type="text" name="vin" placeholder="f&#252;r pr&#228;zisere Bewertung"/></div>
+          </div>
           <div class="form-nav"><button class="btn-next" type="button" onclick="goStep(1,2)">Weiter &#8250;</button></div>
         </div>
 
         <!-- SCHRITT 2 -->
         <div class="fstep" id="fs2">
           <div class="step-lbl">Schritt 2/6 &#183; Kilometerstand &amp; Details</div>
-          <div class="fg-row">
-            <div class="fg"><label>Kilometerstand *</label><input type="text" name="km" placeholder="z.B. 85000" required/></div>
-            <div class="fg"><label>Baujahr *</label><select name="baujahr" required><option value="" disabled selected>Jahr</option><option>2025</option><option>2024</option><option>2023</option><option>2022</option><option>2021</option><option>2020</option><option>2019</option><option>2018</option><option>2017</option><option>2016</option><option>2015</option><option>2014</option><option>2013</option><option>2012</option><option>2011</option><option>2010</option><option>&#196;lter</option></select></div>
+          <div class="fg">
+            <label>Kilometerstand *</label><input type="text" name="km" placeholder="z.B. 85000" required/>
           </div>
-          <div class="fg"><label>Erstzulassung</label><input type="text" name="erstzulassung" placeholder="z.B. 03/2019"/></div>
           <div class="fg"><label>Wann m&#246;chten Sie verkaufen? *</label>
-            <div class="rg" id="rg-wann"><div class="rb" onclick="setR('wann','Sofort',this)">Sofort</div><div class="rb" onclick="setR('wann','4 Wochen',this)">Innerhalb 4 Wochen</div><div class="rb" onclick="setR('wann','3 Monate',this)">Innerhalb 3 Monate</div><div class="rb" onclick="setR('wann','Unklar',this)">Noch unklar</div></div>
+            <div class="rg" id="rg-wann">
+              <div class="rb" onclick="setR('wann','Sofort',this)">Sofort</div>
+              <div class="rb" onclick="setR('wann','4 Wochen',this)">Innerhalb 4 Wochen</div>
+              <div class="rb" onclick="setR('wann','3 Monate',this)">Innerhalb 3 Monate</div>
+              <div class="rb" onclick="setR('wann','Unklar',this)">Noch unklar</div>
+            </div>
             <input type="hidden" name="wann_verkaufen" id="h-wann"/>
           </div>
           <div class="fg"><label>Anzahl Schl&#252;ssel</label>
-            <div class="rg" id="rg-schluessel"><div class="rb" onclick="setR('schluessel','1',this)">1 Schl&#252;ssel</div><div class="rb" onclick="setR('schluessel','2',this)">2 Schl&#252;ssel</div><div class="rb" onclick="setR('schluessel','3+',this)">3+</div></div>
+            <div class="rg" id="rg-schluessel">
+              <div class="rb" onclick="setR('schluessel','1',this)">1 Schl&#252;ssel</div>
+              <div class="rb" onclick="setR('schluessel','2',this)">2 Schl&#252;ssel</div>
+              <div class="rb" onclick="setR('schluessel','3+',this)">3+</div>
+            </div>
             <input type="hidden" name="schluessel" id="h-schluessel"/>
           </div>
           <div class="fg"><label>Reifen vorhanden</label>
             <div class="cg">
-              <label class="ci"><input type="checkbox" name="reifen" value="Sommerreifen"/> Sommerreifen</label>
-              <label class="ci"><input type="checkbox" name="reifen" value="Winterreifen"/> Winterreifen</label>
-              <label class="ci"><input type="checkbox" name="reifen" value="Ganzjahresreifen"/> Ganzjahresreifen</label>
-              <label class="ci"><input type="checkbox" name="reifen" value="Alufelgen"/> Alufelgen</label>
-              <label class="ci"><input type="checkbox" name="reifen" value="Stahlfelgen"/> Stahlfelgen</label>
-              <label class="ci"><input type="checkbox" name="reifen" value="Keine"/> Keine Zweitreifen</label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Sommerreifen<input type="checkbox" name="reifen" value="Sommerreifen"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Winterreifen<input type="checkbox" name="reifen" value="Winterreifen"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Ganzjahresreifen<input type="checkbox" name="reifen" value="Ganzjahresreifen"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Alufelgen<input type="checkbox" name="reifen" value="Alufelgen"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Stahlfelgen<input type="checkbox" name="reifen" value="Stahlfelgen"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Keine Zweitreifen<input type="checkbox" name="reifen" value="Keine"/></label>
             </div>
           </div>
           <div class="form-nav"><button class="btn-prev" type="button" onclick="goStep(2,1)">&#8249; Zur&#252;ck</button><button class="btn-next" type="button" onclick="goStep(2,3)">Weiter &#8250;</button></div>
@@ -277,20 +290,51 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
           <div class="step-lbl">Schritt 3/6 &#183; Ausstattung &amp; Fotos</div>
           <div class="fg"><label>Sonderausstattung</label>
             <div class="cg">
-              <label class="ci"><input type="checkbox" name="ausstattung" value="Navi"/> Navi</label>
-              <label class="ci"><input type="checkbox" name="ausstattung" value="CarPlay"/> CarPlay/Android</label>
-              <label class="ci"><input type="checkbox" name="ausstattung" value="Kamera"/> R&#252;ckfahrkamera</label>
-              <label class="ci"><input type="checkbox" name="ausstattung" value="PDC"/> PDC/Einparkhilfe</label>
-              <label class="ci"><input type="checkbox" name="ausstattung" value="Klimaautomatik"/> Klimaautomatik</label>
-              <label class="ci"><input type="checkbox" name="ausstattung" value="Sitzheizung"/> Sitzheizung</label>
-              <label class="ci"><input type="checkbox" name="ausstattung" value="Lenkradheizung"/> Lenkradheizung</label>
-              <label class="ci"><input type="checkbox" name="ausstattung" value="Ledersitze"/> Ledersitze</label>
-              <label class="ci"><input type="checkbox" name="ausstattung" value="El. Sitze"/> El. Sitze</label>
-              <label class="ci"><input type="checkbox" name="ausstattung" value="Soundsystem"/> Soundsystem</label>
-              <label class="ci"><input type="checkbox" name="ausstattung" value="Panoramadach"/> Panoramadach</label>
-              <label class="ci"><input type="checkbox" name="ausstattung" value="AHK"/> Anh&#228;ngerkupplung</label>
-              <label class="ci"><input type="checkbox" name="ausstattung" value="LED"/> LED/Xenon</label>
-              <label class="ci"><input type="checkbox" name="ausstattung" value="Tempomat"/> Tempomat/ACC</label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Navigationssystem<input type="checkbox" name="ausstattung" value="Navigationssystem"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Apple CarPlay<input type="checkbox" name="ausstattung" value="Apple CarPlay"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Android Auto<input type="checkbox" name="ausstattung" value="Android Auto"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Bluetooth / Freisprechen<input type="checkbox" name="ausstattung" value="Bluetooth"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> R&#252;ckfahrkamera<input type="checkbox" name="ausstattung" value="R&#252;ckfahrkamera"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> 360&#176; Kamera<input type="checkbox" name="ausstattung" value="360 Kamera"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Parksensoren vorne<input type="checkbox" name="ausstattung" value="PDC vorne"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Parksensoren hinten<input type="checkbox" name="ausstattung" value="PDC hinten"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Einparkassistent<input type="checkbox" name="ausstattung" value="Einparkassistent"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> LED-Scheinwerfer<input type="checkbox" name="ausstattung" value="LED-Scheinwerfer"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Matrix-LED / adaptives Licht<input type="checkbox" name="ausstattung" value="Matrix-LED"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Nebelscheinwerfer<input type="checkbox" name="ausstattung" value="Nebelscheinwerfer"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Sitzheizung Fahrer<input type="checkbox" name="ausstattung" value="Sitzheizung Fahrer"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Sitzheizung Beifahrer<input type="checkbox" name="ausstattung" value="Sitzheizung Beifahrer"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Sitzheizung hinten<input type="checkbox" name="ausstattung" value="Sitzheizung hinten"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> El. Sitzverstellung Fahrer<input type="checkbox" name="ausstattung" value="El. Sitz Fahrer"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> El. Sitzverstellung Beifahrer<input type="checkbox" name="ausstattung" value="El. Sitz Beifahrer"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Sitzmemory Fahrer<input type="checkbox" name="ausstattung" value="Sitzmemory"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Lederausstattung<input type="checkbox" name="ausstattung" value="Leder"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Teilleder / Alcantara<input type="checkbox" name="ausstattung" value="Teilleder"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Klimaautomatik<input type="checkbox" name="ausstattung" value="Klimaautomatik"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> 2-Zonen Klimaautomatik<input type="checkbox" name="ausstattung" value="2-Zonen Klima"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> 3-Zonen Klimaautomatik<input type="checkbox" name="ausstattung" value="3-Zonen Klima"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Panoramadach<input type="checkbox" name="ausstattung" value="Panoramadach"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Schiebedach<input type="checkbox" name="ausstattung" value="Schiebedach"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Abstandsregeltempomat (ACC)<input type="checkbox" name="ausstattung" value="ACC"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Tempomat<input type="checkbox" name="ausstattung" value="Tempomat"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Spurhalteassistent<input type="checkbox" name="ausstattung" value="Spurhalteassistent"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Totwinkelassistent<input type="checkbox" name="ausstattung" value="Totwinkelassistent"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Verkehrszeichenerkennung<input type="checkbox" name="ausstattung" value="Verkehrszeichen"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Notbremsassistent<input type="checkbox" name="ausstattung" value="Notbremse"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Head-up-Display<input type="checkbox" name="ausstattung" value="HUD"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Keyless Go<input type="checkbox" name="ausstattung" value="Keyless Go"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Standheizung<input type="checkbox" name="ausstattung" value="Standheizung"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> AHK abnehmbar<input type="checkbox" name="ausstattung" value="AHK abnehmbar"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> AHK schwenkbar<input type="checkbox" name="ausstattung" value="AHK schwenkbar"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Elektrische Heckklappe<input type="checkbox" name="ausstattung" value="El. Heckklappe"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Soundsystem Standard erweitert<input type="checkbox" name="ausstattung" value="Soundsystem"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Premium-Soundsystem<input type="checkbox" name="ausstattung" value="Premium Sound"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Sportpaket (M / AMG / S-Line...)<input type="checkbox" name="ausstattung" value="Sportpaket"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Orig. Leichtmetallfelgen<input type="checkbox" name="ausstattung" value="Alufelgen orig."/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Gro&#223;e Sonderr&#228;der (18&#8243;+)<input type="checkbox" name="ausstattung" value="Sonderr&#228;der 18+"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Allradantrieb<input type="checkbox" name="ausstattung" value="Allrad"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Adaptives Fahrwerk<input type="checkbox" name="ausstattung" value="Adaptiv-Fahrwerk"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Luftfederung<input type="checkbox" name="ausstattung" value="Luftfederung"/></label>
             </div>
           </div>
           <div class="fg" style="margin-top:6px"><label>Fotos hochladen (optional)</label>
@@ -308,26 +352,68 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
         <div class="fstep" id="fs4">
           <div class="step-lbl">Schritt 4/6 &#183; Fahrzeughistorie</div>
           <div class="fg"><label>Scheckheft *</label>
-            <div class="rg" id="rg-sh"><div class="rb" onclick="setR('sh','Vollst&#228;ndig',this)">Vollst&#228;ndig</div><div class="rb" onclick="setR('sh','Teilweise',this)">Teilweise</div><div class="rb" onclick="setR('sh','Kein',this)">Kein Scheckheft</div></div>
+            <div class="rg" id="rg-sh">
+              <div class="rb" onclick="setR('sh','Vollst&#228;ndig',this)">Vollst&#228;ndig</div>
+              <div class="rb" onclick="setR('sh','Teilweise',this)">Teilweise</div>
+              <div class="rb" onclick="setR('sh','Kein',this)">Kein Scheckheft</div>
+            </div>
             <input type="hidden" name="scheckheft" id="h-sh"/>
+          </div>
+          <div class="fg"><label>Unfallfrei? *</label>
+            <div class="rg" id="rg-unfall">
+              <div class="rb" onclick="setR('unfall','Ja, unfallfrei',this)">Ja, unfallfrei</div>
+              <div class="rb" onclick="setR('unfall','Nein, Unfallschaden',this)">Nein, Unfallschaden</div>
+              <div class="rb" onclick="setR('unfall','Nicht bekannt',this)">Nicht bekannt</div>
+            </div>
+            <input type="hidden" name="unfallfrei" id="h-unfall"/>
           </div>
           <div class="fg-row">
             <div class="fg"><label>Importfahrzeug?</label>
-              <div class="rg" id="rg-import"><div class="rb" onclick="setR('import','Nein',this)">Nein</div><div class="rb" onclick="setR('import','Ja',this)">Ja</div></div>
+              <div class="rg" id="rg-import">
+                <div class="rb" onclick="setR('import','Nein',this)">Nein</div>
+                <div class="rb" onclick="setR('import','Ja',this)">Ja</div>
+              </div>
               <input type="hidden" name="import" id="h-import"/>
             </div>
             <div class="fg"><label>Finanzierung offen?</label>
-              <div class="rg" id="rg-finanz"><div class="rb" onclick="setR('finanz','Nein',this)">Nein</div><div class="rb" onclick="setR('finanz','Ja',this)">Ja</div></div>
+              <div class="rg" id="rg-finanz">
+                <div class="rb" onclick="setR('finanz','Nein',this)">Nein</div>
+                <div class="rb" onclick="setR('finanz','Ja',this)">Ja</div>
+              </div>
               <input type="hidden" name="finanzierung_offen" id="h-finanz"/>
             </div>
           </div>
           <div class="fg-row">
             <div class="fg"><label>Vorbesitzer</label><select name="vorbesitzer"><option value="" disabled selected>Anzahl</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5+</option></select></div>
-            <div class="fg"><label>Sitzmaterial</label><select name="sitzmaterial"><option value="" disabled selected>Material</option><option>Stoff</option><option>Leder</option><option>Kunstleder</option><option>Alcantara</option></select></div>
+            <div class="fg"><label>Sitzmaterial</label><select name="sitzmaterial"><option value="" disabled selected>Material</option><option>Stoff</option><option>Leder</option><option>Kunstleder</option><option>Alcantara</option><option>Teilleder</option></select></div>
           </div>
           <div class="fg-row">
-            <div class="fg"><label>Au&#223;enfarbe *</label><input type="text" name="farbe" placeholder="z.B. Schwarz, Silber..." required/></div>
-            <div class="fg"><label>Fahrbereit?</label><select name="fahrbereit"><option value="" disabled selected>Status</option><option>Ja, fahrbereit</option><option>Eingeschr&#228;nkt</option><option>Nicht fahrbereit</option></select></div>
+            <div class="fg"><label>Au&#223;enfarbe *</label>
+              <select name="farbe" required>
+                <option value="" disabled selected>Farbe w&#228;hlen</option>
+                <option>Schwarz</option>
+                <option>Wei&#223;</option>
+                <option>Silber / Grau</option>
+                <option>Grau metallic</option>
+                <option>Blau</option>
+                <option>Dunkelblau</option>
+                <option>Rot</option>
+                <option>Bordeauxrot</option>
+                <option>Braun / Beige</option>
+                <option>Gr&#252;n</option>
+                <option>Orange</option>
+                <option>Gelb / Gold</option>
+                <option>Sonstige</option>
+              </select>
+            </div>
+            <div class="fg"><label>Fahrbereit? *</label>
+              <select name="fahrbereit" required>
+                <option value="" disabled selected>Status</option>
+                <option>Ja, fahrbereit</option>
+                <option>Eingeschr&#228;nkt fahrbereit</option>
+                <option>Nicht fahrbereit</option>
+              </select>
+            </div>
           </div>
           <div class="form-nav"><button class="btn-prev" type="button" onclick="goStep(4,3)">&#8249; Zur&#252;ck</button><button class="btn-next" type="button" onclick="goStep(4,5)">Weiter &#8250;</button></div>
         </div>
@@ -335,29 +421,45 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
         <!-- SCHRITT 5 -->
         <div class="fstep" id="fs5">
           <div class="step-lbl">Schritt 5/6 &#183; Zustand</div>
-          <div class="fg"><label>Warnleuchten?</label>
-            <div class="rg" id="rg-warn"><div class="rb" onclick="setR('warn','Keine',this)">Keine Warnleuchten</div><div class="rb" onclick="setR('warn','Aktiv',this)">Warnleuchten aktiv</div></div>
+          <div class="fg"><label>Warnleuchten? *</label>
+            <div class="rg" id="rg-warn">
+              <div class="rb" onclick="setR('warn','Keine',this);document.getElementById('warn-detail-wrap').style.display='none'">Keine Warnleuchten</div>
+              <div class="rb" onclick="setR('warn','Aktiv',this);document.getElementById('warn-detail-wrap').style.display='block'">Warnleuchten aktiv</div>
+            </div>
             <input type="hidden" name="warnleuchten" id="h-warn"/>
+            <div id="warn-detail-wrap" style="display:none;margin-top:8px">
+              <div class="fg"><label>Welche Warnleuchten? (optional)</label><input type="text" name="warnleuchten_detail" placeholder="z.B. Motorleuchte, ABS..."/></div>
+            </div>
           </div>
           <div class="fg-row">
             <div class="fg"><label>Au&#223;enzustand</label>
-              <div class="ratg" id="rg-aussen"><div class="ratb" onclick="setRat('aussen','Sehr gut',this)">Sehr gut</div><div class="ratb" onclick="setRat('aussen','Gut',this)">Gut</div><div class="ratb" onclick="setRat('aussen','Bef.',this)">Befriedigend</div><div class="ratb" onclick="setRat('aussen','Schlecht',this)">Schlecht</div></div>
+              <div class="ratg" id="rg-aussen">
+                <div class="ratb" onclick="setRat('aussen','Sehr gut',this)">Sehr gut</div>
+                <div class="ratb" onclick="setRat('aussen','Gut',this)">Gut</div>
+                <div class="ratb" onclick="setRat('aussen','Bef.',this)">Befriedigend</div>
+                <div class="ratb" onclick="setRat('aussen','Schlecht',this)">Schlecht</div>
+              </div>
               <input type="hidden" name="aussenzustand" id="h-aussen"/>
             </div>
             <div class="fg"><label>Innenzustand</label>
-              <div class="ratg" id="rg-innen"><div class="ratb" onclick="setRat('innen','Sehr gut',this)">Sehr gut</div><div class="ratb" onclick="setRat('innen','Gut',this)">Gut</div><div class="ratb" onclick="setRat('innen','Bef.',this)">Befriedigend</div><div class="ratb" onclick="setRat('innen','Schlecht',this)">Schlecht</div></div>
+              <div class="ratg" id="rg-innen">
+                <div class="ratb" onclick="setRat('innen','Sehr gut',this)">Sehr gut</div>
+                <div class="ratb" onclick="setRat('innen','Gut',this)">Gut</div>
+                <div class="ratb" onclick="setRat('innen','Bef.',this)">Befriedigend</div>
+                <div class="ratb" onclick="setRat('innen','Schlecht',this)">Schlecht</div>
+              </div>
               <input type="hidden" name="innenzustand" id="h-innen"/>
             </div>
           </div>
           <div class="fg"><label>Sichtbare Sch&#228;den</label>
             <div class="cg">
-              <label class="ci"><input type="checkbox" name="schaeden" value="Keine"/> Keine Sch&#228;den</label>
-              <label class="ci"><input type="checkbox" name="schaeden" value="Kratzer"/> Kratzer</label>
-              <label class="ci"><input type="checkbox" name="schaeden" value="Dellen"/> Dellen</label>
-              <label class="ci"><input type="checkbox" name="schaeden" value="Lack"/> Lacksch&#228;den</label>
-              <label class="ci"><input type="checkbox" name="schaeden" value="Steinschlag"/> Steinschlag</label>
-              <label class="ci"><input type="checkbox" name="schaeden" value="Unfall"/> Unfallschaden</label>
-              <label class="ci"><input type="checkbox" name="schaeden" value="Rost"/> Rost</label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Keine Sch&#228;den<input type="checkbox" name="schaeden" value="Keine"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Kratzer<input type="checkbox" name="schaeden" value="Kratzer"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Dellen<input type="checkbox" name="schaeden" value="Dellen"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Lacksch&#228;den<input type="checkbox" name="schaeden" value="Lack"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Steinschlag<input type="checkbox" name="schaeden" value="Steinschlag"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Unfallschaden<input type="checkbox" name="schaeden" value="Unfall"/></label>
+              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Rost<input type="checkbox" name="schaeden" value="Rost"/></label>
             </div>
           </div>
           <div class="fg"><label>Weitere Angaben (optional)</label><textarea name="schaeden_details" placeholder="Bekannte Sch&#228;den beschreiben..."></textarea></div>
@@ -376,7 +478,7 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
               <div class="tech-row"><span class="tech-label">Klimaanlage</span><div class="tech-btns"><button type="button" class="tb yes" onclick="setTech(this,'klima','Einwandfrei')">Einwandfrei</button><button type="button" class="tb no" onclick="setTech(this,'klima','Defekt')">Defekt</button></div><input type="hidden" name="klima_ok" id="h-klima"/></div>
             </div>
           </div>
-          <div class="fg" style="margin-top:6px"><label>Preisvorstellung (optional)</label><input type="text" name="preisvorstellung" placeholder="z.B. 8.000 &#8364;"/></div>
+          <div class="fg" style="margin-top:6px"><label>Preisvorstellung *</label><input type="text" name="preisvorstellung" placeholder="z.B. 8.000 &#8364;" required/></div>
           <div style="height:1px;background:var(--bo);margin:16px 0"></div>
           <div class="fg-row">
             <div class="fg"><label>Name *</label><input type="text" name="name" placeholder="Vor- und Nachname" required/></div>
@@ -438,7 +540,7 @@ function setR(g,v,el){document.querySelectorAll('#rg-'+g+' .rb').forEach(functio
 function setRat(g,v,el){document.querySelectorAll('#rg-'+g+' .ratb').forEach(function(b){b.classList.remove('sel');});el.classList.add('sel');document.getElementById('h-'+g).value=v;}
 function setTech(btn,k,v){var row=btn.closest('.tech-row');row.querySelectorAll('.tb').forEach(function(b){b.classList.remove('sel');});btn.classList.add('sel');document.getElementById('h-'+k).value=v;}
 function showFiles(input){var n=Array.from(input.files).map(function(f){return f.name;}).join(', ');document.getElementById('file-names').textContent=n||'Keine Dateien';}
-document.querySelectorAll('.ci input').forEach(function(inp){inp.addEventListener('change',function(){inp.closest('.ci').classList.toggle('checked',inp.checked);});});
+// ci handled by togCI
 function submitAnkauf(e){e.preventDefault();var f=document.getElementById('ankauf-form');fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()}).then(function(){f.style.display='none';document.getElementById('ankauf-success').style.display='block';}).catch(function(){f.style.display='none';document.getElementById('ankauf-success').style.display='block';});return false;}
 function faqT(el){var item=el.parentElement,open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});if(!open)item.classList.add('open');}
 function loadMaps(){document.querySelectorAll('[data-map-src]').forEach(function(el){var f=document.createElement('iframe');f.src=el.dataset.mapSrc;f.style.cssText='width:100%;height:100%;border:none;display:block;filter:grayscale(55%) contrast(1.05)';f.allowFullscreen=true;f.loading='lazy';f.referrerPolicy='no-referrer-when-downgrade';el.replaceWith(f);});}
