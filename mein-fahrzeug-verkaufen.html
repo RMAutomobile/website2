@@ -126,10 +126,10 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
 .cg{display:grid;grid-template-columns:1fr 1fr;gap:4px}
 .ci{display:flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid var(--bo);cursor:pointer;transition:all .2s;font-size:11px;font-weight:300;color:var(--tx2);user-select:none}
 .ci:hover{border-color:var(--bo2);color:var(--tx)}
-.ci.checked{border-color:var(--grn-bd);color:var(--tx);background:rgba(111,207,151,.06)}
 .ci input[type=checkbox]{display:none}
-.ci-check{width:16px;height:16px;border:1.5px solid rgba(232,227,216,.25);border-radius:3px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;font-weight:700;color:transparent;transition:all .2s;background:transparent;line-height:1}
-.ci.checked .ci-check{background:var(--grn-bg);border-color:var(--grn);color:var(--grn);font-weight:700}
+.ci-check{width:16px;height:16px;border:1.5px solid rgba(232,227,216,.3);border-radius:3px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;font-weight:700;color:transparent;transition:all .2s;background:transparent;line-height:1}
+.ci input[type=checkbox]:checked~.ci-check{background:var(--grn-bg);border-color:var(--grn);color:var(--grn)}
+.ci:has(input[type=checkbox]:checked){border-color:var(--grn-bd);color:var(--tx);background:rgba(111,207,151,.06)}
 /* Rating buttons */
 .ratg{display:flex;gap:4px;flex-wrap:wrap}
 .ratb{padding:7px 11px;border:1px solid var(--bo);cursor:pointer;font-family:var(--fh);font-size:10px;font-weight:600;text-transform:uppercase;color:var(--tx3);transition:all .25s;background:transparent}
@@ -274,12 +274,12 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
           </div>
           <div class="fg"><label>Reifen vorhanden</label>
             <div class="cg">
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Sommerreifen<input type="checkbox" name="reifen" value="Sommerreifen"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Winterreifen<input type="checkbox" name="reifen" value="Winterreifen"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Ganzjahresreifen<input type="checkbox" name="reifen" value="Ganzjahresreifen"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Alufelgen<input type="checkbox" name="reifen" value="Alufelgen"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Stahlfelgen<input type="checkbox" name="reifen" value="Stahlfelgen"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Keine Zweitreifen<input type="checkbox" name="reifen" value="Keine"/></label>
+              <label class="ci"><input type="checkbox" name="reifen" value="Sommerreifen"/><span class="ci-check">&#10003;</span> Sommerreifen</label>
+              <label class="ci"><input type="checkbox" name="reifen" value="Winterreifen"/><span class="ci-check">&#10003;</span> Winterreifen</label>
+              <label class="ci"><input type="checkbox" name="reifen" value="Ganzjahresreifen"/><span class="ci-check">&#10003;</span> Ganzjahresreifen</label>
+              <label class="ci"><input type="checkbox" name="reifen" value="Alufelgen"/><span class="ci-check">&#10003;</span> Alufelgen</label>
+              <label class="ci"><input type="checkbox" name="reifen" value="Stahlfelgen"/><span class="ci-check">&#10003;</span> Stahlfelgen</label>
+              <label class="ci"><input type="checkbox" name="reifen" value="Keine"/><span class="ci-check">&#10003;</span> Keine Zweitreifen</label>
             </div>
           </div>
           <div class="form-nav"><button class="btn-prev" type="button" onclick="goStep(2,1)">&#8249; Zur&#252;ck</button><button class="btn-next" type="button" onclick="goStep(2,3)">Weiter &#8250;</button></div>
@@ -290,51 +290,51 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
           <div class="step-lbl">Schritt 3/6 &#183; Ausstattung &amp; Fotos</div>
           <div class="fg"><label>Sonderausstattung</label>
             <div class="cg">
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Navigationssystem<input type="checkbox" name="ausstattung" value="Navigationssystem"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Apple CarPlay<input type="checkbox" name="ausstattung" value="Apple CarPlay"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Android Auto<input type="checkbox" name="ausstattung" value="Android Auto"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Bluetooth / Freisprechen<input type="checkbox" name="ausstattung" value="Bluetooth"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> R&#252;ckfahrkamera<input type="checkbox" name="ausstattung" value="R&#252;ckfahrkamera"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> 360&#176; Kamera<input type="checkbox" name="ausstattung" value="360 Kamera"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Parksensoren vorne<input type="checkbox" name="ausstattung" value="PDC vorne"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Parksensoren hinten<input type="checkbox" name="ausstattung" value="PDC hinten"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Einparkassistent<input type="checkbox" name="ausstattung" value="Einparkassistent"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> LED-Scheinwerfer<input type="checkbox" name="ausstattung" value="LED-Scheinwerfer"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Matrix-LED / adaptives Licht<input type="checkbox" name="ausstattung" value="Matrix-LED"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Nebelscheinwerfer<input type="checkbox" name="ausstattung" value="Nebelscheinwerfer"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Sitzheizung Fahrer<input type="checkbox" name="ausstattung" value="Sitzheizung Fahrer"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Sitzheizung Beifahrer<input type="checkbox" name="ausstattung" value="Sitzheizung Beifahrer"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Sitzheizung hinten<input type="checkbox" name="ausstattung" value="Sitzheizung hinten"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> El. Sitzverstellung Fahrer<input type="checkbox" name="ausstattung" value="El. Sitz Fahrer"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> El. Sitzverstellung Beifahrer<input type="checkbox" name="ausstattung" value="El. Sitz Beifahrer"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Sitzmemory Fahrer<input type="checkbox" name="ausstattung" value="Sitzmemory"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Lederausstattung<input type="checkbox" name="ausstattung" value="Leder"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Teilleder / Alcantara<input type="checkbox" name="ausstattung" value="Teilleder"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Klimaautomatik<input type="checkbox" name="ausstattung" value="Klimaautomatik"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> 2-Zonen Klimaautomatik<input type="checkbox" name="ausstattung" value="2-Zonen Klima"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> 3-Zonen Klimaautomatik<input type="checkbox" name="ausstattung" value="3-Zonen Klima"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Panoramadach<input type="checkbox" name="ausstattung" value="Panoramadach"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Schiebedach<input type="checkbox" name="ausstattung" value="Schiebedach"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Abstandsregeltempomat (ACC)<input type="checkbox" name="ausstattung" value="ACC"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Tempomat<input type="checkbox" name="ausstattung" value="Tempomat"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Spurhalteassistent<input type="checkbox" name="ausstattung" value="Spurhalteassistent"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Totwinkelassistent<input type="checkbox" name="ausstattung" value="Totwinkelassistent"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Verkehrszeichenerkennung<input type="checkbox" name="ausstattung" value="Verkehrszeichen"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Notbremsassistent<input type="checkbox" name="ausstattung" value="Notbremse"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Head-up-Display<input type="checkbox" name="ausstattung" value="HUD"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Keyless Go<input type="checkbox" name="ausstattung" value="Keyless Go"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Standheizung<input type="checkbox" name="ausstattung" value="Standheizung"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> AHK abnehmbar<input type="checkbox" name="ausstattung" value="AHK abnehmbar"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> AHK schwenkbar<input type="checkbox" name="ausstattung" value="AHK schwenkbar"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Elektrische Heckklappe<input type="checkbox" name="ausstattung" value="El. Heckklappe"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Soundsystem Standard erweitert<input type="checkbox" name="ausstattung" value="Soundsystem"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Premium-Soundsystem<input type="checkbox" name="ausstattung" value="Premium Sound"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Sportpaket (M / AMG / S-Line...)<input type="checkbox" name="ausstattung" value="Sportpaket"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Orig. Leichtmetallfelgen<input type="checkbox" name="ausstattung" value="Alufelgen orig."/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Gro&#223;e Sonderr&#228;der (18&#8243;+)<input type="checkbox" name="ausstattung" value="Sonderr&#228;der 18+"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Allradantrieb<input type="checkbox" name="ausstattung" value="Allrad"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Adaptives Fahrwerk<input type="checkbox" name="ausstattung" value="Adaptiv-Fahrwerk"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Luftfederung<input type="checkbox" name="ausstattung" value="Luftfederung"/></label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Navigationssystem"/><span class="ci-check">&#10003;</span> Navigationssystem</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Apple CarPlay"/><span class="ci-check">&#10003;</span> Apple CarPlay</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Android Auto"/><span class="ci-check">&#10003;</span> Android Auto</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Bluetooth"/><span class="ci-check">&#10003;</span> Bluetooth / Freisprechen</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="R&#252;ckfahrkamera"/><span class="ci-check">&#10003;</span> R&#252;ckfahrkamera</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="360 Kamera"/><span class="ci-check">&#10003;</span> 360&#176; Kamera</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="PDC vorne"/><span class="ci-check">&#10003;</span> Parksensoren vorne</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="PDC hinten"/><span class="ci-check">&#10003;</span> Parksensoren hinten</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Einparkassistent"/><span class="ci-check">&#10003;</span> Einparkassistent</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="LED-Scheinwerfer"/><span class="ci-check">&#10003;</span> LED-Scheinwerfer</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Matrix-LED"/><span class="ci-check">&#10003;</span> Matrix-LED / adaptives Licht</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Nebelscheinwerfer"/><span class="ci-check">&#10003;</span> Nebelscheinwerfer</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Sitzheizung Fahrer"/><span class="ci-check">&#10003;</span> Sitzheizung Fahrer</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Sitzheizung Beifahrer"/><span class="ci-check">&#10003;</span> Sitzheizung Beifahrer</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Sitzheizung hinten"/><span class="ci-check">&#10003;</span> Sitzheizung hinten</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="El. Sitz Fahrer"/><span class="ci-check">&#10003;</span> El. Sitzverstellung Fahrer</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="El. Sitz Beifahrer"/><span class="ci-check">&#10003;</span> El. Sitzverstellung Beifahrer</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Sitzmemory"/><span class="ci-check">&#10003;</span> Sitzmemory Fahrer</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Leder"/><span class="ci-check">&#10003;</span> Lederausstattung</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Teilleder"/><span class="ci-check">&#10003;</span> Teilleder / Alcantara</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Klimaautomatik"/><span class="ci-check">&#10003;</span> Klimaautomatik</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="2-Zonen Klima"/><span class="ci-check">&#10003;</span> 2-Zonen Klimaautomatik</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="3-Zonen Klima"/><span class="ci-check">&#10003;</span> 3-Zonen Klimaautomatik</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Panoramadach"/><span class="ci-check">&#10003;</span> Panoramadach</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Schiebedach"/><span class="ci-check">&#10003;</span> Schiebedach</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="ACC"/><span class="ci-check">&#10003;</span> Abstandsregeltempomat (ACC)</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Tempomat"/><span class="ci-check">&#10003;</span> Tempomat</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Spurhalteassistent"/><span class="ci-check">&#10003;</span> Spurhalteassistent</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Totwinkelassistent"/><span class="ci-check">&#10003;</span> Totwinkelassistent</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Verkehrszeichen"/><span class="ci-check">&#10003;</span> Verkehrszeichenerkennung</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Notbremse"/><span class="ci-check">&#10003;</span> Notbremsassistent</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="HUD"/><span class="ci-check">&#10003;</span> Head-up-Display</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Keyless Go"/><span class="ci-check">&#10003;</span> Keyless Go</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Standheizung"/><span class="ci-check">&#10003;</span> Standheizung</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="AHK abnehmbar"/><span class="ci-check">&#10003;</span> AHK abnehmbar</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="AHK schwenkbar"/><span class="ci-check">&#10003;</span> AHK schwenkbar</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="El. Heckklappe"/><span class="ci-check">&#10003;</span> Elektrische Heckklappe</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Soundsystem"/><span class="ci-check">&#10003;</span> Soundsystem Standard erweitert</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Premium Sound"/><span class="ci-check">&#10003;</span> Premium-Soundsystem</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Sportpaket"/><span class="ci-check">&#10003;</span> Sportpaket (M / AMG / S-Line...)</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Alufelgen orig."/><span class="ci-check">&#10003;</span> Orig. Leichtmetallfelgen</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Sonderr&#228;der 18+"/><span class="ci-check">&#10003;</span> Gro&#223;e Sonderr&#228;der (18&#8243;+)</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Allrad"/><span class="ci-check">&#10003;</span> Allradantrieb</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Adaptiv-Fahrwerk"/><span class="ci-check">&#10003;</span> Adaptives Fahrwerk</label>
+              <label class="ci"><input type="checkbox" name="ausstattung" value="Luftfederung"/><span class="ci-check">&#10003;</span> Luftfederung</label>
             </div>
           </div>
           <div class="fg" style="margin-top:6px"><label>Fotos hochladen (optional)</label>
@@ -453,13 +453,13 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
           </div>
           <div class="fg"><label>Sichtbare Sch&#228;den</label>
             <div class="cg">
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Keine Sch&#228;den<input type="checkbox" name="schaeden" value="Keine"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Kratzer<input type="checkbox" name="schaeden" value="Kratzer"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Dellen<input type="checkbox" name="schaeden" value="Dellen"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Lacksch&#228;den<input type="checkbox" name="schaeden" value="Lack"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Steinschlag<input type="checkbox" name="schaeden" value="Steinschlag"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Unfallschaden<input type="checkbox" name="schaeden" value="Unfall"/></label>
-              <label class="ci" onclick="togCI(this)"><span class="ci-check">&#10003;</span> Rost<input type="checkbox" name="schaeden" value="Rost"/></label>
+              <label class="ci"><input type="checkbox" name="schaeden" value="Keine"/><span class="ci-check">&#10003;</span> Keine Sch&#228;den</label>
+              <label class="ci"><input type="checkbox" name="schaeden" value="Kratzer"/><span class="ci-check">&#10003;</span> Kratzer</label>
+              <label class="ci"><input type="checkbox" name="schaeden" value="Dellen"/><span class="ci-check">&#10003;</span> Dellen</label>
+              <label class="ci"><input type="checkbox" name="schaeden" value="Lack"/><span class="ci-check">&#10003;</span> Lacksch&#228;den</label>
+              <label class="ci"><input type="checkbox" name="schaeden" value="Steinschlag"/><span class="ci-check">&#10003;</span> Steinschlag</label>
+              <label class="ci"><input type="checkbox" name="schaeden" value="Unfall"/><span class="ci-check">&#10003;</span> Unfallschaden</label>
+              <label class="ci"><input type="checkbox" name="schaeden" value="Rost"/><span class="ci-check">&#10003;</span> Rost</label>
             </div>
           </div>
           <div class="fg"><label>Weitere Angaben (optional)</label><textarea name="schaeden_details" placeholder="Bekannte Sch&#228;den beschreiben..."></textarea></div>
