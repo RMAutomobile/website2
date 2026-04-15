@@ -129,7 +129,7 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
 .ci.checked{border-color:var(--grn-bd);color:var(--tx);background:rgba(111,207,151,.06)}
 .ci input[type=checkbox]{display:none}
 .ci-check{width:16px;height:16px;border:1.5px solid rgba(232,227,216,.25);border-radius:3px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;font-weight:700;color:transparent;transition:all .2s;background:transparent;line-height:1}
-.ci.checked .ci-check{background:var(--grn-bg);border-color:var(--grn);color:var(--grn)}
+.ci.checked .ci-check{background:var(--grn-bg);border-color:var(--grn);color:var(--grn);font-weight:700}
 /* Rating buttons */
 .ratg{display:flex;gap:4px;flex-wrap:wrap}
 .ratb{padding:7px 11px;border:1px solid var(--bo);cursor:pointer;font-family:var(--fh);font-size:10px;font-weight:600;text-transform:uppercase;color:var(--tx3);transition:all .25s;background:transparent}
@@ -540,7 +540,11 @@ function setR(g,v,el){document.querySelectorAll('#rg-'+g+' .rb').forEach(functio
 function setRat(g,v,el){document.querySelectorAll('#rg-'+g+' .ratb').forEach(function(b){b.classList.remove('sel');});el.classList.add('sel');document.getElementById('h-'+g).value=v;}
 function setTech(btn,k,v){var row=btn.closest('.tech-row');row.querySelectorAll('.tb').forEach(function(b){b.classList.remove('sel');});btn.classList.add('sel');document.getElementById('h-'+k).value=v;}
 function showFiles(input){var n=Array.from(input.files).map(function(f){return f.name;}).join(', ');document.getElementById('file-names').textContent=n||'Keine Dateien';}
-// ci handled by togCI
+function togCI(el){
+  var label=el.closest?el.closest('label.ci'):el;
+  if(!label||!label.classList.contains('ci'))return;
+  label.classList.toggle('checked');
+}
 function submitAnkauf(e){e.preventDefault();var f=document.getElementById('ankauf-form');fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()}).then(function(){f.style.display='none';document.getElementById('ankauf-success').style.display='block';}).catch(function(){f.style.display='none';document.getElementById('ankauf-success').style.display='block';});return false;}
 function faqT(el){var item=el.parentElement,open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});if(!open)item.classList.add('open');}
 function loadMaps(){document.querySelectorAll('[data-map-src]').forEach(function(el){var f=document.createElement('iframe');f.src=el.dataset.mapSrc;f.style.cssText='width:100%;height:100%;border:none;display:block;filter:grayscale(55%) contrast(1.05)';f.allowFullscreen=true;f.loading='lazy';f.referrerPolicy='no-referrer-when-downgrade';el.replaceWith(f);});}
