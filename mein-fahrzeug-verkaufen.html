@@ -124,11 +124,11 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
 .rb.sel{border-color:var(--tx);color:var(--page);background:var(--tx)}.rb:hover:not(.sel){border-color:var(--bo3);color:var(--tx)}
 /* Checkboxes */
 .cg{display:grid;grid-template-columns:1fr 1fr;gap:4px}
-.ci{display:flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid var(--bo);cursor:pointer;transition:all .2s;font-size:11px;font-weight:300;color:var(--tx2);user-select:none;position:relative}
+.ci{display:flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid var(--bo);cursor:pointer;transition:all .2s;font-size:11px;font-weight:300;color:var(--tx2);user-select:none}
 .ci:hover{border-color:var(--bo2);color:var(--tx)}
 .ci.checked{border-color:var(--grn-bd);color:var(--tx);background:rgba(111,207,151,.06)}
-.ci input{display:none}
-.ci-check{width:16px;height:16px;border:1.5px solid var(--bo2);border-radius:3px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:11px;color:transparent;transition:all .2s;background:transparent}
+.ci input[type=checkbox]{display:none}
+.ci-check{width:16px;height:16px;border:1.5px solid rgba(232,227,216,.25);border-radius:3px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;font-size:10px;font-weight:700;color:transparent;transition:all .2s;background:transparent;line-height:1}
 .ci.checked .ci-check{background:var(--grn-bg);border-color:var(--grn);color:var(--grn)}
 /* Rating buttons */
 .ratg{display:flex;gap:4px;flex-wrap:wrap}
