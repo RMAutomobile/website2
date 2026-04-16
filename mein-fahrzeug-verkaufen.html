@@ -436,7 +436,38 @@ window.addEventListener('DOMContentLoaded',function(){var c=localStorage.getItem
 function toggleMenu(){var m=document.getElementById('mob-menu'),b=document.getElementById('burger');if(m.classList.contains('open')){m.classList.remove('open');b.classList.remove('open');document.body.style.overflow='';}else{m.classList.add('open');b.classList.add('open');document.body.style.overflow='hidden';}}
 function closeMenu(){document.getElementById('mob-menu').classList.remove('open');document.getElementById('burger').classList.remove('open');document.body.style.overflow='';}
 var _o=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');_o.unobserve(x.target)}});},{threshold:0.08});document.querySelectorAll('.sr').forEach(function(el){_o.observe(el);});
-function goStep(from,to){document.getElementById('fs'+from).classList.remove('active');document.getElementById('fs'+to).classList.add('active');var sf=document.getElementById('si'+from);sf.classList.remove('active');sf.classList.add(to>from?'done':'active');var st=document.getElementById('si'+to);st.classList.remove('done');st.classList.add('active');document.querySelector('.form-card').scrollIntoView({behavior:'smooth',block:'start'});}
+function goStep(from,to){
+  if(to>from){
+    // Validate required radio/hidden fields before advancing
+    var checks={
+      2:['wann_verkaufen'],
+      4:['unfallfrei'],
+      5:['warnleuchten']
+    };
+    if(checks[to]){
+      for(var i=0;i<checks[to].length;i++){
+        var el=document.getElementById('h-'+checks[to][i].replace('_verkaufen','wann').replace('unfallfrei','unfall').replace('warnleuchten','warn'));
+        if(el&&!el.value){
+          // Highlight the radio group
+          var rg=document.querySelector('#rg-'+checks[to][i].replace('_verkaufen','wann').replace('unfallfrei','unfall').replace('warnleuchten','warn'));
+          if(rg){rg.style.outline='2px solid rgba(248,113,113,.6)';rg.style.outlineOffset='4px';setTimeout(function(){rg.style.outline='';rg.style.outlineOffset='';},2000);}
+          return;
+        }
+      }
+    }
+    // Validate HTML5 required fields in current step
+    var step=document.getElementById('fs'+from);
+    var invalid=step.querySelectorAll('input:required,select:required');
+    for(var j=0;j<invalid.length;j++){
+      if(!invalid[j].value){invalid[j].reportValidity();return;}
+    }
+  }
+  document.getElementById('fs'+from).classList.remove('active');
+  document.getElementById('fs'+to).classList.add('active');
+  var sf=document.getElementById('si'+from);sf.classList.remove('active');sf.classList.add(to>from?'done':'active');
+  var st=document.getElementById('si'+to);st.classList.remove('done');st.classList.add('active');
+  document.querySelector('.form-card').scrollIntoView({behavior:'smooth',block:'start'});
+}
 function setR(g,v,el){document.querySelectorAll('#rg-'+g+' .rb').forEach(function(b){b.classList.remove('sel');});el.classList.add('sel');document.getElementById('h-'+g).value=v;}
 function setRat(g,v,el){document.querySelectorAll('#rg-'+g+' .ratb').forEach(function(b){b.classList.remove('sel');});el.classList.add('sel');document.getElementById('h-'+g).value=v;}
 function setTech(btn,k,v){var row=btn.closest('.tech-row');row.querySelectorAll('.tb').forEach(function(b){b.classList.remove('sel');});btn.classList.add('sel');document.getElementById('h-'+k).value=v;}
