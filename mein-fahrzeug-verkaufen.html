@@ -164,7 +164,7 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
 </head><body><nav role="navigation"><a href="/index.html" class="nav-logo"><img src="/rm_logo_white.svg" alt="R&amp;M Automobile" loading="eager" width="160" height="46"/></a><ul class="nav-links"><li><a href="/index.html">Startseite</a></li><li><a href="/uber-uns.html">&#220;ber Uns</a></li><li><a href="/fahrzeugbereich.html">Fahrzeuge</a></li><li><a href="/mein-fahrzeug-verkaufen.html" aria-current="page">Auto verkaufen</a></li><li><a href="/kontakt.html" class="nav-pill">Kontakt</a></li></ul><button class="nav-burger" id="burger" onclick="toggleMenu()" aria-label="Men&#252; &#246;ffnen" aria-expanded="false"><span></span><span></span><span></span></button></nav><div class="mob-menu" id="mob-menu" role="dialog" aria-modal="true"><a href="/index.html" onclick="closeMenu()">Startseite</a><a href="/uber-uns.html" onclick="closeMenu()">&#220;ber Uns</a><a href="/fahrzeugbereich.html" onclick="closeMenu()">Fahrzeuge</a><a href="/mein-fahrzeug-verkaufen.html" onclick="closeMenu()">Auto verkaufen</a><a href="/kontakt.html" onclick="closeMenu()">Kontakt</a></div><main>
 <div class="ph" style="position:relative;overflow:hidden;padding-bottom:0;min-height:60vh;display:flex;align-items:center">
   <div style="position:absolute;inset:0;z-index:0">
-    <img src="/img/vk-hero.webp" alt="R&amp;M Automobile Ankauf" style="width:100%;height:100%;object-fit:cover;object-position:center 30%" loading="eager"/>
+    <img src="/vk-hero.webp" alt="R&amp;M Automobile Ankauf" style="width:100%;height:100%;object-fit:cover;object-position:center 30%" loading="eager"/>
     <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(22,22,20,.92) 0%,rgba(22,22,20,.7) 50%,rgba(22,22,20,.3) 100%)"></div>
   </div>
   <div style="position:relative;z-index:1;padding:80px 0 80px">
@@ -311,9 +311,17 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
 <label class="ci"><input type="checkbox" name="ausstattung" value="Allradantrieb"/><span class="ci-check">&#10003;</span> Allradantrieb</label>
 <label class="ci"><input type="checkbox" name="ausstattung" value="Adaptives Fahrwerk"/><span class="ci-check">&#10003;</span> Adaptives Fahrwerk</label>
 <label class="ci"><input type="checkbox" name="ausstattung" value="Luftfederung"/><span class="ci-check">&#10003;</span> Luftfederung</label></div></div>
-          <div class="wa-hint" style="margin-top:10px">
-            <div class="wa-hint-lbl">&#128247; Tipp: Bessere Bewertung</div>
-            <p>F&#252;r eine pr&#228;zisere Bewertung k&#246;nnen Sie uns Fotos per WhatsApp senden &#8211; direkt im letzten Schritt oder jederzeit an <strong style="color:var(--tx)">+49 1516 1569871</strong></p>
+          <div style="margin-top:12px;border:1px solid var(--grn-bd);background:rgba(111,207,151,.04)">
+            <div style="padding:16px 18px;border-bottom:1px solid var(--grn-bd)">
+              <div style="font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--grn);margin-bottom:6px">&#128247; Fotos senden (optional)</div>
+              <p style="font-size:12px;font-weight:300;color:var(--tx2);line-height:1.7">F&#252;r eine pr&#228;zisere Bewertung k&#246;nnen Sie Fotos direkt per WhatsApp senden. Wir melden uns dann mit einem konkreten Angebot.</p>
+            </div>
+            <div style="padding:12px 18px">
+              <button type="button" onclick="window.open('https://wa.me/4915161569871?text=Hallo%20R%26M%2C%20ich%20moechte%20Fotos%20meines%20Fahrzeugs%20senden.','_blank')" style="display:flex;align-items:center;gap:10px;background:#25D366;border:none;color:#fff;font-family:var(--fh);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:10px 18px;cursor:pointer;width:100%;justify-content:center">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.523 5.843L.057 23.855a.75.75 0 0 0 .916.948l6.205-1.63A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.93 0-3.737-.52-5.287-1.428l-.378-.225-3.922 1.032.993-3.821-.247-.393A9.955 9.955 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+                Fotos per WhatsApp senden
+              </button>
+            </div>
           </div>
           <div class="form-nav"><button class="btn-prev" type="button" onclick="goStep(3,2)">&#8249; Zur&#252;ck</button><button class="btn-next" type="button" onclick="goStep(3,4)">Weiter &#8250;</button></div>
         </div>
@@ -449,34 +457,43 @@ function closeMenu(){document.getElementById('mob-menu').classList.remove('open'
 var _o=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');_o.unobserve(x.target)}});},{threshold:0.08});document.querySelectorAll('.sr').forEach(function(el){_o.observe(el);});
 function goStep(from,to){
   if(to>from){
-    // Validate required radio/hidden fields before advancing
+    // Validate required radio fields when LEAVING a step
     var checks={
-      2:['wann_verkaufen'],
-      4:['unfallfrei'],
-      5:['warnleuchten']
+      2:['h-wann'],
+      4:['h-unfall'],
+      5:['h-warn']
     };
-    if(checks[to]){
-      for(var i=0;i<checks[to].length;i++){
-        var el=document.getElementById('h-'+checks[to][i].replace('_verkaufen','wann').replace('unfallfrei','unfall').replace('warnleuchten','warn'));
+    if(checks[from]){
+      for(var i=0;i<checks[from].length;i++){
+        var el=document.getElementById(checks[from][i]);
         if(el&&!el.value){
-          // Highlight the radio group
-          var rg=document.querySelector('#rg-'+checks[to][i].replace('_verkaufen','wann').replace('unfallfrei','unfall').replace('warnleuchten','warn'));
-          if(rg){rg.style.outline='2px solid rgba(248,113,113,.6)';rg.style.outlineOffset='4px';setTimeout(function(){rg.style.outline='';rg.style.outlineOffset='';},2000);}
+          var rgId=checks[from][i].replace('h-','rg-');
+          var rg=document.querySelector('#'+rgId);
+          if(rg){
+            rg.style.outline='2px solid rgba(248,113,113,.6)';
+            rg.style.outlineOffset='4px';
+            setTimeout(function(){
+              var r=document.querySelector('[style*="rgba(248,113,113"]');
+              if(r){r.style.outline='';r.style.outlineOffset='';}
+            },2000);
+          }
           return;
         }
       }
     }
     // Validate HTML5 required fields in current step
     var step=document.getElementById('fs'+from);
-    var invalid=step.querySelectorAll('input:required,select:required');
-    for(var j=0;j<invalid.length;j++){
-      if(!invalid[j].value){invalid[j].reportValidity();return;}
+    var fields=step.querySelectorAll('input:required,select:required');
+    for(var j=0;j<fields.length;j++){
+      if(!fields[j].value){fields[j].reportValidity();return;}
     }
   }
   document.getElementById('fs'+from).classList.remove('active');
   document.getElementById('fs'+to).classList.add('active');
-  var sf=document.getElementById('si'+from);sf.classList.remove('active');sf.classList.add(to>from?'done':'active');
-  var st=document.getElementById('si'+to);st.classList.remove('done');st.classList.add('active');
+  var sf=document.getElementById('si'+from);
+  sf.classList.remove('active');sf.classList.add(to>from?'done':'active');
+  var st=document.getElementById('si'+to);
+  st.classList.remove('done');st.classList.add('active');
   document.querySelector('.form-card').scrollIntoView({behavior:'smooth',block:'start'});
 }
 function setR(g,v,el){document.querySelectorAll('#rg-'+g+' .rb').forEach(function(b){b.classList.remove('sel');});el.classList.add('sel');document.getElementById('h-'+g).value=v;}
