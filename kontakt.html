@@ -91,6 +91,10 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
   gtag('js', new Date());
   gtag('config', 'G-XDZRP2W3X9');
 </script>
+<link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"/>
+<link rel="apple-touch-icon" sizes="192x192" href="/favicon-192.png"/>
 </head><body><nav role="navigation"><a href="/index.html" class="nav-logo"><img src="/img/rm_logo_white.svg" alt="R&amp;M Automobile" loading="eager" width="160" height="46"/></a><ul class="nav-links"><li><a href="/index.html">Startseite</a></li><li><a href="/uber-uns.html">&#220;ber Uns</a></li><li><a href="/fahrzeugbereich.html">Fahrzeuge</a></li><li><a href="/mein-fahrzeug-verkaufen.html">Auto verkaufen</a></li><li><a href="/kontakt.html" aria-current="page" class="nav-pill">Kontakt</a></li></ul><button class="nav-burger" id="burger" onclick="toggleMenu()" aria-label="Men&#252; &#246;ffnen" aria-expanded="false"><span></span><span></span><span></span></button></nav><div class="mob-menu" id="mob-menu" role="dialog" aria-modal="true"><a href="/index.html" onclick="closeMenu()">Startseite</a><a href="/uber-uns.html" onclick="closeMenu()">&#220;ber Uns</a><a href="/fahrzeugbereich.html" onclick="closeMenu()">Fahrzeuge</a><a href="/mein-fahrzeug-verkaufen.html" onclick="closeMenu()">Auto verkaufen</a><a href="/kontakt.html" onclick="closeMenu()">Kontakt</a></div><main>
 <div class="ph">
   <div class="label sr">Kontakt</div>
@@ -166,4 +170,17 @@ function closeMenu(){document.getElementById('mob-menu').classList.remove('open'
 var _o=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');_o.unobserve(x.target)}});},{threshold:0.08,rootMargin:'0px 0px -24px 0px'});document.querySelectorAll('.sr').forEach(function(el){_o.observe(el);});
 </script><script>
 function submitKontakt(e){e.preventDefault();var f=document.getElementById('kontakt-form');fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()}).then(function(){f.style.display='none';document.getElementById('kontakt-success').style.display='block';}).catch(function(){f.style.display='none';document.getElementById('kontakt-success').style.display='block';});return false;}
-</script></body></html>
+</script><!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/69e662a45460031ed9e26736/1jmlv2kp2';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+setTimeout(function(){s0.parentNode.insertBefore(s1,s0);},8000);
+})();
+</script>
+<!--End of Tawk.to Script-->
+</body></html>
