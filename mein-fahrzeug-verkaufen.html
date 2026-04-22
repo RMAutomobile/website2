@@ -250,9 +250,11 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
         <div class="si" id="si5">5</div><div class="si-line"></div>
         <div class="si" id="si6">6</div>
       </div>
-      <form id="ankauf-form" name="ankauf" method="POST" data-netlify="true" netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="ankauf"/>
-        <input name="bot-field" style="display:none"/>
+      <form id="ankauf-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="c1658cf3-cbae-4074-beef-e94c75d2f19a"/>
+        <input type="hidden" name="subject" value="Neue Ankaufanfrage – R&M Automobile"/>
+        <input type="hidden" name="redirect" value="false"/>
+        
         <!-- S1 -->
         <div class="fstep active" id="fs1">
           <div class="step-lbl">Schritt 1/6 &#183; Fahrzeugdaten</div>
@@ -486,7 +488,7 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
           <p style="font-size:12px;font-weight:300;color:var(--tx2);line-height:1.7;margin-bottom:12px">W&#228;hlen Sie wie Sie die Fotos senden m&#246;chten &#8211; alle Formulardaten sind bereits vorausgef&#252;llt:</p>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
             <button type="button" onclick="sendFotoWA()" style="display:flex;align-items:center;justify-content:center;gap:7px;background:#25D366;border:none;color:#fff;font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:11px;cursor:pointer"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.523 5.843L.057 23.855a.75.75 0 0 0 .916.948l6.205-1.63A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.93 0-3.737-.52-5.287-1.428l-.378-.225-3.922 1.032.993-3.821-.247-.393A9.955 9.955 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg> WhatsApp</button>
-            <button type="button" onclick="sendFotoMail()" style="display:flex;align-items:center;justify-content:center;gap:7px;background:transparent;border:1px solid var(--bo2);color:var(--tx2);font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:11px;cursor:pointer"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Per E-Mail</button>
+            <a id="mail-btn-1" href="#" onclick="return setMailHref(this)" style="display:flex;align-items:center;justify-content:center;gap:7px;background:transparent;border:1px solid var(--bo2);color:var(--tx2);font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:11px;cursor:pointer;text-decoration:none"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg> Per E-Mail</a>
           </div>
         </div>
         <!-- No foto message (hidden initially) -->
@@ -589,7 +591,7 @@ function setR(g,v,el){document.querySelectorAll('#rg-'+g+' .rb').forEach(functio
 function setRat(g,v,el){document.querySelectorAll('#rg-'+g+' .ratb').forEach(function(b){b.classList.remove('sel');});el.classList.add('sel');document.getElementById('h-'+g).value=v;}
 function setTech(btn,k,v){var row=btn.closest('.tech-row');row.querySelectorAll('.tb').forEach(function(b){b.classList.remove('sel');});btn.classList.add('sel');document.getElementById('h-'+k).value=v;}
 function faqT(el){var item=el.parentElement,open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});if(!open)item.classList.add('open');}
-function submitAnkauf(e){if(e)e.preventDefault();var f=document.getElementById('ankauf-form');fetch('/',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()}).then(function(){f.style.display='none';document.getElementById('ankauf-success').style.display='block';}).catch(function(){f.style.display='none';document.getElementById('ankauf-success').style.display='block';});}
+function submitAnkauf(e){if(e)e.preventDefault();var f=document.getElementById('ankauf-form');fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()}).then(function(r){return r.json();}).then(function(d){if(d.success){f.style.display='none';document.getElementById('ankauf-success').style.display='block';}else{alert('Fehler beim Senden. Bitte versuchen Sie es erneut.');}}).catch(function(){f.style.display='none';document.getElementById('ankauf-success').style.display='block';});}
 
 function showFotoOptions(){
   document.getElementById('suc-foto-q').style.display='none';
@@ -600,18 +602,14 @@ function showNoFoto(){
   document.getElementById('suc-no-foto').style.display='block';
 }
 
-function sendFotoMail(){
+function setMailHref(el){
   var d=new FormData(document.getElementById('ankauf-form'));
   var marke=d.get('marke')||'';
   var modell=d.get('modell')||'';
   var subj=encodeURIComponent('Fahrzeugfotos - '+marke+' '+modell);
   var body=encodeURIComponent('Hallo Rene & Moritz,'+String.fromCharCode(10)+String.fromCharCode(10)+'anbei sende ich Fotos meines Fahrzeugs ('+marke+' '+modell+').'+String.fromCharCode(10)+String.fromCharCode(10)+'Mit freundlichen Gruessen');
-  var link=document.createElement('a');
-  link.href='mailto:ankauf@rmauto-mobile.de?subject='+subj+'&body='+body;
-  link.target='_blank';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  el.href='mailto:ankauf@rmauto-mobile.de?subject='+subj+'&body='+body;
+  return true;
 }
 // Field formatting
 function initFieldFormatting(){
@@ -635,18 +633,14 @@ window.addEventListener('DOMContentLoaded',function(){initFieldFormatting();});
 function sendFotoWA(){
   window.open('https://wa.me/4915161569871?text=Hallo%20R%26M%2C%20ich%20moechte%20Fotos%20meines%20Fahrzeugs%20senden.','_blank');
 }
-function sendFotoMail(){
+function setMailHref(el){
   var d=new FormData(document.getElementById('ankauf-form'));
   var marke=d.get('marke')||'';
   var modell=d.get('modell')||'';
   var subj=encodeURIComponent('Fahrzeugfotos - '+marke+' '+modell);
   var body=encodeURIComponent('Hallo Rene & Moritz,'+String.fromCharCode(10)+String.fromCharCode(10)+'anbei sende ich Fotos meines Fahrzeugs ('+marke+' '+modell+').'+String.fromCharCode(10)+String.fromCharCode(10)+'Mit freundlichen Gruessen');
-  var link=document.createElement('a');
-  link.href='mailto:ankauf@rmauto-mobile.de?subject='+subj+'&body='+body;
-  link.target='_blank';
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
+  el.href='mailto:ankauf@rmauto-mobile.de?subject='+subj+'&body='+body;
+  return true;
 }
 function sendWhatsApp(){
   var f=document.getElementById('ankauf-form');
