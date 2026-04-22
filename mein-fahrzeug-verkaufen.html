@@ -250,10 +250,8 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
         <div class="si" id="si5">5</div><div class="si-line"></div>
         <div class="si" id="si6">6</div>
       </div>
-      <form id="ankauf-form" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="c1658cf3-cbae-4074-beef-e94c75d2f19a"/>
-        <input type="hidden" name="subject" value="Neue Ankaufanfrage – R&M Automobile"/>
-        <input type="hidden" name="redirect" value="false"/>
+      <form id="ankauf-form" action="https://formspree.io/f/xwvardoz" method="POST">
+        <input type="hidden" name="_subject" value="Neue Ankaufanfrage – R&amp;M Automobile"/>
         
         <!-- S1 -->
         <div class="fstep active" id="fs1">
@@ -591,7 +589,7 @@ function setR(g,v,el){document.querySelectorAll('#rg-'+g+' .rb').forEach(functio
 function setRat(g,v,el){document.querySelectorAll('#rg-'+g+' .ratb').forEach(function(b){b.classList.remove('sel');});el.classList.add('sel');document.getElementById('h-'+g).value=v;}
 function setTech(btn,k,v){var row=btn.closest('.tech-row');row.querySelectorAll('.tb').forEach(function(b){b.classList.remove('sel');});btn.classList.add('sel');document.getElementById('h-'+k).value=v;}
 function faqT(el){var item=el.parentElement,open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});if(!open)item.classList.add('open');}
-function submitAnkauf(e){if(e)e.preventDefault();var f=document.getElementById('ankauf-form');fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()}).then(function(r){return r.json();}).then(function(d){if(d.success){f.style.display='none';document.getElementById('ankauf-success').style.display='block';}else{alert('Fehler beim Senden. Bitte versuchen Sie es erneut.');}}).catch(function(){f.style.display='none';document.getElementById('ankauf-success').style.display='block';});}
+function submitAnkauf(e){if(e)e.preventDefault();var f=document.getElementById('ankauf-form');fetch('https://formspree.io/f/xwvardoz',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams(new FormData(f)).toString()}).then(function(r){return r.json();}).then(function(d){if(d.ok){f.style.display='none';document.getElementById('ankauf-success').style.display='block';}else{alert('Fehler beim Senden. Bitte versuchen Sie es erneut.');}}).catch(function(){f.style.display='none';document.getElementById('ankauf-success').style.display='block';});}
 
 function showFotoOptions(){
   document.getElementById('suc-foto-q').style.display='none';
