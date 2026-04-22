@@ -126,8 +126,10 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
     <div class="k-form">
       <div class="k-form-title">Nachricht senden</div>
       <div class="k-form-sub">Direkte Anfrage &#8211; wir melden uns pers&#246;nlich bei Ihnen.</div>
-      <form id="kontakt-form" name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="return submitKontakt(event)">
-        <input type="hidden" name="form-name" value="kontakt"/><input name="bot-field" style="display:none"/>
+      <form id="kontakt-form" action="https://api.web3forms.com/submit" method="POST" onsubmit="return submitKontakt(event)">
+        <input type="hidden" name="access_key" value="389274e6-7685-4a9e-ad01-5cd0443e0941"/>
+        <input type="hidden" name="subject" value="Neue Kontaktanfrage – R&M Automobile"/>
+        <input type="hidden" name="redirect" value="false"/>
         <div class="fg-row">
           <div class="fg"><label>Vorname *</label><input type="text" name="vorname" placeholder="Ihr Vorname" required/></div>
           <div class="fg"><label>Nachname *</label><input type="text" name="nachname" placeholder="Ihr Nachname" required/></div>
