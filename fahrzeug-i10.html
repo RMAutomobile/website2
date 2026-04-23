@@ -1,6 +1,6 @@
 <!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Hyundai i10 Select 2020 kaufen | R&amp;M Automobile Hemau</title>
-<meta name="description" content="Hyundai i10 Select EZ 02/2020, 62.500 km, Benzin – 8.980 € bei R&M Automobile Hemau. SZH / Klima / TÜV 02/2027."/>
+<meta name="description" content="Hyundai i10 Select EZ 02/2020, 62.500 km, Benzin – 8.980 € bei R&M Automobile Hemau."/>
 <meta name="robots" content="index,follow"/>
 <meta name="google-site-verification" content="R5Wmv5wI-zQ4gRiX8cHW4b3VT2obFo1bLtBPu4SGeMU"/>
 <link rel="canonical" href="https://rmauto-mobile.de/fahrzeug-i10/"/>
@@ -50,167 +50,182 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:76px;display:flex;ali
 .bg2:hover{border-color:var(--ln2);color:var(--tx)}
 
 /* SCROLL REVEAL */
-.sr{opacity:0;transform:translateY(16px);transition:opacity .65s var(--ease),transform .65s var(--ease)}
+.sr{opacity:0;transform:translateY(14px);transition:opacity .6s var(--ease),transform .6s var(--ease)}
 .sr.d1{transition-delay:.08s}.sr.d2{transition-delay:.16s}.sr.d3{transition-delay:.24s}
 .sr.on{opacity:1;transform:none}
 
+/* PAGE */
+.page{max-width:1280px;margin:0 auto;padding:0 64px}
+
 /* BACK */
-.back{padding:96px 64px 0}
-.back a{display:inline-flex;align-items:center;gap:8px;font-family:var(--fh);font-size:9px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--tx3);transition:color .25s}
+.back{padding-top:96px;margin-bottom:20px}
+.back a{display:inline-flex;align-items:center;gap:7px;font-family:var(--fh);font-size:9px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--tx3);transition:color .25s}
 .back a:hover{color:var(--tx)}
 
-/* VEHICLE HERO */
-.vh{display:grid;grid-template-columns:1fr 360px;gap:56px;padding:28px 64px 0;align-items:start}
+/* VEHICLE HERO — fixed proportions like JB */
+.vh{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:48px;align-items:start}
 
-/* Gallery */
-.gm{position:relative;overflow:hidden;background:var(--s1);cursor:zoom-in}
-.gm img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block}
-.gbadge{position:absolute;top:14px;left:14px;display:flex;align-items:center;gap:5px;font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;padding:5px 11px;background:rgba(111,207,151,.1);border:1px solid var(--grn3);color:var(--grn);backdrop-filter:blur(8px);z-index:5}
-.gbadge::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--grn)}
-.gcnt{position:absolute;bottom:14px;right:14px;font-family:var(--fh);font-size:9px;font-weight:600;letter-spacing:.1em;color:var(--tx2);background:rgba(22,22,20,.65);padding:4px 10px;backdrop-filter:blur(8px);z-index:5}
-.garr{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;background:rgba(22,22,20,.55);border:1px solid rgba(232,227,216,.1);color:var(--tx);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;z-index:5;backdrop-filter:blur(6px)}
+/* Gallery — constrained height */
+.gw{}
+.gm{position:relative;overflow:hidden;background:var(--s1);cursor:zoom-in;line-height:0}
+.gm img{width:100%;height:440px;object-fit:cover;object-position:center;display:block;transition:transform .4s var(--ease)}
+.gm:hover img{transform:scale(1.01)}
+.gbadge{position:absolute;top:12px;left:12px;display:flex;align-items:center;gap:5px;font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;padding:5px 10px;background:rgba(111,207,151,.1);border:1px solid var(--grn3);color:var(--grn);backdrop-filter:blur(8px);z-index:5}
+.gbadge::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--grn);flex-shrink:0}
+.gcnt{position:absolute;bottom:12px;right:12px;font-family:var(--fh);font-size:9px;font-weight:600;letter-spacing:.09em;color:var(--tx2);background:rgba(22,22,20,.6);padding:4px 9px;backdrop-filter:blur(6px);z-index:5}
+.garr{position:absolute;top:50%;transform:translateY(-50%);width:34px;height:34px;background:rgba(22,22,20,.55);border:1px solid rgba(232,227,216,.1);color:var(--tx);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;z-index:5;backdrop-filter:blur(6px)}
 .garr:hover{background:rgba(22,22,20,.9)}.ga-p{left:10px}.ga-n{right:10px}
-.gth{display:flex;gap:5px;margin-top:5px;overflow-x:auto;scrollbar-width:none}
+
+/* Thumbnails */
+.gth{display:flex;gap:4px;margin-top:4px;overflow-x:auto;scrollbar-width:none}
 .gth::-webkit-scrollbar{display:none}
-.gt{flex-shrink:0;width:76px;height:52px;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:all .2s;opacity:.45}
-.gt:hover{opacity:.8}.gt.on{border-color:var(--tx);opacity:1}
+.gt{flex-shrink:0;width:72px;height:48px;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:all .2s;opacity:.4;line-height:0}
+.gt:hover{opacity:.75}.gt.on{border-color:var(--tx);opacity:1}
 .gt img{width:100%;height:100%;object-fit:cover}
 
-/* SPECS */
+/* SPECS PANEL */
 .sp{padding-top:2px}
-.sp-name{font-family:var(--fh);font-size:clamp(20px,2.2vw,28px);font-weight:700;letter-spacing:-.018em;line-height:1.1;color:var(--tx);margin-bottom:8px}
-.sp-acc{display:block;width:32px;height:2px;background:var(--grn);margin-bottom:14px}
-.sp-var{font-size:13px;font-weight:300;color:var(--tx3);line-height:1.7;margin-bottom:22px}
+.sp-name{font-family:var(--fh);font-size:clamp(20px,2vw,27px);font-weight:700;letter-spacing:-.018em;line-height:1.1;color:var(--tx);margin-bottom:9px}
+.sp-acc{display:block;width:30px;height:2px;background:var(--grn);margin-bottom:14px}
+.sp-var{font-size:13px;font-weight:300;color:var(--tx3);line-height:1.65;margin-bottom:20px}
 .sp-mwst{font-size:10px;color:var(--tx3);margin-bottom:4px}
-.sp-price{font-family:var(--fh);font-size:clamp(26px,2.8vw,38px);font-weight:700;letter-spacing:-.02em;color:var(--tx);line-height:1;margin-bottom:22px}
+.sp-price{font-family:var(--fh);font-size:clamp(24px,2.6vw,36px);font-weight:700;letter-spacing:-.02em;color:var(--tx);line-height:1;margin-bottom:24px}
+.sp-div{height:1px;background:var(--ln);margin-bottom:20px}
 
-/* Specs table — plain, no boxes, just lines */
-.st{width:100%;border-collapse:collapse;margin-bottom:22px}
+/* Spec table — plain lines only */
+.st{width:100%;border-collapse:collapse;margin-bottom:20px}
 .st tr{border-bottom:1px solid var(--ln)}
 .st tr:last-child{border-bottom:none}
-.st td{padding:8px 0;vertical-align:top}
-.st .sk{font-family:var(--fh);font-size:9px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--tx3);width:46%;padding-right:10px}
+.st td{padding:8px 0}
+.st .sk{font-family:var(--fh);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--tx3);width:48%}
 .st .sv{font-size:13px;font-weight:400;color:var(--tx)}
 
-/* Fin */
-.fin{background:var(--grn2);border:1px solid var(--grn3);padding:16px 18px;margin-bottom:18px}
-.fin-t{font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--grn);margin-bottom:12px}
-.fin-r{display:grid;grid-template-columns:1fr 1fr;gap:8px 20px}
-.frk{font-size:9px;color:rgba(111,207,151,.5);font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:2px}
-.frv{font-family:var(--fh);font-size:14px;font-weight:700;color:var(--tx)}
+/* Financing */
+.fin{background:var(--grn2);border:1px solid var(--grn3);padding:15px 16px;margin-bottom:16px}
+.fin-t{font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--grn);margin-bottom:11px}
+.fin-r{display:grid;grid-template-columns:1fr 1fr;gap:7px 18px}
+.frk{font-size:9px;color:rgba(111,207,151,.48);font-weight:600;letter-spacing:.09em;text-transform:uppercase;margin-bottom:2px}
+.frv{font-family:var(--fh);font-size:13px;font-weight:700;color:var(--tx)}
 .frv.sm{font-size:12px;color:var(--tx2);font-weight:400}
-.fin-n{font-size:10px;color:rgba(111,207,151,.38);margin-top:10px;line-height:1.6}
-.sp-ctas{display:flex;flex-direction:column;gap:7px}
+.fin-n{font-size:10px;color:rgba(111,207,151,.35);margin-top:9px;line-height:1.55}
+.sp-ctas{display:flex;flex-direction:column;gap:6px}
 
-/* BODY */
-.body-sec{padding:60px 64px 0;display:grid;grid-template-columns:1fr 260px;gap:64px;align-items:start}
-.dl{}
-.ds{margin-bottom:44px}
-.ds-h{display:flex;align-items:center;gap:9px;font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--tx);margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid var(--ln)}
+/* BODY SECTION */
+.body{display:grid;grid-template-columns:1fr 260px;gap:60px;align-items:start;padding-top:56px}
+
+/* Left detail */
+.dl .ds{margin-bottom:40px}
+.ds-h{display:flex;align-items:center;gap:8px;font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:.17em;text-transform:uppercase;color:var(--tx);margin-bottom:16px;padding-bottom:11px;border-bottom:1px solid var(--ln)}
 .ds-h svg{color:var(--grn);flex-shrink:0}
 
-/* Description */
-.desc-ul{list-style:none}
-.desc-ul li{display:flex;align-items:baseline;gap:10px;padding:9px 0;border-bottom:1px solid var(--ln);font-size:14px;font-weight:300;color:var(--tx2);line-height:1.7}
-.desc-ul li:last-child{border-bottom:none}
-.desc-ul li::before{content:'✓';color:var(--grn);font-size:10px;font-weight:700;flex-shrink:0}
+/* Desc list */
+.dul{list-style:none}
+.dul li{display:flex;align-items:baseline;gap:9px;padding:9px 0;border-bottom:1px solid var(--ln);font-size:14px;font-weight:300;color:var(--tx2);line-height:1.65}
+.dul li:last-child{border-bottom:none}
+.dul li::before{content:'✓';color:var(--grn);font-size:10px;font-weight:700;flex-shrink:0}
 
-/* Equipment — 4 cols, no boxes */
-.eq{columns:4;column-gap:4px;list-style:none}
-.eq li{break-inside:avoid;display:flex;align-items:baseline;gap:6px;padding:4px 12px 4px 0;font-size:12px;font-weight:300;color:var(--tx2);line-height:1.65}
+/* Equipment — 4 columns, no boxes */
+.eq{columns:4;column-gap:0;list-style:none}
+.eq li{break-inside:avoid;display:flex;align-items:baseline;gap:6px;padding:4px 10px 4px 0;font-size:12px;font-weight:300;color:var(--tx2);line-height:1.6}
 .eq li::before{content:'✓';color:var(--grn);font-size:10px;font-weight:700;flex-shrink:0}
 
 /* Color */
-.cs{display:flex;gap:40px;padding:14px 0;border-top:1px solid var(--ln);border-bottom:1px solid var(--ln)}
-.cs-item .ck{font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--tx3);margin-bottom:3px}
+.cs{display:flex;gap:36px;padding:13px 0}
+.cs-item .ck{font-size:9px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--tx3);margin-bottom:3px}
 .cs-item .cv{font-size:14px;font-weight:400;color:var(--tx)}
 
-/* Brand */
-.brand-bl{padding:24px 0;border-top:1px solid var(--ln);margin-top:44px}
-.brand-bl h3{font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx);margin-bottom:12px}
-.brand-bl p{font-size:13px;font-weight:300;color:var(--tx2);line-height:1.9;margin-bottom:10px}
-.bsvcs{columns:2;list-style:none;margin:12px 0}
-.bsvcs li{break-inside:avoid;display:flex;align-items:baseline;gap:7px;padding:4px 0;font-size:12px;font-weight:300;color:var(--tx2)}
+/* Further info */
+.dl p.info{font-size:14px;font-weight:300;color:var(--tx2);line-height:1.9}
+
+/* Brand block */
+.brand{padding:20px 0;margin-top:40px;border-top:1px solid var(--ln)}
+.brand h3{font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--tx);margin-bottom:11px}
+.brand p{font-size:13px;font-weight:300;color:var(--tx2);line-height:1.9;margin-bottom:9px}
+.bsvcs{columns:2;list-style:none;margin:10px 0 11px}
+.bsvcs li{break-inside:avoid;display:flex;align-items:baseline;gap:7px;padding:3px 0;font-size:12px;font-weight:300;color:var(--tx2)}
 .bsvcs li::before{content:'✓';color:var(--grn);font-size:10px;font-weight:700;flex-shrink:0}
-.bnote{font-size:11px;font-weight:300;color:var(--tx3);font-style:italic;line-height:1.7;margin-top:10px}
+.bnote{font-size:11px;font-weight:300;color:var(--tx3);font-style:italic;line-height:1.65;margin-top:9px}
 
 /* Sidebar */
 .dr{position:sticky;top:90px}
 .sq{border:1px solid var(--ln);overflow:hidden;margin-bottom:1px}
-.sq-h{padding:14px 18px;border-bottom:1px solid var(--ln);background:var(--s1)}
+.sq-h{padding:13px 16px;border-bottom:1px solid var(--ln);background:var(--s1)}
 .sq-ht{font-family:var(--fh);font-size:12px;font-weight:700;color:var(--tx)}
-.sq-hs{font-size:11px;font-weight:300;color:var(--tx3);margin-top:3px;line-height:1.5}
-.sq-b{padding:14px 18px;display:flex;flex-direction:column;gap:6px}
+.sq-hs{font-size:11px;font-weight:300;color:var(--tx3);margin-top:3px;line-height:1.45}
+.sq-b{padding:13px 16px;display:flex;flex-direction:column;gap:6px}
 
 /* Wunschfahrzeug */
-.wish{padding:56px 64px 0}
-.wish-in{border:1px solid var(--ln);background:var(--s1);padding:40px 48px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
-.wish-lbl{font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--grn);margin-bottom:9px}
-.wish-h{font-family:var(--fh);font-size:clamp(17px,1.9vw,24px);font-weight:700;letter-spacing:-.015em;color:var(--tx);margin-bottom:10px;line-height:1.2}
-.wish-p{font-size:13px;font-weight:300;color:var(--tx2);line-height:1.9;max-width:480px}
-.wish-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
-.wt{font-family:var(--fh);font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;border:1px solid var(--ln2);color:var(--tx3)}
-.wish-btns{display:flex;flex-direction:column;gap:7px;flex-shrink:0;min-width:180px}
+.wish{padding-top:52px}
+.wish-in{border:1px solid var(--ln);background:var(--s1);padding:36px 44px;display:grid;grid-template-columns:1fr auto;gap:36px;align-items:center}
+.wish-lbl{font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--grn);margin-bottom:8px}
+.wish-h{font-family:var(--fh);font-size:clamp(16px,1.8vw,22px);font-weight:700;letter-spacing:-.015em;color:var(--tx);margin-bottom:9px;line-height:1.2}
+.wish-p{font-size:13px;font-weight:300;color:var(--tx2);line-height:1.9;max-width:460px}
+.wish-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px}
+.wt{font-family:var(--fh);font-size:9px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;padding:4px 9px;border:1px solid var(--ln2);color:var(--tx3)}
+.wish-btns{display:flex;flex-direction:column;gap:6px;flex-shrink:0;min-width:175px}
 
 /* CTA */
-.cta{text-align:center;padding:64px;background:var(--s1);border-top:1px solid var(--ln);margin-top:60px}
-.cta h2{font-family:var(--fh);font-size:clamp(22px,2.8vw,38px);font-weight:700;letter-spacing:-.018em;line-height:1.1;color:var(--tx);margin-bottom:10px}
+.cta{text-align:center;padding:56px 64px;background:var(--s1);border-top:1px solid var(--ln);margin-top:52px}
+.cta h2{font-family:var(--fh);font-size:clamp(20px,2.6vw,36px);font-weight:700;letter-spacing:-.018em;line-height:1.1;color:var(--tx);margin-bottom:9px}
 .cta h2 .g{color:var(--tx3)}
-.cta p{font-size:13px;font-weight:300;color:var(--tx2);max-width:320px;margin:0 auto 26px;line-height:1.9}
-.cta-r{display:flex;gap:9px;justify-content:center;flex-wrap:wrap}
+.cta p{font-size:13px;font-weight:300;color:var(--tx2);max-width:300px;margin:0 auto 24px;line-height:1.9}
+.cta-r{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
 
 /* FOOTER */
-footer{background:var(--bg);padding:60px 64px 32px;border-top:1px solid var(--ln)}
-.fi{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:44px;padding-bottom:40px;border-bottom:1px solid var(--ln)}
-.fb img{height:36px;margin-bottom:13px}
-.fb p{font-size:12px;font-weight:300;color:var(--tx3);line-height:1.9;max-width:210px;margin-bottom:16px}
+footer{background:var(--bg);padding:56px 64px 30px;border-top:1px solid var(--ln)}
+.fi{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;padding-bottom:36px;border-bottom:1px solid var(--ln)}
+.fb img{height:36px;margin-bottom:12px}
+.fb p{font-size:12px;font-weight:300;color:var(--tx3);line-height:1.9;max-width:200px;margin-bottom:14px}
 .fso{display:flex;gap:6px}
 .fs{width:32px;height:32px;border:1px solid var(--ln);display:flex;align-items:center;justify-content:center;color:var(--tx3);transition:all .25s}
 .fs:hover{border-color:var(--grn3);color:var(--grn)}
-.fc h4{font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--tx4);margin-bottom:13px}
+.fc h4{font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--tx4);margin-bottom:12px}
 .fc ul{list-style:none;display:flex;flex-direction:column;gap:8px}
 .fc a{font-size:12px;font-weight:300;color:var(--tx3);transition:color .25s}.fc a:hover{color:var(--tx)}
 .fci{display:flex;flex-direction:column;gap:2px}
-.fcil{font-size:9px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;color:var(--tx4)}
+.fcil{font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--tx4)}
 .fciv{font-size:12px;font-weight:300;color:var(--tx3);line-height:1.5}a.fciv:hover{color:var(--tx)}
-.fbot{display:flex;justify-content:space-between;align-items:center;padding-top:18px;flex-wrap:wrap;gap:8px}
+.fbot{display:flex;justify-content:space-between;align-items:center;padding-top:16px;flex-wrap:wrap;gap:7px}
 .fcp{font-size:10px;font-weight:300;color:var(--tx4)}
-.fleg{display:flex;gap:15px}.fleg a{font-size:10px;font-weight:300;color:var(--tx4);transition:color .25s}.fleg a:hover{color:var(--tx3)}
+.fleg{display:flex;gap:14px}.fleg a{font-size:10px;font-weight:300;color:var(--tx4);transition:color .25s}.fleg a:hover{color:var(--tx3)}
 
 /* LIGHTBOX */
 .lb{display:none;position:fixed;inset:0;background:rgba(0,0,0,.96);z-index:1000;align-items:center;justify-content:center}
 .lb.open{display:flex}
 .lb img{max-width:90vw;max-height:88vh;object-fit:contain}
-.lbc{position:absolute;top:18px;right:22px;background:none;border:none;color:rgba(232,227,216,.45);font-size:24px;cursor:pointer;transition:color .2s}.lbc:hover{color:var(--tx)}
+.lbc{position:absolute;top:16px;right:20px;background:none;border:none;color:rgba(232,227,216,.4);font-size:24px;cursor:pointer;transition:color .2s}.lbc:hover{color:var(--tx)}
 
 /* COOKIE */
-.cb{position:fixed;bottom:0;left:0;right:0;z-index:500;background:var(--s2);border-top:1px solid var(--ln);padding:12px 64px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;transform:translateY(100%);transition:transform .5s var(--ease)}.cb.show{transform:none}
-.cb p{font-size:11px;font-weight:300;color:var(--tx2);line-height:1.6;max-width:560px}.cb p a{color:var(--tx);text-decoration:underline}
+.cb{position:fixed;bottom:0;left:0;right:0;z-index:500;background:var(--s2);border-top:1px solid var(--ln);padding:12px 64px;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;transform:translateY(100%);transition:transform .5s var(--ease)}.cb.show{transform:none}
+.cb p{font-size:11px;font-weight:300;color:var(--tx2);line-height:1.55;max-width:540px}.cb p a{color:var(--tx);text-decoration:underline}
 .cb-btns{display:flex;gap:6px}
-.ca{padding:7px 15px;background:var(--tx);color:var(--bg);font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;border:none;cursor:pointer}
-.cd{padding:7px 15px;background:transparent;color:var(--tx3);font-family:var(--fh);font-size:9px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;border:1px solid var(--ln);cursor:pointer;transition:all .25s}.cd:hover{border-color:var(--ln2);color:var(--tx)}
+.ca{padding:7px 14px;background:var(--tx);color:var(--bg);font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;border:none;cursor:pointer}
+.cd{padding:7px 14px;background:transparent;color:var(--tx3);font-family:var(--fh);font-size:9px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;border:1px solid var(--ln);cursor:pointer;transition:all .25s}.cd:hover{border-color:var(--ln2);color:var(--tx)}
 
 /* RESPONSIVE */
 @media(max-width:1100px){
-  nav,footer,.back,.wish,.cta{padding-left:32px;padding-right:32px}
-  .vh,.body-sec{padding-left:32px;padding-right:32px}
-  .vh{grid-template-columns:1fr;gap:24px}
-  .body-sec{grid-template-columns:1fr;gap:36px}
+  nav{padding:0 32px}footer{padding-left:32px;padding-right:32px}
+  .page{padding:0 32px}
+  .vh{grid-template-columns:1fr;gap:22px}
+  .gm img{height:380px}
+  .body{grid-template-columns:1fr;gap:32px}
   .dr{position:static}
-  .wish-in{grid-template-columns:1fr;gap:20px;padding:28px 32px}.wish-btns{min-width:unset}
-  .fi{grid-template-columns:1fr 1fr;gap:24px}
+  .wish-in{grid-template-columns:1fr;gap:18px;padding:24px 28px}.wish-btns{min-width:unset}
+  .fi{grid-template-columns:1fr 1fr;gap:22px}
+  .cta{padding:44px 32px}
+  .cb{padding:12px 32px}
 }
 @media(max-width:768px){
   nav{padding:0 20px;height:66px}.nl img{height:34px}.nm{display:none}.nb{display:flex}
-  .back{padding:86px 20px 0}
-  .vh,.body-sec{padding-left:20px;padding-right:20px}
-  footer,.wish,.cta{padding-left:20px;padding-right:20px}
-  .cta{padding-top:48px;padding-bottom:48px}
+  .page{padding:0 20px}
+  .gm img{height:260px}
   .eq{columns:2}
-  .fi{grid-template-columns:1fr 1fr;gap:18px}
-  .cb{padding:12px 20px;flex-direction:column;align-items:flex-start}
+  footer{padding:44px 20px 28px}
+  .fi{grid-template-columns:1fr 1fr;gap:16px}
+  .cta{padding:40px 20px}
+  .cb{padding:11px 20px;flex-direction:column;align-items:flex-start}
 }
-@media(max-width:480px){.fi{grid-template-columns:1fr}.eq{columns:2}}
+@media(max-width:480px){.fi{grid-template-columns:1fr}.eq{columns:2}.fin-r{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
@@ -235,207 +250,193 @@ footer{background:var(--bg);padding:60px 64px 32px;border-top:1px solid var(--ln
 </div>
 
 <main>
+<div class="page">
 
-<div class="back">
-  <a href="/fahrzeugbereich.html">
-    <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 8H3M7 12l-4-4 4-4"/></svg>
-    Alle Fahrzeuge
-  </a>
-</div>
+  <div class="back sr">
+    <a href="/fahrzeugbereich.html">
+      <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 8H3M7 12l-4-4 4-4"/></svg>
+      Alle Fahrzeuge
+    </a>
+  </div>
 
-<!-- HERO -->
-<div class="vh">
+  <!-- VEHICLE HERO -->
+  <div class="vh">
 
-  <!-- GALLERY -->
-  <div class="sr">
-    <div class="gm" id="gm">
-      <div class="gbadge">Verfügbar</div>
-      <div class="gcnt" id="gcnt">1 / 18</div>
-      <img id="gimg" src="/img/i10_01.jpeg" alt="Hyundai i10 Select" onclick="oLB(this.src)"/>
-      <button class="garr ga-p" onclick="sBy(-1)"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M10 4l-4 4 4 4"/></svg></button>
-      <button class="garr ga-n" onclick="sBy(1)"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 4l4 4-4 4"/></svg></button>
+    <!-- GALLERY -->
+    <div class="gw sr">
+      <div class="gm" id="gm">
+        <div class="gbadge">Verfügbar</div>
+        <div class="gcnt" id="gcnt">1 / 18</div>
+        <img id="gimg" src="/img/i10_01.jpeg" alt="Hyundai i10 Select" onclick="oLB(this.src)"/>
+        <button class="garr ga-p" onclick="sBy(-1)" aria-label="Zurück"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M10 4l-4 4 4 4"/></svg></button>
+        <button class="garr ga-n" onclick="sBy(1)" aria-label="Weiter"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 4l4 4-4 4"/></svg></button>
+      </div>
+      <div class="gth">
+        <div class="gt on" onclick="gTo(0)"><img src="/img/i10_01.jpeg" alt=""/></div>
+        <div class="gt" onclick="gTo(1)"><img src="/img/i10_02.jpeg" alt=""/></div>
+        <div class="gt" onclick="gTo(2)"><img src="/img/i10_03.jpeg" alt=""/></div>
+        <div class="gt" onclick="gTo(3)"><img src="/img/i10_04.jpeg" alt=""/></div>
+        <div class="gt" onclick="gTo(4)"><img src="/img/i10_05.jpeg" alt=""/></div>
+        <div class="gt" onclick="gTo(5)"><img src="/img/i10_06.jpeg" alt=""/></div>
+        <div class="gt" onclick="gTo(6)"><img src="/img/i10_07.jpeg" alt=""/></div>
+        <div class="gt" onclick="gTo(7)"><img src="/img/i10_08.jpeg" alt=""/></div>
+        <div class="gt" onclick="gTo(8)"><img src="/img/i10_09.jpeg" alt=""/></div>
+        <div class="gt" onclick="gTo(9)"><img src="/img/i10_10.jpeg" alt=""/></div>
+        <div class="gt" onclick="gTo(10)"><img src="/img/i10_11.jpeg" alt=""/></div>
+        <div class="gt" onclick="gTo(11)"><img src="/img/i10_12.jpeg" alt=""/></div>
+        <div class="gt" onclick="gTo(12)"><img src="/img/i10_13.jpeg" alt=""/></div>
+        <div class="gt" onclick="gTo(13)"><img src="/img/i10_14.jpeg" alt=""/></div>
+        <div class="gt" onclick="gTo(14)"><img src="/img/i10_15.jpeg" alt=""/></div>
+        <div class="gt" onclick="gTo(15)"><img src="/img/i10_16.jpeg" alt=""/></div>
+        <div class="gt" onclick="gTo(16)"><img src="/img/i10_17.jpeg" alt=""/></div>
+        <div class="gt" onclick="gTo(17)"><img src="/img/i10_18.jpeg" alt=""/></div>
+      </div>
     </div>
-    <div class="gth">
-      <div class="gt on" onclick="gTo(0)"><img src="/img/i10_01.jpeg" alt=""/></div>
-      <div class="gt" onclick="gTo(1)"><img src="/img/i10_02.jpeg" alt=""/></div>
-      <div class="gt" onclick="gTo(2)"><img src="/img/i10_03.jpeg" alt=""/></div>
-      <div class="gt" onclick="gTo(3)"><img src="/img/i10_04.jpeg" alt=""/></div>
-      <div class="gt" onclick="gTo(4)"><img src="/img/i10_05.jpeg" alt=""/></div>
-      <div class="gt" onclick="gTo(5)"><img src="/img/i10_06.jpeg" alt=""/></div>
-      <div class="gt" onclick="gTo(6)"><img src="/img/i10_07.jpeg" alt=""/></div>
-      <div class="gt" onclick="gTo(7)"><img src="/img/i10_08.jpeg" alt=""/></div>
-      <div class="gt" onclick="gTo(8)"><img src="/img/i10_09.jpeg" alt=""/></div>
-      <div class="gt" onclick="gTo(9)"><img src="/img/i10_10.jpeg" alt=""/></div>
-      <div class="gt" onclick="gTo(10)"><img src="/img/i10_11.jpeg" alt=""/></div>
-      <div class="gt" onclick="gTo(11)"><img src="/img/i10_12.jpeg" alt=""/></div>
-      <div class="gt" onclick="gTo(12)"><img src="/img/i10_13.jpeg" alt=""/></div>
-      <div class="gt" onclick="gTo(13)"><img src="/img/i10_14.jpeg" alt=""/></div>
-      <div class="gt" onclick="gTo(14)"><img src="/img/i10_15.jpeg" alt=""/></div>
-      <div class="gt" onclick="gTo(15)"><img src="/img/i10_16.jpeg" alt=""/></div>
-      <div class="gt" onclick="gTo(16)"><img src="/img/i10_17.jpeg" alt=""/></div>
-      <div class="gt" onclick="gTo(17)"><img src="/img/i10_18.jpeg" alt=""/></div>
+
+    <!-- SPECS -->
+    <div class="sp sr d1">
+      <div class="sp-name">Hyundai i10 Select</div>
+      <span class="sp-acc"></span>
+      <div class="sp-var">EZ 02/2020 &middot; 62.500 km &middot; Benzin &middot; Schaltgetriebe &middot; TÜV 02/2027</div>
+      <div class="sp-mwst">19% MwSt.</div>
+      <div class="sp-price">8.980 €</div>
+      <div class="sp-div"></div>
+
+      <table class="st">
+        <tr><td class="sk">Typ</td><td class="sv">PKW</td></tr>
+        <tr><td class="sk">Leistung</td><td class="sv">67 PS / 49 kW</td></tr>
+        <tr><td class="sk">Kilometerstand</td><td class="sv">62.500 km</td></tr>
+        <tr><td class="sk">Kraftstoff</td><td class="sv">Benzin</td></tr>
+        <tr><td class="sk">Getriebe</td><td class="sv">Schaltgetriebe</td></tr>
+        <tr><td class="sk">Erstzulassung</td><td class="sv">02/2020</td></tr>
+        <tr><td class="sk">TÜV / HU</td><td class="sv">02/2027</td></tr>
+        <tr><td class="sk">Scheckheft</td><td class="sv">Vorhanden</td></tr>
+        <tr><td class="sk">Farbe</td><td class="sv">Schwarz</td></tr>
+        <tr><td class="sk">Halter</td><td class="sv">2 (inkl. Autohaus)</td></tr>
+      </table>
+
+      <div class="fin">
+        <div class="fin-t">Finanzierungsbeispiel</div>
+        <div class="fin-r">
+          <div><div class="frk">Monatliche Rate</div><div class="frv">119,04 €</div></div>
+          <div><div class="frk">Laufzeit</div><div class="frv">60 Monate</div></div>
+          <div><div class="frk">Kreditsumme</div><div class="frv sm">10.615,13 €</div></div>
+          <div><div class="frk">Eff. Jahreszins</div><div class="frv sm">5,24 %</div></div>
+          <div style="grid-column:span 2"><div class="frk">Schlussrate</div><div class="frv sm">3.592,00 €</div></div>
+        </div>
+        <div class="fin-n">Finanzierung auf Anfrage &middot; Bonität vorausgesetzt &middot; Vermittlung über Partnerbank</div>
+      </div>
+
+      <div class="sp-ctas">
+        <a href="/kontakt.html" class="bd" style="width:100%">Jetzt anfragen <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="tel:+4915161569871" class="bg2" style="width:100%">+49 1516 1569871</a>
+      </div>
+    </div>
+
+  </div><!-- /vh -->
+
+  <!-- BODY -->
+  <div class="body">
+
+    <div class="dl">
+
+      <div class="ds sr">
+        <div class="ds-h">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
+          Fahrzeugbeschreibung
+        </div>
+        <ul class="dul">
+          <li>Kein Re-Import — deutsches Fahrzeug</li>
+          <li>Unfall- und Nachlackierungsfrei</li>
+          <li>Sehr gepflegter Zustand</li>
+          <li>Scheckheftgepflegt bei Hyundai</li>
+          <li>Sitzheizung (SZH)</li>
+          <li>2 Fahrzeughalter (inkl. Autohauszulassung)</li>
+          <li>Sofort verfügbar</li>
+        </ul>
+      </div>
+
+      <div class="ds sr d1">
+        <div class="ds-h">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Ausstattung
+        </div>
+        <ul class="eq">
+          <li>ABS</li><li>Klimaanlage</li><li>Bordcomputer</li><li>Elektr. Fensterheber</li>
+          <li>ESP</li><li>Front- &amp; Seitenairbags</li><li>Isofix</li><li>Lederlenkrad</li>
+          <li>Pannenkit</li><li>Radio DAB</li><li>Reifendruckkontrolle</li><li>Servolenkung</li>
+          <li>Sitzheizung</li><li>Sommerreifen (Aluf.)</li><li>Tagfahrlicht</li><li>Traktionskontrolle</li>
+          <li>USB-Anschluss</li><li>Winterreifen (Stahlf.)</li><li>Zentralverriegelung</li>
+        </ul>
+      </div>
+
+      <div class="ds sr d2">
+        <div class="ds-h">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="13.5" cy="6.5" r="0.5"/><circle cx="17.5" cy="10.5" r="0.5"/><circle cx="8.5" cy="7.5" r="0.5"/><circle cx="6.5" cy="12.5" r="0.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.477-1.125-.29-.289-.48-.398-.48-.836 0-.93.754-1.688 1.688-1.688H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8z"/></svg>
+          Farbe &amp; Interieur
+        </div>
+        <div class="cs">
+          <div class="cs-item"><div class="ck">Außenfarbe</div><div class="cv">Schwarz</div></div>
+          <div class="cs-item"><div class="ck">Innenausstattung</div><div class="cv">Stoff — Schwarz</div></div>
+        </div>
+      </div>
+
+      <div class="ds sr d3">
+        <div class="ds-h">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          Weitere Informationen
+        </div>
+        <p class="info">Kein Re-Import, deutsches Erstfahrzeug mit lückenlosem Scheckheft bei Hyundai. Das Fahrzeug befindet sich in sehr gepflegtem Zustand, unfallfrei und ohne Nachlackierungen. 2 Vorhalter inklusive Autohauszulassung. Sofort verfügbar.</p>
+      </div>
+
+      <div class="brand sr">
+        <h3>R&amp;M Automobile UG (Haftungsbeschränkt)</h3>
+        <p>Jedes Fahrzeug in unserem Bestand wird sorgfältig ausgewählt und mit Blick auf Zustand, Historie und Preis-Leistungs-Verhältnis geprüft. Die professionelle Aufbereitung erfolgt durch unsere externe Partnerfirma — damit Sie ein Fahrzeug bekommen das optisch und technisch überzeugt.</p>
+        <ul class="bsvcs">
+          <li>Finanzierung (auch ohne Anzahlung)</li><li>Inzahlungnahme zum Höchstpreis</li>
+          <li>Garantie</li><li>Lieferung</li><li>Zulassung</li><li>Ankauf Ihres Fahrzeugs</li>
+        </ul>
+        <div class="bnote">Besichtigung &amp; Probefahrt bitte telefonisch vorab ankündigen. Alle Angaben ohne Gewähr. Änderungen und Zwischenverkauf vorbehalten.</div>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="dr sr d1">
+      <div class="sq">
+        <div class="sq-h">
+          <div class="sq-ht">Fragen zu diesem Fahrzeug?</div>
+          <div class="sq-hs">Persönliche Antwort — kein automatisiertes System.</div>
+        </div>
+        <div class="sq-b">
+          <a href="/kontakt.html" class="bd">Anfrage senden <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+          <a href="tel:+4915161569871" class="bg2">Anrufen</a>
+          <a href="/mein-fahrzeug-verkaufen.html" class="bg2">Auto in Zahlung</a>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /body -->
+
+  <!-- WUNSCHFAHRZEUG -->
+  <div class="wish sr">
+    <div class="wish-in">
+      <div>
+        <div class="wish-lbl">Wunschfahrzeug</div>
+        <div class="wish-h">Nicht das Richtige dabei?<br/>Wir finden Ihr Wunschfahrzeug.</div>
+        <div class="wish-p">Mit Lackmessung, Auslesung, technischer Expertise und einem gewachsenen Händlernetzwerk beschaffen wir gezielt das Fahrzeug das Sie wirklich wollen — inklusive flexibler Finanzierung und Garantie.</div>
+        <div class="wish-tags">
+          <span class="wt">Lackmessung</span><span class="wt">Auslesung</span><span class="wt">Expertise</span><span class="wt">Händlernetzwerk</span><span class="wt">Finanzierung</span><span class="wt">Garantie</span>
+        </div>
+      </div>
+      <div class="wish-btns">
+        <a href="/kontakt.html" class="bd">Anfragen <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="tel:+4915161569871" class="bg2">+49 1516 1569871</a>
+      </div>
     </div>
   </div>
 
-  <!-- SPECS -->
-  <div class="sp sr d1">
-    <div class="sp-name">Hyundai i10 Select</div>
-    <span class="sp-acc"></span>
-    <div class="sp-var">EZ 02/2020 &middot; 62.500 km &middot; Benzin &middot; Schaltgetriebe &middot; TÜV 02/2027</div>
-    <div class="sp-mwst">19% MwSt.</div>
-    <div class="sp-price">8.980 €</div>
-
-    <table class="st">
-      <tr><td class="sk">Typ</td><td class="sv">PKW</td></tr>
-      <tr><td class="sk">Leistung</td><td class="sv">67 PS / 49 kW</td></tr>
-      <tr><td class="sk">Kilometerstand</td><td class="sv">62.500 km</td></tr>
-      <tr><td class="sk">Kraftstoff</td><td class="sv">Benzin</td></tr>
-      <tr><td class="sk">Getriebe</td><td class="sv">Schaltgetriebe</td></tr>
-      <tr><td class="sk">Erstzulassung</td><td class="sv">02/2020</td></tr>
-      <tr><td class="sk">TÜV / HU</td><td class="sv">02/2027</td></tr>
-      <tr><td class="sk">Scheckheft</td><td class="sv">Vorhanden</td></tr>
-      <tr><td class="sk">Farbe</td><td class="sv">Schwarz</td></tr>
-      <tr><td class="sk">Halter</td><td class="sv">2 (inkl. Autohaus)</td></tr>
-    </table>
-
-    <div class="fin">
-      <div class="fin-t">Finanzierungsbeispiel</div>
-      <div class="fin-r">
-        <div><div class="frk">Monatliche Rate</div><div class="frv">119,04 €</div></div>
-        <div><div class="frk">Laufzeit</div><div class="frv">60 Monate</div></div>
-        <div><div class="frk">Kreditsumme</div><div class="frv sm">10.615,13 €</div></div>
-        <div><div class="frk">Eff. Jahreszins</div><div class="frv sm">5,24 %</div></div>
-        <div style="grid-column:span 2"><div class="frk">Schlussrate</div><div class="frv sm">3.592,00 €</div></div>
-      </div>
-      <div class="fin-n">Finanzierung auf Anfrage &middot; Bonität vorausgesetzt &middot; Vermittlung über Partnerbank</div>
-    </div>
-
-    <div class="sp-ctas">
-      <a href="/kontakt.html" class="bd" style="width:100%">Jetzt anfragen <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      <a href="tel:+4915161569871" class="bg2" style="width:100%">+49 1516 1569871</a>
-    </div>
-  </div>
-
-</div>
-
-<!-- BODY -->
-<div class="body-sec">
-
-  <div class="dl">
-
-    <div class="ds sr">
-      <div class="ds-h">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>
-        Fahrzeugbeschreibung
-      </div>
-      <ul class="desc-ul">
-        <li>Kein Re-Import — deutsches Fahrzeug</li>
-        <li>Unfall- und Nachlackierungsfrei</li>
-        <li>Sehr gepflegter Zustand</li>
-        <li>Scheckheftgepflegt bei Hyundai</li>
-        <li>Sitzheizung (SZH)</li>
-        <li>2 Fahrzeughalter (inkl. Autohauszulassung)</li>
-        <li>Sofort verfügbar</li>
-      </ul>
-    </div>
-
-    <div class="ds sr d1">
-      <div class="ds-h">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
-        Ausstattung
-      </div>
-      <ul class="eq">
-        <li>ABS</li>
-        <li>Klimaanlage</li>
-        <li>Bordcomputer</li>
-        <li>Elektr. Fensterheber</li>
-        <li>ESP</li>
-        <li>Front- &amp; Seitenairbags</li>
-        <li>Isofix</li>
-        <li>Lederlenkrad</li>
-        <li>Pannenkit</li>
-        <li>Radio DAB</li>
-        <li>Reifendruckkontrolle</li>
-        <li>Servolenkung</li>
-        <li>Sitzheizung</li>
-        <li>Sommerreifen (Aluf.)</li>
-        <li>Tagfahrlicht</li>
-        <li>Traktionskontrolle</li>
-        <li>USB-Anschluss</li>
-        <li>Winterreifen (Stahlf.)</li>
-        <li>Zentralverriegelung</li>
-      </ul>
-    </div>
-
-    <div class="ds sr d2">
-      <div class="ds-h">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="13.5" cy="6.5" r="0.5"/><circle cx="17.5" cy="10.5" r="0.5"/><circle cx="8.5" cy="7.5" r="0.5"/><circle cx="6.5" cy="12.5" r="0.5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.477-1.125-.29-.289-.48-.398-.48-.836 0-.93.754-1.688 1.688-1.688H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8z"/></svg>
-        Farbe &amp; Interieur
-      </div>
-      <div class="cs">
-        <div class="cs-item"><div class="ck">Außenfarbe</div><div class="cv">Schwarz</div></div>
-        <div class="cs-item"><div class="ck">Innenausstattung</div><div class="cv">Stoff — Schwarz</div></div>
-      </div>
-    </div>
-
-    <div class="ds sr d3">
-      <div class="ds-h">
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-        Weitere Informationen
-      </div>
-      <p style="font-size:14px;font-weight:300;color:var(--tx2);line-height:1.9">Kein Re-Import, deutsches Erstfahrzeug mit lückenlosem Scheckheft bei Hyundai. Das Fahrzeug befindet sich in sehr gepflegtem Zustand, unfallfrei und ohne Nachlackierungen. 2 Vorhalter inklusive Autohauszulassung. Sofort verfügbar.</p>
-    </div>
-
-    <div class="brand-bl sr">
-      <h3>R&amp;M Automobile UG (Haftungsbeschränkt)</h3>
-      <p>Jedes Fahrzeug in unserem Bestand wird sorgfältig ausgewählt und mit Blick auf Zustand, Historie und Preis-Leistungs-Verhältnis geprüft. Die professionelle Aufbereitung erfolgt durch unsere externe Partnerfirma — damit Sie ein Fahrzeug bekommen das optisch und technisch überzeugt.</p>
-      <ul class="bsvcs">
-        <li>Finanzierung (auch ohne Anzahlung)</li>
-        <li>Inzahlungnahme zum Höchstpreis</li>
-        <li>Garantie</li>
-        <li>Lieferung</li>
-        <li>Zulassung</li>
-        <li>Ankauf Ihres Fahrzeugs</li>
-      </ul>
-      <div class="bnote">Besichtigung &amp; Probefahrt bitte telefonisch vorab ankündigen. Alle Angaben ohne Gewähr. Änderungen und Zwischenverkauf vorbehalten.</div>
-    </div>
-
-  </div>
-
-  <!-- SIDEBAR -->
-  <div class="dr sr d1">
-    <div class="sq">
-      <div class="sq-h">
-        <div class="sq-ht">Fragen zu diesem Fahrzeug?</div>
-        <div class="sq-hs">Persönliche Antwort — kein automatisiertes System.</div>
-      </div>
-      <div class="sq-b">
-        <a href="/kontakt.html" class="bd">Anfrage senden <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-        <a href="tel:+4915161569871" class="bg2">Anrufen</a>
-        <a href="/mein-fahrzeug-verkaufen.html" class="bg2">Auto in Zahlung</a>
-      </div>
-    </div>
-  </div>
-
-</div>
-
-<!-- WUNSCHFAHRZEUG -->
-<div class="wish sr">
-  <div class="wish-in">
-    <div>
-      <div class="wish-lbl">Wunschfahrzeug</div>
-      <div class="wish-h">Nicht das Richtige dabei?<br/>Wir finden Ihr Wunschfahrzeug.</div>
-      <div class="wish-p">Mit Lackmessung, Auslesung, technischer Expertise und einem gewachsenen Händlernetzwerk beschaffen wir gezielt das Fahrzeug das Sie wirklich wollen — inklusive flexibler Finanzierung und Garantie.</div>
-      <div class="wish-tags">
-        <span class="wt">Lackmessung</span><span class="wt">Auslesung</span><span class="wt">Expertise</span><span class="wt">Händlernetzwerk</span><span class="wt">Finanzierung</span><span class="wt">Garantie</span>
-      </div>
-    </div>
-    <div class="wish-btns">
-      <a href="/kontakt.html" class="bd">Anfragen <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-      <a href="tel:+4915161569871" class="bg2">+49 1516 1569871</a>
-    </div>
-  </div>
-</div>
+</div><!-- /page -->
 
 <!-- CTA -->
 <div class="cta">
@@ -449,6 +450,7 @@ footer{background:var(--bg);padding:60px 64px 32px;border-top:1px solid var(--ln
 
 </main>
 
+<!-- LIGHTBOX -->
 <div class="lb" id="lb" onclick="cLB()">
   <button class="lbc" onclick="cLB()">&#215;</button>
   <img id="lbi" src="" alt=""/>
@@ -488,19 +490,18 @@ window.addEventListener('DOMContentLoaded',function(){
 });
 function tM(){var m=document.getElementById('mm'),b=document.getElementById('nb');m.classList.toggle('open');b.classList.toggle('open');document.body.style.overflow=m.classList.contains('open')?'hidden':'';}
 function cM(){document.getElementById('mm').classList.remove('open');document.getElementById('nb').classList.remove('open');document.body.style.overflow='';}
-var _ro=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');_ro.unobserve(x.target);}});},{threshold:0.05,rootMargin:'0px 0px -14px 0px'});
+var _ro=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');_ro.unobserve(x.target);}});},{threshold:0.04});
 document.querySelectorAll('.sr').forEach(function(el){_ro.observe(el);});
 var _imgs=['/img/i10_01.jpeg','/img/i10_02.jpeg','/img/i10_03.jpeg','/img/i10_04.jpeg','/img/i10_05.jpeg','/img/i10_06.jpeg','/img/i10_07.jpeg','/img/i10_08.jpeg','/img/i10_09.jpeg','/img/i10_10.jpeg','/img/i10_11.jpeg','/img/i10_12.jpeg','/img/i10_13.jpeg','/img/i10_14.jpeg','/img/i10_15.jpeg','/img/i10_16.jpeg','/img/i10_17.jpeg','/img/i10_18.jpeg'];
 var _ci=0;
 function gTo(n){_ci=Math.max(0,Math.min(n,_imgs.length-1));document.getElementById('gimg').src=_imgs[_ci];document.getElementById('gcnt').textContent=(_ci+1)+' / '+_imgs.length;document.querySelectorAll('.gt').forEach(function(t,i){t.classList.toggle('on',i===_ci);});}
 function sBy(d){gTo(_ci+d);}
-var _tx2=0;
+var _tx0=0;
 var gmel=document.getElementById('gm');
-if(gmel){gmel.addEventListener('touchstart',function(e){_tx2=e.touches[0].clientX;},{passive:true});gmel.addEventListener('touchend',function(e){var dx=_tx2-e.changedTouches[0].clientX;if(Math.abs(dx)>40)sBy(dx>0?1:-1);},{passive:true});}
+if(gmel){gmel.addEventListener('touchstart',function(e){_tx0=e.touches[0].clientX;},{passive:true});gmel.addEventListener('touchend',function(e){var dx=_tx0-e.changedTouches[0].clientX;if(Math.abs(dx)>40)sBy(dx>0?1:-1);},{passive:true});}
 function oLB(src){document.getElementById('lbi').src=src;document.getElementById('lb').classList.add('open');document.body.style.overflow='hidden';}
 function cLB(){document.getElementById('lb').classList.remove('open');document.body.style.overflow='';}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')cLB();if(e.key==='ArrowRight')sBy(1);if(e.key==='ArrowLeft')sBy(-1);});
 </script>
-<script type="text/javascript">var Tawk_API=Tawk_API||{},Tawk_LoadStart=new Date();(function(){var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];s1.async=true;s1.src='https://embed.tawk.to/69e662a45460031ed9e26736/1jmlv2kp2';s1.charset='UTF-8';s1.setAttribute('crossorigin','*');setTimeout(function(){s0.parentNode.insertBefore(s1,s0);},8000);})();</script>
 </body>
 </html>
