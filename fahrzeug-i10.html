@@ -68,7 +68,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:76px;display:flex;ali
 /* Gallery — constrained height */
 .gw{}
 .gm{position:relative;overflow:hidden;background:var(--s1);cursor:zoom-in;line-height:0}
-.gm img{width:100%;height:440px;object-fit:cover;object-position:center;display:block;transition:transform .4s var(--ease)}
+.gm img{width:100%;height:auto;aspect-ratio:4/3;object-fit:contain;object-position:center;display:block;background:var(--s1)}
 .gm:hover img{transform:scale(1.01)}
 .gbadge{position:absolute;top:12px;left:12px;display:flex;align-items:center;gap:5px;font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;padding:5px 10px;background:rgba(111,207,151,.1);border:1px solid var(--grn3);color:var(--grn);backdrop-filter:blur(8px);z-index:5}
 .gbadge::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--grn);flex-shrink:0}
@@ -304,7 +304,6 @@ footer{background:var(--bg);padding:56px 64px 30px;border-top:1px solid var(--ln
       <div class="sp-var">EZ 02/2020 &middot; 62.500 km &middot; Benzin &middot; Schaltgetriebe &middot; TÜV 02/2027</div>
 
       <div class="sp-price-row">
-        <span class="sp-mwst">19% MwSt.</span>
         <span class="sp-price">8.980 €</span>
       </div>
 
@@ -327,18 +326,6 @@ footer{background:var(--bg);padding:56px 64px 30px;border-top:1px solid var(--ln
           <div class="sg-cell"><div class="sgk">Scheckheft</div><div class="sgv">Vorhanden</div></div>
           <div class="sg-cell"><div class="sgk">Halter</div><div class="sgv">2 (inkl. Autohaus)</div></div>
         </div>
-      </div>
-
-      <div class="fin">
-        <div class="fin-t">Finanzierungsbeispiel</div>
-        <div class="fin-r">
-          <div><div class="frk">Monatliche Rate</div><div class="frv">119,04 €</div></div>
-          <div><div class="frk">Laufzeit</div><div class="frv">60 Monate</div></div>
-          <div><div class="frk">Kreditsumme</div><div class="frv sm">10.615,13 €</div></div>
-          <div><div class="frk">Eff. Jahreszins</div><div class="frv sm">5,24 %</div></div>
-          <div style="grid-column:span 2"><div class="frk">Schlussrate</div><div class="frv sm">3.592,00 €</div></div>
-        </div>
-        <div class="fin-n">Finanzierung auf Anfrage &middot; Bonität vorausgesetzt &middot; Vermittlung über Partnerbank</div>
       </div>
 
       <div class="sp-ctas">
@@ -395,21 +382,9 @@ footer{background:var(--bg);padding:56px 64px 30px;border-top:1px solid var(--ln
         </div>
       </div>
 
-      <div class="ds sr d3">
-        <div class="ds-h">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-          Weitere Informationen
-        </div>
-        <p class="info">Kein Re-Import, deutsches Erstfahrzeug mit lückenlosem Scheckheft bei Hyundai. Das Fahrzeug befindet sich in sehr gepflegtem Zustand, unfallfrei und ohne Nachlackierungen. 2 Vorhalter inklusive Autohauszulassung. Sofort verfügbar.</p>
-      </div>
-
       <div class="brand sr">
         <h3>R&amp;M Automobile UG (Haftungsbeschränkt)</h3>
-        <p>Jedes Fahrzeug in unserem Bestand wird sorgfältig ausgewählt und mit Blick auf Zustand, Historie und Preis-Leistungs-Verhältnis geprüft. Die professionelle Aufbereitung erfolgt durch unsere externe Partnerfirma — damit Sie ein Fahrzeug bekommen das optisch und technisch überzeugt.</p>
-        <ul class="bsvcs">
-          <li>Finanzierung (auch ohne Anzahlung)</li><li>Inzahlungnahme zum Höchstpreis</li>
-          <li>Garantie</li><li>Lieferung</li><li>Zulassung</li><li>Ankauf Ihres Fahrzeugs</li>
-        </ul>
+        <p>Jedes Fahrzeug wird sorgfältig ausgewählt und mit Blick auf Zustand, Historie und Preis-Leistungs-Verhältnis geprüft. Aufbereitung durch externe Partnerfirma. Finanzierung, Garantie und Inzahlungnahme auf Anfrage.</p>
         <div class="bnote">Besichtigung &amp; Probefahrt bitte telefonisch vorab ankündigen. Alle Angaben ohne Gewähr. Änderungen und Zwischenverkauf vorbehalten.</div>
       </div>
 
@@ -425,30 +400,26 @@ footer{background:var(--bg);padding:56px 64px 30px;border-top:1px solid var(--ln
         <div class="sq-b">
           <a href="/kontakt.html" class="bd">Anfrage senden <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
           <a href="tel:+4915161569871" class="bg2">Anrufen</a>
-          <a href="/mein-fahrzeug-verkaufen.html" class="bg2">Auto in Zahlung</a>
+        </div>
+      </div>
+      <div class="sq" style="margin-top:1px">
+        <div class="sq-h">
+          <div class="sq-ht">Finanzierungsbeispiel</div>
+          <div class="sq-hs">Auf Anfrage · Bonität vorausgesetzt</div>
+        </div>
+        <div class="sq-b" style="gap:10px">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px 16px">
+            <div><div style="font-size:9px;color:rgba(111,207,151,.5);font-weight:600;letter-spacing:.09em;text-transform:uppercase;margin-bottom:2px">Monatliche Rate</div><div style="font-family:var(--fh);font-size:15px;font-weight:700;color:var(--tx)">119,04 €</div></div>
+            <div><div style="font-size:9px;color:rgba(111,207,151,.5);font-weight:600;letter-spacing:.09em;text-transform:uppercase;margin-bottom:2px">Laufzeit</div><div style="font-family:var(--fh);font-size:15px;font-weight:700;color:var(--tx)">60 Monate</div></div>
+            <div><div style="font-size:9px;color:rgba(111,207,151,.5);font-weight:600;letter-spacing:.09em;text-transform:uppercase;margin-bottom:2px">Kreditsumme</div><div style="font-family:var(--fh);font-size:12px;font-weight:400;color:var(--tx2)">10.615,13 €</div></div>
+            <div><div style="font-size:9px;color:rgba(111,207,151,.5);font-weight:600;letter-spacing:.09em;text-transform:uppercase;margin-bottom:2px">Eff. Jahreszins</div><div style="font-family:var(--fh);font-size:12px;font-weight:400;color:var(--tx2)">5,24 %</div></div>
+          </div>
+          <div style="font-size:10px;color:var(--tx3);line-height:1.55;padding-top:4px;border-top:1px solid var(--ln)">Vermittlung über Partnerbank · inkl. MwSt.</div>
         </div>
       </div>
     </div>
 
   </div><!-- /body -->
-
-  <!-- WUNSCHFAHRZEUG -->
-  <div class="wish sr">
-    <div class="wish-in">
-      <div>
-        <div class="wish-lbl">Wunschfahrzeug</div>
-        <div class="wish-h">Nicht das Richtige dabei?<br/>Wir finden Ihr Wunschfahrzeug.</div>
-        <div class="wish-p">Mit Lackmessung, Auslesung, technischer Expertise und einem gewachsenen Händlernetzwerk beschaffen wir gezielt das Fahrzeug das Sie wirklich wollen — inklusive flexibler Finanzierung und Garantie.</div>
-        <div class="wish-tags">
-          <span class="wt">Lackmessung</span><span class="wt">Auslesung</span><span class="wt">Expertise</span><span class="wt">Händlernetzwerk</span><span class="wt">Finanzierung</span><span class="wt">Garantie</span>
-        </div>
-      </div>
-      <div class="wish-btns">
-        <a href="/kontakt.html" class="bd">Anfragen <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
-        <a href="tel:+4915161569871" class="bg2">+49 1516 1569871</a>
-      </div>
-    </div>
-  </div>
 
 </div><!-- /page -->
 
