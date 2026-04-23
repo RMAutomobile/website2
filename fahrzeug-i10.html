@@ -92,13 +92,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:76px;display:flex;ali
 .sp-price{font-family:var(--fh);font-size:clamp(24px,2.6vw,36px);font-weight:700;letter-spacing:-.02em;color:var(--tx);line-height:1;margin-bottom:24px}
 .sp-div{height:1px;background:var(--ln);margin-bottom:20px}
 
-/* Spec table — plain lines only */
-.st{width:100%;border-collapse:collapse;margin-bottom:20px}
-.st tr{border-bottom:1px solid var(--ln)}
-.st tr:last-child{border-bottom:none}
-.st td{padding:8px 0}
-.st .sk{font-family:var(--fh);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--tx3);width:48%}
-.st .sv{font-size:13px;font-weight:400;color:var(--tx)}
+/* Price row — JB style: mwst inline with price */
+.sp-price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:28px;margin-top:4px}
+.sp-mwst{font-size:11px;color:var(--tx3);font-weight:300}
+.sp-price{font-family:var(--fh);font-size:clamp(26px,2.8vw,38px);font-weight:700;letter-spacing:-.02em;color:var(--tx);line-height:1}
+
+/* JB 3-col horizontal spec grid */
+.sg{margin-bottom:22px}
+.sg-row{display:grid;grid-template-columns:1fr 1fr 1fr;padding:14px 0}
+.sg-div{height:1px;background:var(--ln)}
+.sgk{font-size:11px;font-weight:300;color:var(--tx3);margin-bottom:5px}
+.sgv{font-family:var(--fh);font-size:13px;font-weight:600;color:var(--tx)}
 
 /* Financing */
 .fin{background:var(--grn2);border:1px solid var(--grn3);padding:15px 16px;margin-bottom:16px}
@@ -293,27 +297,37 @@ footer{background:var(--bg);padding:56px 64px 30px;border-top:1px solid var(--ln
       </div>
     </div>
 
-    <!-- SPECS -->
+    <!-- SPECS — JB Style -->
     <div class="sp sr d1">
       <div class="sp-name">Hyundai i10 Select</div>
       <span class="sp-acc"></span>
       <div class="sp-var">EZ 02/2020 &middot; 62.500 km &middot; Benzin &middot; Schaltgetriebe &middot; TÜV 02/2027</div>
-      <div class="sp-mwst">19% MwSt.</div>
-      <div class="sp-price">8.980 €</div>
-      <div class="sp-div"></div>
 
-      <table class="st">
-        <tr><td class="sk">Typ</td><td class="sv">PKW</td></tr>
-        <tr><td class="sk">Leistung</td><td class="sv">67 PS / 49 kW</td></tr>
-        <tr><td class="sk">Kilometerstand</td><td class="sv">62.500 km</td></tr>
-        <tr><td class="sk">Kraftstoff</td><td class="sv">Benzin</td></tr>
-        <tr><td class="sk">Getriebe</td><td class="sv">Schaltgetriebe</td></tr>
-        <tr><td class="sk">Erstzulassung</td><td class="sv">02/2020</td></tr>
-        <tr><td class="sk">TÜV / HU</td><td class="sv">02/2027</td></tr>
-        <tr><td class="sk">Scheckheft</td><td class="sv">Vorhanden</td></tr>
-        <tr><td class="sk">Farbe</td><td class="sv">Schwarz</td></tr>
-        <tr><td class="sk">Halter</td><td class="sv">2 (inkl. Autohaus)</td></tr>
-      </table>
+      <div class="sp-price-row">
+        <span class="sp-mwst">19% MwSt.</span>
+        <span class="sp-price">8.980 €</span>
+      </div>
+
+      <!-- 3-column spec grid like JB — two rows -->
+      <div class="sg">
+        <div class="sg-row">
+          <div class="sg-cell"><div class="sgk">Typ</div><div class="sgv">PKW</div></div>
+          <div class="sg-cell"><div class="sgk">Leistung</div><div class="sgv">67 PS / 49 kW</div></div>
+          <div class="sg-cell"><div class="sgk">Kilometerstand</div><div class="sgv">62.500 km</div></div>
+        </div>
+        <div class="sg-div"></div>
+        <div class="sg-row">
+          <div class="sg-cell"><div class="sgk">Kraftstoff</div><div class="sgv">Benzin</div></div>
+          <div class="sg-cell"><div class="sgk">Getriebe</div><div class="sgv">Schaltgetriebe</div></div>
+          <div class="sg-cell"><div class="sgk">Erstzulassung</div><div class="sgv">02/2020</div></div>
+        </div>
+        <div class="sg-div"></div>
+        <div class="sg-row">
+          <div class="sg-cell"><div class="sgk">TÜV / HU</div><div class="sgv">02/2027</div></div>
+          <div class="sg-cell"><div class="sgk">Scheckheft</div><div class="sgv">Vorhanden</div></div>
+          <div class="sg-cell"><div class="sgk">Halter</div><div class="sgv">2 (inkl. Autohaus)</div></div>
+        </div>
+      </div>
 
       <div class="fin">
         <div class="fin-t">Finanzierungsbeispiel</div>
