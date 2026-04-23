@@ -152,6 +152,18 @@ h1 .g{color:rgba(232,227,216,.48)}
 @media(max-width:768px){
   .partner-grid{grid-template-columns:1fr 1fr!important}
 }
+
+@media(max-width:900px){
+  .fz-grid-3{grid-template-columns:1fr!important}
+}
+
+.fzg-card{background:var(--c2);transition:transform .3s var(--ease),box-shadow .3s}
+.fzg-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.4)}
+.fzg-card:hover img{transform:scale(1.05)}
+.fzg-btn{display:block;width:100%;padding:13px;text-align:center;background:transparent;border:1px solid var(--bo2);color:var(--tx2);font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:all .3s}
+.fzg-btn:hover{background:var(--tx);color:var(--page);border-color:var(--tx)}
+@media(max-width:1000px){.fzg-card{grid-column:span 1}}
+@media(max-width:768px){.fzg-grid{grid-template-columns:1fr!important}}
 </style><script type="application/ld+json">{"@context":"https://schema.org","@type":["AutoDealer","LocalBusiness"],"name":"R&M Automobile UG","url":"https://rmauto-mobile.de","telephone":"+49-1516-1569871","address":{"@type":"PostalAddress","streetAddress":"Am Gewerbebogen 11","addressLocality":"Hemau","postalCode":"93155","addressRegion":"Bayern","addressCountry":"DE"},"geo":{"@type":"GeoCoordinates","latitude":49.0561,"longitude":11.7817},"areaServed":["Hemau","Regensburg","Parsberg","Kelheim","Neumarkt in der Oberpfalz","Ingolstadt","München","Nürnberg"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"5","bestRating":"5"}}</script>
 <meta name="geo.region" content="DE-BY"/><meta name="geo.placename" content="Hemau"/><meta name="geo.position" content="49.0561;11.7817"/><!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XDZRP2W3X9"></script>
@@ -212,25 +224,96 @@ h1 .g{color:rgba(232,227,216,.48)}
   <div class="label sr">Warum R&amp;M</div>
   <h2 class="sr">Was uns<br/><span class="g">unterscheidet</span></h2>
   <p style="font-size:14px;font-weight:300;color:var(--tx2);line-height:1.9;max-width:480px;margin-top:16px" class="sr d1">Kein anonymes Massengesch&#228;ft. Nur ehrliche Arbeit von zwei Leuten die Autos kennen.</p>
-  <div class="usp-grid"><article class="usp sr"><div class="usp-n">01</div><h3>Technisch gepr&#252;ft</h3><p>Jedes Fahrzeug pers&#246;nlich gepr&#252;ft und professionell aufbereitet. Sie bekommen was Sie sehen.</p></article><article class="usp sr d1"><div class="usp-n">02</div><h3>Transparent &amp; fair</h3><p>Klare Kommunikation, schnelle Entscheidungen, keine versteckten Kosten.</p></article><article class="usp sr d2"><div class="usp-n">03</div><h3>Flexibel finanzieren</h3><p>Finanzierung optional ohne Anzahlung, faire Inzahlungnahme &#8211; wir finden eine L&#246;sung.</p></article></div>
-</section>
-<section class="sec-alt">
-  <div class="fz-hd"><div><div class="label sr">Aktueller Bestand</div><h2 class="sr">Unsere Fahrzeuge</h2></div><a href="/fahrzeugbereich.html" class="btn-g sr">Alle ansehen &#8594;</a></div>
-  <div class="fz-list">
-    <div class="fzc sr" onclick="location.href='/fahrzeug-i10.html'">
-      <div class="fzc-img-wrap"><span class="fzc-badge badge-avail"><span class="badge-dot"></span>Verf&#252;gbar</span><img src="/img/i10_01.jpeg" alt="Hyundai i10" loading="lazy"/></div>
-      <div class="fzc-info"><div class="fzc-name">Hyundai i10 Select</div><div class="fzc-var">Select &middot; Sitzheizung &middot; T&#220;V neu &middot; Scheckheft gepflegt</div><div class="fzc-specs"><span class="fzc-spec">2020</span><span class="fzc-spec">62.500 km</span><span class="fzc-spec">Benzin</span><span class="fzc-spec">Schaltgetriebe</span><span class="fzc-spec">67 PS</span></div></div>
-      <div class="fzc-right"><div class="fzc-price">8.980 &#8364;</div><a href="/fahrzeug-i10.html" class="fzc-cta">Details <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+  <div class="usp-grid"><article class="usp sr"><div class="usp-n">01</div><h3>Technisch gepr&#252;ft</h3><p>Jedes Fahrzeug pers&#246;nlich gepr&#252;ft und professionell aufbereitet. Sie bekommen was Sie sehen.</p></article><article class="usp sr d1"><div class="usp-n">02</div><h3>Transparent &amp; fair</h3><p>Klare Kommunikation, schnelle Entscheidungen, keine versteckten Kosten.</p></article><article class="usp sr d2"><div class="usp-n">03</div><h3>Flexibel finanzieren</h3><p>Finanzierung optional ohne Anzahlung, faire Inzah<section style="padding:80px 60px;background:var(--page)">
+  <div style="text-align:center;margin-bottom:56px">
+    <div class="label sr" style="justify-content:center;margin-bottom:20px">Aktueller Bestand</div>
+    <h2 class="sr" style="font-family:var(--fh);font-size:clamp(32px,4.5vw,58px);font-weight:700;letter-spacing:-.022em;line-height:1.0;margin-bottom:20px">Unsere aktuellen Fahrzeuge</h2>
+    <p class="sr" style="font-size:14px;font-weight:300;color:var(--tx2);max-width:580px;margin:0 auto;line-height:2.0">Alle Fahrzeuge werden von unserem KFZ-Mechatroniker pers&#246;nlich gepr&#252;ft und aufbereitet. Transparenz und Qualit&#228;t stehen bei uns an erster Stelle.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1400px;margin:0 auto">
+
+    <!-- Hyundai i10 -->
+    <div class="fzg-card sr">
+      <a href="/fahrzeug-i10.html" style="text-decoration:none;display:block">
+        <div style="position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--c2)">
+          <img src="/img/i10_01.jpeg" alt="Hyundai i10 Select" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease"/>
+          <div style="position:absolute;top:14px;left:14px;background:rgba(22,22,20,.85);border:1px solid var(--grn-bd);color:var(--grn);font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:5px 12px;backdrop-filter:blur(10px)">&#9679; Verf&#252;gbar</div>
+        </div>
+      </a>
+      <div style="padding:28px 28px 24px">
+        <div style="font-family:var(--fh);font-size:22px;font-weight:700;color:var(--tx);margin-bottom:5px">Hyundai i10 Select</div>
+        <div style="font-size:12px;font-weight:300;color:var(--tx3);margin-bottom:22px;letter-spacing:.02em">SZH / KLIMA / 8-FACH / T&#220;V 02/2027</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;padding-bottom:22px;border-bottom:1px solid var(--bo)">
+          <div><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx4);margin-bottom:4px">Erstzulassung</div><div style="font-family:var(--fh);font-size:14px;font-weight:600;color:var(--tx)">02/2020</div></div>
+          <div><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx4);margin-bottom:4px">Kilometerstand</div><div style="font-family:var(--fh);font-size:14px;font-weight:600;color:var(--tx)">62.500 km</div></div>
+          <div><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx4);margin-bottom:4px">Getriebe</div><div style="font-family:var(--fh);font-size:14px;font-weight:600;color:var(--tx)">Schaltgetriebe</div></div>
+          <div><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx4);margin-bottom:4px">Leistung</div><div style="font-family:var(--fh);font-size:14px;font-weight:600;color:var(--tx)">49 kW / 67 PS</div></div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding-top:20px;margin-bottom:20px">
+          <div style="font-family:var(--fh);font-size:28px;font-weight:700;color:var(--tx)">8.980 &#8364;</div>
+        </div>
+        <a href="/fahrzeug-i10.html" class="fzg-btn">Details</a>
+      </div>
     </div>
-    <div class="fzc sr d1" onclick="location.href='/fahrzeug-bmw320d.html'">
-      <div class="fzc-img-wrap"><span class="fzc-badge badge-new">In Anlieferung</span><img src="/img/bmw_grau.jpg" alt="BMW 320d" loading="lazy"/></div>
-      <div class="fzc-info"><div class="fzc-name">BMW 320d M-Paket</div><div class="fzc-var">M-Paket &middot; Vollausstattung &middot; Scheckheft l&#252;ckenlos bei BMW</div><div class="fzc-specs"><span class="fzc-spec">2014</span><span class="fzc-spec">150.000 km</span><span class="fzc-spec">Diesel</span><span class="fzc-spec">Schaltgetriebe</span><span class="fzc-spec">184 PS</span></div></div>
-      <div class="fzc-right"><div class="fzc-price">12.980 &#8364;</div><a href="/fahrzeug-bmw320d.html" class="fzc-cta">Details <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+
+    <!-- Seat Ibiza -->
+    <div class="fzg-card sr d1">
+      <a href="/fahrzeug-seat-ibiza.html" style="text-decoration:none;display:block">
+        <div style="position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--c2)">
+          <img src="/img/seat_ibiza_01.jpeg" alt="Seat Ibiza" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease"/>
+          <div style="position:absolute;top:14px;left:14px;background:rgba(22,22,20,.85);border:1px solid var(--grn-bd);color:var(--grn);font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:5px 12px;backdrop-filter:blur(10px)">&#9679; Verf&#252;gbar</div>
+          <div style="position:absolute;top:14px;right:14px;background:rgba(22,22,20,.85);border:1px solid var(--bo);color:var(--tx3);font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:5px 12px;backdrop-filter:blur(10px)">Export</div>
+        </div>
+      </a>
+      <div style="padding:28px 28px 24px">
+        <div style="font-family:var(--fh);font-size:22px;font-weight:700;color:var(--tx);margin-bottom:5px">Seat Ibiza</div>
+        <div style="font-size:12px;font-weight:300;color:var(--tx3);margin-bottom:22px;letter-spacing:.02em">T&#220;V / KLIMA / EXPORT</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;padding-bottom:22px;border-bottom:1px solid var(--bo)">
+          <div><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx4);margin-bottom:4px">Erstzulassung</div><div style="font-family:var(--fh);font-size:14px;font-weight:600;color:var(--tx)">06/2009</div></div>
+          <div><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx4);margin-bottom:4px">Kilometerstand</div><div style="font-family:var(--fh);font-size:14px;font-weight:600;color:var(--tx)">158.700 km</div></div>
+          <div><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx4);margin-bottom:4px">Getriebe</div><div style="font-family:var(--fh);font-size:14px;font-weight:600;color:var(--tx)">Schaltgetriebe</div></div>
+          <div><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx4);margin-bottom:4px">Leistung</div><div style="font-family:var(--fh);font-size:14px;font-weight:600;color:var(--tx)">51 kW / 69 PS</div></div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding-top:20px;margin-bottom:20px">
+          <div style="font-family:var(--fh);font-size:28px;font-weight:700;color:var(--tx)">1.790 &#8364;</div>
+        </div>
+        <a href="/fahrzeug-seat-ibiza.html" class="fzg-btn">Details</a>
+      </div>
     </div>
-    <div class="fzc sr d2" onclick="location.href='/mein-fahrzeug-verkaufen.html'">
-      
-      <div class="fzc-info"><div class="fzc-specs"><span class="fzc-spec">Alle Marken</span><span class="fzc-spec">Alle Zust&#228;nde</span><span class="fzc-spec">Deutschlandweit</span></div></div>
-      <div class="fzc-right"><div class="fzc-price">Kostenlos</div><a href="/mein-fahrzeug-verkaufen.html" class="fzc-cta">Bewerten <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+
+    <!-- BMW 320d -->
+    <div class="fzg-card sr d2">
+      <a href="/fahrzeug-bmw320d.html" style="text-decoration:none;display:block">
+        <div style="position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--c2)">
+          <img src="/img/bmw_grau.jpg" alt="BMW 320d M-Paket" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease"/>
+          <div style="position:absolute;top:14px;left:14px;background:rgba(22,22,20,.85);border:1px solid rgba(251,191,36,.35);color:rgba(251,191,36,.9);font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:5px 12px;backdrop-filter:blur(10px)">In Anlieferung</div>
+        </div>
+      </a>
+      <div style="padding:28px 28px 24px">
+        <div style="font-family:var(--fh);font-size:22px;font-weight:700;color:var(--tx);margin-bottom:5px">BMW 320d M-Paket</div>
+        <div style="font-size:12px;font-weight:300;color:var(--tx3);margin-bottom:22px;letter-spacing:.02em">M-Paket / Vollausstattung / Scheckheft l&#252;ckenlos</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;padding-bottom:22px;border-bottom:1px solid var(--bo)">
+          <div><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx4);margin-bottom:4px">Erstzulassung</div><div style="font-family:var(--fh);font-size:14px;font-weight:600;color:var(--tx)">2014</div></div>
+          <div><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx4);margin-bottom:4px">Kilometerstand</div><div style="font-family:var(--fh);font-size:14px;font-weight:600;color:var(--tx)">150.000 km</div></div>
+          <div><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx4);margin-bottom:4px">Getriebe</div><div style="font-family:var(--fh);font-size:14px;font-weight:600;color:var(--tx)">Schaltgetriebe</div></div>
+          <div><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx4);margin-bottom:4px">Leistung</div><div style="font-family:var(--fh);font-size:14px;font-weight:600;color:var(--tx)">135 kW / 184 PS</div></div>
+        </div>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding-top:20px;margin-bottom:20px">
+          <div style="font-family:var(--fh);font-size:28px;font-weight:700;color:var(--tx)">12.980 &#8364;</div>
+        </div>
+        <a href="/fahrzeug-bmw320d.html" class="fzg-btn">Details</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="text-align:center;margin-top:44px">
+    <a href="/fahrzeugbereich.html" class="btn-g sr">Alle Fahrzeuge ansehen
+      <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+    </a>
+  </div>
+</section><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
     </div>
   </div>
 </section>
@@ -284,37 +367,7 @@ h1 .g{color:rgba(232,227,216,.48)}
   </div>
 </section>
 <div class="map-sec"><div style="width:100%;height:100%;position:relative"><div data-map-src="https://maps.google.com/maps?q=Am+Gewerbebogen+11,+93155+Hemau,+Germany&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed" class="map-ph">Karte nach Cookie-Zustimmung</div><div class="map-ov"><div class="map-ov-n">R&amp;M Automobile UG</div><div class="map-ov-a">Am Gewerbebogen 11 &middot; 93155 Hemau</div></div></div></div>
-<div class="cta-band"><h2 class="sr">Bereit f&#252;r Ihr<br/><span class="g">n&#228;chstes Fahrzeug?</span></h2><p class="sr d1">Pers&#246;nlich, ehrlich, auf Augenh&#246;he.<br/>Rufen Sie an oder schreiben Sie uns.</p><a href="/kontakt.html" class="btn-d sr d2" style="display:inline-flex">Kontakt aufnehmen <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div></main><section style="padding:52px 60px;border-top:1px solid var(--bo);border-bottom:1px solid var(--bo)">
-  <div style="text-align:center;margin-bottom:32px">
-    <div class="label sr" style="justify-content:center">Unsere Partner</div>
-  </div>
-  <div class="sr" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--bo);max-width:900px;margin:0 auto">
-    <div style="background:var(--c2);padding:28px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:120px">
-      <img src="/partner_mobile.png" alt="mobile.de" style="max-width:100px;max-height:40px;object-fit:contain;filter:brightness(0) invert(1);opacity:.85" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
-      <div style="display:none;font-family:var(--fh);font-size:13px;font-weight:700;color:var(--tx)">mobile.de</div>
-      <div style="font-family:var(--fh);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--tx4)">Fahrzeuginserate</div>
-    </div>
-    <div style="background:var(--c2);padding:28px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:120px">
-      <img src="/partner_google.png" alt="Google" style="max-width:100px;max-height:40px;object-fit:contain;opacity:.85" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
-      <div style="display:none;font-family:var(--fh);font-size:13px;font-weight:700;color:var(--tx)">Google</div>
-      <div style="display:flex;gap:2px"><span style="color:#FBBC05;font-size:12px">&#9733;&#9733;&#9733;&#9733;&#9733;</span></div>
-      <div style="font-family:var(--fh);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--tx4)">5,0 Bewertung</div>
-    </div>
-    <div style="background:var(--c2);padding:28px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:120px">
-      <img src="/partner_ggg.png" alt="GGG Garantie" style="max-width:100px;max-height:40px;object-fit:contain;filter:brightness(0) invert(1);opacity:.85" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"/>
-      <div style="display:none;font-family:var(--fh);font-size:13px;font-weight:700;color:var(--tx)">GGG Garantie</div>
-      <div style="font-family:var(--fh);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--tx4)">Fahrzeuggarantie</div>
-    </div>
-    <div style="background:var(--c2);padding:28px 24px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;min-height:120px">
-      <div style="width:48px;height:48px;background:rgba(111,207,151,.1);border:1.5px solid var(--grn-bd);border-radius:50%;display:flex;align-items:center;justify-content:center">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--grn)" stroke-width="2" stroke-linecap="round"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
-      </div>
-      <div style="font-family:var(--fh);font-size:13px;font-weight:700;color:var(--tx)">Finanzierung</div>
-      <div style="font-family:var(--fh);font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--tx4)">Auf Anfrage</div>
-    </div>
-  </div>
-  <p style="text-align:center;font-size:11px;font-weight:300;color:var(--tx4);margin-top:20px">Alle Logos und Marken geh&#246;ren ihren jeweiligen Eigent&#252;mern</p>
-</section>
+<div class="cta-band"><h2 class="sr">Bereit f&#252;r Ihr<br/><span class="g">n&#228;chstes Fahrzeug?</span></h2><p class="sr d1">Pers&#246;nlich, ehrlich, auf Augenh&#246;he.<br/>Rufen Sie an oder schreiben Sie uns.</p><a href="/kontakt.html" class="btn-d sr d2" style="display:inline-flex">Kontakt aufnehmen <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div></main>
 <section style="padding:52px 60px;background:var(--c2);border-top:1px solid var(--bo)">
   <div style="max-width:900px;margin:0 auto">
     <h2 style="font-family:var(--fh);font-size:clamp(18px,2vw,24px);font-weight:700;color:var(--tx);margin-bottom:16px;letter-spacing:-.01em">Ihr Gebrauchtwagenh&#228;ndler in Hemau &#8211; n&#228;he Regensburg, Ingolstadt &amp; N&#252;rnberg</h2>
