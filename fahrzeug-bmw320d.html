@@ -285,26 +285,36 @@ footer{background:var(--bg);padding:56px 64px 30px;border-top:1px solid var(--ln
   <!-- VEHICLE HERO -->
   <div class="vh">
 
-    <!-- GALLERY -->
+    <!-- GALLERY — In Anlieferung Placeholder -->
     <div class="gw sr">
-      <div class="gm" id="gm">
-        <div class="gbadge" style="background:rgba(251,191,36,.1);border-color:rgba(251,191,36,.25);color:rgba(251,191,36,.9)">In Anlieferung</div>
-        <div class="gcnt" id="gcnt">1 / 18</div>
-        <img id="gimg" src="/img/bmw320d_01.jpeg" alt="BMW 320d M-Paket" onclick="oLB(this.src)"/>
-        <button class="garr ga-p" onclick="sBy(-1)" aria-label="Zurück"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M10 4l-4 4 4 4"/></svg></button>
-        <button class="garr ga-n" onclick="sBy(1)" aria-label="Weiter"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 4l4 4-4 4"/></svg></button>
-      </div>
-      <div class="gth">
-        <div class="gt on" onclick="gTo(0)"><img src="/img/bmw320d_01.jpeg" alt=""/></div>
-        <div class="gt" onclick="gTo(1)"><img src="/img/bmw320d_02.jpeg" alt=""/></div>
-        <div class="gt" onclick="gTo(2)"><img src="/img/bmw320d_03.jpeg" alt=""/></div>
-        <div class="gt" onclick="gTo(3)"><img src="/img/bmw320d_04.jpeg" alt=""/></div>
-        <div class="gt" onclick="gTo(4)"><img src="/img/bmw320d_05.jpeg" alt=""/></div>
-        <div class="gt" onclick="gTo(5)"><img src="/img/bmw320d_06.jpeg" alt=""/></div>
-        <div class="gt" onclick="gTo(6)"><img src="/img/bmw320d_07.jpeg" alt=""/></div>
-        <div class="gt" onclick="gTo(7)"><img src="/img/bmw320d_08.jpeg" alt=""/></div>
+      <div class="gm" style="cursor:default;background:var(--s1)">
+        <div class="gbadge" style="background:rgba(251,191,36,.1);border-color:rgba(251,191,36,.25);color:rgba(251,191,36,.9);z-index:10">In Anlieferung</div>
+        <div style="width:100%;aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;background:var(--s1);position:relative;overflow:hidden">
+          <!-- Road line -->
+          <div style="position:absolute;bottom:30%;left:0;right:0;height:1px;background:rgba(232,227,216,.08)"></div>
+          <!-- Moving car -->
+          <div id="bmw-car" style="position:absolute;bottom:calc(30% + 2px)">
+            <svg width="64" height="32" viewBox="0 0 64 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="8" y="14" width="48" height="12" rx="3" fill="rgba(232,227,216,.15)" stroke="rgba(232,227,216,.3)" stroke-width="1"/>
+              <path d="M16 14 L22 6 L42 6 L48 14" fill="rgba(232,227,216,.1)" stroke="rgba(232,227,216,.3)" stroke-width="1"/>
+              <circle cx="18" cy="27" r="4" fill="rgba(232,227,216,.1)" stroke="rgba(232,227,216,.35)" stroke-width="1.5"/>
+              <circle cx="46" cy="27" r="4" fill="rgba(232,227,216,.1)" stroke="rgba(232,227,216,.35)" stroke-width="1.5"/>
+              <rect x="50" y="17" width="4" height="4" rx="1" fill="rgba(251,191,36,.5)"/>
+              <rect x="10" y="17" width="4" height="4" rx="1" fill="rgba(232,80,80,.4)"/>
+            </svg>
+          </div>
+          <!-- Text -->
+          <div style="text-align:center;position:relative;z-index:2;margin-top:40px">
+            <div style="font-family:var(--fh);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(251,191,36,.8);margin-bottom:10px">Fahrzeug in Anlieferung</div>
+            <div style="font-size:13px;font-weight:300;color:var(--tx3);line-height:1.7">Fahrzeugfotos folgen in Kürze.<br/>Jetzt anfragen &amp; vormerken lassen.</div>
+          </div>
+        </div>
       </div>
     </div>
+<style>
+@keyframes drive{0%{left:-80px}100%{left:calc(100% + 80px)}}
+#bmw-car{animation:drive 3.5s linear infinite}
+</style>
 
     <!-- SPECS — JB Style -->
     <div class="sp sr d1">
