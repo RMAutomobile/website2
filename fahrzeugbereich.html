@@ -20,7 +20,13 @@
   --fh:'Plus Jakarta Sans',sans-serif;--fb:'DM Sans',sans-serif;
   --ease:cubic-bezier(.22,1,.36,1);
 }
-html,body{overflow-x:hidden}html{scroll-behavior:smooth}
+html,body{overflow-x:hidden;max-width:100vw}html{scroll-behavior:smooth}
+/* OVERFLOW FIX — prevents horizontal scroll on all screens */
+*{max-width:100%}
+img,video{max-width:100%;height:auto}
+.page{width:100%;overflow:hidden}
+.vh,.body,.fi,.sg,.sg-row,.ci,.ankauf{min-width:0}
+
 body{font-family:var(--fb);background:var(--bg);color:var(--tx);-webkit-font-smoothing:antialiased}
 a{text-decoration:none;color:inherit}img{display:block;max-width:100%}
 
@@ -72,9 +78,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:76px;display:flex;ali
 .f-count{margin-left:auto;font-size:11px;font-weight:300;color:var(--tx3)}
 
 /* CAR LIST — horizontal rows like JB */
-.cl{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--ln)}
+.cl{display:flex;flex-direction:column;gap:16px;padding-top:0;border-top:none}
 
-.ci{display:grid;grid-template-columns:320px 1fr auto;border-bottom:1px solid var(--ln);cursor:pointer;transition:background .25s}
+.ci{display:grid;grid-template-columns:320px 1fr auto;border:1px solid var(--ln);cursor:pointer;transition:background .25s}
 .ci:hover{background:var(--s1)}
 
 /* Image */
@@ -179,6 +185,21 @@ footer{background:var(--bg);padding:56px 64px 30px;border-top:1px solid var(--ln
   .filters{overflow-x:auto;flex-wrap:nowrap;padding-bottom:16px}
   .fb2{flex-shrink:0}
 }
+
+/* MOBILE GRID COLLAPSE */
+@media(max-width:860px){
+  .ci{grid-template-columns:1fr !important}
+  .ci-img{height:180px}
+  .ci-right{border-left:none;border-top:1px solid var(--ln);flex-direction:row;align-items:center;justify-content:space-between;padding:14px 16px}
+  .ci-info{padding:16px 16px 0}
+  .ankauf{grid-template-columns:1fr !important;gap:20px}
+  .filters{flex-wrap:wrap}
+}
+@media(max-width:480px){
+  .fi{grid-template-columns:1fr !important}
+  .ci-specs{flex-wrap:wrap}
+  .ci-spec{border-right:none;padding-right:8px;margin-right:0}
+}
 </style>
 </head>
 <body>
@@ -246,7 +267,7 @@ footer{background:var(--bg);padding:56px 64px 30px;border-top:1px solid var(--ln
       <div class="ci-right">
         <div>
           <div class="ci-price">8.980 €</div>
-          <div class="ci-note">inkl. MwSt.</div>
+          
         </div>
         <a href="/fahrzeug-i10.html" class="ci-cta">Details ansehen <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
@@ -274,7 +295,7 @@ footer{background:var(--bg);padding:56px 64px 30px;border-top:1px solid var(--ln
       <div class="ci-right">
         <div>
           <div class="ci-price">1.790 €</div>
-          <div class="ci-note">inkl. MwSt.</div>
+          
         </div>
         <a href="/fahrzeug-seat-ibiza.html" class="ci-cta">Details ansehen <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
@@ -301,7 +322,7 @@ footer{background:var(--bg);padding:56px 64px 30px;border-top:1px solid var(--ln
       <div class="ci-right">
         <div>
           <div class="ci-price">12.980 €</div>
-          <div class="ci-note">inkl. MwSt.</div>
+          
         </div>
         <a href="/fahrzeug-bmw320d.html" class="ci-cta">Details ansehen <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
       </div>
