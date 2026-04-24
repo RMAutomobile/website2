@@ -67,8 +67,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:0 60px;height:88px;d
 
 /* Gallery — constrained height */
 .gw{}
-.gm{position:relative;overflow:hidden;background:var(--s1);cursor:zoom-in;line-height:0}
-.gm img{width:100%;height:auto;aspect-ratio:4/3;object-fit:contain;object-position:center;display:block;background:var(--s1)}
+.gm{position:relative;overflow:hidden;background:var(--s1);cursor:zoom-in;line-height:0;width:100%}
+.gm img{width:100%;height:auto;aspect-ratio:4/3;object-fit:contain;object-position:center;display:block;background:var(--s1);max-width:100%}
 .gm:hover img{transform:scale(1.01)}
 .gbadge{position:absolute;top:12px;left:12px;display:flex;align-items:center;gap:5px;font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;padding:5px 10px;background:rgba(111,207,151,.1);border:1px solid var(--grn3);color:var(--grn);backdrop-filter:blur(8px);z-index:5}
 .gbadge::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--grn);flex-shrink:0}
@@ -99,7 +99,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:0 60px;height:88px;d
 
 /* JB 3-col horizontal spec grid */
 .sg{margin-bottom:22px}
-.sg-row{display:grid;grid-template-columns:1fr 1fr 1fr;padding:14px 0}
+.sg-row{display:grid;grid-template-columns:1fr 1fr 1fr;padding:16px 0;row-gap:8px}
 .sg-div{height:1px;background:var(--ln)}
 .sgk{font-size:11px;font-weight:300;color:var(--tx3);margin-bottom:5px}
 .sgv{font-family:var(--fh);font-size:13px;font-weight:600;color:var(--tx)}
@@ -221,15 +221,15 @@ footer{background:var(--bg);padding:56px 64px 30px;border-top:1px solid var(--ln
 @media(max-width:768px){
   nav{padding:0 20px;height:72px}
   .nl img{height:38px}
-  .nm{display:none}
-  .nb{display:flex}
+  .nav-links{display:none}
+  .nav-burger{display:flex}
   .page{padding:0 20px}
   .gm img{height:auto;aspect-ratio:4/3}
   .gt{width:56px;height:38px}
   .sp{padding-top:0}
   .sp-name{font-size:20px}
   .sp-price{font-size:24px}
-  .sg-row{grid-template-columns:1fr 1fr}
+  .sg-row{grid-template-columns:1fr 1fr;row-gap:14px;padding:12px 0}
   .body{padding-top:32px}
   .ds{margin-bottom:28px}
   .eq{columns:2;column-gap:0}
@@ -242,7 +242,7 @@ footer{background:var(--bg);padding:56px 64px 30px;border-top:1px solid var(--ln
 @media(max-width:480px){
   .fi{grid-template-columns:1fr}
   .eq{columns:1}
-  .sg-row{grid-template-columns:1fr 1fr}
+  .sg-row{grid-template-columns:1fr 1fr;row-gap:14px;padding:12px 0}
   .sp-price{font-size:22px}
   .sp-name{font-size:18px}
   .vh{gap:14px}
