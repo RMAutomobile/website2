@@ -137,7 +137,9 @@ h1 .g{color:rgba(232,227,216,.48)}
   #fz-section{padding-left:0!important;padding-right:0!important}
   #fz-section>div:first-child{padding-left:20px;padding-right:20px}
   #fz-section>div:last-child{padding-left:20px;padding-right:20px}
-  .fz-grid-3{display:flex!important;flex-direction:row!important;overflow-x:auto!important;scroll-snap-type:x mandatory!important;-webkit-overflow-scrolling:touch!important;gap:16px!important;padding-bottom:20px!important;scrollbar-width:none!important;padding-left:20px!important;padding-right:20px!important}
+  .fz-grid-3{display:flex!important;flex-direction:row!important;overflow-x:auto!important;scroll-snap-type:x mandatory!important;-webkit-overflow-scrolling:touch!important;gap:16px!important;padding-bottom:20px!important;scrollbar-width:none!important;padding-left:20px!important;padding-right:20px!important;scroll-padding-left:20px!important}
+  .fz-grid-3::-webkit-scrollbar{display:none}
+  .fzg-card{scroll-snap-align:start;flex-shrink:0;width:calc(85vw)!important;min-width:0!important}
   .fz-grid-3::-webkit-scrollbar{display:none!important}
   .fz-grid-3 .fzg-card{flex:0 0 80vw!important;max-width:80vw!important;scroll-snap-align:start!important}
   .fz-dots{display:flex!important}
@@ -147,16 +149,14 @@ h1 .g{color:rgba(232,227,216,.48)}
 .fz-dots{display:none;justify-content:center;gap:8px;margin-top:24px}
 .fz-dot{width:8px;height:8px;border-radius:50%;background:var(--bo2);transition:all .3s;cursor:pointer;border:none}
 .fz-dot.on{background:var(--grn);transform:scale(1.3)}
-/* Logo Band */
-.brand-txt{font-family:var(--fh);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,227,216,.22);white-space:nowrap;flex-shrink:0;transition:color .4s;cursor:default}
-.brand-txt:hover{color:rgba(232,227,216,.6)}
-.logo-fade-l{position:absolute;left:0;top:0;bottom:0;width:100px;background:linear-gradient(to right,var(--c2),transparent);z-index:2;pointer-events:none}
-.logo-fade-r{position:absolute;right:0;top:0;bottom:0;width:100px;background:linear-gradient(to left,var(--c2),transparent);z-index:2;pointer-events:none}
-@keyframes logoscroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-@media(prefers-reduced-motion:reduce){#logo-track{animation:none}}
+
+
+
+100%{transform:translateX(-50%)}}
+
 /* Leistungen Accordion */
 .leist-items{display:flex;flex-direction:column;border-top:1px solid var(--bo)}
-.leist-item{display:grid;grid-template-columns:200px 1fr 40px;gap:32px;align-items:start;padding:36px 0;border-bottom:1px solid var(--bo);cursor:pointer;transition:background .3s;position:relative}
+.leist-item{display:grid;grid-template-columns:200px 1fr 40px;gap:32px;align-items:start;padding:44px 0;border-bottom:1px solid var(--bo);cursor:pointer;transition:background .3s;position:relative}
 .leist-item::after{content:'';position:absolute;bottom:-1px;left:0;width:0;height:1px;background:var(--grn);transition:width .6s var(--ease)}
 .leist-item.open::after{width:100%}
 .leist-item:hover{background:rgba(111,207,151,.02)}
@@ -173,7 +173,7 @@ h1 .g{color:rgba(232,227,216,.48)}
 .leist-link{display:inline-flex;align-items:center;gap:7px;font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grn);text-decoration:none;transition:gap .3s}
 .leist-link:hover{gap:12px}
 .leist-cta{display:inline-flex;align-items:center;gap:9px;padding:12px 24px;border:1px solid var(--bo2);font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx2);transition:all .3s var(--ease);text-decoration:none}.leist-cta:hover{border-color:var(--grn-bd);color:var(--grn)}
-.leist-item-toggle{font-size:20px;font-weight:300;color:var(--tx3);line-height:1;padding-top:6px;transition:transform .4s var(--ease),color .3s;text-align:center}
+.leist-item-toggle{width:32px;height:32px;border:1px solid var(--bo);display:flex;align-items:center;justify-content:center;font-size:13px;color:var(--tx3);padding-top:6px;transition:transform .4s var(--ease),color .3s,border-color .3s}
 .leist-item.open .leist-cta{display:inline-flex;align-items:center;gap:9px;padding:12px 24px;border:1px solid var(--bo2);font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx2);transition:all .3s var(--ease);text-decoration:none}.leist-cta:hover{border-color:var(--grn-bd);color:var(--grn)}
 .leist-item-toggle{transform:rotate(45deg);color:var(--grn)}
 @media(max-width:1100px){#leistungen-sec{padding:80px 32px!important}#leistungen-sec>div{grid-template-columns:280px 1fr!important;gap:48px!important}}@media(max-width:900px){#leistungen-sec{padding:72px 20px!important}#leistungen-sec>div{grid-template-columns:1fr!important;gap:32px!important}#leistungen-sec>div>div:first-child{position:static!important}.leist-item{grid-template-columns:1fr 32px;gap:16px;padding:24px 0}.leist-item-left{flex-direction:row;align-items:baseline;gap:12px}.leist-item-title{font-size:17px}}
@@ -342,41 +342,7 @@ h1 .g{color:rgba(232,227,216,.48)}
     </div></div>
   </div>
 </section>
-<!-- MARKEN + LEISTUNGEN SECTION -->
-<section style="padding:0;background:var(--page);border-top:1px solid var(--bo);overflow:hidden">
-  <div style="position:relative;padding:26px 0;border-bottom:1px solid var(--bo)">
-    <div class="logo-fade-l"></div>
-    <div class="logo-fade-r"></div>
-    <div id="logo-track" style="display:flex;gap:56px;align-items:center;width:max-content;animation:logoscroll 40s linear infinite">
-      <span class="brand-txt">Volkswagen</span>
-      <span class="brand-txt">BMW</span>
-      <span class="brand-txt">Mercedes-Benz</span>
-      <span class="brand-txt">Audi</span>
-      <span class="brand-txt">Toyota</span>
-      <span class="brand-txt">Ford</span>
-      <span class="brand-txt">Hyundai</span>
-      <span class="brand-txt">Kia</span>
-      <span class="brand-txt">Skoda</span>
-      <span class="brand-txt">Mazda</span>
-      <span class="brand-txt">Nissan</span>
-      <span class="brand-txt">Fiat</span>
-      <span class="brand-txt">Jaguar</span>
-      <span class="brand-txt">Volkswagen</span>
-      <span class="brand-txt">BMW</span>
-      <span class="brand-txt">Mercedes-Benz</span>
-      <span class="brand-txt">Audi</span>
-      <span class="brand-txt">Toyota</span>
-      <span class="brand-txt">Ford</span>
-      <span class="brand-txt">Hyundai</span>
-      <span class="brand-txt">Kia</span>
-      <span class="brand-txt">Skoda</span>
-      <span class="brand-txt">Mazda</span>
-      <span class="brand-txt">Nissan</span>
-      <span class="brand-txt">Fiat</span>
-      <span class="brand-txt">Jaguar</span>
-    </div>
-  </div>
-</section>
+
 
 <!-- LEISTUNGEN SECTION -->
 <section style="padding:100px 60px;background:var(--page);border-top:1px solid var(--bo)" id="leistungen-sec">
@@ -407,7 +373,7 @@ h1 .g{color:rgba(232,227,216,.48)}
           </div>
           <a href="/fahrzeugbereich.html" class="leist-link">Fahrzeuge ansehen &#8594;</a>
         </div>
-        <div class="leist-item-toggle">+</div>
+        <div class="leist-item-toggle">&#8595;</div>
       </div>
 
       <div class="leist-item sr d1" onclick="toggleLeist(this)">
@@ -426,7 +392,7 @@ h1 .g{color:rgba(232,227,216,.48)}
           </div>
           <a href="/mein-fahrzeug-verkaufen.html" class="leist-link">Jetzt bewerten lassen &#8594;</a>
         </div>
-        <div class="leist-item-toggle">+</div>
+        <div class="leist-item-toggle">&#8595;</div>
       </div>
 
       <div class="leist-item sr d2" onclick="toggleLeist(this)">
@@ -445,7 +411,7 @@ h1 .g{color:rgba(232,227,216,.48)}
           </div>
           <a href="/kontakt.html" class="leist-link">Termin vereinbaren &#8594;</a>
         </div>
-        <div class="leist-item-toggle">+</div>
+        <div class="leist-item-toggle">&#8595;</div>
       </div>
 
       <div class="leist-item sr d3" onclick="toggleLeist(this)">
@@ -464,7 +430,7 @@ h1 .g{color:rgba(232,227,216,.48)}
           </div>
           <a href="/kontakt.html" class="leist-link">Anfrage stellen &#8594;</a>
         </div>
-        <div class="leist-item-toggle">+</div>
+        <div class="leist-item-toggle">&#8595;</div>
       </div>
 
     </div>
@@ -548,7 +514,13 @@ function closeMenu(){document.getElementById('mob-menu').classList.remove('open'
 var _o=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');_o.unobserve(x.target)}});},{threshold:0.08,rootMargin:'0px 0px -24px 0px'});document.querySelectorAll('.sr').forEach(function(el){_o.observe(el);});
 // Mobile Slider Dots
 function scrollToCard(i){var s=document.getElementById('fz-slider');var cards=s.querySelectorAll('.fzg-card');if(cards[i])s.scrollTo({left:cards[i].offsetLeft-20,behavior:'smooth'});}
-window.addEventListener('DOMContentLoaded',function(){var s=document.getElementById('fz-slider');var dots=document.querySelectorAll('.fz-dot');if(s&&dots.length){s.addEventListener('scroll',function(){var cards=s.querySelectorAll('.fzg-card');var si=s.scrollLeft;var ci=0;cards.forEach(function(c,i){if(c.offsetLeft-20<=si+10)ci=i;});dots.forEach(function(d,i){d.classList.toggle('on',i===ci);});},{passive:true});}});
+window.addEventListener('DOMContentLoaded',function(){var s=document.getElementById('fz-slider');var dots=document.querySelectorAll('.fz-dot');if(s&&dots.length){
+    // Präzise Dot-Erkennung via IntersectionObserver
+    var obs=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting&&entry.intersectionRatio>=0.5){var cards=Array.from(s.querySelectorAll('.fzg-card'));var idx=cards.indexOf(entry.target);if(idx>=0)dots.forEach(function(d,i){d.classList.toggle('on',i===idx);});}});},{root:s,threshold:0.5});
+    s.querySelectorAll('.fzg-card').forEach(function(card){obs.observe(card);});
+    // Dot Click scrollt zu Karte
+    dots.forEach(function(d,i){d.addEventListener('click',function(){var cards=s.querySelectorAll('.fzg-card');if(cards[i])cards[i].scrollIntoView({behavior:'smooth',block:'nearest',inline:'start'});});});
+  }});
 // Hero animation
 var _css='.hero-eye{opacity:0;transform:translateY(12px);transition:opacity .8s,transform .8s}';
 _css+='.hero-sub,.hero-btns{opacity:0;transform:translateY(14px);transition:opacity .8s,transform .8s}';
