@@ -93,9 +93,12 @@ h1.ph .g{color:rgba(232,227,216,.52)}
 @media(max-width:1100px){.team-extended{grid-template-columns:1fr}.team-person{grid-template-columns:1fr 1fr}}
 @media(max-width:768px){.team-person{grid-template-columns:1fr}.tp-text{display:none}}
 </style>
-<script defer src="https://www.googletagmanager.com/gtag/js?id=G-XDZRP2W3X9"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XDZRP2W3X9');</script>
-<link rel="icon" href="/img/favicon.jpg"/>
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
 </head><body><nav role="navigation"><a href="/index.html" class="nav-logo"><img src="/img/rm_logo_white.svg" alt="R&amp;M Automobile" loading="eager" width="160" height="46"/></a><ul class="nav-links"><li><a href="/index.html">Startseite</a></li><li><a href="/uber-uns.html" aria-current="page">&#220;ber Uns</a></li><li><a href="/fahrzeugbereich.html">Fahrzeuge</a></li><li><a href="/mein-fahrzeug-verkaufen.html">Auto verkaufen</a></li><li><a href="/kontakt.html" class="nav-pill">Kontakt</a></li></ul><button class="nav-burger" id="burger" onclick="toggleMenu()" aria-label="Men&#252; &#246;ffnen" aria-expanded="false"><span></span><span></span><span></span></button></nav><div class="mob-menu" id="mob-menu" role="dialog" aria-modal="true"><a href="/index.html" onclick="closeMenu()">Startseite</a><a href="/uber-uns.html" onclick="closeMenu()">&#220;ber Uns</a><a href="/fahrzeugbereich.html" onclick="closeMenu()">Fahrzeuge</a><a href="/mein-fahrzeug-verkaufen.html" onclick="closeMenu()">Auto verkaufen</a><a href="/kontakt.html" onclick="closeMenu()">Kontakt</a></div><main>
 <div class="page-hero">
   <div class="page-hero-left sr">
@@ -175,5 +178,17 @@ window.addEventListener('DOMContentLoaded',function(){var c=localStorage.getItem
 function toggleMenu(){var m=document.getElementById('mob-menu'),b=document.getElementById('burger');if(m.classList.contains('open')){m.classList.remove('open');b.classList.remove('open');document.body.style.overflow='';}else{m.classList.add('open');b.classList.add('open');document.body.style.overflow='hidden';}}
 function closeMenu(){document.getElementById('mob-menu').classList.remove('open');document.getElementById('burger').classList.remove('open');document.body.style.overflow='';}
 var _o=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');_o.unobserve(x.target)}});},{threshold:0.08,rootMargin:'0px 0px -24px 0px'});document.querySelectorAll('.sr').forEach(function(el){_o.observe(el);});
+</script>
+<script>
+window.addEventListener('load',function(){
+  var s=document.createElement('script');
+  s.src='https://www.googletagmanager.com/gtag/js?id=G-XDZRP2W3X9';
+  s.async=true;
+  document.head.appendChild(s);
+  window.dataLayer=window.dataLayer||[];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());
+  gtag('config','G-XDZRP2W3X9',{'send_page_view':true});
+});
 </script>
 </body></html>
