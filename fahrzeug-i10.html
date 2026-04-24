@@ -20,7 +20,7 @@
   --fh:'Plus Jakarta Sans',sans-serif;--fb:'DM Sans',sans-serif;
   --ease:cubic-bezier(.22,1,.36,1);
 }
-html,body{overflow-x:hidden;max-width:100vw}html{scroll-behavior:smooth}
+html,body{overflow-x:hidden;max-width:100vw;width:100%}html{scroll-behavior:smooth}
 /* OVERFLOW FIX */
 img,video{max-width:100%}
 .nl img{max-width:none;width:auto}
@@ -66,7 +66,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:0 60px;height:88px;d
 .vh{display:grid;grid-template-columns:minmax(0,1fr) 380px;gap:48px;align-items:start}
 
 /* Gallery — constrained height */
-.gw{}
+.gw{width:100%;overflow:hidden}
 .gm{position:relative;overflow:hidden;background:var(--s1);cursor:zoom-in;line-height:0;width:100%}
 .gm img{width:100%;height:auto;aspect-ratio:4/3;object-fit:contain;object-position:center;display:block;background:var(--s1);max-width:100%}
 .gm:hover img{transform:scale(1.01)}
@@ -223,8 +223,10 @@ footer{background:var(--bg);padding:56px 64px 30px;border-top:1px solid var(--ln
   .nl img{height:38px}
   .nav-links{display:none}
   .nav-burger{display:flex}
-  .page{padding:0 20px}
-  .gm img{height:auto;aspect-ratio:4/3}
+  .page{padding:0 16px}
+  .gw{width:100vw;margin-left:-16px;margin-right:-16px}
+  .gm{width:100%;overflow:hidden}
+  .gm img{height:auto;aspect-ratio:4/3;width:100%;object-fit:cover}
   .gt{width:56px;height:38px}
   .sp{padding-top:0}
   .sp-name{font-size:20px}
