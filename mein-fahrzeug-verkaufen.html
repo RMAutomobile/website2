@@ -262,8 +262,8 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
             <input type="hidden" name="scheckheft" id="h-sh"/>
           </div>
           <div class="fg-row">
-            <div class="fg"><label>T&#220;V g&#252;ltig bis</label><input type="text" name="tuev_bis" placeholder="MM/JJJJ" maxlength="7" inputmode="numeric" id="inp-tuev"/></div>
-            <div class="fg"><label>Letzter Service</label><input type="text" name="letzter_service" placeholder="MM/JJJJ" maxlength="7" inputmode="numeric" id="inp-service"/></div>
+            <div class="fg"><label>T&#220;V g&#252;ltig bis</label><input type="text" name="tuev_bis" placeholder="MM/JJJJ" maxlength="7" id="inp-tuev" inputmode="numeric" pattern="\d{2}/\d{4}" title="Format: MM/JJJJ"/></div>
+            <div class="fg"><label>Letzter Service</label><input type="text" name="letzter_service" placeholder="MM/JJJJ" maxlength="7" id="inp-service" inputmode="numeric" pattern="\d{2}/\d{4}" title="Format: MM/JJJJ"/></div>
           </div>
           <div class="fg-row">
             <div class="fg"><label>Vorbesitzer</label><select name="vorbesitzer"><option value="" disabled selected>W&#228;hlen</option><option>1</option><option>2</option><option>3</option><option>4+</option><option>Unbekannt</option></select></div>
@@ -275,8 +275,17 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
               <input type="hidden" name="import" id="h-import"/>
             </div>
             <div class="fg"><label>Finanzierung offen?</label>
-              <div class="rg" id="rg-fin"><div class="rb" onclick="setR('fin','Nein',this)">Nein</div><div class="rb" onclick="setR('fin','Ja',this)">Ja</div></div>
+              <div class="rg" id="rg-fin">
+                <div class="rb" onclick="setR('fin','Nein',this);document.getElementById('fin-detail').style.display='none'">Nein</div>
+                <div class="rb" onclick="setR('fin','Ja',this);document.getElementById('fin-detail').style.display='block'">Ja</div>
+              </div>
               <input type="hidden" name="finanzierung_offen" id="h-fin"/>
+              <div id="fin-detail" style="display:none;margin-top:8px;display:none">
+                <div class="fg-row" style="margin-top:0">
+                  <div class="fg"><label>Welche Bank</label><input type="text" name="fin_bank" placeholder="z.B. VW Bank, Santander..."/></div>
+                  <div class="fg"><label>Restsumme ca.</label><input type="text" name="fin_betrag" placeholder="z.B. 4.500 &#8364;" inputmode="numeric"/></div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="fg-row">
@@ -319,8 +328,6 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
               <div class="tech-row"><span class="tech-label">Lenkung</span><div class="tech-btns"><button type="button" class="tb yes" onclick="setTech(this,'lenk','OK')">OK</button><button type="button" class="tb no" onclick="setTech(this,'lenk','Defekt')">Defekt</button></div><input type="hidden" name="lenkung_ok" id="h-lenk"/></div>
               <div class="tech-row"><span class="tech-label">Fahrwerk</span><div class="tech-btns"><button type="button" class="tb yes" onclick="setTech(this,'fahr','OK')">OK</button><button type="button" class="tb no" onclick="setTech(this,'fahr','Defekt')">Defekt</button></div><input type="hidden" name="fahrwerk_ok" id="h-fahr"/></div>
               <div class="tech-row"><span class="tech-label">Klimaanlage</span><div class="tech-btns"><button type="button" class="tb yes" onclick="setTech(this,'klima','OK')">OK</button><button type="button" class="tb no" onclick="setTech(this,'klima','Defekt')">Defekt</button></div><input type="hidden" name="klima_ok" id="h-klima"/></div>
-              <div class="tech-row"><span class="tech-label">Lack</span><div class="tech-btns"><button type="button" class="tb yes" onclick="setTech(this,'lack','OK')">OK</button><button type="button" class="tb no" onclick="setTech(this,'lack','Sch&#228;den')">Sch&#228;den</button></div><input type="hidden" name="lack_ok" id="h-lack"/></div>
-              <div class="tech-row"><span class="tech-label">Rost</span><div class="tech-btns"><button type="button" class="tb yes" onclick="setTech(this,'rost','Kein Rost')">Kein</button><button type="button" class="tb no" onclick="setTech(this,'rost','Rost vorhanden')">Vorhanden</button></div><input type="hidden" name="rost" id="h-rost"/></div>
               <div class="tech-row"><span class="tech-label">Warnleuchten</span><div class="tech-btns"><button type="button" class="tb yes" onclick="setTech(this,'warn','Keine');document.getElementById('warn-detail').style.display='none'">Keine</button><button type="button" class="tb no" onclick="setTech(this,'warn','Aktiv');document.getElementById('warn-detail').style.display='block'">Aktiv</button></div><input type="hidden" name="warnleuchten" id="h-warn"/></div>
             </div>
             <div id="warn-detail" style="display:none;margin-top:8px">
@@ -328,6 +335,7 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
             </div>
           </div>
           <div class="fg" style="margin-top:12px"><label>Preisvorstellung *</label><input type="text" name="preisvorstellung" id="inp-preis" placeholder="z.B. 8.000 &#8364;" required inputmode="numeric" maxlength="12"/></div>
+          <div class="fg"><label>Fahrgestellnummer (FIN) <span style="color:var(--tx3);font-size:10px">optional &#183; 17 Zeichen</span></label><input type="text" name="fin" id="inp-fin" placeholder="z.B. WBA3A5C51CF256985" maxlength="17" style="text-transform:uppercase" autocomplete="off" spellcheck="false"/><div id="fin-count" style="font-size:10px;color:var(--tx4);margin-top:4px;text-align:right">0 / 17</div></div>
           <div class="form-nav"><button class="btn-prev" type="button" onclick="goStep(5,4)">&#8249; Zur&#252;ck</button><button class="btn-next" type="button" onclick="goStep(5,6)">Weiter &#8250;</button></div>
         </div>
         <!-- S6 -->
@@ -355,7 +363,7 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
         <div style="text-align:center;padding-bottom:20px;border-bottom:1px solid var(--bo);margin-bottom:20px">
           <div style="font-size:28px;margin-bottom:10px;color:var(--grn)">&#10003;</div>
           <div style="font-family:var(--fh);font-size:17px;font-weight:700;margin-bottom:8px;color:var(--tx)">Anfrage erhalten!</div>
-          <p style="font-size:13px;font-weight:300;color:var(--tx3);line-height:1.8;margin-bottom:16px">Wir melden uns pers&#246;nlich bei Ihnen.<br/>Dringend? <a href="tel:+4915161569871" style="color:var(--grn)">+49 1516 1569871</a></p>
+          <p style="font-size:13px;font-weight:300;color:var(--tx3);line-height:1.8;margin-bottom:16px">Wir melden uns <strong style="color:var(--tx)">innerhalb 2 Stunden</strong> (w&#228;hrend unserer &#214;ffnungszeiten) mit einem pers&#246;nlichen Angebot bei Ihnen.<br/><span style="font-size:11px">Mo&#8211;Fr 9&#8211;18 Uhr &middot; Sa 9&#8211;14 Uhr</span><br/><br/>Sofort erreichbar: <a href="tel:+4915161569871" style="color:var(--grn)">+49 1516 1569871</a></p>
         </div>
         <div>
           <div style="font-family:var(--fh);font-size:13px;font-weight:700;color:var(--tx);margin-bottom:6px">&#128247; Fotos mitschicken &#8211; je mehr desto besser</div>
@@ -454,17 +462,36 @@ function setRat(g,v,el){document.querySelectorAll('#rg-'+g+' .ratb').forEach(fun
 function setTech(btn,k,v){var row=btn.closest('.tech-row');row.querySelectorAll('.tb').forEach(function(b){b.classList.remove('sel');});btn.classList.add('sel');document.getElementById('h-'+k).value=v;}
 function faqT(el){var item=el.parentElement,open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});if(!open)item.classList.add('open');}
 function submitAnkauf(){var f=document.getElementById('ankauf-form');var d=new FormData(f);fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(d))}).then(function(r){return r.json();}).then(function(res){if(res.success){f.style.display='none';document.getElementById('ankauf-success').style.display='block';}else{alert('Fehler beim Senden. Bitte versuchen Sie es erneut.');}}).catch(function(){f.style.display='none';document.getElementById('ankauf-success').style.display='block';});}
+// FIN Formatierung
+window.addEventListener('DOMContentLoaded',function(){
+  var fin=document.getElementById('inp-fin');
+  var cnt=document.getElementById('fin-count');
+  if(fin){
+    fin.addEventListener('input',function(){
+      // Nur erlaubte Zeichen: A-H, J-N, P-Z, 0-9
+      var v=this.value.toUpperCase().replace(/[^A-HJ-NPR-Z0-9]/g,'').substring(0,17);
+      this.value=v;
+      if(cnt)cnt.textContent=v.length+' / 17';
+      if(v.length===17)cnt.style.color='var(--grn)';
+      else cnt.style.color='var(--tx4)';
+    });
+  }
+});
 function sendFotosMail(){
   var f=document.getElementById('ankauf-form');
   var d=f?new FormData(f):new FormData();
   var marke=d.get('marke')||'';
   var modell=d.get('modell')||'';
-  var subject=encodeURIComponent('Fotos Ankaufanfrage – '+marke+' '+modell);
-  var body=encodeURIComponent('Hallo R&M Automobile,\n\nanbei sende ich Ihnen Fotos zu meinem Fahrzeug.\n\nFahrzeug: '+marke+' '+modell+'\n\nBitte nehmen Sie mein Angebot in Kürze in Bearbeitung.\n\nMit freundlichen Grüßen');
-  window.location.href='mailto:ankauf@rmauto-mobile.de?subject='+subject+'&body='+body;
+  var subject='Fotos Ankaufanfrage – '+marke+' '+modell;
+  var body='Hallo R&M Automobile,%0A%0AAnbei sende ich Ihnen Fotos zu meinem Fahrzeug.%0A%0AFahrzeug: '+marke+' '+modell+'%0A%0AMit freundlichen Grüßen';
+  var a=document.createElement('a');
+  a.href='mailto:ankauf@rmauto-mobile.de?subject='+encodeURIComponent(subject)+'&body='+body;
+  a.click();
 }
 function sendWhatsApp(){var f=document.getElementById('ankauf-form');var d=new FormData(f);var g=function(k){return d.get(k)||'-';};var L=['R&M Automobile - Ankaufanfrage','','Hey, ich möchte mein Fahrzeug verkaufen!','','Fahrzeug: '+g('marke')+' '+g('modell'),'Kraftstoff: '+g('kraftstoff')+' | Getriebe: '+g('getriebe'),'EZ: '+g('erstzulassung')+' | PS: '+g('ps'),'KM: '+g('km'),'Farbe: '+g('farbe'),'Unfallfrei: '+g('unfallfrei'),'Scheckheft: '+g('scheckheft'),'Fahrbereit: '+g('fahrbereit'),'Motor: '+g('motor_ok')+' | Getriebe: '+g('getriebe_ok'),'Klima: '+g('klima_ok')+' | Warnleuchten: '+g('warnleuchten'),'Preisvorstellung: '+g('preisvorstellung'),'Import: '+g('import'),'Finanzierung offen: '+g('finanzierung_offen'),'','Kontakt: '+g('name')+' | '+g('telefon')+'','Fotos folgen gleich!'];window.open('https://wa.me/4915161569871?text='+encodeURIComponent(L.join('\n')),'_blank');}
-window.addEventListener('DOMContentLoaded',function(){var km=document.getElementById('inp-km');if(km){km.addEventListener('input',function(){var v=this.value.replace(/\D/g,'');this.value=v.replace(/\B(?=(\d{3})+(?!\d))/g,'.');});}var ez=document.getElementById('inp-ez');if(ez){ez.addEventListener('input',function(){var v=this.value.replace(/\D/g,'');if(v.length>2)v=v.substring(0,2)+'/'+v.substring(2,6);this.value=v;});}});
+window.addEventListener('DOMContentLoaded',function(){var km=document.getElementById('inp-km');if(km){km.addEventListener('input',function(){var v=this.value.replace(/\D/g,'');this.value=v.replace(/\B(?=(\d{3})+(?!\d))/g,'.');});}var ez=document.getElementById('inp-ez');if(ez){ez.addEventListener('keypress',function(e){if(!/[0-9]/.test(e.key))e.preventDefault();});ez.addEventListener('input',function(){var v=this.value.replace(/\D/g,'');if(v.length>2)v=v.substring(0,2)+'/'+v.substring(2,6);this.value=v;});}
+  function fmtDateOnly(id){var el=document.getElementById(id);if(!el)return;el.addEventListener('keypress',function(e){if(!/[0-9]/.test(e.key))e.preventDefault();});el.addEventListener('input',function(){var v=this.value.replace(/\D/g,'');if(v.length>2)v=v.substring(0,2)+'/'+v.substring(2,6);this.value=v;});}
+  fmtDateOnly('inp-tuev');fmtDateOnly('inp-service');});
 </script>
 <script>
 window.addEventListener('load',function(){
