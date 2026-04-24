@@ -434,7 +434,7 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
 <script>
 function setCookie(v){localStorage.setItem('rm_cookies',v);document.getElementById('cookie-banner').classList.remove('show');if(v==='accepted')loadMaps();}
 function loadMaps(){document.querySelectorAll('[data-map-src]').forEach(function(el){var f=document.createElement('iframe');f.src=el.dataset.mapSrc;f.style.cssText='width:100%;height:100%;border:none;display:block;filter:grayscale(55%) contrast(1.05)';f.allowFullscreen=true;f.loading='lazy';f.referrerPolicy='no-referrer-when-downgrade';el.replaceWith(f);});}
-window.addEventListener('DOMContentLoaded',function(){var c=localStorage.getItem('rm_cookies');if(!c)setTimeout(function(){var b=document.getElementById('cookie-banner');if(b)b.classList.add('show');},900);else if(c==='accepted')loadMaps();var el=document.getElementById('email-link2');if(el)el.href='mai'+'lto:'+'info'+'@'+'rmauto-mobile.de';var af=document.getElementById('ankauf-form');if(af)af.addEventListener('submit',function(e){e.preventDefault();submitAnkauf();});});
+
 function toggleMenu(){var m=document.getElementById('mob-menu'),b=document.getElementById('burger');if(m.classList.contains('open')){m.classList.remove('open');b.classList.remove('open');document.body.style.overflow='';}else{m.classList.add('open');b.classList.add('open');document.body.style.overflow='hidden';}}
 function closeMenu(){document.getElementById('mob-menu').classList.remove('open');document.getElementById('burger').classList.remove('open');document.body.style.overflow='';}
 var _o=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');_o.unobserve(x.target)}});},{threshold:0.08});document.querySelectorAll('.sr').forEach(function(el){_o.observe(el);});
@@ -462,36 +462,54 @@ function setRat(g,v,el){document.querySelectorAll('#rg-'+g+' .ratb').forEach(fun
 function setTech(btn,k,v){var row=btn.closest('.tech-row');row.querySelectorAll('.tb').forEach(function(b){b.classList.remove('sel');});btn.classList.add('sel');document.getElementById('h-'+k).value=v;}
 function faqT(el){var item=el.parentElement,open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});if(!open)item.classList.add('open');}
 function submitAnkauf(){var f=document.getElementById('ankauf-form');var d=new FormData(f);fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(d))}).then(function(r){return r.json();}).then(function(res){if(res.success){f.style.display='none';document.getElementById('ankauf-success').style.display='block';}else{alert('Fehler beim Senden. Bitte versuchen Sie es erneut.');}}).catch(function(){f.style.display='none';document.getElementById('ankauf-success').style.display='block';});}
-// FIN Formatierung
+
 window.addEventListener('DOMContentLoaded',function(){
-  var fin=document.getElementById('inp-fin');
-  var cnt=document.getElementById('fin-count');
-  if(fin){
-    fin.addEventListener('input',function(){
-      // Nur erlaubte Zeichen: A-H, J-N, P-Z, 0-9
-      var v=this.value.toUpperCase().replace(/[^A-HJ-NPR-Z0-9]/g,'').substring(0,17);
-      this.value=v;
-      if(cnt)cnt.textContent=v.length+' / 17';
-      if(v.length===17)cnt.style.color='var(--grn)';
-      else cnt.style.color='var(--tx4)';
-    });
-  }
+  // Cookie Banner
+  var ck=localStorage.getItem('rm_cookies');
+  if(!ck)setTimeout(function(){var b=document.getElementById('cookie-banner');if(b)b.classList.add('show');},900);
+  else if(ck==='accepted')loadMaps();
+  // E-Mail Links
+  var el2=document.getElementById('email-link2');if(el2)el2.href='mai'+'lto:'+'info'+'@'+'rmauto-mobile.de';
+  // Formular Submit — NUR EINMAL
+  var af=document.getElementById('ankauf-form');
+  if(af)af.addEventListener('submit',function(e){e.preventDefault();submitAnkauf();},{once:true});
+  // KM Format
+  var km=document.getElementById('inp-km');
+  if(km)km.addEventListener('input',function(){var v=this.value.replace(/\D/g,'');this.value=v.replace(/\B(?=(\d{3})+(?!\d))/g,'.');});
+  // Datum Format (nur Zahlen + MM/JJJJ)
+  function fmtDate(id){var el=document.getElementById(id);if(!el)return;el.addEventListener('keypress',function(e){if(!/[0-9]/.test(e.key))e.preventDefault();});el.addEventListener('input',function(){var v=this.value.replace(/\D/g,'');if(v.length>2)v=v.substring(0,2)+'/'+v.substring(2,6);this.value=v;});}
+  fmtDate('inp-ez');fmtDate('inp-tuev');fmtDate('inp-service');
+  // FIN
+  var fin=document.getElementById('inp-fin');var cnt=document.getElementById('fin-count');
+  if(fin){fin.addEventListener('input',function(){var v=this.value.toUpperCase().replace(/[^A-HJ-NPR-Z0-9]/g,'').substring(0,17);this.value=v;if(cnt){cnt.textContent=v.length+' / 17';cnt.style.color=v.length===17?'var(--grn)':'var(--tx4)';}});}
+  // TÜV Validierung: max 3 Jahre in Zukunft
+  var tuevEl=document.getElementById('inp-tuev');
+  if(tuevEl){tuevEl.addEventListener('blur',function(){validateFutureDate(this,36,'T\u00dcV-Datum darf max. 3 Jahre in der Zukunft liegen');});}
+  // Service Validierung: max 3 Monate in Zukunft
+  var svcEl=document.getElementById('inp-service');
+  if(svcEl){svcEl.addEventListener('blur',function(){validateFutureDate(this,3,'Service-Datum darf max. 3 Monate in der Zukunft liegen');});}
 });
+function validateFutureDate(el,maxMonths,msg){
+  var v=el.value;if(!v||v.length<7)return;
+  var parts=v.split('/');if(parts.length!==2)return;
+  var m=parseInt(parts[0]),y=parseInt(parts[1]);
+  if(isNaN(m)||isNaN(y)||m<1||m>12)return;
+  var now=new Date();var input=new Date(y,m-1,1);
+  var limit=new Date(now.getFullYear(),now.getMonth()+maxMonths,1);
+  if(input>limit){el.value='';el.style.borderColor='rgba(248,113,113,.6)';el.placeholder=msg;setTimeout(function(){el.style.borderColor='';},3000);}
+}
 function sendFotosMail(){
   var f=document.getElementById('ankauf-form');
   var d=f?new FormData(f):new FormData();
   var marke=d.get('marke')||'';
   var modell=d.get('modell')||'';
-  var subject='Fotos Ankaufanfrage – '+marke+' '+modell;
-  var body='Hallo R&M Automobile,%0A%0AAnbei sende ich Ihnen Fotos zu meinem Fahrzeug.%0A%0AFahrzeug: '+marke+' '+modell+'%0A%0AMit freundlichen Grüßen';
-  var a=document.createElement('a');
-  a.href='mailto:ankauf@rmauto-mobile.de?subject='+encodeURIComponent(subject)+'&body='+body;
-  a.click();
+  var subject=encodeURIComponent('Fotos Ankaufanfrage - '+marke+' '+modell);
+  var body=encodeURIComponent('Hallo R&M Automobile,\n\nAnbei sende ich Ihnen Fotos zu meinem Fahrzeug.\n\nFahrzeug: '+marke+' '+modell+'\n\nMit freundlichen Gruessen');
+  var link='mailto:ankauf@rmauto-mobile.de?subject='+subject+'&body='+body;
+  var a=document.createElement('a');a.href=link;document.body.appendChild(a);a.click();document.body.removeChild(a);
 }
 function sendWhatsApp(){var f=document.getElementById('ankauf-form');var d=new FormData(f);var g=function(k){return d.get(k)||'-';};var L=['R&M Automobile - Ankaufanfrage','','Hey, ich möchte mein Fahrzeug verkaufen!','','Fahrzeug: '+g('marke')+' '+g('modell'),'Kraftstoff: '+g('kraftstoff')+' | Getriebe: '+g('getriebe'),'EZ: '+g('erstzulassung')+' | PS: '+g('ps'),'KM: '+g('km'),'Farbe: '+g('farbe'),'Unfallfrei: '+g('unfallfrei'),'Scheckheft: '+g('scheckheft'),'Fahrbereit: '+g('fahrbereit'),'Motor: '+g('motor_ok')+' | Getriebe: '+g('getriebe_ok'),'Klima: '+g('klima_ok')+' | Warnleuchten: '+g('warnleuchten'),'Preisvorstellung: '+g('preisvorstellung'),'Import: '+g('import'),'Finanzierung offen: '+g('finanzierung_offen'),'','Kontakt: '+g('name')+' | '+g('telefon')+'','Fotos folgen gleich!'];window.open('https://wa.me/4915161569871?text='+encodeURIComponent(L.join('\n')),'_blank');}
-window.addEventListener('DOMContentLoaded',function(){var km=document.getElementById('inp-km');if(km){km.addEventListener('input',function(){var v=this.value.replace(/\D/g,'');this.value=v.replace(/\B(?=(\d{3})+(?!\d))/g,'.');});}var ez=document.getElementById('inp-ez');if(ez){ez.addEventListener('keypress',function(e){if(!/[0-9]/.test(e.key))e.preventDefault();});ez.addEventListener('input',function(){var v=this.value.replace(/\D/g,'');if(v.length>2)v=v.substring(0,2)+'/'+v.substring(2,6);this.value=v;});}
-  function fmtDateOnly(id){var el=document.getElementById(id);if(!el)return;el.addEventListener('keypress',function(e){if(!/[0-9]/.test(e.key))e.preventDefault();});el.addEventListener('input',function(){var v=this.value.replace(/\D/g,'');if(v.length>2)v=v.substring(0,2)+'/'+v.substring(2,6);this.value=v;});}
-  fmtDateOnly('inp-tuev');fmtDateOnly('inp-service');});
+
 </script>
 <script>
 window.addEventListener('load',function(){
