@@ -84,10 +84,12 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
 .oh-note{font-size:10px;font-weight:300;color:var(--tx4);margin-top:5px}
 @media(max-width:1100px){.kontakt-grid{grid-template-columns:1fr;gap:40px;padding-left:32px;padding-right:32px}.oh-grid{grid-template-columns:1fr 1fr}.ph{padding-left:32px;padding-right:32px}}
 @media(max-width:768px){.ph{padding-top:110px;padding-left:20px;padding-right:20px}.kontakt-grid{padding:52px 20px}.k-form{padding:28px}.fg-row{grid-template-columns:1fr}.oh-grid{grid-template-columns:1fr 1fr}}</style>
-<!-- Google Analytics -->
-<script defer src="https://www.googletagmanager.com/gtag/js?id=G-XDZRP2W3X9"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XDZRP2W3X9');</script>
-<link rel="icon" href="/img/favicon.jpg"/>
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
 </head><body><nav role="navigation"><a href="/index.html" class="nav-logo"><img src="/img/rm_logo_white.svg" alt="R&amp;M Automobile" loading="eager" width="160" height="46"/></a><ul class="nav-links"><li><a href="/index.html">Startseite</a></li><li><a href="/uber-uns.html">&#220;ber Uns</a></li><li><a href="/fahrzeugbereich.html">Fahrzeuge</a></li><li><a href="/mein-fahrzeug-verkaufen.html">Auto verkaufen</a></li><li><a href="/kontakt.html" aria-current="page" class="nav-pill">Kontakt</a></li></ul><button class="nav-burger" id="burger" onclick="toggleMenu()" aria-label="Men&#252; &#246;ffnen" aria-expanded="false"><span></span><span></span><span></span></button></nav><div class="mob-menu" id="mob-menu" role="dialog" aria-modal="true"><a href="/index.html" onclick="closeMenu()">Startseite</a><a href="/uber-uns.html" onclick="closeMenu()">&#220;ber Uns</a><a href="/fahrzeugbereich.html" onclick="closeMenu()">Fahrzeuge</a><a href="/mein-fahrzeug-verkaufen.html" onclick="closeMenu()">Auto verkaufen</a><a href="/kontakt.html" onclick="closeMenu()">Kontakt</a></div><main>
 <div class="ph">
   <div class="label sr">Kontakt</div>
@@ -191,5 +193,17 @@ function submitKontakt(e){
   });
   return false;
 }
+</script>
+<script>
+window.addEventListener('load',function(){
+  var s=document.createElement('script');
+  s.src='https://www.googletagmanager.com/gtag/js?id=G-XDZRP2W3X9';
+  s.async=true;
+  document.head.appendChild(s);
+  window.dataLayer=window.dataLayer||[];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());
+  gtag('config','G-XDZRP2W3X9',{'send_page_view':true});
+});
 </script>
 </body></html>
