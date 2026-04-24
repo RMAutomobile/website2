@@ -55,10 +55,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:0 60px;height:88px;d
 .sr.on{opacity:1;transform:none}
 
 /* PAGE */
-.page{max-width:1400px;margin:0 auto;padding:0 60px}
+/* page wrapper removed */
 
 /* HERO */
-.hero{padding:120px 0 56px}
+.hero{padding:120px 60px 56px}
 .lbl{font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--tx3);display:inline-flex;align-items:center;gap:10px;margin-bottom:18px}
 .lbl::before{content:'';width:18px;height:1px;background:var(--ln2)}
 .hero h1{font-family:var(--fh);font-size:clamp(36px,5vw,64px);font-weight:700;letter-spacing:-.022em;line-height:1.0;color:var(--tx);margin-bottom:16px}
@@ -73,7 +73,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:0 60px;height:88px;d
 .f-count{margin-left:auto;font-size:11px;font-weight:300;color:var(--tx3)}
 
 /* CAR LIST — horizontal rows like JB */
-.cl{display:flex;flex-direction:column;gap:16px;padding-top:0;border-top:none}
+.cl{display:flex;flex-direction:column;gap:16px;padding:0 60px 60px}
 
 .ci{display:grid;grid-template-columns:320px 1fr auto;border:1px solid var(--ln);cursor:pointer;transition:background .25s}
 .ci:hover{background:var(--s1)}
@@ -149,13 +149,16 @@ footer{background:var(--bg);padding:56px 64px 30px;border-top:1px solid var(--ln
 }
 @media(max-width:768px){
   nav{padding:0 20px;height:72px}
+  .sgk,.fcil,.fciv,.lbl{font-size:11px!important}
   .nav-logo img{height:38px!important}
+  .cl{padding:0 16px 44px!important}
+  .hero{padding:100px 20px 32px!important}
   .nl img{height:38px}
   .nav-links{display:none}
   .nav-burger{display:flex}
   .page{padding:0 20px}
   /* Hero */
-  .hero{padding:120px 0 56px}
+  .hero{padding:120px 60px 56px}
   /* Filters */
   .filters{gap:6px;padding:20px 0;margin-bottom:32px}
   .fb2{padding:7px 12px;font-size:9px}
@@ -189,7 +192,7 @@ footer{background:var(--bg);padding:56px 64px 30px;border-top:1px solid var(--ln
   .ci-right{border-left:none;border-top:1px solid var(--ln);flex-direction:row;align-items:center;justify-content:space-between;padding:14px 16px}
   .ci-info{padding:16px 16px 0}
   .ankauf{grid-template-columns:1fr !important;gap:20px}
-  .filters{flex-wrap:wrap}
+  .filters{flex-wrap:wrap;padding:0 16px!important}
 }
 @media(max-width:480px){
   .fi{grid-template-columns:1fr !important}
@@ -202,7 +205,6 @@ footer{background:var(--bg);padding:56px 64px 30px;border-top:1px solid var(--ln
 
 <nav role="navigation"><a href="/index.html" class="nav-logo"><img src="/img/rm_logo_white.svg" alt="R&amp;M Automobile" loading="eager" width="160" height="46"/></a><ul class="nav-links"><li><a href="/index.html">Startseite</a></li><li><a href="/uber-uns.html">&#220;ber Uns</a></li><li><a href="/fahrzeugbereich.html" aria-current="page">Fahrzeuge</a></li><li><a href="/mein-fahrzeug-verkaufen.html">Auto verkaufen</a></li><li><a href="/kontakt.html" class="nav-pill">Kontakt</a></li></ul><button class="nav-burger" id="burger" onclick="toggleMenu()" aria-label="Men&#252; &#246;ffnen" aria-expanded="false"><span></span><span></span><span></span></button></nav><div class="mob-menu" id="mob-menu" role="dialog" aria-modal="true"><a href="/index.html" onclick="closeMenu()">Startseite</a><a href="/uber-uns.html" onclick="closeMenu()">&#220;ber Uns</a><a href="/fahrzeugbereich.html" onclick="closeMenu()">Fahrzeuge</a><a href="/mein-fahrzeug-verkaufen.html" onclick="closeMenu()">Auto verkaufen</a><a href="/kontakt.html" onclick="closeMenu()">Kontakt</a></div>
 <main>
-<div class="page">
 
   <!-- HERO -->
   <div class="hero">
@@ -212,7 +214,7 @@ footer{background:var(--bg);padding:56px 64px 30px;border-top:1px solid var(--ln
   </div>
 
   <!-- FILTERS -->
-  <div class="filters sr">
+  <div class="filters sr" style="padding:0 60px">
     <button class="fb2 on" onclick="fCars('all',this)">Alle Fahrzeuge</button>
     <button class="fb2" onclick="fCars('pkw',this)">PKW</button>
     <button class="fb2" onclick="fCars('benzin',this)">Benzin</button>
@@ -320,7 +322,6 @@ footer{background:var(--bg);padding:56px 64px 30px;border-top:1px solid var(--ln
     </div>
   </div>
 
-</div><!-- /page -->
 </main>
 
 <footer>
