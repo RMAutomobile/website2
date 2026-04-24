@@ -163,7 +163,7 @@ h1 .g{color:rgba(232,227,216,.48)}
 <script defer src="https://www.googletagmanager.com/gtag/js?id=G-XDZRP2W3X9"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XDZRP2W3X9');</script>
 <link rel="icon" href="/img/favicon.jpg"/>
-<link rel="preload" as="image" href="/img/i10_01.jpeg" fetchpriority="high"/>
+<link rel="preload" as="image" href="/hero.webp" fetchpriority="high"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Kauft R&M Automobile auch Unfallfahrzeuge an?","acceptedAnswer":{"@type":"Answer","text":"Ja, wir kaufen alle Fahrzeuge unabhängig vom Zustand – auch Unfallfahrzeuge, Fahrzeuge ohne TÜV oder mit hohem Kilometerstand."}},{"@type":"Question","name":"Wie schnell bekomme ich Geld beim Autoverkauf?","acceptedAnswer":{"@type":"Answer","text":"Bei R&M Automobile erhalten Sie die Zahlung sofort bei Vertragsabschluss per Echtzeitüberweisung – das Geld ist binnen Sekunden auf Ihrem Konto."}},{"@type":"Question","name":"Wo kann ich mein Auto in Hemau verkaufen?","acceptedAnswer":{"@type":"Answer","text":"R&M Automobile in Hemau, Am Gewerbebogen 11, kauft Fahrzeuge aller Marken und Zustände an. Kostenlose Abholung deutschlandweit möglich."}},{"@type":"Question","name":"Gebrauchtwagen kaufen in Hemau – was gibt es bei R&M?","acceptedAnswer":{"@type":"Answer","text":"R&M Automobile in Hemau bietet technisch geprüfte Gebrauchtwagen zu fairen Preisen. Finanzierung und Inzahlungnahme möglich."}}]}</script>
 </head><body>
 <nav role="navigation"><a href="/index.html" class="nav-logo"><img src="/img/rm_logo_white.svg" alt="R&amp;M Automobile" loading="eager" width="160" height="46"/></a><ul class="nav-links"><li><a href="/index.html" aria-current="page">Startseite</a></li><li><a href="/uber-uns.html">&#220;ber Uns</a></li><li><a href="/fahrzeugbereich.html">Fahrzeuge</a></li><li><a href="/mein-fahrzeug-verkaufen.html">Auto verkaufen</a></li><li><a href="/kontakt.html" class="nav-pill">Kontakt</a></li></ul><button class="nav-burger" id="burger" onclick="toggleMenu()" aria-label="Men&#252; &#246;ffnen" aria-expanded="false"><span></span><span></span><span></span></button></nav>
@@ -177,11 +177,9 @@ h1 .g{color:rgba(232,227,216,.48)}
     <div class="hero-btns" id="hBtns"><a href="/fahrzeugbereich.html" class="btn-d">Fahrzeuge ansehen <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a><a href="/mein-fahrzeug-verkaufen.html" class="btn-g">Auto verkaufen</a></div>
     <div class="hero-trust" id="hT"><div class="trust-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="trust-txt"><strong>5,0 auf Google</strong> &middot; 100&#37; zufriedene Kunden</div></div>
   </div>
-  <div class="hero-right">
-    <video autoplay muted loop playsinline preload="none" style="width:100%;height:100%;object-fit:cover;object-position:60% center;display:block">
-      <source src="/img/Hero_Video.mp4" type="video/mp4"/>
-      <img src="/hero.webp" alt="R&amp;M Automobile Hemau" width="1600" height="1200" loading="eager"/>
-    </video>
+  <div class="hero-right" id="hero-right">
+    <!-- LCP: Bild zuerst, Video nach load -->
+    <img id="hero-img" src="/hero.webp" alt="R&amp;M Automobile Hemau" width="1600" height="900" fetchpriority="high" loading="eager" style="width:100%;height:100%;object-fit:cover;object-position:60% center;display:block"/>
   </div>
 </section>
 <div class="stats"><div class="stat sr"><div class="stn">5,0&#9733;</div><div class="stl">Google Bewertung</div></div><div class="stat sr d1"><div class="stn">100&#37;</div><div class="stl">Zufriedene Kunden</div></div><div class="stat sr d2"><div class="stn">KFZ</div><div class="stl">Fachkompetenz</div></div><div class="stat sr d3"><div class="stn">Sofort</div><div class="stl">Auszahlung Ankauf</div></div></div>
@@ -400,6 +398,22 @@ h1 .g{color:rgba(232,227,216,.48)}
 </div><div class="ft-bot"><div class="ft-copy">&#169; 2026 R&amp;M Automobile UG (haftungsbeschr&#228;nkt) &#183; Am Gewerbebogen 11, 93155 Hemau</div><div class="ft-legal"><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a><a href="/agb.html">AGB</a></div></div></footer>
 <div class="cookie-banner" id="cookie-banner" role="alertdialog" aria-label="Cookie-Einstellungen"><p class="cookie-txt">Wir verwenden technisch notwendige Cookies und Google Maps. Mit &#8220;Akzeptieren&#8221; stimmen Sie Google Maps zu. <a href="/datenschutz.html">Datenschutz</a></p><div class="cookie-btns"><button class="cookie-decline" onclick="setCookie('declined')">Ablehnen</button><button class="cookie-accept" onclick="setCookie('accepted')">Akzeptieren</button></div></div>
 <script>
+// Video lazy load nach LCP
+window.addEventListener('load', function(){
+  var hr = document.getElementById('hero-right');
+  var img = document.getElementById('hero-img');
+  if(hr && img){
+    var v = document.createElement('video');
+    v.autoplay=true; v.muted=true; v.loop=true; v.playsInline=true;
+    v.style.cssText='width:100%;height:100%;object-fit:cover;object-position:60% center;display:block;position:absolute;inset:0';
+    var s = document.createElement('source');
+    s.src='/img/Hero_Video.mp4'; s.type='video/mp4';
+    v.appendChild(s);
+    hr.style.position='relative';
+    hr.appendChild(v);
+    v.addEventListener('canplay', function(){img.style.opacity='0';});
+  }
+});
 function setCookie(v){localStorage.setItem('rm_cookies',v);document.getElementById('cookie-banner').classList.remove('show');if(v==='accepted')loadMaps();}
 function loadMaps(){document.querySelectorAll('[data-map-src]').forEach(function(el){var f=document.createElement('iframe');f.src=el.dataset.mapSrc;f.style.cssText='width:100%;height:100%;border:none;display:block;filter:grayscale(55%) contrast(1.05)';f.allowFullscreen=true;f.loading='lazy';f.referrerPolicy='no-referrer-when-downgrade';el.replaceWith(f);});}
 window.addEventListener('DOMContentLoaded',function(){var c=localStorage.getItem('rm_cookies');if(!c)setTimeout(function(){var b=document.getElementById('cookie-banner');if(b)b.classList.add('show');},900);else if(c==='accepted')loadMaps();['email-link','email-link2'].forEach(function(id){var el=document.getElementById(id);if(el)el.href='mai'+'lto:'+'info'+'@'+'rmauto-mobile.de';});});
