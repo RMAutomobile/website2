@@ -160,9 +160,10 @@ footer{background:var(--bg);padding:56px 64px 30px;border-top:1px solid var(--ln
   /* Hero */
   .hero{padding:160px 60px 72px}
   /* Filters */
-  .filters{gap:6px;padding:20px 0;margin-bottom:32px}
-  .fb2{padding:7px 12px;font-size:9px}
-  .f-count{width:100%;margin-left:0;padding-top:8px;border-top:1px solid var(--ln)}
+  .filters{gap:6px;padding:20px 16px 20px;margin-bottom:24px;overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .filters::-webkit-scrollbar{display:none}
+  .fb2{padding:7px 14px;font-size:9px;flex-shrink:0}
+  .f-count{display:none}
   /* Car list — stack vertically */
   .ci{grid-template-columns:1fr}
   .ci-img{height:200px}
@@ -181,7 +182,7 @@ footer{background:var(--bg);padding:56px 64px 30px;border-top:1px solid var(--ln
   .fi{grid-template-columns:1fr}
   .ci-specs{flex-direction:row;flex-wrap:wrap;gap:4px}
   .ci-spec{border-right:none!important;margin-right:0!important;padding-right:0!important;font-size:11px;background:rgba(232,227,216,.05);padding:3px 8px!important;border:1px solid var(--ln)!important}
-  .filters{overflow-x:auto;flex-wrap:nowrap;padding-bottom:16px}
+  .filters{overflow-x:auto;flex-wrap:nowrap}
   .fb2{flex-shrink:0}
 }
 
@@ -192,12 +193,10 @@ footer{background:var(--bg);padding:56px 64px 30px;border-top:1px solid var(--ln
   .ci-right{border-left:none;border-top:1px solid var(--ln);flex-direction:row;align-items:center;justify-content:space-between;padding:14px 16px}
   .ci-info{padding:16px 16px 0}
   .ankauf{grid-template-columns:1fr !important;gap:20px}
-  .filters{flex-wrap:wrap;padding:0 16px!important}
+  .filters{flex-wrap:nowrap;overflow-x:auto;padding:0 16px!important;scrollbar-width:none}
 }
 @media(max-width:480px){
   .fi{grid-template-columns:1fr !important}
-  .ci-specs{flex-wrap:wrap}
-  .ci-spec{border-right:none;padding-right:8px;margin-right:0}
 }
 </style>
 </head>
