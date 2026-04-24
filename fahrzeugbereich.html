@@ -7,9 +7,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/>
-<script defer src="https://www.googletagmanager.com/gtag/js?id=G-XDZRP2W3X9"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XDZRP2W3X9');</script>
-<link rel="icon" href="/img/favicon.jpg"/>
+
+<link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png"/>
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"/>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+<link rel="manifest" href="/site.webmanifest"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -374,6 +377,18 @@ function fCars(cat,btn){
   if(vis===0&&!nc){var d=document.createElement('div');d.className='no-cars';d.textContent='Keine Fahrzeuge in dieser Kategorie.';document.getElementById('cl').appendChild(d);}
   else if(vis>0&&nc){nc.remove();}
 }
+</script>
+<script>
+window.addEventListener('load',function(){
+  var s=document.createElement('script');
+  s.src='https://www.googletagmanager.com/gtag/js?id=G-XDZRP2W3X9';
+  s.async=true;
+  document.head.appendChild(s);
+  window.dataLayer=window.dataLayer||[];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js',new Date());
+  gtag('config','G-XDZRP2W3X9',{'send_page_view':true});
+});
 </script>
 </body>
 </html>
