@@ -91,26 +91,11 @@ h1 .g{color:rgba(232,227,216,.48)}
 .usp::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--grn);transition:width .5s var(--ease)}.usp:hover::after{width:100%}
 .usp-n{font-family:var(--fh);font-size:11px;font-weight:600;letter-spacing:.2em;color:var(--tx4);margin-bottom:28px}
 .usp h3{font-family:var(--fh);font-size:17px;font-weight:700;margin-bottom:11px;color:var(--tx)}.usp p{font-size:13px;font-weight:300;color:var(--tx2);line-height:1.85}
-/* OPTION C – list cards */
-.fz-hd{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:32px;flex-wrap:wrap;gap:16px}
-.fz-list{display:flex;flex-direction:column;border:1px solid var(--bo);overflow:hidden}
-.fzc{display:grid;grid-template-columns:220px 1fr auto;border-bottom:1px solid var(--bo);background:var(--c2);transition:background .3s;cursor:pointer}
-.fzc:last-child{border-bottom:none}.fzc:hover{background:var(--c3)}
-.fzc-img-wrap{position:relative;overflow:hidden}
-.fzc-img-wrap img{width:100%;height:140px;object-fit:cover;transition:transform .6s var(--ease)}.fzc:hover .fzc-img-wrap img{transform:scale(1.04)}
-.fzc-badge{position:absolute;top:10px;left:10px;font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 9px;backdrop-filter:blur(8px);z-index:1;display:flex;align-items:center;gap:4px;border-radius:2px}
-.badge-avail{background:var(--grn-bg);color:var(--grn);border:1px solid var(--grn-bd)}.badge-new{background:rgba(22,22,20,.82);color:var(--tx);border:1px solid rgba(232,227,216,.16)}
-.badge-dot{width:5px;height:5px;border-radius:50%;background:var(--grn);flex-shrink:0}
-.fzc-info{padding:20px 24px;display:flex;flex-direction:column;justify-content:center}
-.fzc-name{font-family:var(--fh);font-size:17px;font-weight:700;color:var(--tx);margin-bottom:5px;letter-spacing:-.01em}
-.fzc-var{font-size:12px;font-weight:300;color:var(--tx3);margin-bottom:12px;line-height:1.6}
-.fzc-specs{display:flex;flex-wrap:wrap;gap:6px 16px}
-.fzc-spec{font-size:11px;color:var(--tx3);display:flex;align-items:center;gap:5px}
-.fzc-spec::before{content:'';width:3px;height:3px;border-radius:50%;background:rgba(232,227,216,.22);flex-shrink:0}
-.fzc-spec:first-child::before{display:none}
-.fzc-right{padding:20px 24px;display:flex;flex-direction:column;align-items:flex-end;justify-content:center;gap:10px;min-width:140px}
-.fzc-price{font-family:var(--fh);font-size:22px;font-weight:700;color:var(--tx);white-space:nowrap}
-.fzc-cta{font-family:var(--fh);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--tx3);display:flex;align-items:center;gap:5px;transition:gap .3s,color .3s}.fzc:hover .fzc-cta{gap:9px;color:var(--grn)}
+.fzg-card{background:var(--c2);transition:transform .3s var(--ease),box-shadow .3s}
+.fzg-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.4)}
+.fzg-card:hover img{transform:scale(1.05)}
+.fzg-btn{display:block;width:100%;padding:13px;text-align:center;background:transparent;border:1px solid var(--bo2);color:var(--tx2);font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:all .3s}
+.fzg-btn:hover{background:var(--tx);color:var(--page);border-color:var(--tx)}
 .ank-wrap{display:grid;grid-template-columns:1fr 1fr;gap:68px;align-items:start;margin-top:58px}
 .steps{border-top:1px solid var(--bo)}
 .step{padding:28px 0;border-bottom:1px solid var(--bo)}
@@ -147,48 +132,35 @@ h1 .g{color:rgba(232,227,216,.48)}
 .cta-band{padding:100px 60px;text-align:center;background:var(--c2);border-top:1px solid var(--bo);position:relative;overflow:hidden}
 .cta-band::before{content:'R&M';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--fh);font-size:clamp(80px,12vw,200px);font-weight:700;color:rgba(111,207,151,.03);white-space:nowrap;pointer-events:none}
 .cta-band h2{margin-bottom:18px;position:relative}.cta-band p{font-size:15px;font-weight:300;color:var(--tx2);max-width:370px;margin:0 auto 38px;line-height:1.9;position:relative}
-@media(max-width:1100px){.hero{grid-template-columns:1fr}.hero-right{display:none}.hero-left{padding:96px 32px 72px}.team-inner,.ank-wrap,.s-wrap{grid-template-columns:1fr;gap:40px}.ank-box{position:static}.usp-grid,.rev-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stat{border-bottom:1px solid var(--bo)}.fzc{grid-template-columns:160px 1fr auto}}
-@media(max-width:768px){.hero-left{padding:88px 20px 64px}.team-photos{grid-template-columns:1fr 1fr}.tphoto{max-height:300px}.step{padding:20px 0}.cta-band{padding:72px 20px}.cta-band::before{display:none}.fzc{grid-template-columns:1fr}.fzc-right{flex-direction:row;align-items:center;justify-content:space-between;border-top:1px solid var(--bo);padding-top:14px}.fzc-img-wrap img{height:180px}}
+/* MOBILE FAHRZEUG-SLIDER */
 @media(max-width:768px){
+  .fz-grid-3{display:flex!important;flex-direction:row!important;overflow-x:auto!important;scroll-snap-type:x mandatory!important;-webkit-overflow-scrolling:touch!important;gap:16px!important;padding-bottom:16px!important;scrollbar-width:none!important;padding-left:20px!important;padding-right:20px!important}
+  .fz-grid-3::-webkit-scrollbar{display:none!important}
+  .fz-grid-3 .fzg-card{flex:0 0 80vw!important;max-width:80vw!important;scroll-snap-align:start!important}
+  .fz-dots{display:flex!important}
   .partner-grid{grid-template-columns:1fr 1fr!important}
 }
-
-@media(max-width:900px){
-  .fz-grid-3{grid-template-columns:1fr!important}
-}
-
-.fzg-card{background:var(--c2);transition:transform .3s var(--ease),box-shadow .3s}
-.fzg-card:hover{transform:translateY(-4px);box-shadow:0 20px 40px rgba(0,0,0,.4)}
-.fzg-card:hover img{transform:scale(1.05)}
-.fzg-btn{display:block;width:100%;padding:13px;text-align:center;background:transparent;border:1px solid var(--bo2);color:var(--tx2);font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;transition:all .3s}
-.fzg-btn:hover{background:var(--tx);color:var(--page);border-color:var(--tx)}
-@media(max-width:1000px){.fzg-card{grid-column:span 1}}
-@media(max-width:768px){.fzg-grid{grid-template-columns:1fr!important}}
-</style><script type="application/ld+json">{"@context":"https://schema.org","@type":["AutoDealer","LocalBusiness"],"name":"R&M Automobile UG","url":"https://rmauto-mobile.de","telephone":"+49-1516-1569871","address":{"@type":"PostalAddress","streetAddress":"Am Gewerbebogen 11","addressLocality":"Hemau","postalCode":"93155","addressRegion":"Bayern","addressCountry":"DE"},"geo":{"@type":"GeoCoordinates","latitude":49.0561,"longitude":11.7817},"areaServed":["Hemau","Regensburg","Parsberg","Kelheim","Neumarkt in der Oberpfalz","Ingolstadt","München","Nürnberg"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"5","bestRating":"5"}}</script>
-<meta name="geo.region" content="DE-BY"/><meta name="geo.placename" content="Hemau"/><meta name="geo.position" content="49.0561;11.7817"/><!-- Google Analytics -->
+@media(min-width:769px){.fz-dots{display:none}}
+.fz-dots{display:none;justify-content:center;gap:8px;margin-top:20px}
+.fz-dot{width:7px;height:7px;border-radius:50%;background:var(--bo2);transition:background .3s;cursor:pointer}
+.fz-dot.on{background:var(--grn)}
+@media(max-width:1100px){.hero{grid-template-columns:1fr}.hero-right{display:none}.hero-left{padding:96px 32px 72px}.team-inner,.ank-wrap,.s-wrap{grid-template-columns:1fr;gap:40px}.ank-box{position:static}.usp-grid,.rev-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stat{border-bottom:1px solid var(--bo)}}
+@media(max-width:768px){.hero-left{padding:88px 20px 64px}.team-photos{grid-template-columns:1fr 1fr}.tphoto{max-height:300px}.step{padding:20px 0}.cta-band{padding:72px 20px}.cta-band::before{display:none}}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":["AutoDealer","LocalBusiness"],"name":"R&M Automobile UG","url":"https://rmauto-mobile.de","telephone":"+49-1516-1569871","address":{"@type":"PostalAddress","streetAddress":"Am Gewerbebogen 11","addressLocality":"Hemau","postalCode":"93155","addressRegion":"Bayern","addressCountry":"DE"},"geo":{"@type":"GeoCoordinates","latitude":49.0561,"longitude":11.7817},"areaServed":["Hemau","Regensburg","Parsberg","Kelheim","Neumarkt in der Oberpfalz","Ingolstadt","München","Nürnberg"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"5","bestRating":"5"}}</script>
+<meta name="geo.region" content="DE-BY"/><meta name="geo.placename" content="Hemau"/><meta name="geo.position" content="49.0561;11.7817"/>
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XDZRP2W3X9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XDZRP2W3X9');
-</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XDZRP2W3X9');</script>
 <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"/>
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"/>
 <link rel="apple-touch-icon" sizes="192x192" href="/favicon-192.png"/>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-{"@type":"Question","name":"Kauft R&M Automobile auch Unfallfahrzeuge an?","acceptedAnswer":{"@type":"Answer","text":"Ja, wir kaufen alle Fahrzeuge unabhängig vom Zustand – auch Unfallfahrzeuge, Fahrzeuge ohne TÜV oder mit hohem Kilometerstand."}},
-{"@type":"Question","name":"Wie schnell bekomme ich Geld beim Autoverkauf?","acceptedAnswer":{"@type":"Answer","text":"Bei R&M Automobile erhalten Sie die Zahlung sofort bei Vertragsabschluss per Echtzeitüberweisung – das Geld ist binnen Sekunden auf Ihrem Konto."}},
-{"@type":"Question","name":"Wo kann ich mein Auto in Hemau verkaufen?","acceptedAnswer":{"@type":"Answer","text":"R&M Automobile in Hemau, Am Gewerbebogen 11, kauft Fahrzeuge aller Marken und Zustände an. Kostenlose Abholung deutschlandweit möglich."}},
-{"@type":"Question","name":"Gebrauchtwagen kaufen in Hemau – was gibt es bei R&M?","acceptedAnswer":{"@type":"Answer","text":"R&M Automobile in Hemau bietet technisch geprüfte Gebrauchtwagen zu fairen Preisen. Finanzierung und Inzahlungnahme möglich."}}
-]}
-</script>
-<script type="application/ld+json">
-{"@context":"https://schema.org","@type":["AutoDealer","LocalBusiness"],"name":"R&M Automobile UG","alternateName":["R und M Automobile","RM Automobile Hemau","Autoankauf Hemau","Gebrauchtwagen Hemau"],"url":"https://rmauto-mobile.de","telephone":"+49-1516-1569871","email":"info@rmauto-mobile.de","address":{"@type":"PostalAddress","streetAddress":"Am Gewerbebogen 11","addressLocality":"Hemau","postalCode":"93155","addressRegion":"Bayern","addressCountry":"DE"},"geo":{"@type":"GeoCoordinates","latitude":49.0561,"longitude":11.7817},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday","Friday"],"opens":"09:00","closes":"19:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":"Saturday","opens":"09:00","closes":"14:00"}],"priceRange":"€€","paymentAccepted":"Barzahlung, Überweisung","areaServed":["Hemau","Regensburg","Ingolstadt","Neumarkt in der Oberpfalz","Parsberg","Kelheim","München","Nürnberg","Landshut","Beratzhausen","Nittendorf","Laaber"],"hasMap":"https://maps.google.com/?q=Am+Gewerbebogen+11,+93155+Hemau","aggregateRating":{"@type":"AggregateRating","ratingValue":"5.0","reviewCount":"8","bestRating":"5"},"description":"R&M Automobile UG in Hemau: Geprüfte Gebrauchtwagen kaufen & verkaufen. Fairer Autoankauf, sofortige Auszahlung, KFZ-Mechatroniker vor Ort."}
-</script>
-</head><body><nav role="navigation"><a href="/index.html" class="nav-logo"><img src="/img/rm_logo_white.svg" alt="R&amp;M Automobile" loading="eager" width="160" height="46"/></a><ul class="nav-links"><li><a href="/index.html" aria-current="page">Startseite</a></li><li><a href="/uber-uns.html">&#220;ber Uns</a></li><li><a href="/fahrzeugbereich.html">Fahrzeuge</a></li><li><a href="/mein-fahrzeug-verkaufen.html">Auto verkaufen</a></li><li><a href="/kontakt.html" class="nav-pill">Kontakt</a></li></ul><button class="nav-burger" id="burger" onclick="toggleMenu()" aria-label="Men&#252; &#246;ffnen" aria-expanded="false"><span></span><span></span><span></span></button></nav><div class="mob-menu" id="mob-menu" role="dialog" aria-modal="true"><a href="/index.html" onclick="closeMenu()">Startseite</a><a href="/uber-uns.html" onclick="closeMenu()">&#220;ber Uns</a><a href="/fahrzeugbereich.html" onclick="closeMenu()">Fahrzeuge</a><a href="/mein-fahrzeug-verkaufen.html" onclick="closeMenu()">Auto verkaufen</a><a href="/kontakt.html" onclick="closeMenu()">Kontakt</a></div><main>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Kauft R&M Automobile auch Unfallfahrzeuge an?","acceptedAnswer":{"@type":"Answer","text":"Ja, wir kaufen alle Fahrzeuge unabhängig vom Zustand – auch Unfallfahrzeuge, Fahrzeuge ohne TÜV oder mit hohem Kilometerstand."}},{"@type":"Question","name":"Wie schnell bekomme ich Geld beim Autoverkauf?","acceptedAnswer":{"@type":"Answer","text":"Bei R&M Automobile erhalten Sie die Zahlung sofort bei Vertragsabschluss per Echtzeitüberweisung – das Geld ist binnen Sekunden auf Ihrem Konto."}},{"@type":"Question","name":"Wo kann ich mein Auto in Hemau verkaufen?","acceptedAnswer":{"@type":"Answer","text":"R&M Automobile in Hemau, Am Gewerbebogen 11, kauft Fahrzeuge aller Marken und Zustände an. Kostenlose Abholung deutschlandweit möglich."}},{"@type":"Question","name":"Gebrauchtwagen kaufen in Hemau – was gibt es bei R&M?","acceptedAnswer":{"@type":"Answer","text":"R&M Automobile in Hemau bietet technisch geprüfte Gebrauchtwagen zu fairen Preisen. Finanzierung und Inzahlungnahme möglich."}}]}</script>
+</head><body>
+<nav role="navigation"><a href="/index.html" class="nav-logo"><img src="/img/rm_logo_white.svg" alt="R&amp;M Automobile" loading="eager" width="160" height="46"/></a><ul class="nav-links"><li><a href="/index.html" aria-current="page">Startseite</a></li><li><a href="/uber-uns.html">&#220;ber Uns</a></li><li><a href="/fahrzeugbereich.html">Fahrzeuge</a></li><li><a href="/mein-fahrzeug-verkaufen.html">Auto verkaufen</a></li><li><a href="/kontakt.html" class="nav-pill">Kontakt</a></li></ul><button class="nav-burger" id="burger" onclick="toggleMenu()" aria-label="Men&#252; &#246;ffnen" aria-expanded="false"><span></span><span></span><span></span></button></nav>
+<div class="mob-menu" id="mob-menu" role="dialog" aria-modal="true"><a href="/index.html" onclick="closeMenu()">Startseite</a><a href="/uber-uns.html" onclick="closeMenu()">&#220;ber Uns</a><a href="/fahrzeugbereich.html" onclick="closeMenu()">Fahrzeuge</a><a href="/mein-fahrzeug-verkaufen.html" onclick="closeMenu()">Auto verkaufen</a><a href="/kontakt.html" onclick="closeMenu()">Kontakt</a></div>
+<main>
 <section class="hero" aria-label="Willkommen">
   <div class="hero-left">
     <div class="hero-eye" id="hE">Hemau &middot; Bayern &middot; Seit 2026</div>
@@ -197,7 +169,7 @@ h1 .g{color:rgba(232,227,216,.48)}
     <div class="hero-btns" id="hBtns"><a href="/fahrzeugbereich.html" class="btn-d">Fahrzeuge ansehen <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a><a href="/mein-fahrzeug-verkaufen.html" class="btn-g">Auto verkaufen</a></div>
     <div class="hero-trust" id="hT"><div class="trust-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><div class="trust-txt"><strong>5,0 auf Google</strong> &middot; 100&#37; zufriedene Kunden</div></div>
   </div>
-    <div class="hero-right">
+  <div class="hero-right">
     <video autoplay muted loop playsinline preload="auto" style="width:100%;height:100%;object-fit:cover;object-position:60% center;display:block">
       <source src="/img/Hero_Video.mp4" type="video/mp4"/>
       <img src="/hero.webp" alt="R&amp;M Automobile Hemau" width="1600" height="1200" loading="eager"/>
@@ -224,101 +196,132 @@ h1 .g{color:rgba(232,227,216,.48)}
   <div class="label sr">Warum R&amp;M</div>
   <h2 class="sr">Was uns<br/><span class="g">unterscheidet</span></h2>
   <p style="font-size:14px;font-weight:300;color:var(--tx2);line-height:1.9;max-width:480px;margin-top:16px" class="sr d1">Kein anonymes Massengesch&#228;ft. Nur ehrliche Arbeit von zwei Leuten die Autos kennen.</p>
-  <div class="usp-grid"><article class="usp sr"><div class="usp-n">01</div><h3>Technisch gepr&#252;ft</h3><p>Jedes Fahrzeug pers&#246;nlich gepr&#252;ft und professionell aufbereitet. Sie bekommen was Sie sehen.</p></article><article class="usp sr d1"><div class="usp-n">02</div><h3>Transparent &amp; fair</h3><p>Klare Kommunikation, schnelle Entscheidungen, keine versteckten Kosten.</p></article><article class="usp sr d2"><div class="usp-n">03</div><h3>Flexibel finanzieren</h3><p>Finanzierung optional ohne Anzahlung, faire Inzahl&#252;ngung m&#246;glich.</p></article></div>
+  <div class="usp-grid"><article class="usp sr"><div class="usp-n">01</div><h3>Technisch gepr&#252;ft</h3><p>Jedes Fahrzeug pers&#246;nlich gepr&#252;ft und professionell aufbereitet. Sie bekommen was Sie sehen.</p></article><article class="usp sr d1"><div class="usp-n">02</div><h3>Transparent &amp; fair</h3><p>Klare Kommunikation, schnelle Entscheidungen, keine versteckten Kosten.</p></article><article class="usp sr d2"><div class="usp-n">03</div><h3>Flexibel finanzieren</h3><p>Finanzierung optional ohne Anzahlung, faire Inzahlungnahme m&#246;glich.</p></article></div>
 </section>
+
+<!-- FAHRZEUGE SECTION -->
 <section style="padding:80px 60px;background:var(--page)">
   <div style="text-align:center;margin-bottom:56px">
     <div class="label sr" style="justify-content:center;margin-bottom:20px">Aktueller Bestand</div>
     <h2 class="sr" style="font-family:var(--fh);font-size:clamp(32px,4.5vw,58px);font-weight:700;letter-spacing:-.022em;line-height:1.0;margin-bottom:20px">Unsere aktuellen Fahrzeuge</h2>
-    <p class="sr" style="font-size:14px;font-weight:300;color:var(--tx2);max-width:580px;margin:0 auto;line-height:2.0">Alle Fahrzeuge werden von unserem KFZ-Mechatroniker pers&#246;nlich gepr&#252;ft und aufbereitet. Transparenz und Qualit&#228;t stehen bei uns an erster Stelle.</p>
+    <p class="sr" style="font-size:14px;font-weight:300;color:var(--tx2);max-width:500px;margin:0 auto;line-height:2.0">Alle Fahrzeuge werden von unserem KFZ-Mechatroniker pers&#246;nlich gepr&#252;ft und aufbereitet.</p>
   </div>
-
-  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1400px;margin:0 auto">
-
-    <!-- Hyundai i10 -->
-    <div class="fzg-card sr">
+  <div class="fz-grid-3 sr d1" id="fz-slider" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1400px;margin:0 auto">
+    <!-- i10 -->
+    <div class="fzg-card">
       <a href="/fahrzeug-i10.html" style="text-decoration:none;display:block">
         <div style="position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--c2)">
-          <img src="/img/i10_01.jpeg" alt="Hyundai i10 Select" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease"/>
+          <img src="/img/i10_01.jpeg" alt="Hyundai i10 Select" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease" loading="lazy"/>
           <div style="position:absolute;top:14px;left:14px;background:rgba(22,22,20,.85);border:1px solid var(--grn-bd);color:var(--grn);font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:5px 12px;backdrop-filter:blur(10px)">&#9679; Verf&#252;gbar</div>
         </div>
       </a>
       <div style="padding:28px 28px 24px">
         <div style="font-family:var(--fh);font-size:22px;font-weight:700;color:var(--tx);margin-bottom:5px">Hyundai i10 Select</div>
-        <div style="font-size:12px;font-weight:300;color:var(--tx3);margin-bottom:22px;letter-spacing:.02em">SZH / KLIMA / 8-FACH / T&#220;V 02/2027</div>
+        <div style="font-size:12px;font-weight:300;color:var(--tx3);margin-bottom:22px">SZH / KLIMA / 8-FACH / T&#220;V 02/2027</div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;padding-bottom:22px;border-bottom:1px solid var(--bo)">
           <div><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx4);margin-bottom:4px">Erstzulassung</div><div style="font-family:var(--fh);font-size:14px;font-weight:600;color:var(--tx)">02/2020</div></div>
           <div><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx4);margin-bottom:4px">Kilometerstand</div><div style="font-family:var(--fh);font-size:14px;font-weight:600;color:var(--tx)">62.500 km</div></div>
           <div><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx4);margin-bottom:4px">Getriebe</div><div style="font-family:var(--fh);font-size:14px;font-weight:600;color:var(--tx)">Schaltgetriebe</div></div>
           <div><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx4);margin-bottom:4px">Leistung</div><div style="font-family:var(--fh);font-size:14px;font-weight:600;color:var(--tx)">49 kW / 67 PS</div></div>
         </div>
-        <div style="display:flex;align-items:center;justify-content:space-between;padding-top:20px;margin-bottom:20px">
-          <div style="font-family:var(--fh);font-size:28px;font-weight:700;color:var(--tx)">8.980 &#8364;</div>
-        </div>
+        <div style="padding-top:20px;margin-bottom:20px"><div style="font-family:var(--fh);font-size:28px;font-weight:700;color:var(--tx)">8.980 &#8364;</div></div>
         <a href="/fahrzeug-i10.html" class="fzg-btn">Details</a>
       </div>
     </div>
-
     <!-- Seat Ibiza -->
-    <div class="fzg-card sr d1">
+    <div class="fzg-card">
       <a href="/fahrzeug-seat-ibiza.html" style="text-decoration:none;display:block">
         <div style="position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--c2)">
-          <img src="/img/seat_ibiza_01.jpeg" alt="Seat Ibiza" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease"/>
+          <img src="/img/seat_ibiza_01.jpeg" alt="Seat Ibiza" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease" loading="lazy"/>
           <div style="position:absolute;top:14px;left:14px;background:rgba(22,22,20,.85);border:1px solid var(--grn-bd);color:var(--grn);font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:5px 12px;backdrop-filter:blur(10px)">&#9679; Verf&#252;gbar</div>
           <div style="position:absolute;top:14px;right:14px;background:rgba(22,22,20,.85);border:1px solid var(--bo);color:var(--tx3);font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;padding:5px 12px;backdrop-filter:blur(10px)">Export</div>
         </div>
       </a>
       <div style="padding:28px 28px 24px">
         <div style="font-family:var(--fh);font-size:22px;font-weight:700;color:var(--tx);margin-bottom:5px">Seat Ibiza</div>
-        <div style="font-size:12px;font-weight:300;color:var(--tx3);margin-bottom:22px;letter-spacing:.02em">T&#220;V / KLIMA / EXPORT</div>
+        <div style="font-size:12px;font-weight:300;color:var(--tx3);margin-bottom:22px">T&#220;V / KLIMA / EXPORT</div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;padding-bottom:22px;border-bottom:1px solid var(--bo)">
           <div><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx4);margin-bottom:4px">Erstzulassung</div><div style="font-family:var(--fh);font-size:14px;font-weight:600;color:var(--tx)">06/2009</div></div>
           <div><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx4);margin-bottom:4px">Kilometerstand</div><div style="font-family:var(--fh);font-size:14px;font-weight:600;color:var(--tx)">158.700 km</div></div>
           <div><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx4);margin-bottom:4px">Getriebe</div><div style="font-family:var(--fh);font-size:14px;font-weight:600;color:var(--tx)">Schaltgetriebe</div></div>
           <div><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx4);margin-bottom:4px">Leistung</div><div style="font-family:var(--fh);font-size:14px;font-weight:600;color:var(--tx)">51 kW / 69 PS</div></div>
         </div>
-        <div style="display:flex;align-items:center;justify-content:space-between;padding-top:20px;margin-bottom:20px">
-          <div style="font-family:var(--fh);font-size:28px;font-weight:700;color:var(--tx)">1.790 &#8364;</div>
-        </div>
+        <div style="padding-top:20px;margin-bottom:20px"><div style="font-family:var(--fh);font-size:28px;font-weight:700;color:var(--tx)">1.790 &#8364;</div></div>
         <a href="/fahrzeug-seat-ibiza.html" class="fzg-btn">Details</a>
       </div>
     </div>
-
-    <!-- BMW 320d -->
-    <div class="fzg-card sr d2">
+    <!-- BMW -->
+    <div class="fzg-card">
       <a href="/fahrzeug-bmw320d.html" style="text-decoration:none;display:block">
         <div style="position:relative;overflow:hidden;aspect-ratio:4/3;background:var(--c2)">
-          <img src="/img/bmw_grau.jpg" alt="BMW 320d M-Paket" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease"/>
+          <img src="/img/bmw_grau.jpg" alt="BMW 320d M-Paket" style="width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease" loading="lazy"/>
           <div style="position:absolute;top:14px;left:14px;background:rgba(22,22,20,.85);border:1px solid rgba(251,191,36,.35);color:rgba(251,191,36,.9);font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:5px 12px;backdrop-filter:blur(10px)">In Anlieferung</div>
         </div>
       </a>
       <div style="padding:28px 28px 24px">
         <div style="font-family:var(--fh);font-size:22px;font-weight:700;color:var(--tx);margin-bottom:5px">BMW 320d M-Paket</div>
-        <div style="font-size:12px;font-weight:300;color:var(--tx3);margin-bottom:22px;letter-spacing:.02em">M-Paket / Vollausstattung / Scheckheft l&#252;ckenlos</div>
+        <div style="font-size:12px;font-weight:300;color:var(--tx3);margin-bottom:22px">M-Paket / Vollausstattung / Scheckheft l&#252;ckenlos</div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px 20px;padding-bottom:22px;border-bottom:1px solid var(--bo)">
           <div><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx4);margin-bottom:4px">Erstzulassung</div><div style="font-family:var(--fh);font-size:14px;font-weight:600;color:var(--tx)">2014</div></div>
           <div><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx4);margin-bottom:4px">Kilometerstand</div><div style="font-family:var(--fh);font-size:14px;font-weight:600;color:var(--tx)">150.000 km</div></div>
           <div><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx4);margin-bottom:4px">Getriebe</div><div style="font-family:var(--fh);font-size:14px;font-weight:600;color:var(--tx)">Schaltgetriebe</div></div>
           <div><div style="font-size:9px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx4);margin-bottom:4px">Leistung</div><div style="font-family:var(--fh);font-size:14px;font-weight:600;color:var(--tx)">135 kW / 184 PS</div></div>
         </div>
-        <div style="display:flex;align-items:center;justify-content:space-between;padding-top:20px;margin-bottom:20px">
-          <div style="font-family:var(--fh);font-size:28px;font-weight:700;color:var(--tx)">12.980 &#8364;</div>
-        </div>
+        <div style="padding-top:20px;margin-bottom:20px"><div style="font-family:var(--fh);font-size:28px;font-weight:700;color:var(--tx)">12.980 &#8364;</div></div>
         <a href="/fahrzeug-bmw320d.html" class="fzg-btn">Details</a>
       </div>
     </div>
-
   </div>
-
+  <!-- Mobile Swipe Dots -->
+  <div class="fz-dots" id="fz-dots">
+    <div class="fz-dot on" onclick="scrollToCard(0)"></div>
+    <div class="fz-dot" onclick="scrollToCard(1)"></div>
+    <div class="fz-dot" onclick="scrollToCard(2)"></div>
+  </div>
   <div style="text-align:center;margin-top:44px">
-    <a href="/fahrzeugbereich.html" class="btn-g sr">Alle Fahrzeuge ansehen
-      <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
-    </a>
+    <a href="/fahrzeugbereich.html" class="btn-g sr">Alle Fahrzeuge ansehen <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
   </div>
-</section><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+</section>
+
+<!-- PARTNER SECTION -->
+<section style="padding:80px 60px;background:var(--c2);border-top:1px solid var(--bo)">
+  <div style="text-align:center;margin-bottom:52px">
+    <div class="label sr" style="justify-content:center;margin-bottom:16px">Unsere Partner</div>
+    <h2 class="sr" style="font-family:var(--fh);font-size:clamp(28px,3.8vw,48px);font-weight:700;letter-spacing:-.018em;line-height:1.02;margin-bottom:16px">Starke Partner.<br/><span style="color:rgba(232,227,216,.48)">F&#252;r Sie im Einsatz.</span></h2>
+    <p class="sr d1" style="font-size:14px;font-weight:300;color:var(--tx2);max-width:480px;margin:0 auto;line-height:1.9">Von der Finanzierung bis zur Aufbereitung &#8211; wir arbeiten mit gepr&#252;ften Partnern zusammen damit Sie das beste Ergebnis bekommen.</p>
+  </div>
+  <div class="partner-grid sr d1" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--bo);max-width:960px;margin:0 auto">
+    <div style="background:var(--page);padding:36px 28px;text-align:center;transition:background .4s" onmouseover="this.style.background='var(--c3)'" onmouseout="this.style.background='var(--page)'">
+      <div style="width:48px;height:48px;border:1px solid var(--grn-bd);background:var(--grn-bg);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--grn)" stroke-width="1.8" stroke-linecap="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      </div>
+      <div style="font-family:var(--fh);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--tx);margin-bottom:8px">Finanzierung</div>
+      <div style="font-size:12px;font-weight:300;color:var(--tx3);line-height:1.7">Flexible Raten, faire Konditionen &#8211; auch ohne Anzahlung m&#246;glich.</div>
+    </div>
+    <div style="background:var(--page);padding:36px 28px;text-align:center;transition:background .4s" onmouseover="this.style.background='var(--c3)'" onmouseout="this.style.background='var(--page)'">
+      <div style="width:48px;height:48px;border:1px solid var(--grn-bd);background:var(--grn-bg);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--grn)" stroke-width="1.8" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div style="font-family:var(--fh);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--tx);margin-bottom:8px">Aufbereitung</div>
+      <div style="font-size:12px;font-weight:300;color:var(--tx3);line-height:1.7">Professionelle Innen- und Au&#223;enaufbereitung durch zertifizierte Partner.</div>
+    </div>
+    <div style="background:var(--page);padding:36px 28px;text-align:center;transition:background .4s" onmouseover="this.style.background='var(--c3)'" onmouseout="this.style.background='var(--page)'">
+      <div style="width:48px;height:48px;border:1px solid var(--grn-bd);background:var(--grn-bg);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--grn)" stroke-width="1.8" stroke-linecap="round"><path d="M9 12l2 2 4-4"/><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </div>
+      <div style="font-family:var(--fh);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--tx);margin-bottom:8px">Garantie</div>
+      <div style="font-size:12px;font-weight:300;color:var(--tx3);line-height:1.7">Gebrauchtwagen-Garantie auf Wunsch &#8211; transparent und ohne Fallstricke.</div>
+    </div>
+    <div style="background:var(--page);padding:36px 28px;text-align:center;transition:background .4s" onmouseover="this.style.background='var(--c3)'" onmouseout="this.style.background='var(--page)'">
+      <div style="width:48px;height:48px;border:1px solid var(--grn-bd);background:var(--grn-bg);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--grn)" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+      </div>
+      <div style="font-family:var(--fh);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--tx);margin-bottom:8px">Versicherung</div>
+      <div style="font-size:12px;font-weight:300;color:var(--tx3);line-height:1.7">KFZ-Versicherung direkt beim Kauf &#8211; schnell, einfach, g&#252;nstig.</div>
     </div>
   </div>
 </section>
+
 <section class="sec">
   <div class="label sr">Fahrzeug verkaufen</div>
   <h2 class="sr">In 3 Schritten<br/><span class="g">zum Verkauf</span></h2>
@@ -369,35 +372,41 @@ h1 .g{color:rgba(232,227,216,.48)}
   </div>
 </section>
 <div class="map-sec"><div style="width:100%;height:100%;position:relative"><div data-map-src="https://maps.google.com/maps?q=Am+Gewerbebogen+11,+93155+Hemau,+Germany&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=&amp;output=embed" class="map-ph">Karte nach Cookie-Zustimmung</div><div class="map-ov"><div class="map-ov-n">R&amp;M Automobile UG</div><div class="map-ov-a">Am Gewerbebogen 11 &middot; 93155 Hemau</div></div></div></div>
-<div class="cta-band"><h2 class="sr">Bereit f&#252;r Ihr<br/><span class="g">n&#228;chstes Fahrzeug?</span></h2><p class="sr d1">Pers&#246;nlich, ehrlich, auf Augenh&#246;he.<br/>Rufen Sie an oder schreiben Sie uns.</p><a href="/kontakt.html" class="btn-d sr d2" style="display:inline-flex">Kontakt aufnehmen <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div></main>
+<div class="cta-band"><h2 class="sr">Bereit f&#252;r Ihr<br/><span class="g">n&#228;chstes Fahrzeug?</span></h2><p class="sr d1">Pers&#246;nlich, ehrlich, auf Augenh&#246;he.<br/>Rufen Sie an oder schreiben Sie uns.</p><a href="/kontakt.html" class="btn-d sr d2" style="display:inline-flex">Kontakt aufnehmen <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+</main>
+
+<!-- SEO TEXT — cleaner mit Absätzen -->
 <section style="padding:52px 60px;background:var(--c2);border-top:1px solid var(--bo)">
   <div style="max-width:900px;margin:0 auto">
-    <h2 style="font-family:var(--fh);font-size:clamp(18px,2vw,24px);font-weight:700;color:var(--tx);margin-bottom:16px;letter-spacing:-.01em">Ihr Gebrauchtwagenh&#228;ndler in Hemau &#8211; n&#228;he Regensburg, Ingolstadt &amp; N&#252;rnberg</h2>
-    <p style="font-size:13px;font-weight:300;color:var(--tx3);line-height:2.0;margin-bottom:12px">R&amp;M Automobile ist Ihr regionaler Ansprechpartner f&#252;r <strong style="color:var(--tx2)">Gebrauchtwagen kaufen und verkaufen</strong> in Hemau und der gesamten Region. Wir sind zentral gelegen zwischen <strong style="color:var(--tx2)">Regensburg</strong> (ca. 25 min), <strong style="color:var(--tx2)">Ingolstadt</strong> (ca. 45 min), <strong style="color:var(--tx2)">Neumarkt in der Oberpfalz</strong> (ca. 30 min), <strong style="color:var(--tx2)">Parsberg</strong>, <strong style="color:var(--tx2)">Kelheim</strong> und <strong style="color:var(--tx2)">N&#252;rnberg</strong> (ca. 60 min).</p>
+    <h2 style="font-family:var(--fh);font-size:clamp(18px,2vw,24px);font-weight:700;color:var(--tx);margin-bottom:20px;letter-spacing:-.01em">Ihr Gebrauchtwagenh&#228;ndler in Hemau &#8211; n&#228;he Regensburg, Ingolstadt &amp; N&#252;rnberg</h2>
+    <p style="font-size:13px;font-weight:300;color:var(--tx3);line-height:2.0;margin-bottom:16px">R&amp;M Automobile ist Ihr regionaler Ansprechpartner f&#252;r <strong style="color:var(--tx2)">Gebrauchtwagen kaufen und verkaufen</strong> in Hemau und der gesamten Region. Wir sind zentral gelegen zwischen <strong style="color:var(--tx2)">Regensburg</strong> (ca. 25 min), <strong style="color:var(--tx2)">Ingolstadt</strong> (ca. 45 min), <strong style="color:var(--tx2)">Neumarkt in der Oberpfalz</strong> (ca. 30 min), <strong style="color:var(--tx2)">Parsberg</strong>, <strong style="color:var(--tx2)">Kelheim</strong> und <strong style="color:var(--tx2)">N&#252;rnberg</strong> (ca. 60 min).</p>
     <p style="font-size:13px;font-weight:300;color:var(--tx3);line-height:2.0">Ob <strong style="color:var(--tx2)">Auto verkaufen in Regensburg</strong>, <strong style="color:var(--tx2)">Autoankauf Hemau</strong>, <strong style="color:var(--tx2)">Gebrauchtwagen kaufen Neumarkt</strong> oder <strong style="color:var(--tx2)">Fahrzeug bewerten lassen Bayern</strong> &#8211; wir sind f&#252;r Sie da. Kostenlose Abholung deutschlandweit, sofortige Auszahlung beim <strong style="color:var(--tx2)">Fahrzeugankauf</strong>, faire Preise beim Kauf. Auch <strong style="color:var(--tx2)">Unfallfahrzeuge</strong>, Fahrzeuge ohne T&#220;V oder mit hohem Kilometerstand werden angekauft.</p>
   </div>
 </section>
+
 <footer><div class="ft-inner">
 <div class="ft-brand"><div class="fl"><img src="/img/rm_logo_white.svg" alt="R&amp;M Automobile" width="160" height="44"/></div><p>Ihr Spezialist f&#252;r gepr&#252;fte Gebrauchtwagen &#8211; pers&#246;nlich, transparent, fair.</p><div class="ft-social"><a href="https://www.instagram.com/rm__automobile/" class="fsoc" target="_blank" rel="noopener" aria-label="Instagram"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a><a href="https://www.tiktok.com/@rmauto.mobile?_r=1&amp;_t=ZG-95630f9f9cX" class="fsoc" target="_blank" rel="noopener" aria-label="TikTok"><svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.18 8.18 0 0 0 4.78 1.52V6.74a4.85 4.85 0 0 1-1.01-.05z"/></svg></a></div></div>
 <div class="ft-col"><h4>Navigation</h4><ul><li><a href="/index.html">Startseite</a></li><li><a href="/uber-uns.html">&#220;ber Uns</a></li><li><a href="/fahrzeugbereich.html">Fahrzeuge</a></li><li><a href="/mein-fahrzeug-verkaufen.html">Auto verkaufen</a></li><li><a href="/kontakt.html">Kontakt</a></li></ul></div>
 <div class="ft-col"><h4>Kontakt</h4><ul><li><div class="fci"><span class="fci-l">Telefon</span><a href="tel:+4915161569871" class="fci-v">+49 1516 1569871</a></div></li><li><div class="fci"><span class="fci-l">E-Mail</span><a id="email-link2" href="#" class="fci-v">info&#64;rmauto&#8209;mobile.de</a></div></li><li><div class="fci"><span class="fci-l">Adresse</span><span class="fci-v">Am Gewerbebogen 11, 93155 Hemau</span></div></li></ul></div>
 <div class="ft-col"><h4>&#214;ffnungszeiten</h4><ul><li><div class="fci"><span class="fci-l">Mo &#8211; Fr</span><span class="fci-v">09:00 &#8211; 18:00 Uhr</span></div></li><li><div class="fci"><span class="fci-l">Samstag</span><span class="fci-v">09:00 &#8211; 14:00 Uhr</span></div></li><li><div class="fci"><span class="fci-l">Sonntag</span><span class="fci-v">Geschlossen</span></div></li></ul></div>
-</div><div class="ft-bot"><div class="ft-copy">&#169; 2026 R&amp;M Automobile UG (haftungsbeschr&#228;nkt) &#183; Am Gewerbebogen 11, 93155 Hemau</div><div class="ft-legal"><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a><a href="/agb.html">AGB</a></div></div></footer><div class="cookie-banner" id="cookie-banner" role="alertdialog" aria-label="Cookie-Einstellungen"><p class="cookie-txt">Wir verwenden technisch notwendige Cookies und Google Maps. Mit &#8220;Akzeptieren&#8221; stimmen Sie Google Maps zu. <a href="/datenschutz.html">Datenschutz</a></p><div class="cookie-btns"><button class="cookie-decline" onclick="setCookie('declined')">Ablehnen</button><button class="cookie-accept" onclick="setCookie('accepted')">Akzeptieren</button></div></div><script>
+</div><div class="ft-bot"><div class="ft-copy">&#169; 2026 R&amp;M Automobile UG (haftungsbeschr&#228;nkt) &#183; Am Gewerbebogen 11, 93155 Hemau</div><div class="ft-legal"><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a><a href="/agb.html">AGB</a></div></div></footer>
+<div class="cookie-banner" id="cookie-banner" role="alertdialog" aria-label="Cookie-Einstellungen"><p class="cookie-txt">Wir verwenden technisch notwendige Cookies und Google Maps. Mit &#8220;Akzeptieren&#8221; stimmen Sie Google Maps zu. <a href="/datenschutz.html">Datenschutz</a></p><div class="cookie-btns"><button class="cookie-decline" onclick="setCookie('declined')">Ablehnen</button><button class="cookie-accept" onclick="setCookie('accepted')">Akzeptieren</button></div></div>
+<script>
 function setCookie(v){localStorage.setItem('rm_cookies',v);document.getElementById('cookie-banner').classList.remove('show');if(v==='accepted')loadMaps();}
 function loadMaps(){document.querySelectorAll('[data-map-src]').forEach(function(el){var f=document.createElement('iframe');f.src=el.dataset.mapSrc;f.style.cssText='width:100%;height:100%;border:none;display:block;filter:grayscale(55%) contrast(1.05)';f.allowFullscreen=true;f.loading='lazy';f.referrerPolicy='no-referrer-when-downgrade';el.replaceWith(f);});}
-window.addEventListener('DOMContentLoaded',function(){var c=localStorage.getItem('rm_cookies');if(!c)setTimeout(function(){var b=document.getElementById('cookie-banner');if(b)b.classList.add('show');},900);else if(c==='accepted')loadMaps();['email-link','email-link2'].forEach(function(id){var el=document.getElementById(id);if(el)el.href='mai'+'lto:'+'info'+'@'+'rmauto-mobile.de';});var al=document.getElementById('ankauf-link');if(al)al.href='mai'+'lto:'+'ankauf'+'@'+'rmauto-mobile.de';});
+window.addEventListener('DOMContentLoaded',function(){var c=localStorage.getItem('rm_cookies');if(!c)setTimeout(function(){var b=document.getElementById('cookie-banner');if(b)b.classList.add('show');},900);else if(c==='accepted')loadMaps();['email-link','email-link2'].forEach(function(id){var el=document.getElementById(id);if(el)el.href='mai'+'lto:'+'info'+'@'+'rmauto-mobile.de';});});
 function toggleMenu(){var m=document.getElementById('mob-menu'),b=document.getElementById('burger');if(m.classList.contains('open')){m.classList.remove('open');b.classList.remove('open');document.body.style.overflow='';}else{m.classList.add('open');b.classList.add('open');document.body.style.overflow='hidden';}}
 function closeMenu(){document.getElementById('mob-menu').classList.remove('open');document.getElementById('burger').classList.remove('open');document.body.style.overflow='';}
 var _o=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');_o.unobserve(x.target)}});},{threshold:0.08,rootMargin:'0px 0px -24px 0px'});document.querySelectorAll('.sr').forEach(function(el){_o.observe(el);});
-</script><script>
+// Mobile Slider Dots
+function scrollToCard(i){var s=document.getElementById('fz-slider');var cards=s.querySelectorAll('.fzg-card');if(cards[i])s.scrollTo({left:cards[i].offsetLeft-20,behavior:'smooth'});}
+window.addEventListener('DOMContentLoaded',function(){var s=document.getElementById('fz-slider');var dots=document.querySelectorAll('.fz-dot');if(s&&dots.length){s.addEventListener('scroll',function(){var cards=s.querySelectorAll('.fzg-card');var si=s.scrollLeft;var ci=0;cards.forEach(function(c,i){if(c.offsetLeft-20<=si+10)ci=i;});dots.forEach(function(d,i){d.classList.toggle('on',i===ci);});},{passive:true});}});
+// Hero animation
 var _css='.hero-eye{opacity:0;transform:translateY(12px);transition:opacity .8s,transform .8s}';
 _css+='.hero-sub,.hero-btns{opacity:0;transform:translateY(14px);transition:opacity .8s,transform .8s}';
 _css+='.hero-trust{opacity:0;transition:opacity .8s}';
 _css+='.hw{opacity:0;transform:translateY(100%);transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)}';
 var _s=document.createElement('style');_s.textContent=_css;document.head.appendChild(_s);
-window.addEventListener('DOMContentLoaded',function(){setTimeout(function(){
-  var seq=[['hE',0,'f'],['w1',300,'w'],['w2',460,'w'],['w3',620,'w'],['hB',820,'f'],['hBtns',950,'f'],['hT',1100,'f']];
-  seq.forEach(function(x){setTimeout(function(){var el=document.getElementById(x[0]);if(el){el.style.opacity='1';el.style.transform='none';}},x[1]);});
-},100);});
+window.addEventListener('DOMContentLoaded',function(){setTimeout(function(){var seq=[['hE',0,'f'],['w1',300,'w'],['w2',460,'w'],['w3',620,'w'],['hB',820,'f'],['hBtns',950,'f'],['hT',1100,'f']];seq.forEach(function(x){setTimeout(function(){var el=document.getElementById(x[0]);if(el){el.style.opacity='1';el.style.transform='none';}},x[1]);});},100);});
 </script>
 </body></html>
