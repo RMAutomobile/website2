@@ -198,31 +198,61 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
             <div class="fg"><label>Leistung (PS)</label><input type="number" name="ps" placeholder="z.B. 150" min="30" max="2000" step="1" maxlength="4"/></div>
             <div class="fg"><label>Erstzulassung *</label><input type="text" name="erstzulassung" id="inp-ez" placeholder="MM/JJJJ" required maxlength="7" inputmode="numeric"/></div>
           </div>
+          <div class="fg-row">
+            <div class="fg"><label>Anzahl T&#252;ren *</label><select name="tueren" required><option value="" disabled selected>W&#228;hlen</option><option>3 T&#252;ren</option><option>5 T&#252;ren</option></select></div>
+            <div class="fg"><label>Karosserieform *</label><select name="karosserie" required><option value="" disabled selected>W&#228;hlen</option><option>Limousine</option><option>Kombi</option><option>SUV/Gel&#228;ndewagen</option><option>Kompaktvan/Van</option><option>Coup&#233;</option><option>Cabriolet</option><option>Kleinstwagen</option><option>Pickup</option></select></div>
+          </div>
           <div class="form-nav"><button class="btn-next" type="button" onclick="goStep(1,2)">Weiter &#8250;</button></div>
         </div>
         <!-- S2 -->
         <div class="fstep" id="fs2">
-          <div class="step-lbl">Schritt 2/6 &#183; Kilometerstand &#8212; <span style="color:var(--grn)">Gut gemacht!</span></div>
+          <div class="step-lbl">Schritt 2/6 &#183; Kilometerstand &amp; Ausstattung</div>
           <div class="fg"><label>Kilometerstand *</label><input type="text" name="km" id="inp-km" placeholder="z.B. 85.000 km" required inputmode="numeric" maxlength="10"/></div>
-          <div class="fg"><label>Wann m&#246;chten Sie verkaufen?</label>
-            <div class="rg" id="rg-wann"><div class="rb" onclick="setR('wann','Sofort',this)">Sofort</div><div class="rb" onclick="setR('wann','4 Wochen',this)">4 Wochen</div><div class="rb" onclick="setR('wann','3 Monate',this)">3 Monate</div><div class="rb" onclick="setR('wann','Unklar',this)">Noch unklar</div></div>
-            <input type="hidden" name="wann_verkaufen" id="h-wann"/>
-          </div>
           <div class="fg"><label>Reifen vorhanden</label>
             <div class="cg">
-              <label class="ci-item"><input type="checkbox" name="reifen" value="Sommerreifen auf Alufelgen"/><span class="ci-check">&#10003;</span> Sommerreifen (Alu)</label>
-              <label class="ci-item"><input type="checkbox" name="reifen" value="Sommerreifen auf Stahlfelgen"/><span class="ci-check">&#10003;</span> Sommerreifen (Stahl)</label>
-              <label class="ci-item"><input type="checkbox" name="reifen" value="Winterreifen auf Alufelgen"/><span class="ci-check">&#10003;</span> Winterreifen (Alu)</label>
-              <label class="ci-item"><input type="checkbox" name="reifen" value="Winterreifen auf Stahlfelgen"/><span class="ci-check">&#10003;</span> Winterreifen (Stahl)</label>
+              <label class="ci-item"><input type="checkbox" name="reifen" value="Sommerreifen (Alu)"/><span class="ci-check">&#10003;</span> Sommerreifen (Alu)</label>
+              <label class="ci-item"><input type="checkbox" name="reifen" value="Sommerreifen (Stahl)"/><span class="ci-check">&#10003;</span> Sommerreifen (Stahl)</label>
+              <label class="ci-item"><input type="checkbox" name="reifen" value="Winterreifen (Alu)"/><span class="ci-check">&#10003;</span> Winterreifen (Alu)</label>
+              <label class="ci-item"><input type="checkbox" name="reifen" value="Winterreifen (Stahl)"/><span class="ci-check">&#10003;</span> Winterreifen (Stahl)</label>
               <label class="ci-item"><input type="checkbox" name="reifen" value="Ganzjahresreifen"/><span class="ci-check">&#10003;</span> Ganzjahresreifen</label>
               <label class="ci-item"><input type="checkbox" name="reifen" value="Keine Zweitreifen"/><span class="ci-check">&#10003;</span> Keine Zweitreifen</label>
             </div>
+          </div>
+          <div class="fg"><label>Ausstattung</label>
+            <div class="cg" style="grid-template-columns:1fr 1fr">
+              <label class="ci-item"><input type="checkbox" name="ausstattung" value="Klimaanlage"/><span class="ci-check">&#10003;</span> Klimaanlage</label>
+              <label class="ci-item"><input type="checkbox" name="ausstattung" value="Klimaautomatik"/><span class="ci-check">&#10003;</span> Klimaautomatik</label>
+              <label class="ci-item"><input type="checkbox" name="ausstattung" value="Navigationssystem"/><span class="ci-check">&#10003;</span> Navigationssystem</label>
+              <label class="ci-item"><input type="checkbox" name="ausstattung" value="Sitzheizung"/><span class="ci-check">&#10003;</span> Sitzheizung</label>
+              <label class="ci-item"><input type="checkbox" name="ausstattung" value="Lenkradheizung"/><span class="ci-check">&#10003;</span> Lenkradheizung</label>
+              <label class="ci-item"><input type="checkbox" name="ausstattung" value="Einparkhilfe hinten"/><span class="ci-check">&#10003;</span> Einparkhilfe hinten</label>
+              <label class="ci-item"><input type="checkbox" name="ausstattung" value="Einparkhilfe vorne"/><span class="ci-check">&#10003;</span> Einparkhilfe vorne</label>
+              <label class="ci-item"><input type="checkbox" name="ausstattung" value="R&#252;ckfahrkamera"/><span class="ci-check">&#10003;</span> R&#252;ckfahrkamera</label>
+              <label class="ci-item"><input type="checkbox" name="ausstattung" value="Tempomat"/><span class="ci-check">&#10003;</span> Tempomat</label>
+              <label class="ci-item"><input type="checkbox" name="ausstattung" value="Adaptiver Tempomat"/><span class="ci-check">&#10003;</span> Adaptiver Tempomat</label>
+              <label class="ci-item"><input type="checkbox" name="ausstattung" value="Spurhalteassistent"/><span class="ci-check">&#10003;</span> Spurhalteassistent</label>
+              <label class="ci-item"><input type="checkbox" name="ausstattung" value="Totwinkelassistent"/><span class="ci-check">&#10003;</span> Totwinkelassistent</label>
+              <label class="ci-item"><input type="checkbox" name="ausstattung" value="Notbremsassistent"/><span class="ci-check">&#10003;</span> Notbremsassistent</label>
+              <label class="ci-item"><input type="checkbox" name="ausstattung" value="Bluetooth"/><span class="ci-check">&#10003;</span> Bluetooth</label>
+              <label class="ci-item"><input type="checkbox" name="ausstattung" value="Apple CarPlay"/><span class="ci-check">&#10003;</span> Apple CarPlay</label>
+              <label class="ci-item"><input type="checkbox" name="ausstattung" value="Android Auto"/><span class="ci-check">&#10003;</span> Android Auto</label>
+              <label class="ci-item"><input type="checkbox" name="ausstattung" value="Xenon/LED-Scheinwerfer"/><span class="ci-check">&#10003;</span> Xenon / LED</label>
+              <label class="ci-item"><input type="checkbox" name="ausstattung" value="Panoramadach"/><span class="ci-check">&#10003;</span> Panoramadach</label>
+              <label class="ci-item"><input type="checkbox" name="ausstattung" value="Schiebedach"/><span class="ci-check">&#10003;</span> Schiebedach</label>
+              <label class="ci-item"><input type="checkbox" name="ausstattung" value="Anh&#228;ngerkupplung"/><span class="ci-check">&#10003;</span> Anh&#228;ngerkupplung</label>
+              <label class="ci-item"><input type="checkbox" name="ausstattung" value="Allradantrieb"/><span class="ci-check">&#10003;</span> Allradantrieb</label>
+              <label class="ci-item"><input type="checkbox" name="ausstattung" value="Sportpaket"/><span class="ci-check">&#10003;</span> Sportpaket</label>
+            </div>
+          </div>
+          <div class="fg"><label>Wann m&#246;chten Sie verkaufen?</label>
+            <div class="rg" id="rg-wann"><div class="rb" onclick="setR('wann','Sofort',this)">Sofort</div><div class="rb" onclick="setR('wann','4 Wochen',this)">4 Wochen</div><div class="rb" onclick="setR('wann','3 Monate',this)">3 Monate</div><div class="rb" onclick="setR('wann','Unklar',this)">Noch unklar</div></div>
+            <input type="hidden" name="wann_verkaufen" id="h-wann"/>
           </div>
           <div class="form-nav"><button class="btn-prev" type="button" onclick="goStep(2,1)">&#8249; Zur&#252;ck</button><button class="btn-next" type="button" onclick="goStep(2,3)">Weiter &#8250;</button></div>
         </div>
         <!-- S3 -->
         <div class="fstep" id="fs3">
-          <div class="step-lbl">Schritt 3/6 &#183; Fahrzeughistorie &#8212; <span style="color:var(--grn)">Weiter so!</span></div>
+          <div class="step-lbl">Schritt 3/6 &#183; Fahrzeughistorie</div>
           <div class="fg"><label>Unfallfrei?</label>
             <div class="rg" id="rg-unfall"><div class="rb" onclick="setR('unfall','Ja',this)">Ja, unfallfrei</div><div class="rb" onclick="setR('unfall','Nein',this)">Nein, Unfallschaden</div><div class="rb" onclick="setR('unfall','Unbekannt',this)">Nicht bekannt</div></div>
             <input type="hidden" name="unfallfrei" id="h-unfall"/>
@@ -232,21 +262,39 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
             <input type="hidden" name="scheckheft" id="h-sh"/>
           </div>
           <div class="fg-row">
-            <div class="fg"><label>Au&#223;enfarbe *</label><select name="farbe" required><option value="" disabled selected>W&#228;hlen</option><option>Schwarz</option><option>Wei&#223;</option><option>Silber</option><option>Grau</option><option>Blau</option><option>Rot</option><option>Braun/Beige</option><option>Gr&#252;n</option><option>Sonstige</option></select></div>
-            <div class="fg"><label>Fahrbereit? *</label><select name="fahrbereit" required><option value="" disabled selected>Status</option><option>Ja, fahrbereit</option><option>Eingeschr&#228;nkt</option><option>Nicht fahrbereit</option></select></div>
+            <div class="fg"><label>T&#220;V g&#252;ltig bis</label><input type="text" name="tuev_bis" placeholder="MM/JJJJ" maxlength="7" inputmode="numeric" id="inp-tuev"/></div>
+            <div class="fg"><label>Letzter Service</label><input type="text" name="letzter_service" placeholder="MM/JJJJ" maxlength="7" inputmode="numeric" id="inp-service"/></div>
           </div>
           <div class="fg-row">
-            <div class="fg"><label>Anzahl T&#252;ren</label><select name="tueren"><option value="" disabled selected>W&#228;hlen</option><option>2 T&#252;ren</option><option>3 T&#252;ren</option><option>4 T&#252;ren</option><option>5 T&#252;ren</option></select></div>
-            <div class="fg"><label>Karosserieform</label><select name="karosserie"><option value="" disabled selected>W&#228;hlen</option><option>Limousine</option><option>Kombi</option><option>SUV/Gel&#228;ndewagen</option><option>Kompaktvan/Van</option><option>Coup&#233;</option><option>Cabriolet</option><option>Kleinstwagen</option><option>Pickup</option></select></div>
+            <div class="fg"><label>Vorbesitzer</label><select name="vorbesitzer"><option value="" disabled selected>W&#228;hlen</option><option>1</option><option>2</option><option>3</option><option>4+</option><option>Unbekannt</option></select></div>
+            <div class="fg"><label>Schl&#252;sselanzahl</label><select name="schluessel"><option value="" disabled selected>W&#228;hlen</option><option>1 Schl&#252;ssel</option><option>2 Schl&#252;ssel</option><option>3+ Schl&#252;ssel</option></select></div>
+          </div>
+          <div class="fg-row">
+            <div class="fg"><label>Import?</label>
+              <div class="rg" id="rg-import"><div class="rb" onclick="setR('import','Nein',this)">Nein</div><div class="rb" onclick="setR('import','Ja – EU',this)">Ja – EU</div><div class="rb" onclick="setR('import','Ja – Nicht-EU',this)">Ja – Nicht-EU</div></div>
+              <input type="hidden" name="import" id="h-import"/>
+            </div>
+            <div class="fg"><label>Finanzierung offen?</label>
+              <div class="rg" id="rg-fin"><div class="rb" onclick="setR('fin','Nein',this)">Nein</div><div class="rb" onclick="setR('fin','Ja',this)">Ja</div></div>
+              <input type="hidden" name="finanzierung_offen" id="h-fin"/>
+            </div>
+          </div>
+          <div class="fg-row">
+            <div class="fg"><label>Au&#223;enfarbe *</label><select name="farbe" required><option value="" disabled selected>W&#228;hlen</option><option>Schwarz</option><option>Wei&#223;</option><option>Silber</option><option>Grau</option><option>Blau</option><option>Rot</option><option>Braun/Beige</option><option>Gr&#252;n</option><option>Sonstige</option></select></div>
+            <div class="fg"><label>Fahrbereit? *</label><select name="fahrbereit" required><option value="" disabled selected>Status</option><option>Ja, fahrbereit</option><option>Eingeschr&#228;nkt</option><option>Nicht fahrbereit</option></select></div>
           </div>
           <div class="form-nav"><button class="btn-prev" type="button" onclick="goStep(3,2)">&#8249; Zur&#252;ck</button><button class="btn-next" type="button" onclick="goStep(3,4)">Weiter &#8250;</button></div>
         </div>
         <!-- S4 -->
         <div class="fstep" id="fs4">
-          <div class="step-lbl">Schritt 4/6 &#183; Zustand &#8212; <span style="color:var(--grn)">Sehr gut!</span></div>
+          <div class="step-lbl">Schritt 4/6 &#183; Zustand</div>
           <div class="fg"><label>Au&#223;enzustand</label>
             <div class="ratg" id="rg-aussen"><div class="ratb" onclick="setRat('aussen','Sehr gut',this)">Sehr gut</div><div class="ratb" onclick="setRat('aussen','Gut',this)">Gut</div><div class="ratb" onclick="setRat('aussen','Befriedigend',this)">Befriedigend</div><div class="ratb" onclick="setRat('aussen','Schlecht',this)">Schlecht</div></div>
             <input type="hidden" name="aussenzustand" id="h-aussen"/>
+          </div>
+          <div class="fg"><label>Innenzustand</label>
+            <div class="ratg" id="rg-innen"><div class="ratb" onclick="setRat('innen','Sehr gut',this)">Sehr gut</div><div class="ratb" onclick="setRat('innen','Gut',this)">Gut</div><div class="ratb" onclick="setRat('innen','Befriedigend',this)">Befriedigend</div><div class="ratb" onclick="setRat('innen','Schlecht',this)">Schlecht</div></div>
+            <input type="hidden" name="innenzustand" id="h-innen"/>
           </div>
           <div class="fg"><label>Sichtbare Sch&#228;den</label>
             <div class="cg">
@@ -263,13 +311,20 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
         </div>
         <!-- S5 -->
         <div class="fstep" id="fs5">
-          <div class="step-lbl">Schritt 5/6 &#183; Technik &#8212; <span style="color:var(--grn)">Fast da!</span></div>
+          <div class="step-lbl">Schritt 5/6 &#183; Technik</div>
           <div class="fg"><label>Technischer Zustand</label>
             <div class="tech-grid">
-              <div class="tech-row"><span class="tech-label">Motor</span><div class="tech-btns"><button type="button" class="tb yes" onclick="setTech(this,'motor','Einwandfrei')">OK</button><button type="button" class="tb no" onclick="setTech(this,'motor','Defekt')">Defekt</button></div><input type="hidden" name="motor_ok" id="h-motor"/></div>
-              <div class="tech-row"><span class="tech-label">Getriebe</span><div class="tech-btns"><button type="button" class="tb yes" onclick="setTech(this,'getr','Einwandfrei')">OK</button><button type="button" class="tb no" onclick="setTech(this,'getr','Defekt')">Defekt</button></div><input type="hidden" name="getriebe_ok" id="h-getr"/></div>
-              <div class="tech-row"><span class="tech-label">Klimaanlage</span><div class="tech-btns"><button type="button" class="tb yes" onclick="setTech(this,'klima','Einwandfrei')">OK</button><button type="button" class="tb no" onclick="setTech(this,'klima','Defekt')">Defekt</button></div><input type="hidden" name="klima_ok" id="h-klima"/></div>
-              <div class="tech-row"><span class="tech-label">Warnleuchten</span><div class="tech-btns"><button type="button" class="tb yes" onclick="setTech(this,'warn','Keine')">Keine</button><button type="button" class="tb no" onclick="setTech(this,'warn','Aktiv')">Aktiv</button></div><input type="hidden" name="warnleuchten" id="h-warn"/></div>
+              <div class="tech-row"><span class="tech-label">Motor</span><div class="tech-btns"><button type="button" class="tb yes" onclick="setTech(this,'motor','OK')">OK</button><button type="button" class="tb no" onclick="setTech(this,'motor','Defekt')">Defekt</button></div><input type="hidden" name="motor_ok" id="h-motor"/></div>
+              <div class="tech-row"><span class="tech-label">Getriebe</span><div class="tech-btns"><button type="button" class="tb yes" onclick="setTech(this,'getr','OK')">OK</button><button type="button" class="tb no" onclick="setTech(this,'getr','Defekt')">Defekt</button></div><input type="hidden" name="getriebe_ok" id="h-getr"/></div>
+              <div class="tech-row"><span class="tech-label">Lenkung</span><div class="tech-btns"><button type="button" class="tb yes" onclick="setTech(this,'lenk','OK')">OK</button><button type="button" class="tb no" onclick="setTech(this,'lenk','Defekt')">Defekt</button></div><input type="hidden" name="lenkung_ok" id="h-lenk"/></div>
+              <div class="tech-row"><span class="tech-label">Fahrwerk</span><div class="tech-btns"><button type="button" class="tb yes" onclick="setTech(this,'fahr','OK')">OK</button><button type="button" class="tb no" onclick="setTech(this,'fahr','Defekt')">Defekt</button></div><input type="hidden" name="fahrwerk_ok" id="h-fahr"/></div>
+              <div class="tech-row"><span class="tech-label">Klimaanlage</span><div class="tech-btns"><button type="button" class="tb yes" onclick="setTech(this,'klima','OK')">OK</button><button type="button" class="tb no" onclick="setTech(this,'klima','Defekt')">Defekt</button></div><input type="hidden" name="klima_ok" id="h-klima"/></div>
+              <div class="tech-row"><span class="tech-label">Lack</span><div class="tech-btns"><button type="button" class="tb yes" onclick="setTech(this,'lack','OK')">OK</button><button type="button" class="tb no" onclick="setTech(this,'lack','Sch&#228;den')">Sch&#228;den</button></div><input type="hidden" name="lack_ok" id="h-lack"/></div>
+              <div class="tech-row"><span class="tech-label">Rost</span><div class="tech-btns"><button type="button" class="tb yes" onclick="setTech(this,'rost','Kein Rost')">Kein</button><button type="button" class="tb no" onclick="setTech(this,'rost','Rost vorhanden')">Vorhanden</button></div><input type="hidden" name="rost" id="h-rost"/></div>
+              <div class="tech-row"><span class="tech-label">Warnleuchten</span><div class="tech-btns"><button type="button" class="tb yes" onclick="setTech(this,'warn','Keine');document.getElementById('warn-detail').style.display='none'">Keine</button><button type="button" class="tb no" onclick="setTech(this,'warn','Aktiv');document.getElementById('warn-detail').style.display='block'">Aktiv</button></div><input type="hidden" name="warnleuchten" id="h-warn"/></div>
+            </div>
+            <div id="warn-detail" style="display:none;margin-top:8px">
+              <input type="text" name="warnleuchten_detail" placeholder="Welche Warnleuchten? (z.B. Motorleuchte, ESP...)" style="background:var(--page);border:1px solid var(--bo);color:var(--tx);padding:10px 12px;font-family:var(--fb);font-size:13px;font-weight:300;width:100%"/>
             </div>
           </div>
           <div class="fg" style="margin-top:12px"><label>Preisvorstellung *</label><input type="text" name="preisvorstellung" id="inp-preis" placeholder="z.B. 8.000 &#8364;" required inputmode="numeric" maxlength="12"/></div>
@@ -277,7 +332,7 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
         </div>
         <!-- S6 -->
         <div class="fstep" id="fs6">
-          <div class="step-lbl">Schritt 6/6 &#183; Kontakt &#8212; <span style="color:var(--grn)">Letzter Schritt! &#127881;</span></div>
+          <div class="step-lbl">Schritt 6/6 &#183; Kontakt</div>
           <div class="fg-row">
             <div class="fg"><label>Name *</label><input type="text" name="name" placeholder="Vor- und Nachname" required/></div>
             <div class="fg"><label>Telefon *</label><input type="tel" name="telefon" placeholder="+49 ..." required/></div>
@@ -303,9 +358,12 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
           <p style="font-size:13px;font-weight:300;color:var(--tx3);line-height:1.8;margin-bottom:16px">Wir melden uns pers&#246;nlich bei Ihnen.<br/>Dringend? <a href="tel:+4915161569871" style="color:var(--grn)">+49 1516 1569871</a></p>
         </div>
         <div>
-          <div style="font-family:var(--fh);font-size:13px;font-weight:700;color:var(--tx);margin-bottom:6px">&#128247; Fotos mitschicken?</div>
-          <p style="font-size:12px;font-weight:300;color:var(--tx3);line-height:1.7;margin-bottom:12px">Mit Fotos k&#246;nnen wir schneller und pr&#228;ziser bewerten.</p>
-          <button onclick="window.open('https://wa.me/4915161569871','_blank')" style="width:100%;padding:12px;background:#25D366;border:none;color:#fff;font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.523 5.843L.057 23.855a.75.75 0 0 0 .916.948l6.205-1.63A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.93 0-3.737-.52-5.287-1.428l-.378-.225-3.922 1.032.993-3.821-.247-.393A9.955 9.955 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>Fotos per WhatsApp senden</button>
+          <div style="font-family:var(--fh);font-size:13px;font-weight:700;color:var(--tx);margin-bottom:6px">&#128247; Fotos mitschicken &#8211; je mehr desto besser</div>
+          <p style="font-size:12px;font-weight:300;color:var(--tx3);line-height:1.7;margin-bottom:10px">Mit Fotos k&#246;nnen wir schneller und pr&#228;ziser bewerten. W&#228;hlen Sie Ihre bevorzugte Option:</p>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <button onclick="sendFotosMail()" style="width:100%;padding:12px;background:var(--tx);border:none;color:var(--page);font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px">&#9993; Fotos per E-Mail senden</button>
+            <button onclick="window.open('https://wa.me/4915161569871','_blank')" style="width:100%;padding:12px;background:#25D366;border:none;color:#fff;font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px">&#128241; Fotos per WhatsApp senden</button>
+          </div>
         </div>
       </div>
     </div>
@@ -389,14 +447,23 @@ function goStep(from,to){
   if(fill)fill.style.width=pct+'%';
   if(txt)txt.textContent='Schritt '+to+' von 6';
   if(pctEl)pctEl.textContent=pct+'%';
-  document.querySelector('.form-card').scrollIntoView({behavior:'smooth',block:'start'});
+  document.querySelector('.form-card').scrollIntoView({behavior:'smooth',block:'nearest'});
 }
 function setR(g,v,el){document.querySelectorAll('#rg-'+g+' .rb').forEach(function(b){b.classList.remove('sel');});el.classList.add('sel');document.getElementById('h-'+g).value=v;}
 function setRat(g,v,el){document.querySelectorAll('#rg-'+g+' .ratb').forEach(function(b){b.classList.remove('sel');});el.classList.add('sel');document.getElementById('h-'+g).value=v;}
 function setTech(btn,k,v){var row=btn.closest('.tech-row');row.querySelectorAll('.tb').forEach(function(b){b.classList.remove('sel');});btn.classList.add('sel');document.getElementById('h-'+k).value=v;}
 function faqT(el){var item=el.parentElement,open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});if(!open)item.classList.add('open');}
 function submitAnkauf(){var f=document.getElementById('ankauf-form');var d=new FormData(f);fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify(Object.fromEntries(d))}).then(function(r){return r.json();}).then(function(res){if(res.success){f.style.display='none';document.getElementById('ankauf-success').style.display='block';}else{alert('Fehler beim Senden. Bitte versuchen Sie es erneut.');}}).catch(function(){f.style.display='none';document.getElementById('ankauf-success').style.display='block';});}
-function sendWhatsApp(){var f=document.getElementById('ankauf-form');var d=new FormData(f);var g=function(k){return d.get(k)||'-';};var L=['R&M Automobile - Ankaufanfrage','','Hey, ich möchte mein Fahrzeug verkaufen!','','Fahrzeug: '+g('marke')+' '+g('modell'),'Kraftstoff: '+g('kraftstoff')+' | Getriebe: '+g('getriebe'),'EZ: '+g('erstzulassung')+' | PS: '+g('ps'),'KM: '+g('km'),'Farbe: '+g('farbe'),'Unfallfrei: '+g('unfallfrei'),'Scheckheft: '+g('scheckheft'),'Fahrbereit: '+g('fahrbereit'),'Motor: '+g('motor_ok')+' | Getriebe: '+g('getriebe_ok'),'Klima: '+g('klima_ok')+' | Warnleuchten: '+g('warnleuchten'),'Preisvorstellung: '+g('preisvorstellung'),'','Kontakt: '+g('name')+' | '+g('telefon')+'','Fotos folgen gleich!'];window.open('https://wa.me/4915161569871?text='+encodeURIComponent(L.join('\n')),'_blank');}
+function sendFotosMail(){
+  var f=document.getElementById('ankauf-form');
+  var d=f?new FormData(f):new FormData();
+  var marke=d.get('marke')||'';
+  var modell=d.get('modell')||'';
+  var subject=encodeURIComponent('Fotos Ankaufanfrage – '+marke+' '+modell);
+  var body=encodeURIComponent('Hallo R&M Automobile,\n\nanbei sende ich Ihnen Fotos zu meinem Fahrzeug.\n\nFahrzeug: '+marke+' '+modell+'\n\nBitte nehmen Sie mein Angebot in Kürze in Bearbeitung.\n\nMit freundlichen Grüßen');
+  window.location.href='mailto:ankauf@rmauto-mobile.de?subject='+subject+'&body='+body;
+}
+function sendWhatsApp(){var f=document.getElementById('ankauf-form');var d=new FormData(f);var g=function(k){return d.get(k)||'-';};var L=['R&M Automobile - Ankaufanfrage','','Hey, ich möchte mein Fahrzeug verkaufen!','','Fahrzeug: '+g('marke')+' '+g('modell'),'Kraftstoff: '+g('kraftstoff')+' | Getriebe: '+g('getriebe'),'EZ: '+g('erstzulassung')+' | PS: '+g('ps'),'KM: '+g('km'),'Farbe: '+g('farbe'),'Unfallfrei: '+g('unfallfrei'),'Scheckheft: '+g('scheckheft'),'Fahrbereit: '+g('fahrbereit'),'Motor: '+g('motor_ok')+' | Getriebe: '+g('getriebe_ok'),'Klima: '+g('klima_ok')+' | Warnleuchten: '+g('warnleuchten'),'Preisvorstellung: '+g('preisvorstellung'),'Import: '+g('import'),'Finanzierung offen: '+g('finanzierung_offen'),'','Kontakt: '+g('name')+' | '+g('telefon')+'','Fotos folgen gleich!'];window.open('https://wa.me/4915161569871?text='+encodeURIComponent(L.join('\n')),'_blank');}
 window.addEventListener('DOMContentLoaded',function(){var km=document.getElementById('inp-km');if(km){km.addEventListener('input',function(){var v=this.value.replace(/\D/g,'');this.value=v.replace(/\B(?=(\d{3})+(?!\d))/g,'.');});}var ez=document.getElementById('inp-ez');if(ez){ez.addEventListener('input',function(){var v=this.value.replace(/\D/g,'');if(v.length>2)v=v.substring(0,2)+'/'+v.substring(2,6);this.value=v;});}});
 </script>
 <script>
