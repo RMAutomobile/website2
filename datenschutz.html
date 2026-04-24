@@ -4,8 +4,6 @@
 html,body{overflow-x:hidden;max-width:100vw}html{scroll-behavior:smooth}
 body{font-family:var(--fb);background:var(--page);color:var(--tx);-webkit-font-smoothing:antialiased}
 a{text-decoration:none;color:inherit}img{display:block;max-width:100%;height:auto}
-.btn-d{display:inline-flex;align-items:center;gap:9px;padding:13px 28px;background:var(--tx);color:var(--page);font-family:var(--fh);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;border:1px solid var(--tx);transition:all .35s var(--ease);cursor:pointer;white-space:nowrap}.btn-d:hover{background:transparent;color:var(--tx)}.btn-d svg{transition:transform .3s;flex-shrink:0}.btn-d:hover svg{transform:translateX(4px)}
-.btn-g{display:inline-flex;align-items:center;gap:9px;padding:13px 28px;background:transparent;color:var(--tx2);font-family:var(--fh);font-size:11px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;border:1px solid var(--bo2);transition:all .35s var(--ease);cursor:pointer;white-space:nowrap}.btn-g:hover{border-color:var(--bo3);color:var(--tx)}
 nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:0 60px;height:88px;display:flex;align-items:center;justify-content:space-between;background:rgba(22,22,20,.95);backdrop-filter:blur(20px);border-bottom:1px solid var(--bo)}
 .nav-logo{display:flex;align-items:center;flex-shrink:0}.nav-logo img{height:46px;width:auto}
 .nav-links{display:flex;align-items:center;gap:32px;list-style:none}
@@ -50,14 +48,11 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
 .legal-wrap ul{list-style:none;display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
 .legal-wrap li{font-size:14px;font-weight:300;color:var(--tx2);line-height:1.75;padding-left:16px;position:relative}.legal-wrap li::before{content:'·';position:absolute;left:0;color:var(--tx3)}
 .legal-wrap a{color:var(--tx3);text-decoration:underline}
-@media(max-width:768px){.legal-wrap{padding:110px 20px 80px}}</style><!-- Google Analytics -->
+@media(max-width:768px){.legal-wrap{padding:110px 20px 80px}}</style>
+<link rel="icon" href="/img/favicon.jpg"/>
+<!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-XDZRP2W3X9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XDZRP2W3X9');
-</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XDZRP2W3X9');</script>
 </head><body><nav role="navigation"><a href="/index.html" class="nav-logo"><img src="/img/rm_logo_white.svg" alt="R&amp;M Automobile" loading="eager" width="160" height="46"/></a><ul class="nav-links"><li><a href="/index.html">Startseite</a></li><li><a href="/uber-uns.html">&#220;ber Uns</a></li><li><a href="/fahrzeugbereich.html">Fahrzeuge</a></li><li><a href="/mein-fahrzeug-verkaufen.html">Auto verkaufen</a></li><li><a href="/kontakt.html" class="nav-pill">Kontakt</a></li></ul><button class="nav-burger" id="burger" onclick="toggleMenu()" aria-label="Men&#252; &#246;ffnen" aria-expanded="false"><span></span><span></span><span></span></button></nav><div class="mob-menu" id="mob-menu" role="dialog" aria-modal="true"><a href="/index.html" onclick="closeMenu()">Startseite</a><a href="/uber-uns.html" onclick="closeMenu()">&#220;ber Uns</a><a href="/fahrzeugbereich.html" onclick="closeMenu()">Fahrzeuge</a><a href="/mein-fahrzeug-verkaufen.html" onclick="closeMenu()">Auto verkaufen</a><a href="/kontakt.html" onclick="closeMenu()">Kontakt</a></div><main><div class="legal-wrap"><h1>Datenschutzerkl&#228;rung</h1>
 <h2>1. Verantwortlicher</h2>
 <p>R&amp;M Automobile UG (haftungsbeschr&#228;nkt), Am Gewerbebogen 11, 93155 Hemau<br/>E-Mail: info&#64;rmauto&#8209;mobile.de &#183; Telefon: +49 1516 1569871</p>
@@ -68,8 +63,8 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
 <ul><li>Art. 6 Abs. 1 lit. b DSGVO &#8211; Vertragsanbahnung oder -erf&#252;llung</li><li>Art. 6 Abs. 1 lit. f DSGVO &#8211; berechtigtes Interesse</li><li>Art. 6 Abs. 1 lit. a DSGVO &#8211; Einwilligung</li></ul>
 <h2>4. Cookies &amp; Google Maps</h2>
 <p>Technisch notwendige Cookies sowie Google Maps zur Standortanzeige. Google Maps wird erst nach Ihrer Einwilligung geladen.</p>
-<h2>5. Netlify Forms</h2>
-<p>Formulare &#252;ber Netlify, Inc. (USA) &#8211; verschl&#252;sselt (HTTPS). Es gilt die Datenschutzerkl&#228;rung von Netlify.</p>
+<h2>5. Formulare &amp; Datenverarbeitung</h2>
+<p>Kontakt- und Ankaufformulare werden &#252;ber Web3Forms (web3forms.com) verarbeitet &#8211; verschl&#252;sselt (HTTPS). Daten werden nur zur Bearbeitung Ihrer Anfrage genutzt und nicht an Dritte weitergegeben.</p>
 <h2>6. Ihre Rechte</h2>
 <ul><li>Auskunft &#252;ber gespeicherte Daten</li><li>Berichtigung, L&#246;schung, Einschr&#228;nkung</li><li>Daten&#252;bertragbarkeit</li><li>Widerspruch und Widerruf</li><li>Beschwerde bei der Datenschutzaufsichtsbeh&#246;rde</li></ul>
 <p>Kontakt: info&#64;rmauto&#8209;mobile.de</p>
@@ -82,7 +77,7 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
 </div><div class="ft-bot"><div class="ft-copy">&#169; 2026 R&amp;M Automobile UG (haftungsbeschr&#228;nkt) &#183; Am Gewerbebogen 11, 93155 Hemau</div><div class="ft-legal"><a href="/impressum.html">Impressum</a><a href="/datenschutz.html">Datenschutz</a><a href="/agb.html">AGB</a></div></div></footer><div class="cookie-banner" id="cookie-banner" role="alertdialog" aria-label="Cookie-Einstellungen"><p class="cookie-txt">Wir verwenden technisch notwendige Cookies und Google Maps. Mit &#8220;Akzeptieren&#8221; stimmen Sie Google Maps zu. <a href="/datenschutz.html">Datenschutz</a></p><div class="cookie-btns"><button class="cookie-decline" onclick="setCookie('declined')">Ablehnen</button><button class="cookie-accept" onclick="setCookie('accepted')">Akzeptieren</button></div></div><script>
 function setCookie(v){localStorage.setItem('rm_cookies',v);document.getElementById('cookie-banner').classList.remove('show');if(v==='accepted')loadMaps();}
 function loadMaps(){document.querySelectorAll('[data-map-src]').forEach(function(el){var f=document.createElement('iframe');f.src=el.dataset.mapSrc;f.style.cssText='width:100%;height:100%;border:none;display:block;filter:grayscale(55%) contrast(1.05)';f.allowFullscreen=true;f.loading='lazy';f.referrerPolicy='no-referrer-when-downgrade';el.replaceWith(f);});}
-window.addEventListener('DOMContentLoaded',function(){var c=localStorage.getItem('rm_cookies');if(!c)setTimeout(function(){var b=document.getElementById('cookie-banner');if(b)b.classList.add('show');},900);else if(c==='accepted')loadMaps();['email-link','email-link2'].forEach(function(id){var el=document.getElementById(id);if(el)el.href='mai'+'lto:'+'info'+'@'+'rmauto-mobile.de';});var al=document.getElementById('ankauf-link');if(al)al.href='mai'+'lto:'+'ankauf'+'@'+'rmauto-mobile.de';});
+window.addEventListener('DOMContentLoaded',function(){var c=localStorage.getItem('rm_cookies');if(!c)setTimeout(function(){var b=document.getElementById('cookie-banner');if(b)b.classList.add('show');},900);else if(c==='accepted')loadMaps();['email-link','email-link2'].forEach(function(id){var el=document.getElementById(id);if(el)el.href='mai'+'lto:'+'info'+'@'+'rmauto-mobile.de';});});
 function toggleMenu(){var m=document.getElementById('mob-menu'),b=document.getElementById('burger');if(m.classList.contains('open')){m.classList.remove('open');b.classList.remove('open');document.body.style.overflow='';}else{m.classList.add('open');b.classList.add('open');document.body.style.overflow='hidden';}}
 function closeMenu(){document.getElementById('mob-menu').classList.remove('open');document.getElementById('burger').classList.remove('open');document.body.style.overflow='';}
 </script></body></html>
