@@ -195,14 +195,14 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
             <div class="fg"><label>Getriebe *</label><select name="getriebe" required><option value="" disabled selected>W&#228;hlen</option><option>Schaltgetriebe</option><option>Automatik</option><option>Halbautomatik</option></select></div>
           </div>
           <div class="fg-row">
-            <div class="fg"><label>Leistung (PS)</label><input type="text" name="ps" placeholder="z.B. 150" inputmode="numeric" maxlength="4"/></div>
+            <div class="fg"><label>Leistung (PS)</label><input type="number" name="ps" placeholder="z.B. 150" min="30" max="2000" step="1" maxlength="4"/></div>
             <div class="fg"><label>Erstzulassung *</label><input type="text" name="erstzulassung" id="inp-ez" placeholder="MM/JJJJ" required maxlength="7" inputmode="numeric"/></div>
           </div>
           <div class="form-nav"><button class="btn-next" type="button" onclick="goStep(1,2)">Weiter &#8250;</button></div>
         </div>
         <!-- S2 -->
         <div class="fstep" id="fs2">
-          <div class="step-lbl">Schritt 2/6 &#183; Kilometerstand</div>
+          <div class="step-lbl">Schritt 2/6 &#183; Kilometerstand &#8212; <span style="color:var(--grn)">Gut gemacht!</span></div>
           <div class="fg"><label>Kilometerstand *</label><input type="text" name="km" id="inp-km" placeholder="z.B. 85.000 km" required inputmode="numeric" maxlength="10"/></div>
           <div class="fg"><label>Wann m&#246;chten Sie verkaufen?</label>
             <div class="rg" id="rg-wann"><div class="rb" onclick="setR('wann','Sofort',this)">Sofort</div><div class="rb" onclick="setR('wann','4 Wochen',this)">4 Wochen</div><div class="rb" onclick="setR('wann','3 Monate',this)">3 Monate</div><div class="rb" onclick="setR('wann','Unklar',this)">Noch unklar</div></div>
@@ -210,17 +210,19 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
           </div>
           <div class="fg"><label>Reifen vorhanden</label>
             <div class="cg">
-              <label class="ci-item"><input type="checkbox" name="reifen" value="Sommerreifen"/><span class="ci-check">&#10003;</span> Sommerreifen</label>
-              <label class="ci-item"><input type="checkbox" name="reifen" value="Winterreifen"/><span class="ci-check">&#10003;</span> Winterreifen</label>
-              <label class="ci-item"><input type="checkbox" name="reifen" value="Alufelgen"/><span class="ci-check">&#10003;</span> Alufelgen</label>
-              <label class="ci-item"><input type="checkbox" name="reifen" value="Keine"/><span class="ci-check">&#10003;</span> Keine Zweitreifen</label>
+              <label class="ci-item"><input type="checkbox" name="reifen" value="Sommerreifen auf Alufelgen"/><span class="ci-check">&#10003;</span> Sommerreifen (Alu)</label>
+              <label class="ci-item"><input type="checkbox" name="reifen" value="Sommerreifen auf Stahlfelgen"/><span class="ci-check">&#10003;</span> Sommerreifen (Stahl)</label>
+              <label class="ci-item"><input type="checkbox" name="reifen" value="Winterreifen auf Alufelgen"/><span class="ci-check">&#10003;</span> Winterreifen (Alu)</label>
+              <label class="ci-item"><input type="checkbox" name="reifen" value="Winterreifen auf Stahlfelgen"/><span class="ci-check">&#10003;</span> Winterreifen (Stahl)</label>
+              <label class="ci-item"><input type="checkbox" name="reifen" value="Ganzjahresreifen"/><span class="ci-check">&#10003;</span> Ganzjahresreifen</label>
+              <label class="ci-item"><input type="checkbox" name="reifen" value="Keine Zweitreifen"/><span class="ci-check">&#10003;</span> Keine Zweitreifen</label>
             </div>
           </div>
           <div class="form-nav"><button class="btn-prev" type="button" onclick="goStep(2,1)">&#8249; Zur&#252;ck</button><button class="btn-next" type="button" onclick="goStep(2,3)">Weiter &#8250;</button></div>
         </div>
         <!-- S3 -->
         <div class="fstep" id="fs3">
-          <div class="step-lbl">Schritt 3/6 &#183; Fahrzeughistorie</div>
+          <div class="step-lbl">Schritt 3/6 &#183; Fahrzeughistorie &#8212; <span style="color:var(--grn)">Weiter so!</span></div>
           <div class="fg"><label>Unfallfrei?</label>
             <div class="rg" id="rg-unfall"><div class="rb" onclick="setR('unfall','Ja',this)">Ja, unfallfrei</div><div class="rb" onclick="setR('unfall','Nein',this)">Nein, Unfallschaden</div><div class="rb" onclick="setR('unfall','Unbekannt',this)">Nicht bekannt</div></div>
             <input type="hidden" name="unfallfrei" id="h-unfall"/>
@@ -233,11 +235,15 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
             <div class="fg"><label>Au&#223;enfarbe *</label><select name="farbe" required><option value="" disabled selected>W&#228;hlen</option><option>Schwarz</option><option>Wei&#223;</option><option>Silber</option><option>Grau</option><option>Blau</option><option>Rot</option><option>Braun/Beige</option><option>Gr&#252;n</option><option>Sonstige</option></select></div>
             <div class="fg"><label>Fahrbereit? *</label><select name="fahrbereit" required><option value="" disabled selected>Status</option><option>Ja, fahrbereit</option><option>Eingeschr&#228;nkt</option><option>Nicht fahrbereit</option></select></div>
           </div>
+          <div class="fg-row">
+            <div class="fg"><label>Anzahl T&#252;ren</label><select name="tueren"><option value="" disabled selected>W&#228;hlen</option><option>2 T&#252;ren</option><option>3 T&#252;ren</option><option>4 T&#252;ren</option><option>5 T&#252;ren</option></select></div>
+            <div class="fg"><label>Karosserieform</label><select name="karosserie"><option value="" disabled selected>W&#228;hlen</option><option>Limousine</option><option>Kombi</option><option>SUV/Gel&#228;ndewagen</option><option>Kompaktvan/Van</option><option>Coup&#233;</option><option>Cabriolet</option><option>Kleinstwagen</option><option>Pickup</option></select></div>
+          </div>
           <div class="form-nav"><button class="btn-prev" type="button" onclick="goStep(3,2)">&#8249; Zur&#252;ck</button><button class="btn-next" type="button" onclick="goStep(3,4)">Weiter &#8250;</button></div>
         </div>
         <!-- S4 -->
         <div class="fstep" id="fs4">
-          <div class="step-lbl">Schritt 4/6 &#183; Zustand</div>
+          <div class="step-lbl">Schritt 4/6 &#183; Zustand &#8212; <span style="color:var(--grn)">Sehr gut!</span></div>
           <div class="fg"><label>Au&#223;enzustand</label>
             <div class="ratg" id="rg-aussen"><div class="ratb" onclick="setRat('aussen','Sehr gut',this)">Sehr gut</div><div class="ratb" onclick="setRat('aussen','Gut',this)">Gut</div><div class="ratb" onclick="setRat('aussen','Befriedigend',this)">Befriedigend</div><div class="ratb" onclick="setRat('aussen','Schlecht',this)">Schlecht</div></div>
             <input type="hidden" name="aussenzustand" id="h-aussen"/>
@@ -257,7 +263,7 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
         </div>
         <!-- S5 -->
         <div class="fstep" id="fs5">
-          <div class="step-lbl">Schritt 5/6 &#183; Technik</div>
+          <div class="step-lbl">Schritt 5/6 &#183; Technik &#8212; <span style="color:var(--grn)">Fast da!</span></div>
           <div class="fg"><label>Technischer Zustand</label>
             <div class="tech-grid">
               <div class="tech-row"><span class="tech-label">Motor</span><div class="tech-btns"><button type="button" class="tb yes" onclick="setTech(this,'motor','Einwandfrei')">OK</button><button type="button" class="tb no" onclick="setTech(this,'motor','Defekt')">Defekt</button></div><input type="hidden" name="motor_ok" id="h-motor"/></div>
@@ -271,7 +277,7 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
         </div>
         <!-- S6 -->
         <div class="fstep" id="fs6">
-          <div class="step-lbl">Schritt 6/6 &#183; Kontakt</div>
+          <div class="step-lbl">Schritt 6/6 &#183; Kontakt &#8212; <span style="color:var(--grn)">Letzter Schritt! &#127881;</span></div>
           <div class="fg-row">
             <div class="fg"><label>Name *</label><input type="text" name="name" placeholder="Vor- und Nachname" required/></div>
             <div class="fg"><label>Telefon *</label><input type="tel" name="telefon" placeholder="+49 ..." required/></div>
@@ -368,7 +374,7 @@ function closeMenu(){document.getElementById('mob-menu').classList.remove('open'
 var _o=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');_o.unobserve(x.target)}});},{threshold:0.08});document.querySelectorAll('.sr').forEach(function(el){_o.observe(el);});
 function goStep(from,to){
   if(to>from){
-    var checks={2:['h-unfall'],4:['h-aussen']};
+    var checks={4:['h-aussen']};
     if(checks[from]){for(var i=0;i<checks[from].length;i++){var el=document.getElementById(checks[from][i]);if(el&&!el.value)return;}}
     var step=document.getElementById('fs'+from);
     var fields=step.querySelectorAll('input:required,select:required');
