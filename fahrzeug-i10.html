@@ -293,12 +293,12 @@ footer{background:var(--bg);padding:56px 64px 30px;border-top:1px solid var(--ln
       <div class="gm" id="gm">
         <div class="gbadge">Verfügbar</div>
         <div class="gcnt" id="gcnt">1 / 18</div>
-        <img id="gimg" src="/img/i10_01.jpeg" alt="Hyundai i10 Select" width="1200" height="900" fetchpriority="high" decoding="async" onclick="oLB(this.src)"/>
+        <img id="gimg" src="/img/i10_01.webp" alt="Hyundai i10 Select" width="1200" height="900" fetchpriority="high" decoding="async" onclick="oLB(this.src)"/>
         <button class="garr ga-p" onclick="sBy(-1)" aria-label="Zurück"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M10 4l-4 4 4 4"/></svg></button>
         <button class="garr ga-n" onclick="sBy(1)" aria-label="Weiter"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 4l4 4-4 4"/></svg></button>
       </div>
       <div class="gth">
-        <div class="gt on" onclick="gTo(0)"><img src="/img/i10_01.jpeg" alt="" loading="lazy" decoding="async"/></div>
+        <div class="gt on" onclick="gTo(0)"><img src="/img/i10_01.webp" alt="" loading="lazy" decoding="async"/></div>
         <div class="gt" onclick="gTo(1)"><img src="/img/i10_02.jpeg" alt="" loading="lazy" decoding="async"/></div>
         <div class="gt" onclick="gTo(2)"><img src="/img/i10_03.jpeg" alt="" loading="lazy" decoding="async"/></div>
         <div class="gt" onclick="gTo(3)"><img src="/img/i10_04.jpeg" alt="" loading="lazy" decoding="async"/></div>
@@ -499,7 +499,7 @@ function toggleMenu(){var m=document.getElementById('mob-menu'),b=document.getEl
 function closeMenu(){document.getElementById('mob-menu').classList.remove('open');document.getElementById('burger').classList.remove('open');document.body.style.overflow='';}
 var _ro=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('on');_ro.unobserve(x.target);}});},{threshold:0.04});
 document.querySelectorAll('.sr').forEach(function(el){_ro.observe(el);});
-var _imgs=['/img/i10_01.jpeg','/img/i10_02.jpeg','/img/i10_03.jpeg','/img/i10_04.jpeg','/img/i10_05.jpeg','/img/i10_06.jpeg','/img/i10_07.jpeg','/img/i10_08.jpeg','/img/i10_09.jpeg','/img/i10_10.jpeg','/img/i10_11.jpeg','/img/i10_12.jpeg','/img/i10_13.jpeg','/img/i10_14.jpeg','/img/i10_15.jpeg','/img/i10_16.jpeg','/img/i10_17.jpeg','/img/i10_18.jpeg'];
+var _imgs=['/img/i10_01.webp','/img/i10_02.jpeg','/img/i10_03.jpeg','/img/i10_04.jpeg','/img/i10_05.jpeg','/img/i10_06.jpeg','/img/i10_07.jpeg','/img/i10_08.jpeg','/img/i10_09.jpeg','/img/i10_10.jpeg','/img/i10_11.jpeg','/img/i10_12.jpeg','/img/i10_13.jpeg','/img/i10_14.jpeg','/img/i10_15.jpeg','/img/i10_16.jpeg','/img/i10_17.jpeg','/img/i10_18.jpeg'];
 var _ci=0;
 function gTo(n){_ci=Math.max(0,Math.min(n,_imgs.length-1));document.getElementById('gimg').src=_imgs[_ci];document.getElementById('gcnt').textContent=(_ci+1)+' / '+_imgs.length;document.querySelectorAll('.gt').forEach(function(t,i){t.classList.toggle('on',i===_ci);});}
 function sBy(d){gTo(_ci+d);}
