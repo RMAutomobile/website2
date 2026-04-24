@@ -147,10 +147,38 @@ h1 .g{color:rgba(232,227,216,.48)}
 .fz-dots{display:none;justify-content:center;gap:8px;margin-top:24px}
 .fz-dot{width:8px;height:8px;border-radius:50%;background:var(--bo2);transition:all .3s;cursor:pointer;border:none}
 .fz-dot.on{background:var(--grn);transform:scale(1.3)}
-.partner-grid{margin-left:auto!important;margin-right:auto!important}
-.partner-item{transition:background .4s;display:flex;flex-direction:column;align-items:center;justify-content:center}
-.partner-item:hover{background:var(--c3)!important}
-@media(max-width:768px){.partner-grid{grid-template-columns:1fr 1fr!important;max-width:100%!important}}
+/* Logo Band */
+.brand-txt{font-family:var(--fh);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(232,227,216,.22);white-space:nowrap;flex-shrink:0;transition:color .4s;cursor:default}
+.brand-txt:hover{color:rgba(232,227,216,.6)}
+.logo-fade-l{position:absolute;left:0;top:0;bottom:0;width:100px;background:linear-gradient(to right,var(--c2),transparent);z-index:2;pointer-events:none}
+.logo-fade-r{position:absolute;right:0;top:0;bottom:0;width:100px;background:linear-gradient(to left,var(--c2),transparent);z-index:2;pointer-events:none}
+@keyframes logoscroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){#logo-track{animation:none}}
+/* Leistungen Accordion */
+.leist-items{display:flex;flex-direction:column;border-top:1px solid var(--bo)}
+.leist-item{display:grid;grid-template-columns:200px 1fr 40px;gap:32px;align-items:start;padding:36px 0;border-bottom:1px solid var(--bo);cursor:pointer;transition:background .3s;position:relative}
+.leist-item::after{content:'';position:absolute;bottom:-1px;left:0;width:0;height:1px;background:var(--grn);transition:width .6s var(--ease)}
+.leist-item.open::after{width:100%}
+.leist-item:hover{background:rgba(111,207,151,.02)}
+.leist-item-left{display:flex;flex-direction:column;gap:6px;padding-top:4px}
+.leist-item-num{font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--grn)}
+.leist-item-title{font-family:var(--fh);font-size:20px;font-weight:700;color:var(--tx);letter-spacing:-.015em;line-height:1}
+.leist-item-body{font-size:13px;font-weight:300;color:var(--tx3);line-height:1.9;max-height:0;overflow:hidden;transition:max-height .55s var(--ease)}
+.leist-item.open .leist-item-body{max-height:600px}
+.leist-item-body p{color:var(--tx2)}
+.leist-item-body strong{color:var(--tx)}
+.leist-checks{display:flex;flex-direction:column;gap:6px;margin-top:16px;margin-bottom:16px}
+.leist-check{font-size:12px;color:var(--tx3);display:flex;gap:8px;align-items:flex-start}
+.leist-check::before{content:none}
+.leist-link{display:inline-flex;align-items:center;gap:7px;font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--grn);text-decoration:none;transition:gap .3s}
+.leist-link:hover{gap:12px}
+.leist-cta{display:inline-flex;align-items:center;gap:9px;padding:12px 24px;border:1px solid var(--bo2);font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx2);transition:all .3s var(--ease);text-decoration:none}.leist-cta:hover{border-color:var(--grn-bd);color:var(--grn)}
+.leist-item-toggle{font-size:20px;font-weight:300;color:var(--tx3);line-height:1;padding-top:6px;transition:transform .4s var(--ease),color .3s;text-align:center}
+.leist-item.open .leist-cta{display:inline-flex;align-items:center;gap:9px;padding:12px 24px;border:1px solid var(--bo2);font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx2);transition:all .3s var(--ease);text-decoration:none}.leist-cta:hover{border-color:var(--grn-bd);color:var(--grn)}
+.leist-item-toggle{transform:rotate(45deg);color:var(--grn)}
+@media(max-width:1100px){#leistungen-sec{padding:80px 32px!important}#leistungen-sec>div{grid-template-columns:280px 1fr!important;gap:48px!important}}@media(max-width:900px){#leistungen-sec{padding:72px 20px!important}#leistungen-sec>div{grid-template-columns:1fr!important;gap:32px!important}#leistungen-sec>div>div:first-child{position:static!important}.leist-item{grid-template-columns:1fr 32px;gap:16px;padding:24px 0}.leist-item-left{flex-direction:row;align-items:baseline;gap:12px}.leist-item-title{font-size:17px}}
+@media(max-width:768px){#logo-track{gap:40px!important}.brand-logo{height:32px}#leistungen-sec{padding:72px 20px!important}.leist-item{grid-template-columns:1fr 32px;gap:16px;padding:28px 0}.leist-item-left{flex-direction:row;align-items:center;gap:12px;grid-column:1}.leist-item-title{font-size:17px}.leist-item-body{grid-column:1;max-height:0}.leist-item.open .leist-item-body{max-height:800px}.leist-cta{display:inline-flex;align-items:center;gap:9px;padding:12px 24px;border:1px solid var(--bo2);font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx2);transition:all .3s var(--ease);text-decoration:none}.leist-cta:hover{border-color:var(--grn-bd);color:var(--grn)}
+.leist-item-toggle{grid-row:1;grid-column:2;align-self:center}}
 @media(max-width:1100px){.hero{grid-template-columns:1fr}.hero-right{display:none}.hero-left{padding:96px 32px 72px}.team-inner,.ank-wrap,.s-wrap{grid-template-columns:1fr;gap:40px}.ank-box{position:static}.usp-grid,.rev-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stat{border-bottom:1px solid var(--bo)}}
 @media(max-width:768px){
   .seo-sec{padding:44px 20px!important}
@@ -291,44 +319,7 @@ h1 .g{color:rgba(232,227,216,.48)}
   <div class="usp-grid"><article class="usp sr"><div class="usp-n">01</div><h3>Technisch gepr&#252;ft</h3><p>Jedes Fahrzeug pers&#246;nlich gepr&#252;ft und professionell aufbereitet. Sie bekommen was Sie sehen.</p></article><article class="usp sr d1"><div class="usp-n">02</div><h3>Transparent &amp; fair</h3><p>Klare Kommunikation, schnelle Entscheidungen, keine versteckten Kosten.</p></article><article class="usp sr d2"><div class="usp-n">03</div><h3>Flexibel finanzieren</h3><p>Finanzierung optional ohne Anzahlung, faire Inzahlungnahme m&#246;glich.</p></article></div>
 </section>
 
-<!-- PARTNER SECTION -->
-<section style="padding:80px 60px;background:var(--c2);border-top:1px solid var(--bo)">
-  <div style="text-align:center;margin-bottom:52px">
-    <div class="label sr" style="justify-content:center;margin-bottom:16px">Unsere Partner</div>
-    <h2 class="sr" style="font-family:var(--fh);font-size:clamp(28px,3.8vw,48px);font-weight:700;letter-spacing:-.018em;line-height:1.02;margin-bottom:16px">Starke Partner.<br/><span style="color:rgba(232,227,216,.48)">F&#252;r Sie im Einsatz.</span></h2>
-    <p class="sr d1" style="font-size:14px;font-weight:300;color:var(--tx2);max-width:480px;margin:0 auto;line-height:1.9">Von der Finanzierung bis zur Aufbereitung &#8211; wir arbeiten mit gepr&#252;ften Partnern zusammen damit Sie das beste Ergebnis bekommen.</p>
-  </div>
-  <div class="partner-grid sr d1" style="display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--bo);max-width:960px;margin:0 auto">
-    <div style="background:var(--page);padding:36px 28px;text-align:center;transition:background .4s" class="partner-item">
-      <div style="width:48px;height:48px;border:1px solid var(--grn-bd);background:var(--grn-bg);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--grn)" stroke-width="1.8" stroke-linecap="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-      </div>
-      <div style="font-family:var(--fh);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--tx);margin-bottom:8px">Finanzierung</div>
-      <div style="font-size:12px;font-weight:300;color:var(--tx3);line-height:1.7">Flexible Raten, faire Konditionen &#8211; auch ohne Anzahlung m&#246;glich.</div>
-    </div>
-    <div style="background:var(--page);padding:36px 28px;text-align:center;transition:background .4s" class="partner-item">
-      <div style="width:48px;height:48px;border:1px solid var(--grn-bd);background:var(--grn-bg);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--grn)" stroke-width="1.8" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      </div>
-      <div style="font-family:var(--fh);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--tx);margin-bottom:8px">Aufbereitung</div>
-      <div style="font-size:12px;font-weight:300;color:var(--tx3);line-height:1.7">Professionelle Innen- und Au&#223;enaufbereitung durch zertifizierte Partner.</div>
-    </div>
-    <div style="background:var(--page);padding:36px 28px;text-align:center;transition:background .4s" class="partner-item">
-      <div style="width:48px;height:48px;border:1px solid var(--grn-bd);background:var(--grn-bg);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--grn)" stroke-width="1.8" stroke-linecap="round"><path d="M9 12l2 2 4-4"/><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      </div>
-      <div style="font-family:var(--fh);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--tx);margin-bottom:8px">Garantie</div>
-      <div style="font-size:12px;font-weight:300;color:var(--tx3);line-height:1.7">Gebrauchtwagen-Garantie auf Wunsch &#8211; transparent und ohne Fallstricke.</div>
-    </div>
-    <div style="background:var(--page);padding:36px 28px;text-align:center;transition:background .4s" class="partner-item">
-      <div style="width:48px;height:48px;border:1px solid var(--grn-bd);background:var(--grn-bg);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--grn)" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-      </div>
-      <div style="font-family:var(--fh);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--tx);margin-bottom:8px">Versicherung</div>
-      <div style="font-size:12px;font-weight:300;color:var(--tx3);line-height:1.7">KFZ-Versicherung direkt beim Kauf &#8211; schnell, einfach, g&#252;nstig.</div>
-    </div>
-  </div>
-</section>
+
 
 <section class="sec">
   <div class="label sr">Fahrzeug verkaufen</div>
@@ -349,6 +340,134 @@ h1 .g{color:rgba(232,227,216,.48)}
       <div class="bene">Echter Ansprechpartner &#8211; kein Portal</div>
       <a href="/mein-fahrzeug-verkaufen.html" class="btn-d" style="width:100%">Jetzt bewerten lassen <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
     </div></div>
+  </div>
+</section>
+<!-- MARKEN + LEISTUNGEN SECTION -->
+<section style="padding:0;background:var(--page);border-top:1px solid var(--bo);overflow:hidden">
+  <div style="position:relative;padding:26px 0;border-bottom:1px solid var(--bo)">
+    <div class="logo-fade-l"></div>
+    <div class="logo-fade-r"></div>
+    <div id="logo-track" style="display:flex;gap:56px;align-items:center;width:max-content;animation:logoscroll 40s linear infinite">
+      <span class="brand-txt">Volkswagen</span>
+      <span class="brand-txt">BMW</span>
+      <span class="brand-txt">Mercedes-Benz</span>
+      <span class="brand-txt">Audi</span>
+      <span class="brand-txt">Toyota</span>
+      <span class="brand-txt">Ford</span>
+      <span class="brand-txt">Hyundai</span>
+      <span class="brand-txt">Kia</span>
+      <span class="brand-txt">Skoda</span>
+      <span class="brand-txt">Mazda</span>
+      <span class="brand-txt">Nissan</span>
+      <span class="brand-txt">Fiat</span>
+      <span class="brand-txt">Jaguar</span>
+      <span class="brand-txt">Volkswagen</span>
+      <span class="brand-txt">BMW</span>
+      <span class="brand-txt">Mercedes-Benz</span>
+      <span class="brand-txt">Audi</span>
+      <span class="brand-txt">Toyota</span>
+      <span class="brand-txt">Ford</span>
+      <span class="brand-txt">Hyundai</span>
+      <span class="brand-txt">Kia</span>
+      <span class="brand-txt">Skoda</span>
+      <span class="brand-txt">Mazda</span>
+      <span class="brand-txt">Nissan</span>
+      <span class="brand-txt">Fiat</span>
+      <span class="brand-txt">Jaguar</span>
+    </div>
+  </div>
+</section>
+
+<!-- LEISTUNGEN SECTION -->
+<section style="padding:100px 60px;background:var(--page);border-top:1px solid var(--bo)" id="leistungen-sec">
+  <div style="display:grid;grid-template-columns:360px 1fr;gap:80px;align-items:start">
+    <!-- Links: Sticky Heading -->
+    <div style="position:sticky;top:110px">
+      <div class="label sr">Unser Service</div>
+      <h2 class="sr" style="font-family:var(--fh);font-size:clamp(32px,4vw,54px);font-weight:700;line-height:.96;letter-spacing:-.025em;margin-bottom:24px">Was wir<br/>f&#252;r Sie<br/><em style="font-style:italic;color:var(--grn)">tun.</em></h2>
+      <p class="sr d1" style="font-size:14px;font-weight:300;color:var(--tx3);line-height:1.95;margin-bottom:32px">Kein Massengesch&#228;ft. Kein anonymes Portal. Zwei Leute die Autos kennen &#8211; und das merken Sie.</p>
+      <a href="/kontakt.html" class="leist-cta sr d2">Kontakt aufnehmen <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+    </div>
+    <!-- Rechts: Accordion -->
+    <div class="leist-items">
+
+      <div class="leist-item sr" onclick="toggleLeist(this)">
+        <div class="leist-item-left">
+          <div class="leist-item-num">01</div>
+          <div class="leist-item-title">Fahrzeugverkauf</div>
+        </div>
+        <div class="leist-item-body">
+          <p>Wir nehmen uns Zeit f&#252;r Sie &#8211; keine Massenabfertigung, kein Druck. Sie suchen ein Fahrzeug das wirklich zu Ihnen passt? Wir h&#246;ren zu, pr&#252;fen mit Fachkenntnis und begleiten Sie durch den gesamten Prozess bis zur Schl&#252;ssel&#252;bergabe.</p>
+          <p style="margin-top:12px">Jedes Fahrzeug wurde von unserem KFZ-Mechatroniker pers&#246;nlich gepr&#252;ft. Auf Wunsch arrangieren wir <strong>Gebrauchtwagen-Garantie</strong> und <strong>flexible Finanzierung</strong> &#8211; auch ohne Anzahlung.</p>
+          <div class="leist-checks">
+            <div class="leist-check">&#10003; Pers&#246;nliche Beratung auf Augenh&#246;he</div>
+            <div class="leist-check">&#10003; Garantie auf Wunsch</div>
+            <div class="leist-check">&#10003; Finanzierung ohne Anzahlung m&#246;glich</div>
+            <div class="leist-check">&#10003; Transparente, faire Preise</div>
+          </div>
+          <a href="/fahrzeugbereich.html" class="leist-link">Fahrzeuge ansehen &#8594;</a>
+        </div>
+        <div class="leist-item-toggle">+</div>
+      </div>
+
+      <div class="leist-item sr d1" onclick="toggleLeist(this)">
+        <div class="leist-item-left">
+          <div class="leist-item-num">02</div>
+          <div class="leist-item-title">Fahrzeugankauf</div>
+        </div>
+        <div class="leist-item-body">
+          <p>Sie m&#246;chten Ihr Fahrzeug verkaufen? Faire Bewertung durch unseren KFZ-Mechatroniker, sofortige Auszahlung per Echtzeit&#252;berweisung &#8211; das Geld ist binnen Sekunden auf Ihrem Konto.</p>
+          <p style="margin-top:12px">Wir kaufen <strong>alle Marken, alle Zust&#228;nde</strong> &#8211; auch Unfallfahrzeuge, Fahrzeuge ohne T&#220;V oder mit hohem Kilometerstand. Keine versteckten Abz&#252;ge. Kostenlose Abholung deutschlandweit.</p>
+          <div class="leist-checks">
+            <div class="leist-check">&#10003; Faire, marktgerechte Bewertung</div>
+            <div class="leist-check">&#10003; Sofortige Auszahlung per Echtzeit&#252;berweisung</div>
+            <div class="leist-check">&#10003; Alle Marken &amp; Zust&#228;nde</div>
+            <div class="leist-check">&#10003; Kostenlose Abholung deutschlandweit</div>
+          </div>
+          <a href="/mein-fahrzeug-verkaufen.html" class="leist-link">Jetzt bewerten lassen &#8594;</a>
+        </div>
+        <div class="leist-item-toggle">+</div>
+      </div>
+
+      <div class="leist-item sr d2" onclick="toggleLeist(this)">
+        <div class="leist-item-left">
+          <div class="leist-item-num">03</div>
+          <div class="leist-item-title">Zulassungsservice</div>
+        </div>
+        <div class="leist-item-body">
+          <p>Das Prozedere der Fahrzeugzulassung kann zeitaufwendig und kompliziert sein &#8211; Beh&#246;rdeng&#228;nge, Papierkram, Wartezeiten. Wir &#252;bernehmen das f&#252;r Sie. Stressfrei und m&#252;helos.</p>
+          <p style="margin-top:12px">Ob Ummeldung, Neuzulassung oder Abmeldung &#8211; wir k&#252;mmern uns um alles. Sie m&#252;ssen keinen einzigen Beh&#246;rdengang machen.</p>
+          <div class="leist-checks">
+            <div class="leist-check">&#10003; Reibungslose &amp; schnelle Abwicklung</div>
+            <div class="leist-check">&#10003; Kein Beh&#246;rdengang f&#252;r Sie</div>
+            <div class="leist-check">&#10003; Alles aus einer Hand</div>
+            <div class="leist-check">&#10003; Ummeldung, Neuzulassung, Abmeldung</div>
+          </div>
+          <a href="/kontakt.html" class="leist-link">Termin vereinbaren &#8594;</a>
+        </div>
+        <div class="leist-item-toggle">+</div>
+      </div>
+
+      <div class="leist-item sr d3" onclick="toggleLeist(this)">
+        <div class="leist-item-left">
+          <div class="leist-item-num">04</div>
+          <div class="leist-item-title">R&amp;M Findet</div>
+        </div>
+        <div class="leist-item-body">
+          <p>Sie haben ein genaues Fahrzeug im Kopf aber finden es nicht? Wir &#252;bernehmen die Suche. Mit unserem Netzwerk und Marktkenntnis finden wir Ihr Wunschfahrzeug &#8211; bundesweit.</p>
+          <p style="margin-top:12px">Teilen Sie uns mit was Sie suchen: Marke, Modell, Budget, Ausstattung. Wir filtern den Markt, pr&#252;fen Angebote technisch vor und legen Ihnen nur passende Optionen vor. Sie entscheiden &#8211; wir liefern die Auswahl.</p>
+          <div class="leist-checks">
+            <div class="leist-check">&#10003; Marktweite Suche nach Ihrem Wunschfahrzeug</div>
+            <div class="leist-check">&#10003; Technische Vorpr&#252;fung durch KFZ-Fachmann</div>
+            <div class="leist-check">&#10003; Transparente Empfehlung ohne Kaufdruck</div>
+            <div class="leist-check">&#10003; Auch deutschlandweite Beschaffung m&#246;glich</div>
+          </div>
+          <a href="/kontakt.html" class="leist-link">Anfrage stellen &#8594;</a>
+        </div>
+        <div class="leist-item-toggle">+</div>
+      </div>
+
+    </div>
   </div>
 </section>
 <section class="sec-alt">
@@ -387,8 +506,8 @@ h1 .g{color:rgba(232,227,216,.48)}
 <section class="seo-sec" style="padding:64px 60px;background:var(--c2);border-top:1px solid var(--bo)">
   <div style="max-width:800px;margin:0 auto;text-align:center">
     <h2 style="font-family:var(--fh);font-size:clamp(18px,2vw,24px);font-weight:700;color:var(--tx);margin-bottom:20px;letter-spacing:-.01em;text-align:center">Ihr Gebrauchtwagenh&#228;ndler in Hemau &#8211; n&#228;he Regensburg, Ingolstadt &amp; N&#252;rnberg</h2>
-    <p style="font-size:13px;font-weight:300;color:var(--tx3);line-height:2.0;margin-bottom:16px;text-align:left">R&amp;M Automobile ist Ihr regionaler Ansprechpartner f&#252;r <strong style="color:var(--tx2)">Gebrauchtwagen kaufen und verkaufen</strong> in Hemau und der gesamten Region. Wir sind zentral gelegen zwischen <strong style="color:var(--tx2)">Regensburg</strong> (ca. 25 min), <strong style="color:var(--tx2)">Ingolstadt</strong> (ca. 45 min), <strong style="color:var(--tx2)">Neumarkt in der Oberpfalz</strong> (ca. 30 min), <strong style="color:var(--tx2)">Parsberg</strong>, <strong style="color:var(--tx2)">Kelheim</strong> und <strong style="color:var(--tx2)">N&#252;rnberg</strong> (ca. 60 min).</p>
-    <p style="font-size:13px;font-weight:300;color:var(--tx3);line-height:2.0;text-align:left">Ob <strong style="color:var(--tx2)">Auto verkaufen in Regensburg</strong>, <strong style="color:var(--tx2)">Autoankauf Hemau</strong>, <strong style="color:var(--tx2)">Gebrauchtwagen kaufen Neumarkt</strong> oder <strong style="color:var(--tx2)">Fahrzeug bewerten lassen Bayern</strong> &#8211; wir sind f&#252;r Sie da. Kostenlose Abholung deutschlandweit, sofortige Auszahlung beim <strong style="color:var(--tx2)">Fahrzeugankauf</strong>, faire Preise beim Kauf. Auch <strong style="color:var(--tx2)">Unfallfahrzeuge</strong>, Fahrzeuge ohne T&#220;V oder mit hohem Kilometerstand werden angekauft.</p>
+    <p style="font-size:13px;font-weight:300;color:var(--tx3);line-height:2.0;margin-bottom:16px;text-align:center">R&amp;M Automobile ist Ihr regionaler Ansprechpartner f&#252;r <strong style="color:var(--tx2)">Gebrauchtwagen kaufen und verkaufen</strong> in Hemau und der gesamten Region. Wir sind zentral gelegen zwischen <strong style="color:var(--tx2)">Regensburg</strong> (ca. 25 min), <strong style="color:var(--tx2)">Ingolstadt</strong> (ca. 45 min), <strong style="color:var(--tx2)">Neumarkt in der Oberpfalz</strong> (ca. 30 min), <strong style="color:var(--tx2)">Parsberg</strong>, <strong style="color:var(--tx2)">Kelheim</strong> und <strong style="color:var(--tx2)">N&#252;rnberg</strong> (ca. 60 min).</p>
+    <p style="font-size:13px;font-weight:300;color:var(--tx3);line-height:2.0;text-align:center">Ob <strong style="color:var(--tx2)">Auto verkaufen in Regensburg</strong>, <strong style="color:var(--tx2)">Autoankauf Hemau</strong>, <strong style="color:var(--tx2)">Gebrauchtwagen kaufen Neumarkt</strong> oder <strong style="color:var(--tx2)">Fahrzeug bewerten lassen Bayern</strong> &#8211; wir sind f&#252;r Sie da. Kostenlose Abholung deutschlandweit, sofortige Auszahlung beim <strong style="color:var(--tx2)">Fahrzeugankauf</strong>, faire Preise beim Kauf. Auch <strong style="color:var(--tx2)">Unfallfahrzeuge</strong>, Fahrzeuge ohne T&#220;V oder mit hohem Kilometerstand werden angekauft.</p>
   </div>
 </section>
 
@@ -416,6 +535,11 @@ window.addEventListener('load', function(){
     v.addEventListener('canplay', function(){img.style.opacity='0';});
   }
 });
+function toggleLeist(el){
+  var isOpen=el.classList.contains('open');
+  document.querySelectorAll('.leist-item').forEach(function(i){i.classList.remove('open');});
+  if(!isOpen)el.classList.add('open');
+}
 function setCookie(v){localStorage.setItem('rm_cookies',v);document.getElementById('cookie-banner').classList.remove('show');if(v==='accepted')loadMaps();}
 function loadMaps(){document.querySelectorAll('[data-map-src]').forEach(function(el){var f=document.createElement('iframe');f.src=el.dataset.mapSrc;f.style.cssText='width:100%;height:100%;border:none;display:block;filter:grayscale(55%) contrast(1.05)';f.allowFullscreen=true;f.loading='lazy';f.referrerPolicy='no-referrer-when-downgrade';el.replaceWith(f);});}
 window.addEventListener('DOMContentLoaded',function(){var c=localStorage.getItem('rm_cookies');if(!c)setTimeout(function(){var b=document.getElementById('cookie-banner');if(b)b.classList.add('show');},900);else if(c==='accepted')loadMaps();['email-link','email-link2'].forEach(function(id){var el=document.getElementById(id);if(el)el.href='mai'+'lto:'+'info'+'@'+'rmauto-mobile.de';});});
