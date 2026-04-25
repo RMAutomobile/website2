@@ -71,7 +71,7 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
 .bene{display:flex;gap:10px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--bo);font-size:13px;font-weight:300;color:var(--tx2);line-height:1.65}.bene:last-child{border-bottom:none}
 .bene::before{content:'✓';color:var(--grn);font-size:11px;flex-shrink:0;margin-top:2px;font-weight:700}
 /* FORM */
-.form-card{background:var(--c2);border:1px solid var(--bo);padding:40px;position:sticky;top:100px}
+.form-card{background:var(--c2);border:1px solid var(--bo);padding:40px;position:sticky;top:100px;overflow:hidden;max-width:100%}
 .form-title{font-family:var(--fh);font-size:18px;font-weight:700;margin-bottom:5px;color:var(--tx)}
 .form-sub{font-size:12px;font-weight:300;color:var(--tx3);margin-bottom:24px;line-height:1.7}
 .prog-bar-wrap{margin-bottom:20px}
@@ -93,6 +93,7 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
 .rb{padding:7px 11px;border:1px solid var(--bo);cursor:pointer;font-family:var(--fh);font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--tx3);transition:all .25s;background:transparent}
 .rb.sel{border-color:var(--tx);color:var(--page);background:var(--tx)}.rb:hover:not(.sel){border-color:var(--bo3);color:var(--tx)}
 .cg{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.ausstattung-grid{grid-template-columns:1fr 1fr}
 .ci-item{display:flex;align-items:center;gap:8px;padding:9px 12px;border:1px solid var(--bo);cursor:pointer;transition:all .2s;font-size:11px;font-weight:300;color:var(--tx2)}
 .ci-item:hover{border-color:var(--bo2);color:var(--tx)}
 .ci-item input[type=checkbox]{display:none}
@@ -219,7 +220,7 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
             </div>
           </div>
           <div class="fg"><label>Ausstattung</label>
-            <div class="cg" style="grid-template-columns:1fr 1fr">
+            <div class="cg ausstattung-grid">
               <label class="ci-item"><input type="checkbox" name="ausstattung" value="Klimaanlage"/><span class="ci-check">&#10003;</span> Klimaanlage</label>
               <label class="ci-item"><input type="checkbox" name="ausstattung" value="Klimaautomatik"/><span class="ci-check">&#10003;</span> Klimaautomatik</label>
               <label class="ci-item"><input type="checkbox" name="ausstattung" value="Navigationssystem"/><span class="ci-check">&#10003;</span> Navigationssystem</label>
@@ -352,7 +353,7 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
               <button class="btn-prev" type="button" onclick="goStep(6,5)">&#8249; Zur&#252;ck</button>
               <button class="btn-mail" type="submit">Per E-Mail senden &#10003;</button>
             </div>
-            <button type="button" class="btn-wa" onclick="sendWhatsApp()">
+            <button type="button" class="btn-wa" onclick="sendWhatsAppValidated()">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.122.554 4.112 1.523 5.843L.057 23.855a.75.75 0 0 0 .916.948l6.205-1.63A11.945 11.945 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.93 0-3.737-.52-5.287-1.428l-.378-.225-3.922 1.032.993-3.821-.247-.393A9.955 9.955 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
               Per WhatsApp einreichen (schneller)
             </button>
@@ -506,6 +507,14 @@ function sendFotosMail(){
   var subject=encodeURIComponent('Fotos Ankaufanfrage - '+marke+' '+modell);
   var body=encodeURIComponent('Hallo R&M Automobile,\n\nAnbei sende ich Ihnen Fotos zu meinem Fahrzeug.\n\nFahrzeug: '+marke+' '+modell+'\n\nMit freundlichen Gruessen');
   window.location.href='mailto:ankauf@rmauto-mobile.de?subject='+subject+'&body='+body;
+}
+function sendWhatsAppValidated(){
+  var name=document.querySelector('#fs6 input[name="name"]');
+  var tel=document.querySelector('#fs6 input[name="telefon"]');
+  var email=document.querySelector('#fs6 input[name="email"]');
+  if(!name||!name.value.trim()){name.focus();name.style.borderColor='rgba(248,113,113,.6)';setTimeout(function(){name.style.borderColor='';},2000);return;}
+  if(!tel||!tel.value.trim()){tel.focus();tel.style.borderColor='rgba(248,113,113,.6)';setTimeout(function(){tel.style.borderColor='';},2000);return;}
+  sendWhatsApp();
 }
 function sendWhatsApp(){var f=document.getElementById('ankauf-form');var d=new FormData(f);var g=function(k){return d.get(k)||'-';};var L=['R&M Automobile - Ankaufanfrage','','Hey, ich möchte mein Fahrzeug verkaufen!','','Fahrzeug: '+g('marke')+' '+g('modell'),'Kraftstoff: '+g('kraftstoff')+' | Getriebe: '+g('getriebe'),'EZ: '+g('erstzulassung')+' | PS: '+g('ps'),'KM: '+g('km'),'Farbe: '+g('farbe'),'Unfallfrei: '+g('unfallfrei'),'Scheckheft: '+g('scheckheft'),'Fahrbereit: '+g('fahrbereit'),'Motor: '+g('motor_ok')+' | Getriebe: '+g('getriebe_ok'),'Klima: '+g('klima_ok')+' | Warnleuchten: '+g('warnleuchten'),'Preisvorstellung: '+g('preisvorstellung'),'Import: '+g('import'),'Finanzierung offen: '+g('finanzierung_offen'),'','Kontakt: '+g('name')+' | '+g('telefon')+'','Fotos folgen gleich!'];window.open('https://wa.me/4915161569871?text='+encodeURIComponent(L.join('\n')),'_blank');}
 
