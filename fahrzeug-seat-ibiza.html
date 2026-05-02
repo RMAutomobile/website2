@@ -6,8 +6,10 @@
 <link rel="canonical" href="https://rmauto-mobile.de/fahrzeug-seat-ibiza/"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/>
-
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet" media="print" onload="this.media='all'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/></noscript>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Vehicle","name":"Seat Ibiza","brand":{"@type":"Brand","name":"Seat"},"model":"Ibiza","vehicleModelDate":"2009","bodyType":"Kleinwagen","numberOfDoors":3,"vehicleTransmission":"Schaltgetriebe","fuelType":"Benzin","mileageFromOdometer":{"@type":"QuantitativeValue","value":158700,"unitCode":"KMT"},"vehicleEngine":{"@type":"EngineSpecification","enginePower":{"@type":"QuantitativeValue","value":51,"unitCode":"KWT"}},"offers":{"@type":"Offer","price":1790,"priceCurrency":"EUR","availability":"https://schema.org/InStock","itemCondition":"https://schema.org/UsedCondition","seller":{"@type":"AutoDealer","name":"R&M Automobile UG","url":"https://rmauto-mobile.de","telephone":"+49-1516-1569871","address":{"@type":"PostalAddress","streetAddress":"Am Gewerbebogen 11","addressLocality":"Hemau","postalCode":"93155","addressCountry":"DE"}}},"image":["https://rmauto-mobile.de/img/seat_ibiza_01.jpeg"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Startseite","item":"https://rmauto-mobile.de/"},{"@type":"ListItem","position":2,"name":"Fahrzeuge","item":"https://rmauto-mobile.de/fahrzeugbereich.html"},{"@type":"ListItem","position":3,"name":"Seat Ibiza","item":"https://rmauto-mobile.de/fahrzeug-seat-ibiza.html"}]}</script>
 <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -18,7 +20,9 @@
   --grn:#6fcf97;--grn2:rgba(111,207,151,.1);--grn3:rgba(111,207,151,.2);
   --fh:'Plus Jakarta Sans',sans-serif;--fb:'DM Sans',sans-serif;
   --ease:cubic-bezier(.22,1,.36,1);
+  --bo:var(--ln);--bo2:var(--ln2);--bo3:rgba(232,227,216,.32);--page:var(--bg);--c2:var(--s1);--c3:var(--s2);--grn-bg:var(--grn2);--grn-bd:var(--grn3);
 }
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;animation-iteration-count:1!important}.sr{opacity:1!important;transform:none!important}}
 html,body{overflow-x:hidden;max-width:100vw;width:100%}html{scroll-behavior:smooth}
 /* OVERFLOW FIX */
 img,video{max-width:100%}
@@ -53,6 +57,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:0 60px;height:88px;d
 .sr.d1{transition-delay:.08s}.sr.d2{transition-delay:.16s}.sr.d3{transition-delay:.24s}
 .sr.on{opacity:1;transform:none}
 
+/* RELATED */
+.related{padding:64px 64px;border-top:1px solid var(--ln);background:var(--bg)}
+.related-inner{max-width:1280px;margin:0 auto}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:36px}
+.rv-card{display:grid;grid-template-columns:200px 1fr;border:1px solid var(--ln);background:var(--s1);transition:background .25s,transform .3s var(--ease);overflow:hidden}
+.rv-card:hover{background:var(--s2);transform:translateY(-2px)}
+.rv-img{height:160px;overflow:hidden;background:var(--s2)}
+.rv-img img{width:100%;height:100%;object-fit:cover;transition:transform .55s var(--ease);display:block}
+.rv-card:hover .rv-img img{transform:scale(1.04)}
+.rv-body{padding:20px 22px;display:flex;flex-direction:column;justify-content:center;min-width:0}
+.rv-name{font-family:var(--fh);font-size:17px;font-weight:700;color:var(--tx);margin-bottom:4px;letter-spacing:-.012em;line-height:1.15}
+.rv-var{font-size:12px;color:var(--tx3);margin-bottom:10px;font-weight:300;line-height:1.5}
+.rv-meta{font-size:11px;color:var(--tx2);margin-bottom:10px;font-weight:400}
+.rv-price{font-family:var(--fh);font-size:19px;font-weight:700;color:var(--tx);letter-spacing:-.014em}
+.related-cta{text-align:center;margin-top:32px}
+@media(max-width:860px){.related{padding:48px 20px}.related-grid{grid-template-columns:1fr;gap:12px}.rv-card{grid-template-columns:130px 1fr}.rv-img{height:130px}.rv-body{padding:14px 16px}}
+
 /* PAGE */
 .page{max-width:1280px;margin:0 auto;padding:0 64px}
 
@@ -84,7 +105,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:0 60px;height:88px;d
 
 /* SPECS PANEL */
 .sp{padding-top:2px}
-.sp-name{font-family:var(--fh);font-size:clamp(20px,2vw,27px);font-weight:700;letter-spacing:-.018em;line-height:1.1;color:var(--tx);margin-bottom:9px}
+.sp-name,h1.sp-name{font-family:var(--fh);font-size:clamp(22px,2.4vw,32px);font-weight:700;letter-spacing:-.02em;line-height:1.1;color:var(--tx);margin-bottom:9px}
 .sp-acc{display:block;width:30px;height:2px;background:var(--grn);margin-bottom:14px}
 .sp-var{font-size:13px;font-weight:300;color:var(--tx3);line-height:1.65;margin-bottom:20px}
 .sp-mwst{font-size:10px;color:var(--tx3);margin-bottom:4px}
@@ -277,11 +298,14 @@ footer{background:var(--bg);padding:56px 64px 30px;border-top:1px solid var(--ln
 <main>
 <div class="page">
 
-  <div class="back sr">
-    <a href="/fahrzeugbereich.html">
-      <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M13 8H3M7 12l-4-4 4-4"/></svg>
-      Alle Fahrzeuge
-    </a>
+  <div class="back sr" aria-label="Breadcrumb">
+    <nav style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+      <a href="/" style="font-family:var(--fh);font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--tx3);transition:color .25s">Start</a>
+      <span style="color:var(--tx4);font-size:9px">›</span>
+      <a href="/fahrzeugbereich.html" style="font-family:var(--fh);font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--tx3);transition:color .25s">Fahrzeuge</a>
+      <span style="color:var(--tx4);font-size:9px">›</span>
+      <span style="font-family:var(--fh);font-size:9px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--tx)">Seat Ibiza</span>
+    </nav>
   </div>
 
   <!-- VEHICLE HERO -->
@@ -309,7 +333,7 @@ footer{background:var(--bg);padding:56px 64px 30px;border-top:1px solid var(--ln
 
     <!-- SPECS — JB Style -->
     <div class="sp sr d1">
-      <div class="sp-name">Seat Ibiza</div>
+      <h1 class="sp-name">Seat Ibiza</h1>
       <span class="sp-acc"></span>
       <div class="sp-var">EZ 06/2009 &middot; 158.700 km &middot; Benzin &middot; Schaltgetriebe &middot; Export</div>
 
@@ -422,6 +446,37 @@ footer{background:var(--bg);padding:56px 64px 30px;border-top:1px solid var(--ln
 </div><!-- /page -->
 
 <!-- CTA -->
+<!-- RELATED VEHICLES -->
+<section class="related" aria-labelledby="rel-h">
+  <div class="related-inner">
+    <div class="lbl sr">Weitere Fahrzeuge</div>
+    <h2 id="rel-h" class="sr" style="font-family:var(--fh);font-size:clamp(24px,3vw,38px);font-weight:700;line-height:1.05;letter-spacing:-.018em;margin-bottom:8px">Andere aus<br/><span style="color:var(--tx3)">unserem Bestand</span></h2>
+    <div class="related-grid">
+      <a class="rv-card sr" href="/fahrzeug-i10.html" aria-label="Hyundai i10 Select ansehen">
+        <div class="rv-img"><img src="/img/i10_01.webp" alt="Hyundai i10 Select" loading="lazy" width="340" height="200"/></div>
+        <div class="rv-body">
+          <div class="rv-tag" style="font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--grn);margin-bottom:6px">● Verfügbar</div>
+          <div class="rv-name">Hyundai i10 Select</div>
+          <div class="rv-var">SZH · Klima · 8-Fach · TÜV 02/2027</div>
+          <div class="rv-meta">2020 · 62.500 km · Benzin · 67 PS</div>
+          <div class="rv-price">8.980 €</div>
+        </div>
+      </a>
+      <a class="rv-card sr d1" href="/fahrzeug-bmw320d.html" aria-label="BMW 320d M-Paket ansehen">
+        <div class="rv-img"><img src="/img/bmw_grau.webp" alt="BMW 320d M-Paket" loading="lazy" width="340" height="200"/></div>
+        <div class="rv-body">
+          <div class="rv-tag" style="font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(251,191,36,.9);margin-bottom:6px">In Anlieferung</div>
+          <div class="rv-name">BMW 320d M-Paket</div>
+          <div class="rv-var">M-Paket · Scheckheft lückenlos · Navi · Leder</div>
+          <div class="rv-meta">2014 · 150.000 km · Diesel · 184 PS</div>
+          <div class="rv-price">12.980 €</div>
+        </div>
+      </a>
+    </div>
+    <div class="related-cta sr d2"><a href="/fahrzeugbereich.html" class="bg2">Alle Fahrzeuge ansehen <svg width="12" height="12" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></div>
+  </div>
+</section>
+
 <div class="cta">
   <h2 class="sr">Interesse geweckt?<br/><span class="g">Wir sind für Sie da.</span></h2>
   <p class="sr d1">Rufen Sie an, schreiben Sie uns oder kommen Sie direkt in Hemau vorbei.</p>
@@ -498,5 +553,6 @@ window.addEventListener('load',function(){
   gtag('config','G-XDZRP2W3X9',{'send_page_view':true});
 });
 </script>
+<script src="/back-to-top.js" defer></script>
 </body>
 </html>

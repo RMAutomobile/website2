@@ -46,6 +46,7 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
 .ft-bot{display:flex;justify-content:space-between;align-items:center;padding-top:24px;flex-wrap:wrap;gap:12px}
 .ft-copy{font-size:11px;font-weight:300;color:var(--tx4)}
 .ft-legal{display:flex;gap:20px}.ft-legal a{font-size:11px;font-weight:300;color:var(--tx4);transition:color .3s}.ft-legal a:hover{color:var(--tx3)}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;animation-iteration-count:1!important}.sr,.hw,.hero-eye,.hero-sub,.hero-btns,.hero-trust{opacity:1!important;transform:none!important}}
 .cookie-banner{position:fixed;bottom:0;left:0;right:0;z-index:500;background:var(--c2);border-top:1px solid var(--bo);padding:16px 60px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;transform:translateY(100%);transition:transform .5s var(--ease)}.cookie-banner.show{transform:none}
 .cookie-txt{font-size:12px;font-weight:300;color:var(--tx2);line-height:1.6;max-width:660px}.cookie-txt a{color:var(--tx);text-decoration:underline}
 .cookie-btns{display:flex;gap:9px;flex-shrink:0}
@@ -58,10 +59,12 @@ footer{background:var(--page);padding:72px 60px 40px;border-top:1px solid var(--
 @media(max-width:1100px){nav,footer,.sec,.sec-alt{padding-left:32px;padding-right:32px}.ft-inner{grid-template-columns:1fr 1fr;gap:32px}.cookie-banner{padding:14px 24px}}
 @media(max-width:768px){nav{padding:0 20px;height:72px}.nav-logo img{height:38px}.nav-links{display:none}.nav-burger{display:flex}.sec,.sec-alt{padding:64px 20px}footer{padding:52px 20px 32px}.ft-inner{grid-template-columns:1fr 1fr;gap:24px}.cookie-banner{flex-direction:column;align-items:flex-start;padding:14px 20px}}
 @media(max-width:480px){.ft-inner{grid-template-columns:1fr}}
-h1{font-family:var(--fh);font-weight:700;line-height:1.0;letter-spacing:-.02em;font-size:clamp(38px,5.2vw,72px);word-break:break-word}
+h1{font-family:var(--fh);font-weight:700;line-height:.98;letter-spacing:-.025em;font-size:clamp(44px,6.4vw,86px);word-break:break-word}
 h1 .line{display:block;overflow:hidden;padding-bottom:0.12em;margin-bottom:-0.12em}h1 .hw{display:inline-block}
-h1 .g{color:rgba(232,227,216,.48)}
-.hero{min-height:100svh;display:grid;grid-template-columns:48% 52%;padding-top:88px;overflow:hidden}
+h1 .g{color:rgba(232,227,216,.48);font-style:italic}
+.hero{position:relative;min-height:100svh;display:grid;grid-template-columns:48% 52%;padding-top:88px;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 28% 35%,rgba(111,207,151,.075) 0%,rgba(111,207,151,0) 60%);pointer-events:none;z-index:0}
+.hero-left,.hero-right{position:relative;z-index:1}
 .hero-left{display:flex;flex-direction:column;justify-content:center;padding:60px 52px 90px 60px}
 .hero-right{position:relative;overflow:hidden}
 .hero-right img{width:100%;height:100%;object-fit:cover;object-position:60% center}
@@ -179,7 +182,7 @@ h1 .g{color:rgba(232,227,216,.48)}
 @media(max-width:1100px){#leistungen-sec{padding:80px 32px!important}#leistungen-sec>div{grid-template-columns:280px 1fr!important;gap:48px!important}}@media(max-width:900px){#leistungen-sec{padding:72px 20px!important}#leistungen-sec>div{grid-template-columns:1fr!important;gap:32px!important}#leistungen-sec>div>div:first-child{position:static!important}.leist-item{grid-template-columns:1fr 32px;gap:16px;padding:24px 0}.leist-item-left{flex-direction:row;align-items:baseline;gap:12px}.leist-item-title{font-size:17px}}
 @media(max-width:768px){#logo-track{gap:40px!important}.brand-logo{height:32px}#leistungen-sec{padding:72px 20px!important}.leist-item{grid-template-columns:1fr 32px;gap:16px;padding:28px 0}.leist-item-left{flex-direction:row;align-items:center;gap:12px;grid-column:1}.leist-item-title{font-size:17px}.leist-item-body{grid-column:1;max-height:0}.leist-item.open .leist-item-body{max-height:800px}.leist-cta{display:inline-flex;align-items:center;gap:9px;padding:12px 24px;border:1px solid var(--bo2);font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--tx2);transition:all .3s var(--ease);text-decoration:none}.leist-cta:hover{border-color:var(--grn-bd);color:var(--grn)}
 .leist-item-toggle{grid-row:1;grid-column:2;align-self:center}}
-@media(max-width:1100px){.hero{grid-template-columns:1fr}.hero-right{display:none}.hero-left{padding:96px 32px 72px}.team-inner,.ank-wrap,.s-wrap{grid-template-columns:1fr;gap:40px}.ank-box{position:static}.usp-grid,.rev-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stat{border-bottom:1px solid var(--bo)}}
+@media(max-width:1100px){.hero{grid-template-columns:1fr}.hero-right{display:none}.hero-left{padding:104px 32px 72px;position:relative;z-index:1}.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(22,22,20,0) 30%,rgba(111,207,151,.05) 100%),url('/hero.webp') center/cover no-repeat;opacity:.18;mix-blend-mode:screen;z-index:0;pointer-events:none}.team-inner,.ank-wrap,.s-wrap{grid-template-columns:1fr;gap:40px}.ank-box{position:static}.usp-grid,.rev-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr 1fr}.stat{border-bottom:1px solid var(--bo)}}
 @media(max-width:768px){
   .seo-sec{padding:44px 20px!important}
   .label,.lbl{font-size:11px!important}
@@ -448,6 +451,45 @@ h1 .g{color:rgba(232,227,216,.48)}
   </div>
   <p style="font-size:11px;font-weight:300;color:var(--tx3);text-align:center;margin-top:28px">Weitere Bewertungen auf <a href="https://www.google.com/search?q=R%26M+Automobile+Hemau+Bewertungen" target="_blank" rel="noopener" style="color:var(--tx2);text-decoration:underline">Google</a></p>
 </section>
+<!-- INSTAGRAM PLACEHOLDER -->
+<section class="sec" style="padding:88px 60px;border-top:1px solid var(--bo)" aria-labelledby="ig-h">
+  <div style="display:flex;flex-direction:column;align-items:center;text-align:center;max-width:640px;margin:0 auto 36px">
+    <div class="label sr" style="justify-content:center;margin-bottom:16px">Folgen Sie uns</div>
+    <h2 id="ig-h" class="sr" style="margin-bottom:14px">Hinter den Kulissen<br/><span class="g">auf Instagram</span></h2>
+    <p class="sr d1" style="font-size:14px;font-weight:300;color:var(--tx2);line-height:1.85;max-width:480px">Neue Fahrzeuge, Aufbereitungs-Stories, Werkstatt-Einblicke. <strong style="color:var(--tx);font-weight:600">@rm__automobile</strong> &#8211; ehrlich und unverstellt.</p>
+  </div>
+  <div class="ig-grid sr d2">
+    <a href="https://www.instagram.com/rm__automobile/" target="_blank" rel="noopener" class="ig-tile" aria-label="Instagram Beitrag &#8211; aktueller Bestand">
+      <div class="ig-img" style="background-image:linear-gradient(135deg,rgba(111,207,151,.18) 0%,rgba(22,22,20,.6) 100%),url('/img/i10_01.webp')"></div>
+      <div class="ig-ov"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+    </a>
+    <a href="https://www.instagram.com/rm__automobile/" target="_blank" rel="noopener" class="ig-tile" aria-label="Instagram Beitrag &#8211; BMW 320d">
+      <div class="ig-img" style="background-image:linear-gradient(135deg,rgba(111,207,151,.18) 0%,rgba(22,22,20,.6) 100%),url('/img/bmw_grau.webp')"></div>
+      <div class="ig-ov"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+    </a>
+    <a href="https://www.instagram.com/rm__automobile/" target="_blank" rel="noopener" class="ig-tile" aria-label="Instagram Beitrag &#8211; Halle">
+      <div class="ig-img" style="background-image:linear-gradient(135deg,rgba(111,207,151,.18) 0%,rgba(22,22,20,.6) 100%),url('/halle2.webp')"></div>
+      <div class="ig-ov"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+    </a>
+    <a href="https://www.instagram.com/rm__automobile/" target="_blank" rel="noopener" class="ig-tile" aria-label="Instagram Beitrag &#8211; Team">
+      <div class="ig-img" style="background-image:linear-gradient(135deg,rgba(111,207,151,.18) 0%,rgba(22,22,20,.6) 100%),url('/rene.webp');background-position:top"></div>
+      <div class="ig-ov"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+    </a>
+  </div>
+  <div style="text-align:center;margin-top:36px">
+    <a href="https://www.instagram.com/rm__automobile/" target="_blank" rel="noopener" class="btn-g sr d3">@rm__automobile auf Instagram <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
+  </div>
+</section>
+<style>
+.ig-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--bo);max-width:1100px;margin:0 auto}
+.ig-tile{position:relative;aspect-ratio:1/1;overflow:hidden;display:block;background:var(--c2);transition:transform .35s var(--ease)}
+.ig-tile:hover{transform:translateY(-2px)}
+.ig-img{position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .55s var(--ease),filter .35s}
+.ig-tile:hover .ig-img{transform:scale(1.05);filter:brightness(.7)}
+.ig-ov{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:42px;height:42px;display:flex;align-items:center;justify-content:center;background:rgba(22,22,20,.78);border:1px solid rgba(111,207,151,.45);color:var(--grn);opacity:0;transition:opacity .3s var(--ease);backdrop-filter:blur(8px)}
+.ig-tile:hover .ig-ov,.ig-tile:focus-visible .ig-ov{opacity:1}
+@media(max-width:768px){.ig-grid{grid-template-columns:1fr 1fr;max-width:480px}}
+</style>
 <section class="sec">
   <div class="label sr">Standort</div>
   <h2 class="sr">Nah dran &#8211;<br/><span class="g">egal woher</span></h2>
@@ -541,4 +583,5 @@ window.addEventListener('load',function(){
   gtag('config','G-XDZRP2W3X9',{'send_page_view':true});
 });
 </script>
+<script src="/back-to-top.js" defer></script>
 </body></html>
