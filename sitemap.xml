@@ -21,9 +21,14 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rmauto-mobile.de/fahrzeug-seat-ibiza.html</loc>
+    <loc>https://rmauto-mobile.de/fahrzeug-opel-corsa.html</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://rmauto-mobile.de/fahrzeug-seat-ibiza.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
   </url>
   <url>
     <loc>https://rmauto-mobile.de/uber-uns.html</loc>
