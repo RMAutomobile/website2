@@ -12,18 +12,22 @@ User-Reality-Check auf https://claude-project-bex.pages.dev/ — Design wirkt "w
 **Umgesetzt:** `body::before` (Mint+Gold-Mesh-Gradient) + `body::after` (SVG-Fractal-Noise mit opacity:.32 mix-blend-mode:overlay) komplett aus `styles/v2.css` entfernt. Background ist jetzt pure `var(--page)` #161614 — clean Dark, kein Rauschen mehr. Auch `@keyframes ambientFlow` entfernt.
 **Verifikation:** User-Review auf Preview-URL ausstehend.
 
-### B · Container "Full-width gequetscht" *(offen)*
-**Problem:** Auf Home, Über-uns und überall klatscht Inhalt links/rechts an die Ränder. User wollte "full-width" als gestalterische Wirkung, nicht "Inhalt ganz nach außen".
-**Fix-Ansatz:** Hero-/Section-Padding auf `max-width:var(--container)` mit `margin:0 auto` zwingen wo es fehlt. Identifizieren: vk-hero, page-hero, sec, sec-alt — was ist `100% - 60px` und sollte stattdessen `--container` (1440px) sein.
+### B · Container "Full-width gequetscht" *(✅ erledigt)*
+**Umgesetzt:**
+- `--container` von 1440px auf 1280px (KKM-Niveau, lesbarer)
+- `--pad-sec` von 160px auf 128px (KKM moderate spacing)
+- `.sec` jetzt `padding:128px 40px` + Inner `max-width:var(--container);margin:0 auto` per Default — Inhalte zentriert nicht mehr "an den Rand geklatscht"
 
-### C · Kontakt-Button im Header gequetscht *(offen)*
-**Problem:** Memory sagt das wurde mit Burger-Breakpoint 1024px schon mal gefixt — User sieht es trotzdem wieder kaputt. Aktueller Live-Preview zeigt Button als "+49 1516 1569871 in standard text format. No dedicated button widget visible" — das deutet auf Mobile-Breakpoint, wo der `nav-cta` zum Telefon-Link verkommt oder squisht.
-**Fix-Ansatz:** Burger-Breakpoint nochmal höher ziehen oder Nav-Layout flex-wrap kontrollieren.
+### C · Kontakt-Button Squish *(✅ erledigt)*
+**Umgesetzt:** Burger-Breakpoint von 1024px auf 1180px hochgezogen — auf allen Tablets + kleineren Desktops greift jetzt Mobile-Nav, Kontakt-Button wird nicht mehr zerquetscht.
 
-### D · Brand-Logos teilweise nicht sichtbar / kaputt *(offen)*
-**Problem:** `filter:brightness(0) invert(1)` macht alle Logos weiß — bei BMW-Ring, Mazda-Schwingen, Mercedes-Stern zerstört das die Form (Innenkonturen werden weiß). Plus: Opel, Seat haben gar keine SVGs (nur Text-Fallback in fahrzeugbereich.html).
-**Fix-Ansatz:** Filter abschalten und SVGs als-is zeigen, oder Original-Brand-Farben behalten. Fehlende Opel/Seat SVGs nachholen.
-**KKM-Referenz:** KKM nutzt Carousel mit 5 Logos im Endlosloop, einfache weiße Darstellung auf Grau — ihre SVGs sind aber von Anfang an Single-Color-Lineart.
+### D · Brand-Logos sichtbar machen *(✅ erledigt)*
+**Umgesetzt:**
+- `filter:brightness(0) invert(1)` (zerstört Innenkonturen) ersetzt durch `grayscale(.85)` auf alle Brand-Logo-Klassen (`.brand-tile`, `.brand-pill`, `.bp-tile`)
+- Form bleibt sichtbar (BMW-Ring, Mercedes-Stern), nur Sättigung reduziert
+- On hover / .on / .sel: `grayscale(0)` → originale Farben zurück
+- Opel/Seat haben weiterhin keine SVGs — bleibt als Text-Pill (akzeptabel)
+**Noch offen-optional:** Logo-Carousel (Endlosschleife wie KKM) statt 7-Spalten-Grid auf Index. Schreit "professionell" lauter als statisches Grid. Backlog.
 
 ### E · Insta-Section: Insta-Edit-Video + TikTok einbinden *(✅ erledigt)*
 **Umgesetzt (User wählte Option 1 — komprimieren):**
@@ -36,15 +40,37 @@ User-Reality-Check auf https://claude-project-bex.pages.dev/ — Design wirkt "w
 - **NICHT-PERFEKT:** Beide Cards zeigen aktuell das gleiche Video. Wenn User später ein eigenes TikTok-Video hat, kann das einfach als 2. video-File reingehängt werden.
 **Verifikation:** User-Review auf Preview-URL ausstehend.
 
-### F · SEO-Keywords *(offen)*
-**Problem:** Keywords nur in `<title>`/`<meta>`, kaum in H1/Lead/Body. User: "Auto verkaufen Hemau", "Fahrzeug verkaufen", "Gebrauchtwagen kaufen Hemau / Regensburg" fehlen sichtbar.
-**Fix-Ansatz:** Pro Page H1 + Lead-Paragraph mit Keyword-Pflege. Index, mein-fahrzeug-verkaufen, fahrzeugbereich, fahrzeug-* Detail-Pages prüfen. Region-Pages als gut bewertet (User-Lob).
+### F · SEO-Keywords *(✅ Phase 1 erledigt — Hauptseiten)*
+**Umgesetzt H1+Lead+Eyebrow auf Hauptseiten:**
+- `index.html`: H1 "Gebrauchtwagen kaufen & verkaufen in Hemau", Lead nennt Hemau/Regensburg/Ingolstadt/Neumarkt/Kelheim/Parsberg, "100% zufrieden"-Marketing-Behauptung raus
+- `mein-fahrzeug-verkaufen.html`: H1 "Auto verkaufen in Hemau & Regensburg", Lead mit Region-Keywords + "Fahrzeug verkaufen"
+- `fahrzeugbereich.html`: H1 "Gebrauchtwagen kaufen in Hemau", Lead Region-Keywords
+- `uber-uns.html`: Eyebrow "Ihr Gebrauchtwagenhändler · Hemau", Lead mit Region-Hinweis
+**Phase 2 offen:** Body-Texte (Sub-Sections, USPs, Reviews) auf Keywords prüfen. Detail-Pages, Region-Pages weiter ausbauen.
 
-### G · Schriften zu groß *(offen)*
-**Problem:** Hero-H1 mit `clamp(...,8vw,128px)` wird auf großen Monitoren überdimensioniert. Wirkt unprofessionell.
-**Fix-Ansatz:** Max-Werte runter (z.B. 96px statt 128px), Body-Größen prüfen.
+### G · Hero-Schriftgrößen drastisch runter *(✅ erledigt)*
+**Umgesetzt:**
+- `h1.hero-h1` Index von `clamp(64px,10vw,176px)` auf `clamp(40px,5.5vw,84px)` — auf 1920px-Monitor jetzt 84px statt 176px
+- `h2.display` global von `clamp(44px,6vw,96px)` auf `clamp(36px,4.4vw,64px)`
+- `.hero-sub` Index von `clamp(18px,1.5vw,22px)` auf `clamp(16px,1.2vw,18px)`
+- Mobile-Hero-H1 von `clamp(48px,13vw,84px)` auf `clamp(34px,9vw,56px)`
+- `.hero{min-height:100svh}` auf `78svh` reduziert (KKM hat Hero nicht Vollbild)
+- `.hero-bg-grid` (Punkt-Raster) entfernt, 3 Glow-Layer auf 1 reduziert
+- 5 Word-Animationen (`.h1w--N`) raus — clean reveal stattdessen
 
-### H · Animationen-Audit (Texte überdecken) + Bilder-Crop *(in progress)*
+### H · Animationen-Audit (Texte überdecken) + Bilder-Crop *(in progress — größter Strip-Down erledigt)*
+
+**Über-uns Cinema-Cards komplett entschlackt:**
+- conic-gradient rotating Border-Animation (`@property --ang` + keyframes rotateBorder) → entfernt
+- Mouse-tracked spotlight (`.tp-spotlight` CSS + Inline-Script) → entfernt
+- Quote-Shimmer Sweep-Animation (`tp-quote::after` translateX) → entfernt
+- Pulsing-Dot auf tp-badge (badgePulse animation) → entfernt
+- Gradient-Text auf tp-name (linear-gradient bg-clip) → entfernt
+- Reveal-Scale-Animation auf .team-person → entfernt (verwendet jetzt Standard-Reveal)
+- Bleibt: dezenter Hover-Lift translateY(-4px), Card-Border-Color-Wechsel, kleines img-scale(1.03)
+- Karten haben jetzt: Bild + Badge (statisch, keine Pulse) + Name + Role + Eyebrow + H3 + Role-Line + Bio + Quote + Skills — alle KKM-style ohne Show-off
+
+
 **Problem:** Stats auf Team-Cards überdeckten Text — als Beispiel. Plus: User-Feedback "Cards schneiden unsere Bilder so ab" — `aspect-ratio:4/5` + `object-position:center 22%` schnitt die quasi-quadratischen 800x800 Bilder oben/unten ab.
 **✅ Fixes:**
 - `tp-stats`-HTML aus uber-uns.html entfernt (waren faktisch erfunden, siehe Memory `feedback_no_invented_stats.md`)

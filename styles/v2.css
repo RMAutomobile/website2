@@ -34,9 +34,9 @@
   --r-xl:32px;
   --nav-h:88px;
   --nav-h-mob:72px;
-  --container:1440px;
-  --pad-sec:160px;
-  --pad-sec-mob:88px;
+  --container:1280px;
+  --pad-sec:128px;
+  --pad-sec-mob:72px;
 }
 html,body{overflow-x:hidden;max-width:100vw}
 html{scroll-behavior:smooth;scroll-padding-top:108px}
@@ -66,7 +66,7 @@ button{font-family:inherit}
 .eyebrow.center::before{background:linear-gradient(to right,transparent 0%,var(--grn-bd) 50%,transparent 100%)}
 .eyebrow.green{color:var(--grn)}
 
-h2.display{font-family:var(--fh);font-size:clamp(44px,6vw,96px);font-weight:800;line-height:.96;letter-spacing:-.04em;color:var(--tx)}
+h2.display{font-family:var(--fh);font-size:clamp(36px,4.4vw,64px);font-weight:800;line-height:1;letter-spacing:-.035em;color:var(--tx)}
 h2.display em{font-style:italic;font-weight:700;color:var(--grn)}
 h2.display .muted{color:var(--tx3)}
 h2.display .grad{background:linear-gradient(135deg,var(--grn) 0%,var(--gold) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -116,13 +116,15 @@ nav.topbar.scrolled{background:rgba(15,15,14,.86);box-shadow:0 8px 32px rgba(0,0
 .mob-menu a em{font-style:italic;color:var(--grn);font-weight:700}
 .mob-menu .mob-cta{margin-top:32px}
 
-/* SECTIONS */
+/* SECTIONS — KKM-style: clear container, alternating backgrounds */
 section,.sec{position:relative}
-.sec{padding:var(--pad-sec) 60px}
-.sec-tight{padding:96px 60px}
+.sec{padding:var(--pad-sec) 40px}
+.sec>*{max-width:var(--container);margin-left:auto;margin-right:auto}
+.sec-tight{padding:80px 40px}
+.sec-tight>*{max-width:var(--container);margin-left:auto;margin-right:auto}
 .sec-alt{background:var(--c1)}
 .container{max-width:var(--container);margin:0 auto;width:100%}
-.container-narrow{max-width:980px;margin:0 auto;width:100%}
+.container-narrow{max-width:920px;margin:0 auto;width:100%}
 
 /* FOOTER */
 footer{background:var(--page);padding:120px 60px 48px;border-top:1px solid var(--bo);position:relative;overflow:hidden}
@@ -174,7 +176,8 @@ a.fci-v:hover{color:var(--grn)}
   .ft-pre{grid-template-columns:1fr;gap:36px}
   .sec{padding:var(--pad-sec-mob) 32px}
 }
-@media(max-width:1024px){
+@media(max-width:1180px){
+  /* Burger früher rein damit Kontakt-Button nicht zerquetscht wird */
   nav.topbar{padding:0 24px;height:var(--nav-h-mob)}
   .nav-logo img{height:42px}
   .nav-links{display:none}
@@ -184,8 +187,8 @@ a.fci-v:hover{color:var(--grn)}
 @media(max-width:768px){
   nav.topbar{padding:0 20px}
   .nav-logo img{height:38px}
-  .sec,.sec-tight{padding:80px 20px}
-  footer{padding:72px 20px 32px}
+  .sec,.sec-tight{padding:64px 20px}
+  footer{padding:64px 20px 32px}
   .ft-inner{grid-template-columns:1fr 1fr;gap:32px;padding-bottom:40px}
   .cookie-banner{left:12px;right:12px;bottom:12px;padding:18px 20px;flex-direction:column;align-items:flex-start;gap:14px}
   .cookie-btns{width:100%}
