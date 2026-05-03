@@ -1,0 +1,63 @@
+# R&M Automobile — gitignore
+# Hält unbenutzte Roh-Assets, lokale Tooling-Files und temporäre Outputs aus dem Repo.
+
+# === Lokale Build-/Migration-Tools ===
+compress_assets.py
+compress_i10_gallery.py
+add_faq_link.py
+v2-migration-template.md
+
+# === Roh-Fotos & Originalvideos (unbenutzt — komprimierte WebP-Versionen sind in Verwendung) ===
+img/DSC*.jpg
+img/DSC*.JPG
+img/halle_innen.jpg
+img/i10_neu.jpg
+img/opel.PNG
+img/team_atmosph.jpg
+img/uebergabe.jpg
+img/werkstatt.jpg
+img/werkstatt-lg.webp
+img/werkstatt-lg.jpg
+img/werkstatt-md.webp
+img/werkstatt-md.jpg
+img/werkstatt-sm.webp
+img/werkstatt-sm.jpg
+
+# === Ungenutzte Videos ===
+img/Hero_Video.mp4
+img/Insta Edit.mp4
+img/insta.mp4
+
+# === i10 Roh-JPEGs (komprimierte .webp + _full.jpg sind in Verwendung) ===
+img/i10_01.jpeg
+img/i10_02.jpeg
+img/i10_03.jpeg
+img/i10_04.jpeg
+img/i10_05.jpeg
+img/i10_06.jpeg
+img/i10_07.jpeg
+img/i10_08.jpeg
+img/i10_09.jpeg
+img/i10_10.jpeg
+img/i10_11.jpeg
+img/i10_12.jpeg
+img/i10_13.jpeg
+img/i10_14.jpeg
+img/i10_15.jpeg
+img/i10_16.jpeg
+img/i10_17.jpeg
+img/i10_18.jpeg
+
+# === Andere Roh-Assets ===
+img/seat_ibiza_01.jpeg
+
+# === OS/Editor cruft ===
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+.obsidian/
+__pycache__/
+*.pyc
