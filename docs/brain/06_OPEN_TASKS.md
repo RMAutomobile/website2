@@ -83,11 +83,71 @@ User-Reality-Check auf https://claude-project-bex.pages.dev/ — Design wirkt "w
 ---
 
 ## Stage-Status (Mapping zu Tasks)
-- Stages 1–11 **inhaltlich fertig** — letzter Sprint hat T-01 (Blog-Fakten), T-02 (Werte-Section), T-03 (Team-Cards Cinema), T-04 (Detail-Pages), T-05 (Marken-Filter) und T-06 (Wizard-Polish) erledigt.
-- Bevor Merge in main: T-07 Cross-Browser, T-08 Lighthouse, T-09 Commit/PR.
+- Stages 1–11 **inhaltlich fertig**, danach KKM-Reduktion in 3 Phasen (Schritte A-H + Phase 2 + Phase 3) durchgeführt
+- Bevor Merge in main: T-07 Cross-Browser, T-08 Lighthouse, T-09 Commit/PR + Backlog-Items unten
 
-## Nächste konkrete Teilaufgabe
-**User-Review im Browser**: Alle Stage 5/6/7-Änderungen visuell testen (uber-uns Cinema-Cards, Fahrzeugbereich Brand-Filter, 4 Detail-Pages neue Sections, Verkaufs-Wizard Step-Pips + Brand-Picker). Anschließend T-07 (Cross-Browser), T-08 (Lighthouse), dann T-09 (Commit + PR + Merge).
+---
+
+## 🎯 Backlog für nächste Session (priorisiert)
+
+### B1 · Detail-Pages auf KKM-Niveau reduzieren  *(höchste Prio)*
+**Problem:** `fahrzeug-bmw320d.html`, `fahrzeug-i10.html`, `fahrzeug-opel-corsa.html`, `fahrzeug-seat-ibiza.html` haben noch alte Glow-Animationen + `min-height:64vh`-Heros + page-spezifisches CSS aus dem Cinema-Sprint. Phase 3 hat sie nicht angefasst.
+**Fix-Ansatz:**
+- Page-Hero `floatA`/`floatB` Animationen entfernen (analog zu uber-uns / fahrzeugbereich / mein-fahrzeug-verkaufen)
+- Hero-Padding auf 128px standardisieren
+- `min-height` raus
+- Sticky-Sidebar checken (sticky-Top war 108px — passt wenn nav-h:88px)
+- Gallery thumbs evtl. reduzieren
+
+### B2 · Section-BG echte Hell/Dunkel-Wechsel
+**Problem:** KKM wechselt zwischen weiß und dunkel; wir bleiben in 2 Dark-Tönen (`page` ↔ `c1`). Memory `project_rm_automobile.md` sagte "Dark Theme bleibt" — aber User hat 04.05.2026 Freifahrt erteilt für Design-Optimierung. Theme-Refactor möglich.
+**Optionen:**
+- (A) Komplett Dark bleiben aber stärkere Tonwerte zwischen Sections (`#0a0a09` ↔ `#1c1c1a` ↔ `#2a2a26`) für klarere Trennung
+- (B) Cremig-helle Akzent-Sections (Stats / Testimonials / Atmosphere) als Bruch im Dark-Flow
+- **UNGEKLÄRT** mit User: Welche Variante.
+
+### B3 · Process-Steps prominenter
+**Problem:** KKM hat "Wie wir arbeiten" mit 4 Schritten + Number-Markern als zentrale Section; wir haben das als `steps-row` aber nicht so präsent.
+**Fix-Ansatz:** Steps-Section auf eigene Section vor USPs heben, mit großen Number-Markern, klare Linie zwischen Schritten, KKM-Style.
+
+### B4 · SEO-Keywords Phase 2 — Body-Texte
+**Problem:** Phase 1 hat nur H1+Lead+Eyebrow auf Hauptseiten gemacht. USP-Card-Body, Reviews-Texte, Werkstatt-Section, FAQ-Antworten nicht durchgekämmt.
+**Fix-Ansatz:** Pro Section "Auto verkaufen Hemau", "Gebrauchtwagen Regensburg", "KFZ-Mechatroniker Hemau" natürlich integrieren (kein Keyword-Stuffing).
+
+### B5 · Atmosphere-Collage entschlacken
+**Problem:** Aktuell 4 Tiles mit verschiedenen grid-spans (atmo-1 takes 6 cols/2 rows etc) — wirkt unruhig. KKM-Style wäre 4 gleichgroße Cards oder 3+1.
+**Fix-Ansatz:** `.atmo-collage` grid-template auf `repeat(4,1fr)` mit gleichen Höhen, schlichter.
+
+### B6 · Reviews/Testimonials KKM-Style
+**Problem:** Aktuell Cards-Grid; KKM macht Testimonials als breite zitierbare Quotes mit Stern + Avatar + Klar.
+**Fix-Ansatz:** Reviews-Section umbauen zu zitable Quote-Format (groß, klar lesbar) statt Cards.
+
+### B7 · Region-Pages Background prüfen
+**Problem:** User-Lob "Inhaltlich gut" — aber `body::before/::after` Glow-Anims sind möglicherweise auch da drin (autoankauf-regensburg, -ingolstadt, -kelheim, -parsberg, gebrauchtwagen-neumarkt).
+**Fix-Ansatz:** Schnell-Check via Grep, falls floatA/floatB drin → entfernen.
+
+### B8 · CSS-Klassen-Cleanup `.werkstatt*` → `.diagnose*`
+**Problem:** Memory `project_no_werkstatt.md` — R&M hat keine Werkstatt. CSS-Klassen heißen aber noch `.werkstatt`, `.werkstatt-grid` etc. — kosmetischer Tech-Schuld.
+**Fix-Ansatz:** Rename auf `.diagnose-section` o.ä. — nur kosmetisch, kein User-sichtbarer Effekt.
+
+---
+
+## 🚀 Vor Merge nach main (T-07/T-08/T-09)
+
+- **T-07 Cross-Browser-Test** — User-Aufgabe, Mobile iOS Safari + Android Chrome + Desktop Chrome/Firefox/Safari
+- **T-08 Lighthouse-Run** — Performance, Accessibility, SEO, Best Practices ≥95
+- **T-09 Commit + PR + Merge nach main** — Cloudflare Pages auto-deployt, Live-Site rmauto-mobile.de aktualisiert sich
+
+## ⚠️ Netlify-Webhook in Repo-Settings entfernen
+User-Beobachtung: "Deploy Preview for effortless-bunny-69b136 failed" bei jedem Push. Ist alter Netlify-Hook am GitHub-Repo, User nutzt Cloudflare. Lösung: GitHub Repo → Settings → Webhooks → Netlify-Hook löschen. Manuelle User-Aktion, kein Code-Fix nötig.
+
+---
+
+## Nächste konkrete Teilaufgabe (aus Sicht 04.05.2026 Sessionsende)
+
+**Step 1:** User reviewt Live-Preview https://claude-project-bex.pages.dev/ nach Commit `9bee4b4`. Feedback einholen welche Punkte noch nicht KKM-Niveau sind.
+**Step 2:** Mit Backlog-B1 (Detail-Pages reduzieren) starten — kürzester Hebel, klarer Pattern aus Phase 3 wiederverwenden.
+**Step 3:** Backlog B2 (Hell/Dunkel-Wechsel) als gemeinsame Entscheidung mit User klären — größere Theme-Frage.
 
 ---
 

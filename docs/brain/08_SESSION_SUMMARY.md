@@ -1,3 +1,78 @@
+# 08 — Session Summary
+
+## Session 04.05.2026 — KKM-Reduktion in 3 Phasen (User-Reset)
+
+**Kontext:** Vorhergehender Sprint (03.05.2026, "Cook-Sprint Stage 5/6/7") hatte massive autonome Änderungen ohne Live-Verifikation gemacht. User-Reality-Check auf https://claude-project-bex.pages.dev/ → Design wirkte "wie Bastelprojekt von Schulkind", "kein Vergleich zu KKM Media". User-Forderung: "kriegst du es nochmal krasser hin" + später "du hast meine Freifahrt um das Design zu optimieren".
+
+**Strategischer Pivot:** Statt weiter zu cooken → Reduktions-Modus mit KKM als Ground-Truth. Reality-Check via WebFetch von kkmmedia.de. Brain-Lessons festgehalten für Cross-Session-Memory.
+
+### Erst gefixt: faktische Bugs (sofort, nicht-verhandelbar)
+- **Falsche Stats über René** raus aus uber-uns Team-Cards ("10+ Jahre Branche", "100% Beratung" waren Marketing-Erfindungen). Memory `feedback_no_invented_stats.md` als feste Regel angelegt.
+- **Insta-Section** komprimierte `insta-web.mp4` (1080p H.264, 6.5 MB) statt fehlender `insta.mp4` (4K HEVC, 19.5 MB, gitignored). 2 Social-Cards (Insta + TikTok) statt 1.
+- **Team-Bilder Crop** — `aspect-ratio:4/5` schnitt 800x800-Originale unten ab → auf `1/1` umgestellt, kein Crop mehr.
+
+### Phase 1 — Background-Reset (Commit `a7ce5a9`)
+**Decision D-15** in `07_DECISIONS_LOG.md`.
+- `body::before` (Mint+Gold-Mesh-Gradient mit floatA-Animation) entfernt
+- `body::after` (SVG-Fractal-Noise mit `opacity:.32` + `mix-blend-mode:overlay`) entfernt — wirkte wie TV-Off-Screen-Static
+- `@keyframes ambientFlow` entfernt
+- Background ist jetzt pure `var(--page)` Dark, kein Rauschen mehr
+
+### Phase 2 — Layout + Effekt-Reduktion (Commit `ff74295`)
+**Schritte B+C+D+F+G+H.**
+- **B Container:** `--container` 1440px → 1280px, `--pad-sec` 160px → 128px, `.sec` Children automatisch zentriert
+- **C Kontakt-Button:** Burger-Breakpoint 1024px → 1180px, kein Squish mehr auf Tablet/Mid-Desktop
+- **D Brand-Logos:** `filter:brightness(0) invert(1)` (zerstörte BMW-Ring etc.) → `grayscale(.85)`, hover/.on/.sel = `grayscale(0)` für Original-Farben
+- **F SEO Phase 1:** H1+Lead+Eyebrow auf 4 Hauptseiten mit "Gebrauchtwagen Hemau", "Auto verkaufen Regensburg" + Region-Liste in Leads
+- **G Hero-Schriften:** `hero-h1` clamp(...,176px) → clamp(40,5.5vw,84px). `h2.display` clamp(...,96px) → clamp(36,4.4vw,64px). `min-height:100svh` → `78svh`. `hero-bg-grid` (Punkt-Raster) + 2 von 3 Glow-Layern entfernt. 5 Word-Animationen (`.h1w--N`) raus.
+- **H Animations-Stripper auf Über-Uns Cinema-Cards:**
+  - conic-gradient rotating Border-Animation (`@property --ang` + keyframes rotateBorder) → entfernt
+  - Mouse-tracked spotlight (`.tp-spotlight` CSS + Inline-Script) → entfernt
+  - Quote-Shimmer Sweep-Animation (`tp-quote::after` translateX) → entfernt
+  - Pulsing-Dot auf tp-badge (badgePulse animation) → entfernt
+  - Gradient-Text auf tp-name (linear-gradient bg-clip) → entfernt
+
+### Phase 3 — KKM-Pattern erste Umsetzung (Commit `4cbd71e`)
+**Decision D-17** in `07_DECISIONS_LOG.md`. Tief-Analyse via WebFetch von kkmmedia.de gibt konkrete Patterns vor.
+- **Index Brand-Section** komplett neu: Brand-Grid (7-Spalten + "+162 weitere"-Tile) → `.logo-carousel` mit 17 Logos x2 für seamless infinite-scroll, mask-fade Edges, hover-pause, prefers-reduced-motion-Guard, 40s Loop
+- **USP-Cards:** `.featured`-Klasse komplett entfernt, alle 4 Cards gleichgroß in 4-Spalten-Grid (war 1.4fr 1fr 1fr Bento mit 540px-Riesen-Card). Padding 36/28, h3 18px statt clamp(...,30px)
+- **Hero-h1-Caps reduziert auf allen Pages:** index 84px (war 176px), uber-uns 76px (war 128px), fahrzeugbereich 84px (war 128px), mein-fahrzeug-verkaufen 80px (war 118px)
+- **CTA-Band:** Riesen-"R&M"-Wasserzeichen (clamp 360px) entfernt, Glow auf 900x420 reduziert, Headline auf 64px max statt 108px, Padding 112px statt 160px
+- **Brand-Marquee oben** (Text-Endlos) entfernt — war Dopplung mit neuem Logo-Carousel
+
+### Phase 4 — Stats-Strip + Glow-Anims raus + Footer (Commit `9bee4b4`)
+**Decision D-18** in `07_DECISIONS_LOG.md`.
+- **Stats-Strip neu als eigene Section** (KKM-Pattern): Direkt unter Hero, 4-Spalten-Grid mit border-Trennung, BG `var(--c1)` für Tonal-Wechsel zum Hero. Inhalt: 5,0★ Google, 24-Punkte-Check, KFZ vor Ort, Sofort-Auszahlung. Hero-Trust-Cells aus Index entfernt.
+- **Page-Hero floatA/floatB Glow-Animationen entfernt** auf uber-uns + fahrzeugbereich + mein-fahrzeug-verkaufen — `body::before/::after` mit blur(50px)+animations weg
+- **Hero-Padding global 160px → 128px**, `min-height:74vh/64vh` raus
+- **Footer entglowt:** `footer::before` Radial-Gradient entfernt, Padding 120/60/48 → 96/40/36, BG `var(--page)` → `var(--c1)` für Tonal-Wechsel, Container max-width zentriert
+
+### Memory-Files (cross-session) festgehalten
+- `feedback_kkm_lessons.md` — Reflexionsfragen vor jedem Effekt: "Macht KKM das?" "Verstärkt das die Lesbarkeit?" — Pflicht-Lecture vor jedem Design-Move
+- `feedback_no_invented_stats.md` — niemals erfundene Marketing-Zahlen auf die Site
+- `feedback_brain_workflow.md` — Brain-Docs aktiv pflegen, nicht erst am Sessionsende
+- `reference_preview_url.md` — https://claude-project-bex.pages.dev/ für visuellen Reality-Check vor Status-Reports
+
+---
+
+## Aktueller Stand nach Session 04.05.2026
+
+- Branch `claude-optimierung`: 6 Commits ahead von `main` (e23fcf5 → 9bee4b4)
+- Stage 5/6/7 inhaltlich fertig, KKM-Reduktion in 3 Phasen abgeschlossen
+- KKM-konform: Background, Hero, Stats-Strip, Logo-Carousel, USPs, Hero-H1-Größen, Container, Brand-Logos, Footer, Card-Crop, Insta+TikTok Embeds
+- KKM-noch-nicht: Detail-Pages (fahrzeug-*) haben noch alte Glow-Animationen, Section-BG-Wechsel ist nur zwischen 2 Dark-Tönen statt echtes Hell-Dunkel-Pattern, Process-Steps könnten präsenter, SEO-Keywords nur H1+Lead
+
+## Nächste Session — Anleitung
+
+1. **Erst lesen:** `02_CURRENT_STATE.md` (was steht), `06_OPEN_TASKS.md` Section "🚨 P0 — User-Kritik 04.05.2026" (was offen ist), `07_DECISIONS_LOG.md` D-15/D-16/D-17/D-18 (warum so entschieden), Memory `feedback_kkm_lessons.md` (KKM-Reflexion)
+2. **Live-Stand:** https://claude-project-bex.pages.dev/ aufrufen, mit User durchgehen wo's noch hängt
+3. **Backlog Prio 1:** Detail-Pages (fahrzeug-bmw320d, -i10, -opel-corsa, -seat-ibiza) auf KKM-Niveau reduzieren (Phase 4) — aktuell noch alte Glow-Animationen, alte Hero-Größen
+4. **Mini-Schritt-Workflow** beibehalten — keine Riesen-Sprints, jeder Move mit User-Sign-off auf Preview-URL
+5. **Brain-Docs pflegen** während des Arbeitens (nicht erst am Ende)
+6. **Vor T-09 (Merge nach main):** T-07 Cross-Browser-Test + T-08 Lighthouse-Run + finaler User-Review
+
+---
+
 # 08 — Session Summary (03.05.2026)
 
 ## Was wurde gemacht
