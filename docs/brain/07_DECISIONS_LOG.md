@@ -79,6 +79,16 @@
 - T-01 in `06_OPEN_TASKS.md` jetzt mit konkreten Akzeptanzkriterien — Implementation steht noch aus
 - Hinweis: Memory-Datei `project_rm_automobile.md` hat René noch als "jahrelange Erfahrung als Verkaufsberater" — leicht ungenau (richtig: >1 Jahr). User hat in dieser Session NUR Brain-Update gewünscht, Memory-Update nicht beauftragt — bei nächstem Touch ggf. mit User abstimmen
 
+### D-15 · Background ohne Noise + Mesh — pure Dark
+**Wann:** 04.05.2026 nach User-Reality-Check
+**Warum:** User-Feedback: "Der ganze Hintergrund besteht aus Rauschen irgendwie ... Bastelprojekt von einem Schulkind". Live-Reality-Check auf https://claude-project-bex.pages.dev/ + Vergleich mit kkmmedia.de bestätigt: KKM hat clean Background ohne Noise/Texturen, dafür viel Whitespace und klare Sections. Der Mint+Gold-Mesh + SVG-Fractal-Noise wirkten wie TV-Off-Screen-Static und unterminierten den professionellen Eindruck.
+**Konsequenz:** `body::before` (Mesh) + `body::after` (Noise) + `@keyframes ambientFlow` aus `styles/v2.css` entfernt. Background ist jetzt pure `var(--page)` #161614. Atmosphärische Akzente bleiben zulässig **per-Section** (z.B. Hero-Page-`::before` mit Radial-Glow, Region-Cards) — aber niemals site-wide gestapelt. Memory-Eintrag `feedback_design_ambition.md` (KKM-Niveau, MAX OPUS) wird umgedeutet: "Ambitioniert" heißt cleane Typo + durchdachte Sections + Whitespace, NICHT Noise + Animation-Stack.
+
+### D-16 · Mini-Schritt-Workflow mit User-Sign-off
+**Wann:** 04.05.2026 nach User-Frust über Riesen-Sprint ohne Verifikation
+**Warum:** Letzter Sprint war massiv (5 Phasen, 166 Files committed), ohne dass irgendein Schritt im Browser verifiziert wurde — Resultat: "komplett verkakt". Plus erfundene Stats über René, Animationen die Text überdecken, Background nicht User-tauglich. Großvolumige autonome Arbeit ohne Reality-Check führt zu Drift weg vom User-Wunsch.
+**Konsequenz:** Ab jetzt Mini-Schritte (A, B, C…) mit explicit User-Sign-off auf Live-Preview-URL, BEVOR der nächste Schritt gestartet wird. Brain-Updates pro Schritt. Auch große Themen (z.B. SEO-Keywords) in einzelne Pages aufteilen, nicht en bloc bearbeiten.
+
 ---
 
 ## Offene Entscheidungen

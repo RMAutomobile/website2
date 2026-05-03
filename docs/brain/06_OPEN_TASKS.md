@@ -2,6 +2,51 @@
 
 Sortiert nach Priorität. Jede Aufgabe klein und konkret.
 
+---
+
+## 🚨 P0 — User-Kritik 04.05.2026 (LAUFEND, Mini-Schritte mit Sign-off)
+
+User-Reality-Check auf https://claude-project-bex.pages.dev/ — Design wirkt "wie Bastelprojekt", nicht KKM-Niveau. Ground-Truth-Vergleich: KKM hat clean Whitespace + zentrierte Container + Logo-Carousel + minimal Animation. Wir haben aktuell überladen + verrauscht + überlaufende Animationen.
+
+### A · Background-Noise + Mesh raus *(✅ erledigt)*
+**Umgesetzt:** `body::before` (Mint+Gold-Mesh-Gradient) + `body::after` (SVG-Fractal-Noise mit opacity:.32 mix-blend-mode:overlay) komplett aus `styles/v2.css` entfernt. Background ist jetzt pure `var(--page)` #161614 — clean Dark, kein Rauschen mehr. Auch `@keyframes ambientFlow` entfernt.
+**Verifikation:** User-Review auf Preview-URL ausstehend.
+
+### B · Container "Full-width gequetscht" *(offen)*
+**Problem:** Auf Home, Über-uns und überall klatscht Inhalt links/rechts an die Ränder. User wollte "full-width" als gestalterische Wirkung, nicht "Inhalt ganz nach außen".
+**Fix-Ansatz:** Hero-/Section-Padding auf `max-width:var(--container)` mit `margin:0 auto` zwingen wo es fehlt. Identifizieren: vk-hero, page-hero, sec, sec-alt — was ist `100% - 60px` und sollte stattdessen `--container` (1440px) sein.
+
+### C · Kontakt-Button im Header gequetscht *(offen)*
+**Problem:** Memory sagt das wurde mit Burger-Breakpoint 1024px schon mal gefixt — User sieht es trotzdem wieder kaputt. Aktueller Live-Preview zeigt Button als "+49 1516 1569871 in standard text format. No dedicated button widget visible" — das deutet auf Mobile-Breakpoint, wo der `nav-cta` zum Telefon-Link verkommt oder squisht.
+**Fix-Ansatz:** Burger-Breakpoint nochmal höher ziehen oder Nav-Layout flex-wrap kontrollieren.
+
+### D · Brand-Logos teilweise nicht sichtbar / kaputt *(offen)*
+**Problem:** `filter:brightness(0) invert(1)` macht alle Logos weiß — bei BMW-Ring, Mazda-Schwingen, Mercedes-Stern zerstört das die Form (Innenkonturen werden weiß). Plus: Opel, Seat haben gar keine SVGs (nur Text-Fallback in fahrzeugbereich.html).
+**Fix-Ansatz:** Filter abschalten und SVGs als-is zeigen, oder Original-Brand-Farben behalten. Fehlende Opel/Seat SVGs nachholen.
+**KKM-Referenz:** KKM nutzt Carousel mit 5 Logos im Endlosloop, einfache weiße Darstellung auf Grau — ihre SVGs sind aber von Anfang an Single-Color-Lineart.
+
+### E · Insta-Section: Insta-Edit-Video + TikTok einbinden *(offen)*
+**Problem:** Live-Preview zeigt KEIN eingebettetes Video. User-Wunsch: Insta-Edit (`img/insta.mp4` lokal vorhanden, gitignored) + TikTok-Embed/Link sichtbar in der Section. Aktuell nur Text-Section.
+**Fix-Ansatz:**
+- `insta.mp4` muss live verfügbar gemacht werden — Optionen: (a) als Direct-Asset auf Cloudflare R2 / Pages-Static ohne git-Tracking via deploy-Hook, (b) Größe reduzieren + git-tauglich machen, (c) als externes embed (Instagram-Reel-Embed Code).
+- TikTok-Embed: offizielles `<blockquote class="tiktok-embed">` mit `<script async src="https://www.tiktok.com/embed.js">`.
+- **UNGEKLÄRT** mit User: welche Option für insta.mp4? Welcher konkrete TikTok-Post oder Profil-Embed?
+
+### F · SEO-Keywords *(offen)*
+**Problem:** Keywords nur in `<title>`/`<meta>`, kaum in H1/Lead/Body. User: "Auto verkaufen Hemau", "Fahrzeug verkaufen", "Gebrauchtwagen kaufen Hemau / Regensburg" fehlen sichtbar.
+**Fix-Ansatz:** Pro Page H1 + Lead-Paragraph mit Keyword-Pflege. Index, mein-fahrzeug-verkaufen, fahrzeugbereich, fahrzeug-* Detail-Pages prüfen. Region-Pages als gut bewertet (User-Lob).
+
+### G · Schriften zu groß *(offen)*
+**Problem:** Hero-H1 mit `clamp(...,8vw,128px)` wird auf großen Monitoren überdimensioniert. Wirkt unprofessionell.
+**Fix-Ansatz:** Max-Werte runter (z.B. 96px statt 128px), Body-Größen prüfen.
+
+### H · Animationen-Audit (Texte überdecken) *(in progress)*
+**Problem:** Stats auf Team-Cards überdeckten Text — als Beispiel. Vermutlich gibt's mehr.
+**✅ Erstes Fix:** `tp-stats`-HTML aus uber-uns.html entfernt (waren auch faktisch erfunden, siehe Memory feedback_no_invented_stats.md).
+**Offen:** Weitere Hover-Reveals durchgehen — Quote-Shimmer, Brand-Tile-Zoom, Spotlight, etc. Alle prüfen ob bei Standard-Hover Text verdeckt wird.
+
+---
+
 ## Stage-Status (Mapping zu Tasks)
 - Stages 1–11 **inhaltlich fertig** — letzter Sprint hat T-01 (Blog-Fakten), T-02 (Werte-Section), T-03 (Team-Cards Cinema), T-04 (Detail-Pages), T-05 (Marken-Filter) und T-06 (Wizard-Polish) erledigt.
 - Bevor Merge in main: T-07 Cross-Browser, T-08 Lighthouse, T-09 Commit/PR.

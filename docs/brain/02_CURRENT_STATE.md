@@ -1,6 +1,8 @@
 # 02 — Current State
 
-**Stand:** 03.05.2026, Branch `claude-optimierung`, **153 Änderungen uncommitted.**
+**Stand:** 04.05.2026, Branch `claude-optimierung`, Commit `e23fcf5` ist live auf Preview https://claude-project-bex.pages.dev/.
+
+**Aktuell:** Nach User-Reality-Check Reset-Phase — Mini-Schritt-Workflow A→H. Schritt A (Background-Noise raus) lokal erledigt, push ausstehend.
 
 ## Stage-Status
 - Stages 1–4 (Bilder, v2.css-Foundation, Header/Footer-Rollout, Home MAX OPUS) — **fertig**
