@@ -172,12 +172,21 @@ h1.hero-h1 .muted{color:var(--tx3)}
 .insta-tags{display:flex;flex-wrap:wrap;gap:10px;margin:32px 0 40px}
 .insta-tag{padding:9px 16px;background:var(--c2);border:1px solid var(--bo);border-radius:999px;font-family:var(--fh);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--tx2);transition:all .3s var(--ease)}
 .insta-tag:hover{border-color:var(--grn-bd);color:var(--grn);background:var(--grn-soft)}
-.insta-video-wrap{position:relative;border-radius:var(--r-lg);overflow:hidden;background:#000;aspect-ratio:9/16;max-height:720px;justify-self:end;width:min(100%,420px);box-shadow:0 32px 64px rgba(0,0,0,.5),0 0 0 1px var(--bo2)}
-.insta-video-wrap::before{content:'';position:absolute;inset:0;border-radius:var(--r-lg);box-shadow:inset 0 0 0 1px rgba(122,217,158,.2);pointer-events:none;z-index:2}
-.insta-video-wrap video{width:100%;height:100%;object-fit:cover;display:block}
-.insta-video-overlay{position:absolute;bottom:20px;left:20px;right:20px;display:flex;justify-content:space-between;align-items:flex-end;z-index:3;color:#fff;pointer-events:none}
-.insta-handle{font-family:var(--fh);font-size:14px;font-weight:700;letter-spacing:-.012em;text-shadow:0 2px 8px rgba(0,0,0,.6)}
-.insta-meta{font-size:11px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;opacity:.85;text-shadow:0 2px 8px rgba(0,0,0,.6)}
+/* SOCIAL CARDS — Insta + TikTok */
+.social-cards-wrap{display:grid;grid-template-columns:1fr 1fr;gap:14px;justify-self:end;width:min(100%,460px);align-self:center}
+.social-card{position:relative;border-radius:var(--r-md);overflow:hidden;background:#000;aspect-ratio:9/16;box-shadow:0 24px 48px rgba(0,0,0,.45),0 0 0 1px var(--bo2);transition:transform .55s var(--ease),box-shadow .55s,border-color .55s;cursor:pointer;display:block;text-decoration:none;color:inherit}
+.social-card:hover{transform:translateY(-4px);box-shadow:0 32px 72px rgba(0,0,0,.55),0 0 0 1px var(--grn-bd)}
+.social-card::before{content:'';position:absolute;inset:0;border-radius:var(--r-md);box-shadow:inset 0 0 0 1px rgba(255,255,255,.06);pointer-events:none;z-index:2}
+.social-card video{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1.6s var(--ease)}
+.social-card:hover video{transform:scale(1.04)}
+.social-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.85) 0%,transparent 40%,transparent 65%,rgba(0,0,0,.45) 100%);pointer-events:none;z-index:1}
+.social-tag{position:absolute;top:14px;left:14px;display:inline-flex;align-items:center;gap:7px;padding:7px 12px;background:rgba(0,0,0,.7);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);border-radius:999px;font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:#fff;z-index:3}
+.social-tag svg{width:11px;height:11px;flex-shrink:0}
+.social-handle-overlay{position:absolute;bottom:16px;left:14px;right:14px;z-index:3;color:#fff;pointer-events:none}
+.social-handle-overlay .sh-h{font-family:var(--fh);font-size:13px;font-weight:700;letter-spacing:-.012em;text-shadow:0 2px 8px rgba(0,0,0,.7);line-height:1.15}
+.social-handle-overlay .sh-m{font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.75);margin-top:5px;text-shadow:0 2px 8px rgba(0,0,0,.7)}
+.social-card .ext-arrow{position:absolute;top:14px;right:14px;width:32px;height:32px;background:rgba(0,0,0,.7);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.12);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:#fff;z-index:3;transition:transform .35s var(--ease),background .35s}
+.social-card:hover .ext-arrow{transform:translate(2px,-2px);background:rgba(122,217,158,.6);border-color:var(--grn-bd)}
 
 /* REGION CLUSTER */
 .regions-section{padding:var(--pad-sec) 60px;background:var(--c1);border-top:1px solid var(--bo);border-bottom:1px solid var(--bo)}
@@ -313,7 +322,7 @@ h1.hero-h1 .muted{color:var(--tx3)}
   .werkstatt-grid{min-height:auto}
   .werkstatt-photo{aspect-ratio:16/10}
   .werkstatt-text{padding:80px 40px}
-  .insta-video-wrap{justify-self:center}
+  .insta-video-wrap,.social-cards-wrap{justify-self:center}
   .faq-a-inner{padding-left:24px;padding-right:24px}
 }
 @media(max-width:768px){
@@ -346,6 +355,10 @@ h1.hero-h1 .muted{color:var(--tx3)}
   .leist-item{grid-template-columns:auto 1fr 36px;gap:14px;padding:24px 0}
   .leist-toggle{width:36px;height:36px}
   .insta-video-wrap{aspect-ratio:9/16;max-height:560px}
+  .social-cards-wrap{width:100%;max-width:420px;gap:10px}
+  .social-tag{font-size:8px;padding:6px 10px}
+  .social-handle-overlay .sh-h{font-size:12px}
+  .social-handle-overlay .sh-m{font-size:8px}
   .faq-q{grid-template-columns:auto 1fr 36px;gap:14px;padding:22px 0}
   .faq-toggle{width:36px;height:36px}
   .faq-a-inner{padding-left:0;padding-right:0}

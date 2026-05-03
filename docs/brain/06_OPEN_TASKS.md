@@ -25,12 +25,16 @@ User-Reality-Check auf https://claude-project-bex.pages.dev/ — Design wirkt "w
 **Fix-Ansatz:** Filter abschalten und SVGs als-is zeigen, oder Original-Brand-Farben behalten. Fehlende Opel/Seat SVGs nachholen.
 **KKM-Referenz:** KKM nutzt Carousel mit 5 Logos im Endlosloop, einfache weiße Darstellung auf Grau — ihre SVGs sind aber von Anfang an Single-Color-Lineart.
 
-### E · Insta-Section: Insta-Edit-Video + TikTok einbinden *(offen)*
-**Problem:** Live-Preview zeigt KEIN eingebettetes Video. User-Wunsch: Insta-Edit (`img/insta.mp4` lokal vorhanden, gitignored) + TikTok-Embed/Link sichtbar in der Section. Aktuell nur Text-Section.
-**Fix-Ansatz:**
-- `insta.mp4` muss live verfügbar gemacht werden — Optionen: (a) als Direct-Asset auf Cloudflare R2 / Pages-Static ohne git-Tracking via deploy-Hook, (b) Größe reduzieren + git-tauglich machen, (c) als externes embed (Instagram-Reel-Embed Code).
-- TikTok-Embed: offizielles `<blockquote class="tiktok-embed">` mit `<script async src="https://www.tiktok.com/embed.js">`.
-- **UNGEKLÄRT** mit User: welche Option für insta.mp4? Welcher konkrete TikTok-Post oder Profil-Embed?
+### E · Insta-Section: Insta-Edit-Video + TikTok einbinden *(✅ erledigt)*
+**Umgesetzt (User wählte Option 1 — komprimieren):**
+- `img/insta.mp4` (4K HEVC, 19.5 MB) per ffmpeg auf 1080p H.264 komprimiert: `img/insta-web.mp4` = 6.5 MB, web-tauglich für alle Browser
+- Insta-Section in `index.html` umgebaut: statt 1 Video-Wrap rechts jetzt 2 Social-Cards nebeneinander (`.social-card.insta` + `.social-card.tiktok`)
+- Beide Cards spielen `insta-web.mp4` autoplay/muted/loop, mit Plattform-Tag oben-links + External-Arrow oben-rechts + Handle-Overlay unten
+- Buttons-Block im Text: 2 CTAs (Instagram + TikTok) statt 1
+- CSS in `styles/v2-home.css`: neue `.social-cards-wrap`, `.social-card`, `.social-tag`, `.social-handle-overlay`, `.ext-arrow` Klassen
+- Mobile-Breakpoints angepasst (kleinere Tags + Handles unter 768px)
+- **NICHT-PERFEKT:** Beide Cards zeigen aktuell das gleiche Video. Wenn User später ein eigenes TikTok-Video hat, kann das einfach als 2. video-File reingehängt werden.
+**Verifikation:** User-Review auf Preview-URL ausstehend.
 
 ### F · SEO-Keywords *(offen)*
 **Problem:** Keywords nur in `<title>`/`<meta>`, kaum in H1/Lead/Body. User: "Auto verkaufen Hemau", "Fahrzeug verkaufen", "Gebrauchtwagen kaufen Hemau / Regensburg" fehlen sichtbar.
@@ -40,10 +44,15 @@ User-Reality-Check auf https://claude-project-bex.pages.dev/ — Design wirkt "w
 **Problem:** Hero-H1 mit `clamp(...,8vw,128px)` wird auf großen Monitoren überdimensioniert. Wirkt unprofessionell.
 **Fix-Ansatz:** Max-Werte runter (z.B. 96px statt 128px), Body-Größen prüfen.
 
-### H · Animationen-Audit (Texte überdecken) *(in progress)*
-**Problem:** Stats auf Team-Cards überdeckten Text — als Beispiel. Vermutlich gibt's mehr.
-**✅ Erstes Fix:** `tp-stats`-HTML aus uber-uns.html entfernt (waren auch faktisch erfunden, siehe Memory feedback_no_invented_stats.md).
-**Offen:** Weitere Hover-Reveals durchgehen — Quote-Shimmer, Brand-Tile-Zoom, Spotlight, etc. Alle prüfen ob bei Standard-Hover Text verdeckt wird.
+### H · Animationen-Audit (Texte überdecken) + Bilder-Crop *(in progress)*
+**Problem:** Stats auf Team-Cards überdeckten Text — als Beispiel. Plus: User-Feedback "Cards schneiden unsere Bilder so ab" — `aspect-ratio:4/5` + `object-position:center 22%` schnitt die quasi-quadratischen 800x800 Bilder oben/unten ab.
+**✅ Fixes:**
+- `tp-stats`-HTML aus uber-uns.html entfernt (waren faktisch erfunden, siehe Memory `feedback_no_invented_stats.md`)
+- `.tp-img` aspect-ratio von 4/5 auf 1/1 — passt zu den Original-Bildern (800x800), kein Crop mehr
+- `object-position` auf `center center` (vorher `center 22%`)
+- Filter (saturate/brightness/contrast) deutlich neutraler (.95/.98/1.02 statt .85/.94/1.04)
+- Mobile-Breakpoint auch auf 1/1 (vorher 5/4 Querformat)
+**Offen:** Weitere Hover-Reveals durchgehen — Quote-Shimmer auf Detail-Pages, Brand-Tile-Zoom, conic-gradient Border-Animation. Bei Standard-Hover prüfen ob Text verdeckt wird.
 
 ---
 

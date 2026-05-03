@@ -48,8 +48,8 @@ h1.ph .g{color:var(--tx3)}
 .team-person:hover::before{opacity:1;animation-play-state:running}
 @keyframes rotateBorder{to{--ang:360deg}}
 
-.tp-img{position:relative;overflow:hidden;background:var(--c3);aspect-ratio:4/5}
-.tp-img img{width:100%;height:100%;object-fit:cover;object-position:center 22%;transition:transform 1.4s var(--ease),filter 1s var(--ease);filter:saturate(.85) brightness(.94) contrast(1.04);display:block;will-change:transform}
+.tp-img{position:relative;overflow:hidden;background:var(--c3);aspect-ratio:1/1}
+.tp-img img{width:100%;height:100%;object-fit:cover;object-position:center center;transition:transform 1.4s var(--ease),filter 1s var(--ease);filter:saturate(.95) brightness(.98) contrast(1.02);display:block;will-change:transform}
 .team-person:hover .tp-img img{transform:scale(1.08);filter:saturate(1.05) brightness(1.02) contrast(1.05)}
 
 /* Mouse-tracked spotlight */
@@ -130,8 +130,8 @@ h1.ph .g{color:var(--tx3)}
   .page-hero{padding:100px 20px 64px}
   .sec-alt{padding:80px 20px}
   .team-person{grid-template-columns:1fr}
-  .tp-img{aspect-ratio:5/4}
-  .tp-img img{object-position:center 18%}
+  .tp-img{aspect-ratio:1/1}
+  .tp-img img{object-position:center center}
   .tp-stats{top:auto;bottom:18px;right:18px;flex-direction:row;gap:6px}
   .tp-stat{min-width:auto;padding:9px 12px}
   .tp-stat-n{font-size:17px}
