@@ -75,69 +75,55 @@
   <div class="scroll-hint" aria-hidden="true"><span>Scrollen</span><div class="scroll-hint__line"></div></div>
 </section>
 
-<!-- BRAND MARQUEE -->
-<div class="marquee" aria-label="Wir kaufen alle Marken">
-  <div class="marquee-track">
-    <span class="marquee-item">BMW</span>
-    <span class="marquee-item">Mercedes-Benz</span>
-    <span class="marquee-item"><em style="font-style:italic;color:var(--grn)">Audi</em></span>
-    <span class="marquee-item">Volkswagen</span>
-    <span class="marquee-item">Porsche</span>
-    <span class="marquee-item">Skoda</span>
-    <span class="marquee-item">Opel</span>
-    <span class="marquee-item">Ford</span>
-    <span class="marquee-item"><em style="font-style:italic;color:var(--grn)">Hyundai</em></span>
-    <span class="marquee-item">Kia</span>
-    <span class="marquee-item">Toyota</span>
-    <span class="marquee-item">Mazda</span>
-    <span class="marquee-item">Jaguar</span>
-    <span class="marquee-item">Mini</span>
-    <span class="marquee-item"><em style="font-style:italic;color:var(--gold)">und 175+ weitere</em></span>
-    <!-- duplicate for seamless loop -->
-    <span class="marquee-item">BMW</span>
-    <span class="marquee-item">Mercedes-Benz</span>
-    <span class="marquee-item"><em style="font-style:italic;color:var(--grn)">Audi</em></span>
-    <span class="marquee-item">Volkswagen</span>
-    <span class="marquee-item">Porsche</span>
-    <span class="marquee-item">Skoda</span>
-    <span class="marquee-item">Opel</span>
-    <span class="marquee-item">Ford</span>
-    <span class="marquee-item"><em style="font-style:italic;color:var(--grn)">Hyundai</em></span>
-    <span class="marquee-item">Kia</span>
-    <span class="marquee-item">Toyota</span>
-    <span class="marquee-item">Mazda</span>
-    <span class="marquee-item">Jaguar</span>
-    <span class="marquee-item">Mini</span>
-    <span class="marquee-item"><em style="font-style:italic;color:var(--gold)">und 175+ weitere</em></span>
-  </div>
-</div>
-
-<!-- BRAND GRID (Marken) -->
+<!-- BRAND CAROUSEL — Endlosschleife mit Logos -->
 <section class="brand-section">
   <div class="brand-head reveal">
     <div>
-      <div class="eyebrow" style="margin-bottom:22px">175+ Marken im Ankauf</div>
+      <div class="eyebrow" style="margin-bottom:18px">175+ Marken im Ankauf</div>
       <h2 class="display">Egal welche<br/><em>Marke.</em></h2>
     </div>
-    <p>VW, BMW, Audi, Mercedes, Hyundai, Kia, Skoda, Toyota, Mazda, Ford, Nissan, Fiat, Jaguar — und 162 weitere. <strong>Alle Marken, alle Zustände, alle Baujahre.</strong> Auch Importfahrzeuge, Oldtimer, Unfaller, ohne TÜV. Wir kaufen, was Sie haben.</p>
+    <p>VW, BMW, Audi, Mercedes, Hyundai, Kia, Škoda, Toyota, Mazda, Ford, Nissan, Fiat, Jaguar — und 162 weitere. <strong>Alle Marken, alle Zustände, alle Baujahre.</strong> Auch Importfahrzeuge, Oldtimer, Unfaller, ohne TÜV.</p>
   </div>
-  <div class="brand-grid reveal d1">
-    <div class="brand-tile" title="VW"><img src="/img/logo-vw.svg" alt="Volkswagen" loading="lazy" width="80" height="80"/></div>
-    <div class="brand-tile" title="BMW"><img src="/img/logo-bmw.svg" alt="BMW" loading="lazy" width="80" height="80"/></div>
-    <div class="brand-tile" title="Audi"><img src="/img/logo-audi.svg" alt="Audi" loading="lazy" width="80" height="80"/></div>
-    <div class="brand-tile" title="Mercedes-Benz"><img src="/img/logo-mercedes.svg" alt="Mercedes-Benz" loading="lazy" width="80" height="80"/></div>
-    <div class="brand-tile" title="Hyundai"><img src="/img/logo-hyundai.svg" alt="Hyundai" loading="lazy" width="80" height="80"/></div>
-    <div class="brand-tile" title="Kia"><img src="/img/logo-kia.svg" alt="Kia" loading="lazy" width="80" height="80"/></div>
-    <div class="brand-tile" title="Skoda"><img src="/img/logo-skoda.svg" alt="Skoda" loading="lazy" width="80" height="80"/></div>
-    <div class="brand-tile" title="Toyota"><img src="/img/logo-toyota.svg" alt="Toyota" loading="lazy" width="80" height="80"/></div>
-    <div class="brand-tile" title="Mazda"><img src="/img/logo-mazda.svg" alt="Mazda" loading="lazy" width="80" height="80"/></div>
-    <div class="brand-tile" title="Ford"><img src="/img/logo-ford.svg" alt="Ford" loading="lazy" width="80" height="80"/></div>
-    <div class="brand-tile" title="Nissan"><img src="/img/logo-nissan.svg" alt="Nissan" loading="lazy" width="80" height="80"/></div>
-    <div class="brand-tile" title="Fiat"><img src="/img/logo-fiat.svg" alt="Fiat" loading="lazy" width="80" height="80"/></div>
-    <div class="brand-tile" title="Jaguar"><img src="/img/logo-jaguar.svg" alt="Jaguar" loading="lazy" width="80" height="80"/></div>
-    <div class="brand-tile more"><div><strong>+162</strong>weitere Marken</div></div>
+  <div class="logo-carousel" aria-label="Marken-Logos">
+    <div class="logo-carousel-track">
+      <div class="logo-item"><img src="/img/logo-vw.svg" alt="Volkswagen" loading="lazy"/></div>
+      <div class="logo-item"><img src="/img/logo-bmw.svg" alt="BMW" loading="lazy"/></div>
+      <div class="logo-item"><img src="/img/logo-audi.svg" alt="Audi" loading="lazy"/></div>
+      <div class="logo-item"><img src="/img/logo-mercedes.svg" alt="Mercedes-Benz" loading="lazy"/></div>
+      <div class="logo-item"><img src="/img/logo-hyundai.svg" alt="Hyundai" loading="lazy"/></div>
+      <div class="logo-item"><img src="/img/logo-kia.svg" alt="Kia" loading="lazy"/></div>
+      <div class="logo-item"><img src="/img/logo-skoda.svg" alt="Škoda" loading="lazy"/></div>
+      <div class="logo-item"><img src="/img/logo-toyota.svg" alt="Toyota" loading="lazy"/></div>
+      <div class="logo-item"><img src="/img/logo-mazda.svg" alt="Mazda" loading="lazy"/></div>
+      <div class="logo-item"><img src="/img/logo-ford.svg" alt="Ford" loading="lazy"/></div>
+      <div class="logo-item"><img src="/img/logo-nissan.svg" alt="Nissan" loading="lazy"/></div>
+      <div class="logo-item"><img src="/img/logo-fiat.svg" alt="Fiat" loading="lazy"/></div>
+      <div class="logo-item"><img src="/img/logo-jaguar.svg" alt="Jaguar" loading="lazy"/></div>
+      <div class="logo-item text">Opel</div>
+      <div class="logo-item text">Seat</div>
+      <div class="logo-item text">Porsche</div>
+      <div class="logo-item text">Mini</div>
+      <!-- duplicate for seamless infinite loop -->
+      <div class="logo-item" aria-hidden="true"><img src="/img/logo-vw.svg" alt="" loading="lazy"/></div>
+      <div class="logo-item" aria-hidden="true"><img src="/img/logo-bmw.svg" alt="" loading="lazy"/></div>
+      <div class="logo-item" aria-hidden="true"><img src="/img/logo-audi.svg" alt="" loading="lazy"/></div>
+      <div class="logo-item" aria-hidden="true"><img src="/img/logo-mercedes.svg" alt="" loading="lazy"/></div>
+      <div class="logo-item" aria-hidden="true"><img src="/img/logo-hyundai.svg" alt="" loading="lazy"/></div>
+      <div class="logo-item" aria-hidden="true"><img src="/img/logo-kia.svg" alt="" loading="lazy"/></div>
+      <div class="logo-item" aria-hidden="true"><img src="/img/logo-skoda.svg" alt="" loading="lazy"/></div>
+      <div class="logo-item" aria-hidden="true"><img src="/img/logo-toyota.svg" alt="" loading="lazy"/></div>
+      <div class="logo-item" aria-hidden="true"><img src="/img/logo-mazda.svg" alt="" loading="lazy"/></div>
+      <div class="logo-item" aria-hidden="true"><img src="/img/logo-ford.svg" alt="" loading="lazy"/></div>
+      <div class="logo-item" aria-hidden="true"><img src="/img/logo-nissan.svg" alt="" loading="lazy"/></div>
+      <div class="logo-item" aria-hidden="true"><img src="/img/logo-fiat.svg" alt="" loading="lazy"/></div>
+      <div class="logo-item" aria-hidden="true"><img src="/img/logo-jaguar.svg" alt="" loading="lazy"/></div>
+      <div class="logo-item text" aria-hidden="true">Opel</div>
+      <div class="logo-item text" aria-hidden="true">Seat</div>
+      <div class="logo-item text" aria-hidden="true">Porsche</div>
+      <div class="logo-item text" aria-hidden="true">Mini</div>
+    </div>
   </div>
-  <div class="brand-foot reveal d2">
+  <div class="brand-foot">
     <p>Auch Ihr Fahrzeug ist dabei. Anfrage in 5 Minuten — Bewertung innerhalb von 2 Stunden.</p>
     <a href="/mein-fahrzeug-verkaufen.html" class="btn btn-prime btn-shimmer">Fahrzeug bewerten <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
   </div>
@@ -266,26 +252,26 @@
       <p class="lede" style="margin-top:28px">Kein Massengeschäft. Kein anonymes Portal. Zwei Leute, die Autos kennen — und das spürt man in jedem Detail.</p>
     </div>
     <div class="usp-bento">
-      <article class="usp-card featured reveal">
-        <div class="ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+      <article class="usp-card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
         <div class="usp-num">01 · Fachkompetenz</div>
-        <h3>KFZ-Mechatroniker prüft jedes Fahrzeug — persönlich.</h3>
-        <p>Moritz erkennt auf den ersten Blick, was ein Fahrzeug wirklich wert ist. Was er sieht, sagt er — auch wenn es den Preis drückt. Dafür gibt's keine nachträglichen Kürzungen, keine versteckten Mängel, keine bösen Überraschungen.</p>
+        <h3>KFZ-Mechatroniker prüft jedes Fahrzeug.</h3>
+        <p>Moritz erkennt auf den ersten Blick, was ein Auto wirklich wert ist. Keine versteckten Mängel.</p>
       </article>
       <article class="usp-card reveal d1">
-        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg></div>
         <div class="usp-num">02 · Auszahlung</div>
         <h3>Echtzeit­überweisung sofort.</h3>
         <p>Sie sehen den Eingang auf dem Smartphone, bevor wir den Schlüssel mitnehmen.</p>
       </article>
       <article class="usp-card reveal d2">
-        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
         <div class="usp-num">03 · Persönlich</div>
         <h3>Direkter Kontakt — kein Callcenter.</h3>
         <p>Sie reden mit René oder Moritz. Klare Worte, keine Lockangebote.</p>
       </article>
       <article class="usp-card reveal d3">
-        <div class="ico"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></div>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg></div>
         <div class="usp-num">04 · Bundesweit</div>
         <h3>Kostenlose Abholung.</h3>
         <p>Bayernweit und auch deutschlandweit — auch nicht zugelassene Fahrzeuge.</p>

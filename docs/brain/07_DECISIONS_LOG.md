@@ -84,7 +84,15 @@
 **Warum:** User-Feedback: "Der ganze Hintergrund besteht aus Rauschen irgendwie ... Bastelprojekt von einem Schulkind". Live-Reality-Check auf https://claude-project-bex.pages.dev/ + Vergleich mit kkmmedia.de bestätigt: KKM hat clean Background ohne Noise/Texturen, dafür viel Whitespace und klare Sections. Der Mint+Gold-Mesh + SVG-Fractal-Noise wirkten wie TV-Off-Screen-Static und unterminierten den professionellen Eindruck.
 **Konsequenz:** `body::before` (Mesh) + `body::after` (Noise) + `@keyframes ambientFlow` aus `styles/v2.css` entfernt. Background ist jetzt pure `var(--page)` #161614. Atmosphärische Akzente bleiben zulässig **per-Section** (z.B. Hero-Page-`::before` mit Radial-Glow, Region-Cards) — aber niemals site-wide gestapelt. Memory-Eintrag `feedback_design_ambition.md` (KKM-Niveau, MAX OPUS) wird umgedeutet: "Ambitioniert" heißt cleane Typo + durchdachte Sections + Whitespace, NICHT Noise + Animation-Stack.
 
-### D-16 · Mini-Schritt-Workflow mit User-Sign-off
+### D-17 · KKM-Reduktion Phase 2: Logo-Carousel + USP-Entfeatured + Hero-H1-Caps global
+**Wann:** 04.05.2026 nach User-Feedback "kein Vergleich, KKM-Niveau noch nicht erreicht — Claude Code hat KKM auch gebaut, also kriegst du es krasser hin"
+**Warum:** Erste Reduktions-Phase (D-15) hat Background-Noise + falsche Stats raus genommen, aber visuell noch nicht KKM-Niveau. Tief-Analyse via WebFetch ergab konkrete KKM-Patterns: Endlos-Logo-Carousel (kein Brand-Grid), Service-Cards alle gleichgewichtig (kein "featured"-Riese), Hero-Schriften 32-48px (nicht 128px+), Section-BG-Wechsel.
+**Konsequenz:**
+- Index Brand-Section komplett ersetzt: Brand-Grid (7-Spalten-Tiles mit "+162 weitere"-CTA) → `.logo-carousel` mit 17 Logos x2 für seamless infinite-scroll, mask-fade an Rändern, hover-pause. Dezent (`grayscale(.9)` opacity .65), wirkt durch Bewegung statt Effekt
+- USP-Cards: `.featured`-Klasse komplett entfernt, alle 4 Cards gleichgroß in 4-Spalten-Grid, kein 540px-Riesen-Card mehr. Padding 36/28 statt 48/40, h3 18px statt clamp(...,30px)
+- Hero-h1-Caps reduziert auf allen Pages: index 84px (war 176px), uber-uns 76px (war 128px), fahrzeugbereich 84px (war 128px), mein-fahrzeug-verkaufen 80px (war 118px) — alle KKM-Bandbreite 32-48px adjusted für Dark-Theme
+- CTA-Band: Riesen-"R&M"-Wasserzeichen (clamp 360px) entfernt; Glow auf 900x420 reduziert; Headline auf 64px max statt 108px; Padding 112px statt 160px
+- Brand-Marquee oben (Text-Endlos) entfernt — war Dopplung mit neuem Logo-Carousel
 **Wann:** 04.05.2026 nach User-Frust über Riesen-Sprint ohne Verifikation
 **Warum:** Letzter Sprint war massiv (5 Phasen, 166 Files committed), ohne dass irgendein Schritt im Browser verifiziert wurde — Resultat: "komplett verkakt". Plus erfundene Stats über René, Animationen die Text überdecken, Background nicht User-tauglich. Großvolumige autonome Arbeit ohne Reality-Check führt zu Drift weg vom User-Wunsch.
 **Konsequenz:** Ab jetzt Mini-Schritte (A, B, C…) mit explicit User-Sign-off auf Live-Preview-URL, BEVOR der nächste Schritt gestartet wird. Brain-Updates pro Schritt. Auch große Themen (z.B. SEO-Keywords) in einzelne Pages aufteilen, nicht en bloc bearbeiten.

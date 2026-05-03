@@ -27,7 +27,7 @@ User-Reality-Check auf https://claude-project-bex.pages.dev/ — Design wirkt "w
 - Form bleibt sichtbar (BMW-Ring, Mercedes-Stern), nur Sättigung reduziert
 - On hover / .on / .sel: `grayscale(0)` → originale Farben zurück
 - Opel/Seat haben weiterhin keine SVGs — bleibt als Text-Pill (akzeptabel)
-**Noch offen-optional:** Logo-Carousel (Endlosschleife wie KKM) statt 7-Spalten-Grid auf Index. Schreit "professionell" lauter als statisches Grid. Backlog.
+**Noch offen-optional:** Logo-Carousel (Endlosschleife wie KKM) statt 7-Spalten-Grid auf Index. Schreit "professionell" lauter als statisches Grid. *(✅ erledigt — siehe Sprint 04.05.2026 Phase 2)*
 
 ### E · Insta-Section: Insta-Edit-Video + TikTok einbinden *(✅ erledigt)*
 **Umgesetzt (User wählte Option 1 — komprimieren):**
