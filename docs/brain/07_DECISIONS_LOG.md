@@ -84,6 +84,22 @@
 **Warum:** User-Feedback: "Der ganze Hintergrund besteht aus Rauschen irgendwie ... Bastelprojekt von einem Schulkind". Live-Reality-Check auf https://claude-project-bex.pages.dev/ + Vergleich mit kkmmedia.de bestätigt: KKM hat clean Background ohne Noise/Texturen, dafür viel Whitespace und klare Sections. Der Mint+Gold-Mesh + SVG-Fractal-Noise wirkten wie TV-Off-Screen-Static und unterminierten den professionellen Eindruck.
 **Konsequenz:** `body::before` (Mesh) + `body::after` (Noise) + `@keyframes ambientFlow` aus `styles/v2.css` entfernt. Background ist jetzt pure `var(--page)` #161614. Atmosphärische Akzente bleiben zulässig **per-Section** (z.B. Hero-Page-`::before` mit Radial-Glow, Region-Cards) — aber niemals site-wide gestapelt. Memory-Eintrag `feedback_design_ambition.md` (KKM-Niveau, MAX OPUS) wird umgedeutet: "Ambitioniert" heißt cleane Typo + durchdachte Sections + Whitespace, NICHT Noise + Animation-Stack.
 
+### D-18 · KKM-Reduktion Phase 3: Stats-Strip Section, Hero-Trust raus, Glow-Animations site-wide raus
+**Wann:** 04.05.2026, User-Freifahrt erteilt: "du hast meine freifahrt um das design zu optimieren"
+**Warum:** Phase 2 hat Logo-Carousel + USP + Hero-H1-Caps gemacht — KKM-Niveau aber noch nicht erreicht. Hero hatte trust-grid INNERHALB des Hero (überladen), Page-Heros auf uber-uns/fahrzeugbereich/mein-fahrzeug-verkaufen hatten weiterhin floatA/floatB Glow-Animationen + 160px-Padding. Footer hatte Glow-Wasserzeichen. KKM macht das anders: Stats sind eigene Section, keine Glow-Animationen, Padding moderat.
+**Konsequenz:**
+- **Stats-Strip neu als eigene Section** (KKM-Pattern): Direkt unter Hero, 4-Spalten-Grid mit border-Trennung, BG `var(--c1)` für Tonal-Wechsel zum Hero. Inhalt: 5,0★ Google, 24-Punkte-Check, KFZ vor Ort, Sofort-Auszahlung. Keine `<small class="unit">` Werbung mehr ohne Belege.
+- **Hero-Trust-Cells aus Index entfernt** — wandern in Stats-Strip
+- **Page-Hero floatA/floatB Glow-Animationen entfernt** auf uber-uns + fahrzeugbereich + mein-fahrzeug-verkaufen — `body::before/::after` mit blur(50px)+animations weg, keinerlei pulsierender Mesh mehr
+- **Hero-Padding global 160px → 128px** (KKM moderate spacing)
+- **Footer entglowt:** `footer::before` Radial-Gradient (rgba 122/217/158 .06) entfernt, Padding 120/60/48 → 96/40/36, Background var(--c1) statt var(--page) für Tonal-Wechsel zum Site-Body
+- **Page-Hero `min-height:74vh`/`64vh` raus** — Hero soll natürlich kurz sein, nicht künstlich Vollbild stretched
+
+**KKM-Reflexion pro Move:**
+- Stats-Strip → KKM hat exakt das Pattern (Section #1 nach Hero)
+- Glow weg → KKM hat keine Glow-Animationen, Punkt
+- Footer-Glow weg → KKM-Footer ist solid color, kein atmospheric layer
+
 ### D-17 · KKM-Reduktion Phase 2: Logo-Carousel + USP-Entfeatured + Hero-H1-Caps global
 **Wann:** 04.05.2026 nach User-Feedback "kein Vergleich, KKM-Niveau noch nicht erreicht — Claude Code hat KKM auch gebaut, also kriegst du es krasser hin"
 **Warum:** Erste Reduktions-Phase (D-15) hat Background-Noise + falsche Stats raus genommen, aber visuell noch nicht KKM-Niveau. Tief-Analyse via WebFetch ergab konkrete KKM-Patterns: Endlos-Logo-Carousel (kein Brand-Grid), Service-Cards alle gleichgewichtig (kein "featured"-Riese), Hero-Schriften 32-48px (nicht 128px+), Section-BG-Wechsel.

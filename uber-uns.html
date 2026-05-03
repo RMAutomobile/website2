@@ -6,11 +6,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Startseite","item":"https://rmauto-mobile.de/"},{"@type":"ListItem","position":2,"name":"Über Uns","item":"https://rmauto-mobile.de/uber-uns.html"}]}</script>
 <style>
 /* page-specific: über uns */
-.page-hero{padding:160px 60px 96px;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;border-bottom:1px solid var(--bo);min-height:74vh;position:relative;overflow:hidden;isolation:isolate}
-.page-hero::before{content:'';position:absolute;top:8%;left:-8%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(122,217,158,.14) 0%,transparent 65%);filter:blur(50px);pointer-events:none;z-index:0;animation:floatA 22s ease-in-out infinite}
-.page-hero::after{content:'';position:absolute;bottom:6%;right:-10%;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle,rgba(217,184,109,.08) 0%,transparent 60%);filter:blur(50px);pointer-events:none;z-index:0;animation:floatB 28s ease-in-out infinite}
-@keyframes floatA{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(60px,-40px) scale(1.08)}}
-@keyframes floatB{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-50px,30px) scale(.95)}}
+.page-hero{padding:128px 40px 80px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;border-bottom:1px solid var(--bo);position:relative;overflow:hidden;max-width:var(--container);margin:0 auto}
 .page-hero-left,.page-hero-img{position:relative;z-index:1}
 h1.ph{font-family:var(--fh);font-size:clamp(38px,5vw,76px);font-weight:800;line-height:1;letter-spacing:-.035em;color:var(--tx);margin-bottom:24px}
 h1.ph em{font-style:italic;color:var(--grn);font-weight:700}
@@ -19,7 +15,8 @@ h1.ph .g{color:var(--tx3)}
 .page-hero-img{position:relative;overflow:hidden;aspect-ratio:16/10;border-radius:var(--r-lg);box-shadow:0 32px 64px rgba(0,0,0,.4)}
 .page-hero-img img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
 .page-hero-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 60%,rgba(15,15,14,.8))}
-.sec-alt{padding:var(--pad-sec) 60px;background:var(--c1)}
+.sec-alt{padding:var(--pad-sec) 40px;background:var(--c1)}
+.sec-alt>*{max-width:var(--container);margin-left:auto;margin-right:auto}
 .geschichte-wrap{display:grid;grid-template-columns:1fr 1fr;gap:68px;align-items:start;margin-top:52px}
 .geschichte-txt p{font-size:15px;font-weight:300;color:var(--tx2);line-height:2.0;margin-bottom:24px}
 .geschichte-txt p:last-of-type{margin-bottom:32px}

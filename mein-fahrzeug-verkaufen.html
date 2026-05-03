@@ -12,12 +12,9 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Startseite","item":"https://rmauto-mobile.de/"},{"@type":"ListItem","position":2,"name":"Auto verkaufen","item":"https://rmauto-mobile.de/mein-fahrzeug-verkaufen.html"}]}</script>
 <style>
 /* page-specific: mein-fahrzeug-verkaufen */
-.vk-hero{position:relative;overflow:hidden;min-height:64vh;display:flex;align-items:center;padding:148px 60px 96px;isolation:isolate}
-.vk-hero::before{content:'';position:absolute;top:8%;left:-8%;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle,rgba(122,217,158,.16) 0%,rgba(122,217,158,0) 65%);filter:blur(60px);pointer-events:none;z-index:0;animation:floatA 22s ease-in-out infinite}
-.vk-hero::after{content:'';position:absolute;bottom:6%;right:-10%;width:780px;height:780px;border-radius:50%;background:radial-gradient(circle,rgba(217,184,109,.08) 0%,rgba(217,184,109,0) 60%);filter:blur(60px);pointer-events:none;z-index:0;animation:floatB 28s ease-in-out infinite}
-@keyframes floatA{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(60px,-40px) scale(1.08)}}
-@keyframes floatB{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-50px,30px) scale(.95)}}
-.vk-hero-content{position:relative;z-index:1;max-width:760px}
+.vk-hero{position:relative;display:flex;align-items:center;padding:128px 40px 80px}
+.vk-hero-content{position:relative;z-index:1;max-width:var(--container);margin:0 auto;width:100%}
+.vk-hero-content>*{max-width:760px}
 .live-badge{display:inline-flex;align-items:center;gap:10px;padding:8px 16px 8px 14px;background:var(--grn-soft);border:1px solid var(--grn-bd);border-radius:999px;font-family:var(--fh);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--grn);margin-bottom:30px;backdrop-filter:blur(12px)}
 .live-dot{width:7px;height:7px;border-radius:50%;background:var(--grn);box-shadow:0 0 0 0 rgba(122,217,158,.6);animation:pulse 2s ease-out infinite}
 @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(122,217,158,.6)}70%{box-shadow:0 0 0 14px rgba(122,217,158,0)}100%{box-shadow:0 0 0 0 rgba(122,217,158,0)}}
@@ -31,8 +28,8 @@
 .proc-n{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border:1px solid var(--grn-bd);background:var(--grn-soft);color:var(--grn);font-family:var(--fh);font-size:11px;font-weight:700;border-radius:50%;margin-bottom:16px}
 .proc h3{font-family:var(--fh);font-size:16px;font-weight:700;margin-bottom:8px;color:var(--tx)}
 .proc p{font-size:13px;font-weight:400;color:var(--tx2);line-height:1.85}
-.vk-wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;padding:80px 60px;align-items:start}
-.vk-wrap h2.section-h{font-family:var(--fh);font-size:clamp(32px,4.5vw,62px);font-weight:800;line-height:1.0;letter-spacing:-.03em;color:var(--tx)}
+.vk-wrap{display:grid;grid-template-columns:1fr 1fr;gap:56px;padding:96px 40px;align-items:start;max-width:var(--container);margin:0 auto}
+.vk-wrap h2.section-h{font-family:var(--fh);font-size:clamp(28px,3.4vw,48px);font-weight:800;line-height:1.05;letter-spacing:-.03em;color:var(--tx)}
 .vk-wrap h2.section-h .muted{color:var(--tx3)}
 .bene-list{list-style:none;margin-bottom:32px}
 .bene{display:flex;gap:10px;align-items:flex-start;padding:12px 0;border-bottom:1px solid var(--bo);font-size:14px;font-weight:400;color:var(--tx2);line-height:1.65}

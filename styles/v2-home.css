@@ -20,13 +20,15 @@ h1.hero-h1 .muted{color:var(--tx3)}
 
 .hero-sub{font-size:clamp(16px,1.2vw,18px);font-weight:400;color:var(--tx2);line-height:1.65;max-width:640px;margin-bottom:36px}
 .hero-ctas{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:64px}
-.hero-trust{display:grid;grid-template-columns:repeat(3,auto);gap:0;align-items:center;padding-top:36px;border-top:1px solid var(--bo);max-width:760px}
-.trust-cell{padding:0 36px;border-right:1px solid var(--bo)}
-.trust-cell:first-child{padding-left:0}
-.trust-cell:last-child{border-right:none}
-.trust-num{font-family:var(--fh);font-size:clamp(28px,2.6vw,40px);font-weight:800;line-height:1;letter-spacing:-.03em;color:var(--tx);margin-bottom:8px}
-.trust-num em{font-style:normal;color:var(--grn)}
-.trust-lbl{font-family:var(--fh);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--tx3)}
+/* STATS STRIP — eigene Section unter Hero (KKM-Pattern Section #1 nach Hero) */
+.stats-strip{padding:48px 40px;background:var(--c1);border-top:1px solid var(--bo);border-bottom:1px solid var(--bo)}
+.stats-strip-inner{display:grid;grid-template-columns:repeat(4,1fr);gap:0;max-width:var(--container);margin:0 auto;align-items:center}
+.stat-item{padding:20px 28px;border-right:1px solid var(--bo);display:flex;flex-direction:column;gap:8px}
+.stat-item:last-child{border-right:none}
+.stat-num{font-family:var(--fh);font-size:clamp(28px,2.8vw,42px);font-weight:800;line-height:1;letter-spacing:-.03em;color:var(--tx)}
+.stat-num em{font-style:normal;color:var(--grn);font-weight:800}
+.stat-num .unit{font-size:.5em;color:var(--tx3);font-weight:600;margin-left:4px;letter-spacing:.04em}
+.stat-lbl{font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--tx3)}
 
 .scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:14px;font-family:var(--fh);font-size:9px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--tx3);z-index:2}
 .scroll-hint__line{width:1px;height:48px;background:linear-gradient(to bottom,var(--tx3) 0%,transparent 100%);position:relative;overflow:hidden}
@@ -303,9 +305,10 @@ h1.hero-h1 .muted{color:var(--tx3)}
   .leist-side{position:static}
   .fleet-grid,.steps-row,.regions-grid{grid-template-columns:1fr 1fr}
   .usp-bento{grid-template-columns:1fr 1fr}
-  .hero-trust{grid-template-columns:repeat(2,1fr);gap:24px}
-  .trust-cell{padding:20px 0;border-right:none;border-bottom:1px solid var(--bo)}
-  .trust-cell:nth-last-child(-n+2){border-bottom:none}
+  .stats-strip-inner{grid-template-columns:repeat(2,1fr)}
+  .stat-item{padding:18px 24px;border-right:none}
+  .stat-item:nth-child(odd){border-right:1px solid var(--bo)}
+  .stat-item:nth-child(-n+2){border-bottom:1px solid var(--bo)}
   .werkstatt-grid{min-height:auto}
   .werkstatt-photo{aspect-ratio:16/10}
   .werkstatt-text{padding:80px 40px}
@@ -331,8 +334,12 @@ h1.hero-h1 .muted{color:var(--tx3)}
   h1.hero-h1{font-size:clamp(34px,9vw,56px);margin-bottom:24px}
   .hero-sub{font-size:15px;margin-bottom:32px}
   .live-badge{margin-bottom:24px;font-size:10px}
-  .hero-trust{grid-template-columns:1fr 1fr;padding-top:24px}
-  .hero-trust .trust-cell:last-child{grid-column:span 2;border-bottom:none}
+  .stats-strip{padding:32px 20px}
+  .stats-strip-inner{grid-template-columns:1fr 1fr;gap:0}
+  .stat-item{padding:16px 14px;border-right:none;border-bottom:1px solid var(--bo)}
+  .stat-item:nth-child(odd){border-right:1px solid var(--bo)}
+  .stat-item:nth-last-child(-n+2){border-bottom:none}
+  .stat-num{font-size:24px}
   .insta-section,.faq-section,.regions-section,.cta-band{padding:80px 20px}
   .fleet-grid,.usp-bento,.steps-row,.regions-grid{grid-template-columns:1fr}
   .team-photos{grid-template-columns:1fr 1fr}
