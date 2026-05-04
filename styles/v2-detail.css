@@ -60,6 +60,20 @@
 .dfaq-a-inner p{font-size:13.5px;color:var(--tx2);line-height:1.85;margin:0 0 10px}
 .dfaq-a-inner p:last-child{margin-bottom:0}
 
+/* Detail-FAQ — Cream Variant (D-19, Pattern β) */
+.ds.sec-light{background:var(--page-light);padding:88px 40px;border-radius:0;margin:48px 0 0;border-top:1px solid var(--bd-on-light)}
+.ds.sec-light .ds-h{color:var(--tx-on-light);font-size:14px;letter-spacing:.16em;padding-bottom:20px;border-bottom:1px solid var(--bd-on-light);margin-bottom:24px}
+.ds.sec-light .ds-h svg{color:var(--grn-on-light)}
+.ds.sec-light .dfaq{border-top-color:var(--bd-on-light);margin-top:0}
+.ds.sec-light .dfaq-item{border-bottom-color:var(--bd-on-light)}
+.ds.sec-light .dfaq-item:hover,
+.ds.sec-light .dfaq-item.open{background:linear-gradient(90deg,rgba(47,111,73,.06) 0%,transparent 60%)}
+.ds.sec-light .dfaq-q{padding:26px 4px}
+.ds.sec-light .dfaq-q h4{color:var(--tx-on-light);font-size:clamp(15px,1.4vw,18px);font-weight:600}
+.ds.sec-light .dfaq-tog{color:var(--tx2-on-light);border:1px solid var(--bd-on-light);background:transparent}
+.ds.sec-light .dfaq-item.open .dfaq-tog{color:var(--grn-on-light);border-color:var(--grn-bd-on-light);background:var(--grn-soft-on-light)}
+.ds.sec-light .dfaq-a-inner p{color:var(--tx2-on-light);font-size:14.5px;line-height:1.85}
+
 /* COSTS GRID — TCO Vorschau */
 .costs{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--bo);border:1px solid var(--bo);border-radius:var(--r-lg);overflow:hidden;margin-top:10px}
 .cost{padding:22px 20px;background:var(--c2);transition:background .35s}
