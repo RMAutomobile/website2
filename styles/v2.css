@@ -22,6 +22,19 @@
   --grn-soft:rgba(122,217,158,.12);
   --grn-bd:rgba(122,217,158,.32);
   --grn-glow:rgba(122,217,158,.42);
+  /* Light/Cream Theme — Akzent-Sections (D-19, Spec 2026-05-04-section-hell-dunkel) */
+  --page-light:#f5f1e8;
+  --c1-light:#ebe5d6;
+  --c2-light:#e0d9c5;
+  --tx-on-light:#0f0f0e;
+  --tx2-on-light:rgba(15,15,14,.62);
+  --tx3-on-light:rgba(15,15,14,.45);
+  --tx4-on-light:rgba(15,15,14,.28);
+  --bd-on-light:rgba(15,15,14,.10);
+  --bd2-on-light:rgba(15,15,14,.18);
+  --grn-on-light:#2f6f49;
+  --grn-soft-on-light:rgba(47,111,73,.10);
+  --grn-bd-on-light:rgba(47,111,73,.40);
   --gold:#d9b86d;
   --red:#f87171;
   --fh:'Plus Jakarta Sans',sans-serif;
@@ -123,6 +136,32 @@ section,.sec{position:relative}
 .sec-tight{padding:80px 40px}
 .sec-tight>*{max-width:var(--container);margin-left:auto;margin-right:auto}
 .sec-alt{background:var(--c1)}
+
+/* CREAM ACCENT SECTIONS — Pattern β, Akzent-Sections im Dark-Flow (D-19) */
+.sec-light{background:var(--page-light);color:var(--tx-on-light)}
+.sec-light .eyebrow{color:var(--tx2-on-light)}
+.sec-light .eyebrow.green{color:var(--grn-on-light)}
+.sec-light .eyebrow::before{background:linear-gradient(to right,var(--grn-bd-on-light) 0%,transparent 100%)}
+.sec-light .eyebrow.center::before{background:linear-gradient(to right,transparent 0%,var(--grn-bd-on-light) 50%,transparent 100%)}
+.sec-light h1,
+.sec-light h2,
+.sec-light h3,
+.sec-light h4,
+.sec-light h2.display,
+.sec-light h3.section-h3{color:var(--tx-on-light)}
+.sec-light h2.display em{color:var(--grn-on-light)}
+.sec-light h2.display .muted{color:var(--tx3-on-light)}
+.sec-light p,
+.sec-light .lede,
+.sec-light .lead{color:var(--tx2-on-light)}
+.sec-light strong{color:var(--tx-on-light)}
+.sec-light .btn-prime{background:var(--tx-on-light);color:var(--page-light);box-shadow:0 12px 32px rgba(15,15,14,.18),inset 0 1px 0 rgba(255,255,255,.06)}
+.sec-light .btn-prime:hover{background:#222220;box-shadow:0 18px 48px rgba(15,15,14,.28)}
+.sec-light .btn-glass{background:rgba(15,15,14,.04);border-color:var(--bd-on-light);color:var(--tx-on-light)}
+.sec-light .btn-glass:hover{background:rgba(15,15,14,.08);border-color:var(--bd2-on-light)}
+.sec-light .btn-mini{color:var(--tx2-on-light);border-color:var(--bd-on-light)}
+.sec-light .btn-mini:hover{color:var(--grn-on-light);border-color:var(--grn-bd-on-light);background:var(--grn-soft-on-light)}
+
 .container{max-width:var(--container);margin:0 auto;width:100%}
 .container-narrow{max-width:920px;margin:0 auto;width:100%}
 
