@@ -30,6 +30,15 @@ h1.hero-h1 .muted{color:var(--tx3)}
 .stat-num .unit{font-size:.5em;color:var(--tx3);font-weight:600;margin-left:4px;letter-spacing:.04em}
 .stat-lbl{font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--tx3)}
 
+/* Stats-Strip — Cream Variant (D-19, Pattern β erste Akzent-Section nach Hero) */
+.stats-strip.sec-light{padding:88px 40px;background:var(--page-light);border-top:1px solid var(--bd-on-light);border-bottom:1px solid var(--bd-on-light)}
+.stats-strip.sec-light .stats-strip-inner{align-items:start;gap:0}
+.stats-strip.sec-light .stat-item{padding:24px 36px;gap:16px;border-right-color:var(--bd-on-light);position:relative}
+.stats-strip.sec-light .stat-num{font-size:clamp(40px,5.4vw,72px);font-weight:800;color:var(--tx-on-light);line-height:.95;letter-spacing:-.04em}
+.stats-strip.sec-light .stat-num em{color:var(--grn-on-light)}
+.stats-strip.sec-light .stat-num .unit{font-size:.32em;color:var(--tx2-on-light);font-weight:700;margin-left:8px;letter-spacing:.06em;text-transform:uppercase}
+.stats-strip.sec-light .stat-lbl{color:var(--tx2-on-light);font-size:11px;letter-spacing:.22em;padding-top:14px;border-top:2px solid var(--grn-on-light);align-self:flex-start;display:inline-block}
+
 .scroll-hint{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:14px;font-family:var(--fh);font-size:9px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--tx3);z-index:2}
 .scroll-hint__line{width:1px;height:48px;background:linear-gradient(to bottom,var(--tx3) 0%,transparent 100%);position:relative;overflow:hidden}
 .scroll-hint__line::after{content:'';position:absolute;top:-30%;left:0;width:1px;height:30%;background:var(--grn);animation:scrollDot 2.4s ease-in-out infinite}
@@ -309,6 +318,10 @@ h1.hero-h1 .muted{color:var(--tx3)}
   .stat-item{padding:18px 24px;border-right:none}
   .stat-item:nth-child(odd){border-right:1px solid var(--bo)}
   .stat-item:nth-child(-n+2){border-bottom:1px solid var(--bo)}
+  .stats-strip.sec-light{padding:64px 32px}
+  .stats-strip.sec-light .stat-item{padding:24px 28px}
+  .stats-strip.sec-light .stat-item:nth-child(odd){border-right-color:var(--bd-on-light)}
+  .stats-strip.sec-light .stat-item:nth-child(-n+2){border-bottom-color:var(--bd-on-light)}
   .werkstatt-grid{min-height:auto}
   .werkstatt-photo{aspect-ratio:16/10}
   .werkstatt-text{padding:80px 40px}
@@ -338,6 +351,11 @@ h1.hero-h1 .muted{color:var(--tx3)}
   .stats-strip-inner{grid-template-columns:1fr 1fr;gap:0}
   .stat-item{padding:16px 14px;border-right:none;border-bottom:1px solid var(--bo)}
   .stat-item:nth-child(odd){border-right:1px solid var(--bo)}
+  .stats-strip.sec-light{padding:48px 20px}
+  .stats-strip.sec-light .stat-item{padding:18px 16px;border-bottom-color:var(--bd-on-light)}
+  .stats-strip.sec-light .stat-item:nth-child(odd){border-right-color:var(--bd-on-light)}
+  .stats-strip.sec-light .stat-num{font-size:clamp(28px,7vw,48px)}
+  .stats-strip.sec-light .stat-lbl{font-size:9px;letter-spacing:.18em}
   .stat-item:nth-last-child(-n+2){border-bottom:none}
   .stat-num{font-size:24px}
   .insta-section,.faq-section,.regions-section,.cta-band{padding:80px 20px}
