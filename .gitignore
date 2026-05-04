@@ -61,3 +61,6 @@ Thumbs.db
 .obsidian/
 __pycache__/
 *.pyc
+
+# Superpowers brainstorming session files
+.superpowers/
