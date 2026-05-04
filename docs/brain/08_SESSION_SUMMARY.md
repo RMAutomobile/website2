@@ -1,6 +1,47 @@
 # 08 — Session Summary
 
-## Session 04.05.2026 — KKM-Reduktion in 3 Phasen (User-Reset)
+## Session 04.05.2026 (Teil 2) — Phase 4 Hell/Dunkel-Theme + Backlog B6
+
+**Kontext:** Reduktions-Phasen 1-3 hatten Effekte rausgenommen, Site lief aber monoton auf einer Background-Farbe. Backlog B2 (Section-BG echte Hell/Dunkel-Wechsel) war ungelöst — KKM nutzt diesen Hebel für Premium-Look. User-Frust ("kann nicht sein das erstentwurf gut war und alles danach müll") → ambitioniertes Cream-Akzent-Pattern.
+
+**Vorgehen:** Brainstorming-Skill mit Visual-Companion-Server (Port 50054) für Pattern-Auswahl, dann Spec → Plan → Direkt-Implementation (Subagent-Mode angefangen aber für Speed verworfen).
+
+**Entscheidungen (D-19):**
+1. Pattern β — Akzent-Sections cremig im Dark-Flow (nicht Vollwechsel KKM-pur, der hätte Showroom-Identität zerstört)
+2. Cream-Token Warm Paper `#f5f1e8` (thermal harmonisch zum warmen `--tx`)
+3. Scope γ — Index Stats + Reviews, Über-uns Werte, Detail-FAQ (BMW + i10 + Opel)
+4. Hard-Cut-Übergänge
+5. Generische `.sec-light` Modifier-Klasse (additiv, analog zu `.sec-alt`)
+
+**Implementation (6 Commits, `47784a4` → `d55115d`):**
+
+- **Foundation** — neue `:root`-Tokens (`--page-light`, `--c1-light`, `--tx-on-light`, `--grn-on-light` etc.), `.sec-light` Basis-Modifier mit Eyebrow/Heading/Body/Button-Overrides in `styles/v2.css`
+- **Stats-Strip Cream** — confidenter als Dark-Variante: Padding 88px (statt 48), Numbers clamp 40-72px (statt 28-42), dunkelmint Top-Border-Akzent unter Labels. Component-Override in `v2-home.css`. HTML: `<section class="stats-strip sec-light">`.
+- **Werte-Section Cream** — Premium-Paper-Cards: `#fdfaf2` BG, dunkelmint Top-Akzent-Border animiert auf Hover (48 → 120px), Layered-Shadows statt Glass-Hover, größere Eyebrow-Letter-Spacing. Override in inline `<style>` von `uber-uns.html`.
+- **Detail-FAQ Cream** — BMW + i10 + Opel: cremig BG 88px Padding, dunkelmint Icon, größere Question-Typo (15-18px), Toggle-Plus rotiert auf mint-pastell-Pill. Override in `v2-detail.css`. Seat unangetastet (keine FAQ).
+- **Reviews KKM-Quote-Format** (zugleich Backlog B6 erledigt) — größter visueller Move: vertikaler Stack 96px Gap (statt 3-Spalten-Grid), Quote-Text clamp 24-40px italic, 240px typografischer Quote-Marker als CSS `::before` semi-transparent dunkelmint, Strong-Highlights als mint-Pills, dunkelmint Stars statt golden, Avatare ruhig in Beige-Card. Padding 128px für Atrium-Vibe. Eigentliche `"`-Zeichen aus Reviews-HTML entfernt (Doppelung mit Marker).
+
+**Brain + Memory geupdated:**
+- D-19 in `07_DECISIONS_LOG.md`
+- B2 + B6 als ✅ markiert in `06_OPEN_TASKS.md`
+- Phase 4 Block in `02_CURRENT_STATE.md`, Letzte-Commits-Liste aktualisiert
+- `05_UI_UX_CONTEXT.md` komplett refresh: korrekte Tokens (war 1440/160 statt 1280/128), Cream-Theme dokumentiert, alte "bekannte Probleme" entfernt
+- Memory `project_rm_automobile.md` Token-Liste auf echte Werte (`--page:#0f0f0e --c1:#161614 --tx:#f4eee0 --grn:#7ad99e`) korrigiert + Cream-Tokens ergänzt
+
+**Spec/Plan unter `docs/superpowers/`:**
+- `specs/2026-05-04-section-hell-dunkel-design.md`
+- `plans/2026-05-04-section-hell-dunkel.md`
+
+**Nächste Session — Anleitung:**
+1. **Erst lesen:** `02_CURRENT_STATE.md`, `06_OPEN_TASKS.md` (Backlog B1/B3/B5/B7/B8), `07_DECISIONS_LOG.md` D-19
+2. **Live-Stand prüfen:** https://claude-project-bex.pages.dev/ (insbes. Reviews als KKM-Quote-Moment, Stats-Strip Pop)
+3. **Backlog Prio 1:** B1 Detail-Pages Hero-Reduktion (Phase-3-Pattern auf BMW/i10/Opel/Seat anwenden — Glow-Anims raus, Hero-Größen vernünftig)
+4. **T-07/T-08/T-09 vor Merge:** Cross-Browser, Lighthouse, Sammel-Commit + PR
+5. **Workflow:** Mini-Schritte mit Live-Sign-off auf Preview, Brain während des Arbeitens pflegen
+
+---
+
+## Session 04.05.2026 (Teil 1) — KKM-Reduktion in 3 Phasen (User-Reset)
 
 **Kontext:** Vorhergehender Sprint (03.05.2026, "Cook-Sprint Stage 5/6/7") hatte massive autonome Änderungen ohne Live-Verifikation gemacht. User-Reality-Check auf https://claude-project-bex.pages.dev/ → Design wirkte "wie Bastelprojekt von Schulkind", "kein Vergleich zu KKM Media". User-Forderung: "kriegst du es nochmal krasser hin" + später "du hast meine Freifahrt um das Design zu optimieren".
 
