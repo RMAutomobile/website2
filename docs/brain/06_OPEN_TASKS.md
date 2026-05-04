@@ -99,12 +99,12 @@ User-Reality-Check auf https://claude-project-bex.pages.dev/ — Design wirkt "w
 - Sticky-Sidebar checken (sticky-Top war 108px — passt wenn nav-h:88px)
 - Gallery thumbs evtl. reduzieren
 
-### B2 · Section-BG echte Hell/Dunkel-Wechsel
-**Problem:** KKM wechselt zwischen weiß und dunkel; wir bleiben in 2 Dark-Tönen (`page` ↔ `c1`). Memory `project_rm_automobile.md` sagte "Dark Theme bleibt" — aber User hat 04.05.2026 Freifahrt erteilt für Design-Optimierung. Theme-Refactor möglich.
-**Optionen:**
-- (A) Komplett Dark bleiben aber stärkere Tonwerte zwischen Sections (`#0a0a09` ↔ `#1c1c1a` ↔ `#2a2a26`) für klarere Trennung
-- (B) Cremig-helle Akzent-Sections (Stats / Testimonials / Atmosphere) als Bruch im Dark-Flow
-- **UNGEKLÄRT** mit User: Welche Variante.
+### ✅ B2 · Section-BG Hell/Dunkel-Wechsel — fertig (Sprint 04.05.2026)
+**Entscheidung:** Pattern β (Akzent-Sections im Dark-Flow), nicht Vollwechsel. Cream-Token Warm-Paper `#f5f1e8` (thermal harmonisch zum warmen `--tx`). Scope γ: Index Stats-Strip + Reviews, Über-uns Werte, Detail-FAQ (BMW + i10 + Opel Corsa). Hard-Cut-Übergänge.
+**Implementation:** Neue `:root`-Tokens (`--page-light`, `--c1-light`, `--tx-on-light`, `--grn-on-light` etc.) und generische Modifier-Klasse `.sec-light` in `styles/v2.css`. Component-Overrides in `styles/v2-home.css` (Stats-Strip, Reviews), inline `<style>` von `uber-uns.html` (Werte) und `styles/v2-detail.css` (Detail-FAQ).
+**Spec:** `docs/superpowers/specs/2026-05-04-section-hell-dunkel-design.md`
+**Decision-Log:** D-19
+**Region/Blog/FAQ-Page/Forms** bleiben dark — eventuelle 2. Welle als eigener Spec.
 
 ### B3 · Process-Steps prominenter
 **Problem:** KKM hat "Wie wir arbeiten" mit 4 Schritten + Number-Markern als zentrale Section; wir haben das als `steps-row` aber nicht so präsent.
@@ -118,9 +118,8 @@ User-Reality-Check auf https://claude-project-bex.pages.dev/ — Design wirkt "w
 **Problem:** Aktuell 4 Tiles mit verschiedenen grid-spans (atmo-1 takes 6 cols/2 rows etc) — wirkt unruhig. KKM-Style wäre 4 gleichgroße Cards oder 3+1.
 **Fix-Ansatz:** `.atmo-collage` grid-template auf `repeat(4,1fr)` mit gleichen Höhen, schlichter.
 
-### B6 · Reviews/Testimonials KKM-Style
-**Problem:** Aktuell Cards-Grid; KKM macht Testimonials als breite zitierbare Quotes mit Stern + Avatar + Klar.
-**Fix-Ansatz:** Reviews-Section umbauen zu zitable Quote-Format (groß, klar lesbar) statt Cards.
+### ✅ B6 · Reviews KKM-Style — fertig (mit-erledigt im B2-Sprint)
+**Umgesetzt:** Reviews-Section auf KKM-Quote-Format umgebaut, gleichzeitig Cream-Background. Vertikale Stack-Layout statt 3-Spalten-Grid, BIG italic Quote-Typo (clamp 24-40px), riesiger typografischer Quote-Marker (240px) als Akzent links oben semi-transparent dunkelmint, Stars dunkelmint, Strong-Highlights mit Pill-Background, Avatare ruhiger.
 
 ### B7 · Region-Pages Background prüfen
 **Problem:** User-Lob "Inhaltlich gut" — aber `body::before/::after` Glow-Anims sind möglicherweise auch da drin (autoankauf-regensburg, -ingolstadt, -kelheim, -parsberg, gebrauchtwagen-neumarkt).

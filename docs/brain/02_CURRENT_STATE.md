@@ -1,6 +1,6 @@
 # 02 — Current State
 
-**Stand:** 04.05.2026, Branch `claude-optimierung`, Commit `9bee4b4` ist live auf Preview https://claude-project-bex.pages.dev/.
+**Stand:** 04.05.2026, Branch `claude-optimierung`, Commits bis `d55115d` (Hell/Dunkel-Theme Sprint) sind live auf Preview https://claude-project-bex.pages.dev/.
 
 **Live-Branch `main`** unangetastet — Cloudflare Pages deployt nur main, daher ist rmauto-mobile.de noch alter Stand. Merge nach main erst nach User-Review-OK.
 
@@ -10,10 +10,11 @@
 
 User-Reality-Check auf Preview-URL → Design wirkte "wie Bastelprojekt", "kein Vergleich zu KKM Media". Tiefe Analyse via WebFetch von kkmmedia.de + 3 systematische Reduktions-Phasen statt weiterem "Cook-Sprint". Brain-Lessons festgehalten in Memory `feedback_kkm_lessons.md`.
 
-**3 Reduktions-Phasen + Memory-Lessons:**
+**3 Reduktions-Phasen + Phase 4 Hell/Dunkel + Memory-Lessons:**
 1. **Phase 1** (`a7ce5a9`) — Background-Noise + Mesh raus, falsche Stats raus (Decision D-15)
 2. **Phase 2** (`4cbd71e`) — Logo-Carousel statt Brand-Grid, USP entfeatured, Hero-H1-Caps global, CTA-Wasserzeichen weg (Decision D-17)
 3. **Phase 3** (`9bee4b4`) — Stats-Strip als eigene Section, Hero-Trust raus, Glow-Anims site-wide raus, Footer cleanup (Decision D-18)
+4. **Phase 4 — Hell/Dunkel-Theme** (`47784a4` → `d55115d`) — Pattern β Akzent-Sections cremig auf Warm-Paper #f5f1e8: Stats-Strip + Reviews (Index), Werte (Über-uns), Detail-FAQ (BMW + i10 + Opel Corsa). `.sec-light` Modifier-Klasse generisch additiv. Reviews zugleich auf KKM-Quote-Format (B6 mit-erledigt). Decision D-19, Spec/Plan unter `docs/superpowers/`.
 
 Plus Schritt-vor-Phase-1 (`431b5d5`) — Insta+TikTok Cards mit komprimiertem Video, Team-Bilder Crop fix.
 
@@ -36,16 +37,17 @@ Plus Schritt-vor-Phase-1 (`431b5d5`) — Insta+TikTok Cards mit komprimiertem Vi
 - ✅ **Falsche Stats raus** auf Team-Cards ("10+ Jahre", "100%" — waren erfunden)
 - ✅ **SEO-Keywords** in H1+Lead+Eyebrow auf allen Hauptseiten (Hemau, Regensburg, Ingolstadt, Neumarkt, Kelheim, Parsberg)
 - ✅ **Insta + TikTok** beide mit Video-Card eingebunden (insta-web.mp4 6.5 MB statt 19.5 MB)
+- ✅ **Hell/Dunkel-Theme — Pattern β Akzent-Sections** auf Warm-Paper #f5f1e8: Stats-Strip + Reviews (Index), Werte (Über-uns), Detail-FAQ (BMW + i10 + Opel Corsa). `.sec-light` Modifier additiv kombinierbar
+- ✅ **Reviews KKM-Quote-Format** — vertikales Stack-Layout mit BIG italic Quote-Typo (clamp 24-40px), 240px typografischer Quote-Marker als Akzent, dunkelmint Stars statt golden, Quote-Highlight-Pills
 
 ---
 
 ## Was noch nicht KKM-Niveau ist (Backlog)
 
 ### Backlog Priorität 1 — visuelle Distanz zu KKM
-- **Section-BG echte Hell/Dunkel-Wechsel** — KKM wechselt weiß↔dunkel, wir wechseln nur zwischen 2 Dark-Tönen. Memory `project_rm_automobile.md` sagte "Dark Theme bleibt" — User hat aber jetzt Freifahrt erteilt → Theme-Refactor mit cremigem Akzent-Bereich denkbar
-- **Detail-Pages noch nicht reduziert** — fahrzeug-bmw320d, -i10, -opel-corsa, -seat-ibiza haben noch alte Glow-Animationen, alte Hero-Größen, page-spezifisches CSS aus dem Cinema-Sprint. Phase 4 nötig.
+- **Detail-Pages-Hero-Reduktion** — fahrzeug-bmw320d, -i10, -opel-corsa, -seat-ibiza haben noch alte Glow-Animationen, alte Hero-Größen, page-spezifisches CSS aus dem Cinema-Sprint. Phase-3-Reduktion ist auf Detail-Pages noch nicht durchgezogen.
 - **Process-Steps prominenter** — KKM hat 4-Schritt-Liste mit Number-Markers; wir haben `steps-row` aber kann präsenter
-- **Reviews/Testimonials** — aktuell als Cards; KKM macht das als breite zitierbare Blocks
+- **Hell/Dunkel-Erweiterung 2. Welle** — Region-Pages, Blog-Article-Body, FAQ-Page könnten als Long-Form-Reading-Mode-Sprint cremig werden (eigener Spec)
 
 ### Backlog Priorität 2 — Content + SEO
 - **SEO-Keywords Phase 2** — nur H1+Lead+Eyebrow gemacht, Body-Texte + Sub-Sections noch nicht durchgekämmt
@@ -80,10 +82,14 @@ Plus Schritt-vor-Phase-1 (`431b5d5`) — Insta+TikTok Cards mit komprimiertem Vi
 ## Letzte Commits (chronologisch)
 
 ```
+d55115d theme+B6: reviews auf KKM-Quote-Format + cream
+63caf4f theme: detail-FAQ cream nachgezogen — i10 + Opel Corsa
+97d8050 theme: detail-FAQ auf cream (BMW + i10 + Opel Corsa)
+736bdde theme: werte-section auf cream (Über-uns)
+878c05c theme: stats-strip auf cream — KKM-style Pop-Section nach Hero
+47784a4 theme: cream tokens + .sec-light modifier in v2.css
+2394634 spec+plan: Hell/Dunkel-Theme Refactor (Backlog B2)
 9bee4b4 KKM-Reduktion Phase 3: Stats-Strip Section, Glow-Animations site-wide raus, Footer clean
 4cbd71e KKM-Reduktion Phase 2: Logo-Carousel, USP entfeatured, Hero-H1 global cap, CTA-Band entschlackt
 ff74295 Reset B+C+D+F+G+H: KKM-Reduktion - Effekte raus, Hierarchie ein, Container zentriert, SEO-Keywords sichtbar
-a7ce5a9 Reset Schritt A+H: Background-Noise raus, falsche Team-Stats raus
-431b5d5 Schritt E + H-fix: Insta+TikTok Cards, Team-Bilder Crop fix
-e23fcf5 Sprint Stage 5-7: Cinema-Cards, Marken-Filter, Detail-Pages, Wizard-Polish
 ```

@@ -115,6 +115,30 @@
 
 ---
 
+## D-19 · Hell/Dunkel-Theme als Akzent-Sections, nicht Vollwechsel
+**Wann:** 04.05.2026, nach Brainstorming-Skill-Session (Spec `2026-05-04-section-hell-dunkel-design.md`)
+**Warum:** Backlog B2 ungelöst — KKM erreicht Premium-Look u.a. durch Hell-Dunkel-Section-Wechsel, R&M lief seit Phase 3 monoton auf einer Background-Farbe. Vollwechsel (jeder zweite Section hell, KKM-pur) würde aber die Auto-Showroom-Identität (Dark = Foto-Glanz, Premium-Vibe) zerstören. Akzent-Pattern β nutzt KKM's Section-Trennungs-Hebel gezielt nur dort, wo Vertrauen aufgebaut wird (Reviews, Werte, FAQ) oder Zahlen pop sollen (Stats-Strip).
+
+**Entscheidungs-Set:**
+- **Pattern:** β (Akzent-Sections im Dark-Flow), nicht C (Vollwechsel) und nicht A (nur stärkere Dark-Tonwerte)
+- **Cream-Token:** Warm Paper `#f5f1e8` (thermal harmonisch zum warmen `--tx #f4eee0`), nicht Cool Grey, nicht Stone Crème
+- **Scope:** γ (Index Stats + Reviews, Über-uns Werte, Detail-FAQ auf BMW + i10 + Opel) — Region/Blog/FAQ-Page/Forms bleiben dark
+- **Detail-Page Cream-Section:** nur Detail-FAQ; Garantie-Block bleibt dark (Card-Grid-Logik)
+- **Übergänge:** Hard Cut, keine Gradients, keine Curves
+- **Implementation:** generische `.sec-light` Modifier-Klasse (analog `.sec-alt`), additiv kombinierbar mit beliebigen Section-Tags
+
+**Konsequenz:**
+- Neue `:root`-Tokens: `--page-light:#f5f1e8`, `--c1-light:#ebe5d6`, `--tx-on-light:#0f0f0e`, `--grn-on-light:#2f6f49`, plus Mute-Stufen
+- Reviews-Section bekommt zugleich KKM-Quote-Format-Restructure (B6 erledigt) — vertikales Stack-Layout mit BIG italic Quote-Typo + 240px typografischer Quote-Marker
+- Mint `#7ad99e` auf Cream zu hell für Solid-Buttons → invertierter Stil: Solid-Dark-Button mit Cream-Text auf `.sec-light`-Sections
+- Stats-Strip auf Cream wird größer und confidenter (clamp 40-72px Numbers statt 28-42, mint-Top-Border-Akzent unter Labels) — der Cream-Bruch ist nicht nur ein BG-Flip, sondern ein bewusster Pop-Moment
+- Werte-Cards bekommen Premium-Paper-Treatment (Cream BG, mint Top-Akzent-Border animiert auf Hover, kein Glass-Hover mehr)
+
+**Spec/Plan-Pfad:** `docs/superpowers/specs/2026-05-04-section-hell-dunkel-design.md`, `docs/superpowers/plans/2026-05-04-section-hell-dunkel.md`
+**Commits:** `47784a4` → `d55115d` (6 commits)
+
+---
+
 ## Offene Entscheidungen
 
 ### O-03 · Soll Header/Footer als JS-Partial geladen werden? **UNGEKLÄRT**
