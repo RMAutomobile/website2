@@ -1,0 +1,99 @@
+/* R&M Automobile — Fahrzeug-Detail extra sections (History, Check, Warranty, FAQ) */
+
+/* HISTORY TIMELINE */
+.history{margin-top:10px;display:flex;flex-direction:column;border-left:1px solid var(--bo);padding-left:28px;position:relative}
+.history-item{position:relative;padding:14px 0 22px;font-size:14px;color:var(--tx2);line-height:1.75;max-width:680px}
+.history-item:last-child{padding-bottom:0}
+.history-item::before{content:'';position:absolute;left:-32px;top:18px;width:11px;height:11px;border-radius:50%;background:var(--grn);border:2px solid rgba(15,15,14,1);box-shadow:0 0 0 3px rgba(122,217,158,.18);transition:transform .45s var(--bounce),box-shadow .45s}
+.history-item:hover::before{transform:scale(1.25);box-shadow:0 0 0 5px rgba(122,217,158,.28)}
+.history-item.gold::before{background:var(--gold,#d9b86d)}
+.history-item.gold{}
+.history-tag{font-family:var(--fh);font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--grn);margin-bottom:6px;display:inline-flex;align-items:center;gap:8px}
+.history-tag::after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--grn-bd),transparent);min-width:32px;max-width:80px}
+.history-item.gold .history-tag{color:var(--gold,#d9b86d)}
+.history-item.gold .history-tag::after{background:linear-gradient(to right,rgba(217,184,109,.4),transparent)}
+.history-item h4{font-family:var(--fh);font-size:15px;font-weight:700;color:var(--tx);letter-spacing:-.012em;margin-bottom:4px}
+.history-item p{font-size:13px;color:var(--tx2);line-height:1.75;margin:0}
+
+/* CHECK GRID — 24-Punkte-Pruefung */
+.check-wrap{padding:32px 28px;background:linear-gradient(155deg,var(--c2) 0%,rgba(122,217,158,.03) 100%);border:1px solid var(--bo);border-radius:var(--r-lg);position:relative;overflow:hidden;margin-top:8px}
+.check-wrap::before{content:'';position:absolute;top:-30%;right:-10%;width:420px;height:420px;background:radial-gradient(circle,rgba(122,217,158,.07) 0%,transparent 65%);filter:blur(40px);pointer-events:none}
+.check-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:20px;flex-wrap:wrap;position:relative;z-index:1}
+.check-head h3{font-family:var(--fh);font-size:18px;font-weight:700;color:var(--tx);letter-spacing:-.012em}
+.check-pass{display:inline-flex;align-items:center;gap:9px;padding:8px 14px;background:rgba(122,217,158,.14);border:1px solid var(--grn-bd);border-radius:999px;font-family:var(--fh);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--grn)}
+.check-pass::before{content:'';width:7px;height:7px;border-radius:50%;background:var(--grn);box-shadow:0 0 10px var(--grn);animation:badgePulse 2.4s ease-in-out infinite}
+.check-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0 28px;list-style:none;position:relative;z-index:1}
+.chk{display:grid;grid-template-columns:24px 1fr auto;align-items:center;gap:11px;padding:12px 0;border-bottom:1px solid var(--bo);font-size:13px;color:var(--tx2)}
+.chk-ico{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;background:var(--grn-soft);border:1px solid var(--grn-bd);color:var(--grn);transition:transform .45s var(--bounce)}
+.chk:hover .chk-ico{transform:scale(1.18) rotate(8deg)}
+.chk-ico svg{width:11px;height:11px}
+.chk-l{font-weight:500;color:var(--tx);letter-spacing:-.005em}
+.chk-status{font-family:var(--fh);font-size:9px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--grn);padding:3px 10px;background:rgba(122,217,158,.1);border-radius:999px;border:1px solid rgba(122,217,158,.2)}
+.chk-foot{margin-top:18px;padding-top:18px;border-top:1px solid var(--bo);display:flex;flex-wrap:wrap;align-items:center;gap:14px;justify-content:space-between;position:relative;z-index:1}
+.chk-foot p{font-size:12px;color:var(--tx3);line-height:1.6;font-style:italic;max-width:520px}
+.chk-by{font-family:var(--fh);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--grn);display:inline-flex;align-items:center;gap:8px}
+.chk-by::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--grn);box-shadow:0 0 10px var(--grn)}
+
+/* WARRANTY 3-CARD */
+.warr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:10px}
+.warr{padding:28px 26px;background:var(--c2);border:1px solid var(--bo);border-radius:var(--r-lg);transition:transform .55s var(--ease),background .5s,border-color .5s,box-shadow .55s;position:relative;overflow:hidden}
+.warr::before{content:'';position:absolute;top:-30%;right:-15%;width:240px;height:240px;background:radial-gradient(circle,rgba(122,217,158,.12) 0%,transparent 65%);opacity:0;transition:opacity .55s;pointer-events:none;border-radius:50%}
+.warr:hover{transform:translateY(-6px);background:var(--c3);border-color:var(--grn-bd);box-shadow:0 24px 48px -16px rgba(0,0,0,.5)}
+.warr:hover::before{opacity:1}
+.warr>*{position:relative;z-index:1}
+.warr-num{font-family:var(--fh);font-size:38px;font-weight:800;color:var(--grn);letter-spacing:-.035em;line-height:1;margin-bottom:8px}
+.warr-num small{font-size:.42em;font-weight:600;letter-spacing:.04em;color:var(--tx3);margin-left:4px;text-transform:uppercase}
+.warr h4{font-family:var(--fh);font-size:15px;font-weight:700;color:var(--tx);margin-bottom:10px;letter-spacing:-.012em}
+.warr p{font-size:12.5px;color:var(--tx2);line-height:1.7}
+
+/* DETAIL FAQ — collapsible */
+.dfaq{display:flex;flex-direction:column;border-top:1px solid var(--bo);margin-top:10px}
+.dfaq-item{border-bottom:1px solid var(--bo);transition:background .35s,padding .35s}
+.dfaq-item:hover,.dfaq-item.open{background:linear-gradient(90deg,rgba(122,217,158,.04) 0%,transparent 60%);padding-left:14px}
+.dfaq-q{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:22px 4px;cursor:pointer;width:100%;background:none;border:none;text-align:left;color:inherit;font:inherit}
+.dfaq-q h4{font-family:var(--fh);font-size:clamp(14px,1.3vw,16px);font-weight:600;color:var(--tx);letter-spacing:-.012em;line-height:1.35;margin:0}
+.dfaq-tog{flex-shrink:0;width:36px;height:36px;border:1px solid var(--bo2);border-radius:50%;display:inline-flex;align-items:center;justify-content:center;color:var(--tx3);font-size:18px;font-weight:300;transition:transform .45s var(--ease),color .35s,border-color .35s,background .35s}
+.dfaq-item.open .dfaq-tog{transform:rotate(45deg);color:var(--grn);border-color:var(--grn-bd);background:var(--grn-soft)}
+.dfaq-a{max-height:0;overflow:hidden;transition:max-height .65s var(--ease)}
+.dfaq-item.open .dfaq-a{max-height:520px}
+.dfaq-a-inner{padding:0 4px 22px;max-width:680px}
+.dfaq-a-inner p{font-size:13.5px;color:var(--tx2);line-height:1.85;margin:0 0 10px}
+.dfaq-a-inner p:last-child{margin-bottom:0}
+
+/* Detail-FAQ — Cream Variant (D-19, Pattern β) */
+.ds.sec-light{background:var(--page-light);padding:88px 40px;border-radius:0;margin:48px 0 0;border-top:1px solid var(--bd-on-light)}
+.ds.sec-light .ds-h{color:var(--tx-on-light);font-size:14px;letter-spacing:.16em;padding-bottom:20px;border-bottom:1px solid var(--bd-on-light);margin-bottom:24px}
+.ds.sec-light .ds-h svg{color:var(--grn-on-light)}
+.ds.sec-light .dfaq{border-top-color:var(--bd-on-light);margin-top:0}
+.ds.sec-light .dfaq-item{border-bottom-color:var(--bd-on-light)}
+.ds.sec-light .dfaq-item:hover,
+.ds.sec-light .dfaq-item.open{background:linear-gradient(90deg,rgba(47,111,73,.06) 0%,transparent 60%)}
+.ds.sec-light .dfaq-q{padding:26px 4px}
+.ds.sec-light .dfaq-q h4{color:var(--tx-on-light);font-size:clamp(15px,1.4vw,18px);font-weight:600}
+.ds.sec-light .dfaq-tog{color:var(--tx2-on-light);border:1px solid var(--bd-on-light);background:transparent}
+.ds.sec-light .dfaq-item.open .dfaq-tog{color:var(--grn-on-light);border-color:var(--grn-bd-on-light);background:var(--grn-soft-on-light)}
+.ds.sec-light .dfaq-a-inner p{color:var(--tx2-on-light);font-size:14.5px;line-height:1.85}
+
+/* COSTS GRID — TCO Vorschau */
+.costs{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--bo);border:1px solid var(--bo);border-radius:var(--r-lg);overflow:hidden;margin-top:10px}
+.cost{padding:22px 20px;background:var(--c2);transition:background .35s}
+.cost:hover{background:var(--c3)}
+.cost-l{font-family:var(--fh);font-size:9px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--tx4);margin-bottom:6px}
+.cost-v{font-family:var(--fh);font-size:18px;font-weight:800;color:var(--tx);letter-spacing:-.018em;line-height:1.1}
+.cost-v small{font-size:.55em;font-weight:600;color:var(--tx3);margin-left:3px;letter-spacing:.04em}
+.cost-h{font-size:11px;color:var(--tx3);margin-top:4px;line-height:1.45}
+
+@media(max-width:1100px){
+  .warr-grid{grid-template-columns:1fr 1fr}
+  .costs{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .check-wrap{padding:24px 20px}
+  .check-grid{grid-template-columns:1fr;gap:0}
+  .warr-grid{grid-template-columns:1fr;gap:10px}
+  .warr{padding:22px 20px}
+  .costs{grid-template-columns:1fr 1fr}
+  .history{padding-left:24px}
+  .history-item::before{left:-29px}
+  .dfaq-item:hover,.dfaq-item.open{padding-left:10px}
+}
